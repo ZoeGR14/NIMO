@@ -93,6 +93,11 @@
                 <div class="content">
 
                     <form method="post" class="contenidoNuevaMasc" action="Controler" id='contenidoNuevaMasc' enctype="multipart/form-data">
+                            <div class="image-details">
+                                <img src="imagenes/nuevaMasc.jpg" id="foto" draggable="false">
+                                <input type="file" id="imagen" accept="image/*" name="fileFoto" class="imagen" required>
+                                <label for="imagen" class="boton">Agregar foto</label>
+                            </div>
                             <div class="user-details">
                                 <div class="input-box">
                                     <span class="details">Nombre</span>
@@ -293,6 +298,16 @@
                         </form>
                     </div>
                 </div>
+                <script>
+                    Swal.fire({
+                        title: "¡Atención!",
+                        text: "Añada nuevamente la foto de su mascota",
+                        icon: "info",
+                        confirmButtonText: "Vale",
+                        confirmButtonColor: "#4b277a",
+                        color: "black"
+                    });
+                </script>
             </c:forEach>
             <%
                 try {

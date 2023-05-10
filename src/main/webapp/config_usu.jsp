@@ -9,7 +9,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="sweetalert2.all.min.js"></script>
-        <style>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="menusito.css">
+    </head>
+    <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
@@ -72,33 +75,10 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                transition: .5s;
+                transition: .5s;  
             }
 
-            .nav{
-                position: relative;
-                display: flex;
-            }
-
-            .nav li{
-                margin: 0 0 0 30px;
-            }
-
-            .nav li a{
-                color: #fff;
-                font-weight: 300;
-                text-transform: capitalize;
-                &.sticky{
-                    color: #fff;
-                }
-            }
-
-            .nav li a:hover{
-                color: #c59bfb;
-                font-weight: 300;
-                text-transform: capitalize;
-            }
-
+            
             .home{
                 position: relative;
                 width: 100%;
@@ -265,8 +245,7 @@
                 width: 100%;
                 height: 140%;
                 position: absolute;
-                overflow: hidden;
-                background-color: #4b277a;
+                overflow: hidden;background-color: #4b277a;
             }
             .burbuja{
                 border-radius: 50%;
@@ -465,25 +444,6 @@
                 font-size: 20px;
             }
         </style>
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function () {
-                var $cabecera = $('#header');
-                var previousScroll = 0;
-                $(window).scroll(function (event) {
-                    var scroll = $(this).scrollTop();
-                    if (scroll > previousScroll && scroll > 0) {
-                        $cabecera.addClass('bgcolor');
-                    } else {
-                        $cabecera.removeClass('bgcolor');
-                    }
-                    previousScroll = scroll;
-                });
-
-            });
-        </script>
-    </head>
-
     <body>
         <%
             HttpSession sesion = request.getSession();
@@ -493,128 +453,180 @@
             if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
                 usuario = sesion.getAttribute("user").toString();
                 tipo = sesion.getAttribute("tipo_usuario").toString();
-
         %>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <header class="headersito" id="header">
-            <a href="cierreSesion.jsp" class="logoin">
-                <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
-            </a>
-            <form method="post" action="Controler">
-                <ul class="nav">
-                    <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                    <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
-                    <li><a href="calendario.html" class="">Calendario</a></li>
-                    <li><a href="informativo.html" class="">Información Mascotas</a></li>
-                    <li><a href="comunidad.html" class="">Comunidad</a></li>
-                    <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
-                    <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
-                    <li><a href="adopciones.html" class="">Adopciones</a></li>
-                    <li><a href="config_usu.jsp" class="">Configuración</a></li>
-                    <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>
-
-                </ul>
-        </header>
-
-
-
-
-        <section class="home" id="home">
-            <div class="bg_animate">
-                <div class="burbujas">
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
-                    <div class="burbuja"></div>
+        <aside class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="imagenes/logo_nimo.png" alt="" class="logo2">
+                    <div class="logo_name">NIMO</div>
                 </div>
+                <i class='bx bx-menu' id='btn'></i>
             </div>
-            <br><br>
-            <div class="bodsito">
-                <div class="conteniendo">
-                    <div class="cajac" style="--clr: #89ec5b">
-                        <div class="contenido-cajac">
-                            <div class="icon-cajac">
-                                <ion-icon name="analytics"></ion-icon>
-                            </div>
-                            <div class="text-cajac">
-                                <h3>Modificar Datos Personales</h3>
-                                <p>Actualiza tus datos</p>
-                                <a href="modificadatos_1.jsp">Vamos</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cajac" style="--clr: #eb5ae5">
-                        <div class="contenido-cajac">
-                            <div class="icon-cajac">
-                                <ion-icon name="lock-closed"></ion-icon>
-                            </div>
-                            <div class="text-cajac">
-                                <h3>Cambiar Contraseña</h3>
-                                <p>Establece una nueva contraseña para tu cuenta</p>
-                                <a href="cambiaContra_usu.jsp">Vamos</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cajac" style="--clr: #5b98eb">
-                        <div class="contenido-cajac">
-                            <div class="icon-cajac">
-                                <ion-icon name="trash"></ion-icon>
-                            </div>
-                            <div class="text-cajac">
-                                <h3>Eliminar Cuenta</h3>
-                                <p>¿Deseas darte de baja?</p>
 
-                                <button id="btn-abrir-modal">Vamos</button>
-                                <dialog id="modal">
-                                    <form action="eliminaCuentaUsu.jsp" method="post" name="buscarUsu">
-                                        <h3>Confirme su contraseña para proceder</h3>
-                                        <input type="text" placeholder="Contraseña" name="contraUsu" id="campito" required autofocus>
-                                        &nbsp;&nbsp;
-                                        <button type="submit" name="verificando" id="btn-enviar-modal">Verificar</button>
-
-                                    </form>
-                                    <br><br>
-                                    <button id="btn-cerrar-modal" onclick="limpiar()">Cancelar</button>
-                                </dialog>
-
-                                <script>
-                                    const btnAbrirModal = document.querySelector("#btn-abrir-modal");
-
-                                    const btnCerrarModal = document.querySelector("#btn-cerrar-modal");
-
-                                    const modal = document.querySelector("#modal");
-
-
-                                    btnAbrirModal.addEventListener("click", () => {
-                                        modal.showModal();
-                                    });
-
-                                    btnCerrarModal.addEventListener("click", () => {
-                                        modal.close();
-                                    });
-
-                                    function limpiar() {
-                                        var camp = document.getElementById("campito");
-                                        camp.value = "";
-                                    }
-                                </script>
-
-                            </div>
-                        </div>
+            <ul class="nav">
+                <li>
+                    <a href="/NIMO/Controler?visualizar=mascotas">
+                        <i class='bx bxs-dog'></i>
+                        <span class="link_name">Mis Mascotas</span>
+                    </a>
+                    <span class="tooltip">Mis Mascotas</span>
+                </li>
+                <li>
+                    <a href="calendario.html">
+                        <i class='bx bx-calendar'></i>
+                        <span class="link_name">Calendario</span>
+                    </a>
+                    <span class="tooltip">Calendario</span>
+                </li>
+                <li>
+                    <a href="informativo.html">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="link_name">Información Mascotas</span>
+                    </a>
+                    <span class="tooltip">Información Mascotas</span>
+                </li>
+                <li>
+                    <a href="comunidad.html">
+                        <i class='bx bx-group'></i>
+                        <span class="link_name">Comunidad</span>
+                    </a>
+                    <span class="tooltip">Comunidad</span>
+                </li>
+                <li>
+                    <a href="/NIMO/Controler?visualizar=notas">
+                        <i class='bx bx-note'></i>
+                        <span class="link_name">Notas</span>
+                    </a>
+                    <span class="tooltip">Notas</span>
+                </li>
+                <li>
+                    <a href="saludBienestar.html">
+                        <i class='bx bxs-heart-circle'></i>
+                        <span class="link_name">Salud y Bienestar</span>
+                    </a>
+                    <span class="tooltip">Salud y Bienestar</span>
+                </li>
+                <li>
+                    <a href="adopciones.html">
+                        <i class='bx bxs-clinic'></i>
+                        <span class="link_name">Adopciones</span>
+                    </a>
+                    <span class="tooltip">Adopciones</span>
+                </li>
+                <li>
+                    <a href="config_usu.jsp">
+                        <i class='bx bx-cog'></i>
+                        <span class="link_name">Configuración</span>
+                    </a>
+                    <span class="tooltip">Configuración</span>
+                </li>
+                <li>
+                    <a href="cierreSesion.jsp">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span class="link_name">Cerrar Sesión</span>
+                    </a>
+                    <span class="tooltip">Cerrar Sesión</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="ventana">
+            <section class="home" id="home">
+                <div class="bg_animate">
+                    <div class="burbujas">
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
+                        <div class="burbuja"></div>
                     </div>
                 </div>
-            </div>
+                <br><br>
+                <div class="bodsito">
+                    <div class="conteniendo">
+                        <div class="cajac" style="--clr: #89ec5b">
+                            <div class="contenido-cajac">
+                                <div class="icon-cajac">
+                                    <ion-icon name="analytics"></ion-icon>
+                                </div>
+                                <div class="text-cajac">
+                                    <h3>Modificar Datos Personales</h3>
+                                    <p>Actualiza tus datos</p>
+                                    <a href="modificadatos_1.jsp">Vamos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cajac" style="--clr: #eb5ae5">
+                            <div class="contenido-cajac">
+                                <div class="icon-cajac">
+                                    <ion-icon name="lock-closed"></ion-icon>
+                                </div>
+                                <div class="text-cajac">
+                                    <h3>Cambiar Contraseña</h3>
+                                    <p>Establece una nueva contraseña para tu cuenta</p>
+                                    <a href="cambiaContra_usu.jsp">Vamos</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cajac" style="--clr: #5b98eb">
+                            <div class="contenido-cajac">
+                                <div class="icon-cajac">
+                                    <ion-icon name="trash"></ion-icon>
+                                </div>
+                                <div class="text-cajac">
+                                    <h3>Eliminar Cuenta</h3>
+                                    <p>¿Deseas darte de baja?</p>
+
+                                    <button id="btn-abrir-modal">Vamos</button>
+                                    <dialog id="modal">
+                                        <form action="eliminaCuentaUsu.jsp" method="post" name="buscarUsu">
+                                            <h3>Confirme su contraseña para proceder</h3>
+                                            <input type="text" placeholder="Contraseña" name="contraUsu" id="campito" required autofocus>
+                                            &nbsp;&nbsp;
+                                            <button type="submit" name="verificando" id="btn-enviar-modal">Verificar</button>
+
+                                        </form>
+                                        <br><br>
+                                        <button id="btn-cerrar-modal" onclick="limpiar()">Cancelar</button>
+                                    </dialog>
+
+                                    <script>
+                                        const btnAbrirModal = document.querySelector("#btn-abrir-modal");
+
+                                        const btnCerrarModal = document.querySelector("#btn-cerrar-modal");
+
+                                        const modal = document.querySelector("#modal");
+
+
+                                        btnAbrirModal.addEventListener("click", () => {
+                                            modal.showModal();
+                                        });
+
+                                        btnCerrarModal.addEventListener("click", () => {
+                                            modal.close();
+                                        });
+
+                                        function limpiar() {
+                                            var camp = document.getElementById("campito");
+                                            camp.value = "";
+                                        }
+                                    </script>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
-
         <script src="script_inic.js"></script>
         <%        } else {
                 out.print("<script>location.replace('ini_sesion.jsp');</script>");
@@ -623,6 +635,6 @@
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     </body>
+    <script src="prueba.js"></script>
 </html>

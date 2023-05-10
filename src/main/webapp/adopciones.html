@@ -3,61 +3,106 @@
     <head><link rel="icon" href="imagenes/logo_nimo.ico">
         <title>Explora</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="adopciones.css" type="text/css">
-        <link rel="stylesheet" href="saludBienestar.css" type="text/css">
+        <link rel="stylesheet" href="adopcionesN.css" type="text/css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
-        <nav>
-        <link rel="stylesheet" href="menu.css">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-               <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
-            </label>
-            <a href="index.html" class="enlace">
-                <img src="imagenes/logo_nimo.png" alt="" class="logo">
-            </a>
-            <ul class="bot_acc">
-                <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
-                <li><a href="calendario.html" class="">Calendario</a></li>
-                <li><a href="informativo.html" class="">Información Mascotas</a></li>
-                <li><a href="comunidad.html" class="">Comunidad</a></li>
-                <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
-                
-                <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
-                <li><a href="adopciones.html" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
-            </ul>
-        </nav>
-        <h1 class="titulo">Adopciones</h1>
-        <section>
-            <div class="apartadito">
-                <div class="grid">
-                    <figure class="effect-ruby" draggable="false"> 
-                        <img src="./imagenes/imagensita.jpg" alt="img13">
-                        <figcaption draggable="false">
-                            <h2 class="ola">
-                                <span class="ola">Quiero Adoptar</span>
-                            </h2>
-                            <p>¡Conoce a mascotas que puedes adoptar y llena un pequeño cuestionario!</p>
-                            <a href="QuieroAdop.html"></a>
-                        </figcaption>
-                    </figure>
-                    <form action="Controler" method="post">
-                        <button class="aaaa" name="accion" value="Dar adopcion" style="border:none;"> 
-                    <figure class="effect-ruby" draggable="false"> 
-                        <img src="./imagenes/adoptar.png" alt="img13">
-                        <figcaption draggable="false">
-                            <h2 class="ola">
-                                <span class="ola">Quiero Dar en Adopción</span>
-                            </h2>
-                            <p>¡Da en adopcion a tu mascota llenando un pequeño cuestionario!</p>
-                        </figcaption>
-                    </figure>
-                   </button>
-                    </form>
-                    
-                </div>       
+        <aside class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="imagenes/logo_nimo.png" alt="" class="logo2">
+                    <div class="logo_name">NIMO</div>
+                </div>
+                <i class='bx bx-menu' id='btn'></i>
             </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="/NIMO/Controler?visualizar=mascotas">
+                        <i class='bx bxs-dog'></i>
+                        <span class="link_name">Mis Mascotas</span>
+                    </a>
+                    <span class="tooltip">Mis Mascotas</span>
+                </li>
+                <li>
+                    <a href="calendario.html">
+                        <i class='bx bx-calendar'></i>
+                        <span class="link_name">Calendario</span>
+                    </a>
+                    <span class="tooltip">Calendario</span>
+                </li>
+                <li>
+                    <a href="informativo.html">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="link_name">Información Mascotas</span>
+                    </a>
+                    <span class="tooltip">Información Mascotas</span>
+                </li>
+                <li>
+                    <a href="comunidad.html">
+                        <i class='bx bx-group'></i>
+                        <span class="link_name">Comunidad</span>
+                    </a>
+                    <span class="tooltip">Comunidad</span>
+                </li>
+                <li>
+                    <a href="/NIMO/Controler?visualizar=notas">
+                        <i class='bx bx-note'></i>
+                        <span class="link_name">Notas</span>
+                    </a>
+                    <span class="tooltip">Notas</span>
+                </li>
+                <li>
+                    <a href="saludBienestar.html">
+                        <i class='bx bxs-heart-circle'></i>
+                        <span class="link_name">Salud y Bienestar</span>
+                    </a>
+                    <span class="tooltip">Salud y Bienestar</span>
+                </li>
+                <li>
+                    <a href="adopciones.html">
+                        <i class='bx bxs-clinic'></i>
+                        <span class="link_name">Adopciones</span>
+                    </a>
+                    <span class="tooltip">Adopciones</span>
+                </li>
+                <li>
+                    <a href="config_usu.jsp">
+                        <i class='bx bx-cog'></i>
+                        <span class="link_name">Configuración</span>
+                    </a>
+                    <span class="tooltip">Configuración</span>
+                </li>
+                <li>
+                    <a href="cierreSesion.jsp">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span class="link_name">Cerrar Sesión</span>
+                    </a>
+                    <span class="tooltip">Cerrar Sesión</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="ventana">
+            <center>
+                <br>
+                <h1 class="titulo">Adopciones</h1>
+                <div>
+                    <a href="/NIMO/Controler?visualizar=verAdop" style="none">
+                        <div class="card">
+                            <h2>Adoptar</h2>
+                        </div>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="/NIMO/Controler?visualizar=adopciones" style="none">
+                        <div class="card">
+                            <h2>Dar en Adopción</h2>
+                        </div>
+                    </a>
+                </div>
+            </center>
         </section>
     </body>
+    <script src="prueba.js"></script>
 </html>

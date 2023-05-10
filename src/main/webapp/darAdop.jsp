@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
@@ -8,7 +7,6 @@
         <style>
             html {
                 height: 100%;
-                
             }
             .mascotasSelect select{
                 display: inline-block;
@@ -38,15 +36,15 @@
             body {
                 margin:0;
                 padding:0;
-                zoom: 0.67;
                 background: url(imagenes/514564654.png);
             }
             .user-box{
                 font-size: 2em;
                 margin-top: 1%;
             }
-            
+
             .login-box {
+                zoom:0.67;
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -242,63 +240,133 @@
             }
 
         </style>
-        <link rel="stylesheet" href="estilos.css" type="text/css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="menusito.css">
+        <style>
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 50px;
+                background: #ffffff;
+                padding: 6px 16px;
+                height: 100%;
+                box-shadow: 5px 0 30px rgba(0, 0, 0, 0.1);
+                transition: all 0.5s ease;
+                overflow: hidden;
+            }
+        </style>
     </head>
     <body>
-        <nav>
-        <link rel="stylesheet" href="menu.css">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-               <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
-            </label>
-            <a href="index.html" class="enlace">
-                <img src="imagenes/logo_nimo.png" alt="" class="logo">
-            </a>
-            <ul class="bot_acc">
-                <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
-                <li><a href="calendario.html" class="">Calendario</a></li>
-                <li><a href="informativo.html" class="">Información Mascotas</a></li>
-                <li><a href="comunidad.html" class="">Comunidad</a></li>
-                <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
-                
-                <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
-                <li><a href="adopciones.html" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
-            </ul>
-        </nav>
-    
-        <div class="login-box">
-           <h2>Dar en Adopción</h2>
-           <form action="Controler" method="post">
-            <div class="user-box">
-                <label>Elige la mascota para dar en adopción</label><br>
-                <div class="mascotasSelect">
-                    <select id="mascotasSelect" name="mascota">
-                        <option value="selec" disabled="true" selected="true">Seleccione una mascota</option>
-                        <c:forEach var="datito" items="${listita}">
-                            <option value="${datito.getNombre()}">${datito.getNombre()}</option>
-                        </c:forEach>
-                            <c:if test="${empty listita}">
-                                <option >No hay mascotas registradas unu</option>
-                        </c:if>
-                    </select>
+        <aside class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="imagenes/logo_nimo.png" alt="" class="logo2">
+                    <div class="logo_name">NIMO</div>
                 </div>
-            </div><br>
-             <div class="user-box">
-               <input type="text" name="historia" required autofocus>
-               <label>Historia de la mascota</label>
-             </div>
-             <div class="user-box">
-               <input type="type" name="salud" required="">
-               <label>Estado de salud</label>
-             </div>
-            <div class="user-box">
-               <input type="type" name="ubicacion" required="">
-               <label>Ubicacion</label>
-             </div>
-            <button type="submit" name="accion" value="zoeguapote" style="border:none;" class="botoncito"><center>Dar en adopción</center></button>
-           </form>
-         </div>
-   
+                <i class='bx bx-menu' id='btn'></i>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="/NIMO/Controler?visualizar=mascotas">
+                        <i class='bx bxs-dog'></i>
+                        <span class="link_name">Mis Mascotas</span>
+                    </a>
+                    <span class="tooltip">Mis Mascotas</span>
+                </li>
+                <li>
+                    <a href="calendario.html">
+                        <i class='bx bx-calendar'></i>
+                        <span class="link_name">Calendario</span>
+                    </a>
+                    <span class="tooltip">Calendario</span>
+                </li>
+                <li>
+                    <a href="informativo.html">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="link_name">Información Mascotas</span>
+                    </a>
+                    <span class="tooltip">Información Mascotas</span>
+                </li>
+                <li>
+                    <a href="comunidad.html">
+                        <i class='bx bx-group'></i>
+                        <span class="link_name">Comunidad</span>
+                    </a>
+                    <span class="tooltip">Comunidad</span>
+                </li>
+                <li>
+                    <a href="/NIMO/Controler?visualizar=notas">
+                        <i class='bx bx-note'></i>
+                        <span class="link_name">Notas</span>
+                    </a>
+                    <span class="tooltip">Notas</span>
+                </li>
+                <li>
+                    <a href="saludBienestar.html">
+                        <i class='bx bxs-heart-circle'></i>
+                        <span class="link_name">Salud y Bienestar</span>
+                    </a>
+                    <span class="tooltip">Salud y Bienestar</span>
+                </li>
+                <li>
+                    <a href="adopciones.html">
+                        <i class='bx bxs-clinic'></i>
+                        <span class="link_name">Adopciones</span>
+                    </a>
+                    <span class="tooltip">Adopciones</span>
+                </li>
+                <li>
+                    <a href="config_usu.jsp">
+                        <i class='bx bx-cog'></i>
+                        <span class="link_name">Configuración</span>
+                    </a>
+                    <span class="tooltip">Configuración</span>
+                </li>
+                <li>
+                    <a href="cierreSesion.jsp">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span class="link_name">Cerrar Sesión</span>
+                    </a>
+                    <span class="tooltip">Cerrar Sesión</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="ventana">
+            <div class="login-box">
+                <h2>Dar en Adopción</h2>
+                <form action="Controler" method="post">
+                    <div class="user-box">
+                        <label>Elige la mascota para dar en adopción</label><br>
+                        <div class="mascotasSelect">
+                            <select id="mascotasSelect" name="mascota" required>
+                                <c:forEach var="datito" items="${listita}">
+                                    <option value="selec" disabled="true" selected="true" hidden>Seleccione una mascota</option>
+                                    <option value="${datito.getId()}">${datito.getNombre()}</option>
+                                </c:forEach>
+                                <c:if test="${empty listita}">
+                                    <option id="zero" selected="true" disabled="true" hidden>No hay mascotas registradas unu</option>
+                                </c:if>
+                            </select>
+                        </div>
+                    </div><br>
+                    <div class="user-box">
+                        <input type="text" name="historia" required autofocus>
+                        <label>Historia de la mascota</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="type" name="salud" required="">
+                        <label>Estado de salud</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="type" name="ubicacion" required="">
+                        <label>Ubicacion</label>
+                    </div>
+                    <button type="submit" name="accion" value="zoeguapote" style="border:none;" class="botoncito"><center>Dar en adopción</center></button>
+                </form>
+            </div>
+        </section>
     </body>
+    <script src="prueba.js"></script>
 </html>

@@ -296,9 +296,3 @@ input[type=radio]{
     background-color: #9a51fa;
     cursor: pointer;
 }
-
-@media (max-width: 1400px){
-    *{
-        zoom:1;
-    }
-}

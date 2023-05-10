@@ -37,6 +37,6 @@ function updateNote(id, descripcion) {
     popupTitle.innerText = "Edita la nota";
     addBtn.innerText = "Editar";
     addBtn.setAttribute("name", "id2");
-    addBtn.value = id;
+    addBtn.value = id
     
 }

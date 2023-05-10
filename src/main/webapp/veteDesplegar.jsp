@@ -204,7 +204,7 @@
                 <li><a href="informativo.html" class="">Información Mascotas</a></li>
                 <li><a href="comunidad.html" class="">Comunidad</a></li>
                 <li><button class="desplegar" name="accion" value="Visualizar mis notas" style="border: none;">Notas</button></li></form>
-                
+                <li><a href="citas.html" class="">Citas</a></li>
                 <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
                 <li><a href="config_usu.jsp" class="">Configuración</a></li>
                 <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>

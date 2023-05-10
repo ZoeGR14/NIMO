@@ -61,7 +61,7 @@
                                     <td>${listaM.getFecha_hora()}</td>
                                     <td>${listaM.getSolucion()}</td>
 
-
+                                    
                                     <td>
                                         <c:choose>
                                             <c:when test="${empty listaM.getSolucion()}">

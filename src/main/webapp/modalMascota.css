@@ -25,8 +25,6 @@
     position: relative;
     margin:2rem;
     width: 500px;
-    max-height: calc(100vh - 50px);
-    overflow-y: scroll;
 }
 
 .info-mascotas .info.active{

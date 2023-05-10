@@ -374,12 +374,12 @@
             </a>
             <ul class="nav">
                 <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
+                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mascotas</a></li>
                 <li><a href="calendario.html" class="">Calendario</a></li>
                 <li><a href="informativo.html" class="">Información Mascotas</a></li>
                 <li><a href="comunidad.html" class="">Comunidad</a></li>
                 <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
-                
+                <li><a href="citas.html" class="">Citas</a></li>
                 <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
                 <li><a href="adopciones.html" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
                 <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>

@@ -237,6 +237,10 @@ form .button{
   background: #7851fa;
 }
 
+.edit{
+    display: none;
+}
+
 @media (max-width: 660px){
   .wrapper{
     margin: 15px;

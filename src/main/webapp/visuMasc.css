@@ -7,28 +7,19 @@
     color: rgba(0,0,0,0.5);
 }
 
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #8f54a0 #ffffff;
-  }
+/*--scrollbar--*/
+*::-webkit-scrollbar{
+    width: 9px;
+}
+::-webkit-scrollbar-thumb:active{
+    background: #9140C7;
+}
+*::-webkit-scrollbar-thumb{
+    background: #7A40C7;
+    border-radius: 15px;
+}
+/*--termina scrollbar--*/
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-    margin: 20px 0;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #8f54a0;
-    border-radius: 10px;
-    border: 3px solid #ffffff;
-  }
 .button {
     position: fixed;
     bottom: 25px;
@@ -204,6 +195,7 @@ section {
     background-size: cover;
     background-position: center center;
     border-radius: 12px;
+    filter: grayscale(100%);
     transition: .3s ease;
 }
 .container .card button {
@@ -239,6 +231,7 @@ section {
     top: 80px;
 }
 .container .card:hover .pic {
+    filter: grayscale(0);
     width: 320px;
 }
 .container .card2 .pic {

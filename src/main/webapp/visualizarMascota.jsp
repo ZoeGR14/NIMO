@@ -131,12 +131,10 @@
                             </p>
                             <div class='buttons'>
                                 <form action='Controler?accion=eliminarMascota' method='post' id="eliminar">
-                                    <input type="hidden" value='${dato.getId()}'  name='delete'>
-                                    <button class="buy" id="btnD" >Eliminar mascota</button>
+                                    <button class="buy" value='${dato.getId()}' name="delete" id="btnD" >Eliminar mascota</button>
                                 </form>
-                                <form action='Controler?accion=editarMascota' method='post' id="editar">
-                                    <input type="hidden" value='${dato.getId()}'  name='edit'>
-                                    <button type='submit' class="cart" id="btnE">Editar información</button>
+                                <form action='Controler?accion=editarMascota' method='post'>
+                                    <button type='submit' class="cart" value='${dato.getId()}' name='edit'>Editar información</button>
                                 </form>
                             </div>
                         </div>
@@ -155,52 +153,5 @@
     <script src="prueba.js"></script>
     <script src="modalMascota.js"></script>
     <script>
-        var form = document.getElementById("editar");
-        var botonEditar = document.getElementById("btnE");
-
-        var form2 = document.getElementById("eliminar");
-        var botonDelete = document.getElementById("btnD");
-
-        botonEditar.addEventListener("click", function (e) {
-            e.preventDefault();
-            Swal.fire({
-                title: "¿Qué deseas editar?",
-                text: "Selecciona la opción que desees",
-                icon: "question",
-                showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: "Fotografía",
-                confirmButtonColor: "#4b277a",
-                denyButtonText: "Datos de mi mascota",
-                denyButtonColor: "#624891",
-                cancelButtonText: "Cancelar",
-                color: "black"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    form.action = "Controler?accion=editarFoto";
-                    form.submit();
-                } else if (result.isDenied) {
-                    form.submit();
-                }
-            });
-        });
-
-        botonDelete.addEventListener("click", function (e) {
-            e.preventDefault();
-            Swal.fire({
-                title: "¿Estás seguro?",
-                text: "Toda la información de tu mascota será borrada",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonText: "Si, lo estoy",
-                confirmButtonColor: "#4b277a",
-                cancelButtonText: "Regresar",
-                color: "black"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    form2.submit();
-                }
-            });
-        });
     </script>
 </html>

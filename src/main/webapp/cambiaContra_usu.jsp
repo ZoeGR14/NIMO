@@ -11,13 +11,13 @@
             body{
                 background-color: #4b277a;
             }
-                        
+
 
             .bgcolor{
                 background-color: #4b277a;
                 transition: all .35s ease-in-out;
-              }
-              
+            }
+
             *{
                 padding: 0;
                 margin: 0;
@@ -55,7 +55,7 @@
             }
 
             .logoni{
-                    height: 70px;
+                height: 70px;
             }
 
             #header{
@@ -72,62 +72,6 @@
                 transition: .5s;  
             }
 
-            .nav{
-                position: relative;
-                display: flex;
-            }
-
-            .nav li{
-                margin: 0 0 0 30px;
-            }
-
-            .nav li a{
-                color: #fff;
-                font-weight: 300;
-                text-transform: capitalize;
-                &.sticky{
-                color: #fff;}
-            }
-
-            .nav li a:hover{
-                color: #c59bfb;
-                font-weight: 300;
-                text-transform: capitalize;
-            }
-
-            .home{
-                position: relative;
-                width: 100%;
-                min-height: 100%;
-                background-color: #4b277a;
-                background-size: cover;
-                align-items: center;
-                justify-content: center;
-                display: grid;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: 'Poppins', sans-serif;
-            }
-
-            
-            .home .bodsito{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 100vh;
-            }
-            
-            .home .bodsito .conteniendo{
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-wrap: wrap;
-                padding: 60px 0;
-                gap: 65px;
-            }
-            
             .conteniendo .cajac{
                 position: relative;
                 width: 400px;
@@ -139,9 +83,9 @@
                 align-items: center;
                 margin-left: 40px;
             }
-            
 
-            
+
+
             .conteniendo .cajac .contenido-cajac{
                 position: relative;
                 display: flex;
@@ -156,7 +100,7 @@
                 overflow: hidden;
                 border-radius: 10px;
             }
-            
+
             .conteniendo .cajac .contenido-cajac .icon-cajac{
                 color: var(--clr);
                 width: 80px;
@@ -169,7 +113,7 @@
                 background: #2e2e2e;
                 transition: 0.5s ease-in-out;
             }
-            
+
             .conteniendo .cajac:hover .contenido-cajac .icon-cajac{
                 background: var(--clr);
                 color: #2e2e2e;
@@ -182,16 +126,16 @@
                 font-weight: 500;
                 transition: 0.5s ease-in-out;
             }
-            
+
             .conteniendo .cajac .contenido-cajac .text-cajac p{
                 color: #666;
                 transition: 0.5s ease-in-out;
             }
-            
+
             .conteniendo .cajac:hover .contenido-cajac .text-cajac p{
                 color: #2e2e2e;
             }
-            
+
             .conteniendo .cajac .contenido-cajac .text-cajac a{
                 position: relative;
                 background: var(--clr);
@@ -203,13 +147,13 @@
                 transition: 0.5s ease-in-out;
                 border-radius: 10px;
             }
-            
+
             .conteniendo .cajac:hover .contenido-cajac .text-cajac a{
                 background: #2e2e2e;
                 color: var(--clr);
                 border-radius: 10px;
             }
-            
+
             .conteniendo .cajac .contenido-cajac .text-cajac button{
                 position: relative;
                 background: var(--clr);
@@ -226,7 +170,7 @@
                 font-weight: 500;
                 cursor: pointer;
             }
-            
+
             .conteniendo .cajac:hover .contenido-cajac .text-cajac button{
                 background: #2e2e2e;
                 color: var(--clr);
@@ -256,7 +200,7 @@
                 max-width: 100px;
                 background: transparent;
             }
-            
+
             .bg_animate{
                 width: 100%;
                 height: 140%;
@@ -393,21 +337,21 @@
                     transform: translateY(0);
                 }
             }
-            
-                        .containss{
+
+            .containss{
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
             }
-            
+
             .containss .strengthMeter{
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 width: 100%;
                 height: 3px;
-                
+
             }
             .containss .strengthMeter::before{
                 content: '';
@@ -457,61 +401,120 @@
         </style>
         <script src="sweetalert2.all.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9wkNCBFjfknOvfJd2s1MCUM42Ia2QJdU&libraries=places"></script>
-
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="menusito.css">
     </head>
     <body>
-        <header class="headersito" id="header">
-            <a href="cierreSesion.jsp" class="logoin">
-                <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
-            </a>
-            <form method="post" action="Controler">
-            <ul class="nav">
-                <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                <li><button class="desplegar" name="accion" value="Visualizar mis mascotas" style="border: none;">Mis Mascotas</button></li>
-                <li><a href="calendario.html" class="">Calendario</a></li>
-                <li><a href="informativo.html" class="">Información Mascotas</a></li>
-                <li><a href="comunidad.html" class="">Comunidad</a></li>
-                <li><button class="desplegar" name="accion" value="Visualizar mis notas" style="border: none;">Notas</button></li></form>
-                
-                <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
-                <li><a href="config_usu.jsp" class="">Configuración</a></li>
-                <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>
-
-            </ul>
-        </header>
-        <br><br><br><br>
-         <div class="login-card-container">
-            <div class="login-card">
-                <div class="login-card-logo">
-                    <img src="imagenes/logo_nimo.png" alt="logo">
+        <aside class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="imagenes/logo_nimo.png" alt="" class="logo2">
+                    <div class="logo_name">NIMO</div>
                 </div>
-                <div class="login-card-header">
-                    <h1>Modificación de contraseña</h1>
-                    <div>Por favor, confirma tu contraseña actual, y realiza los cambios deseados</div>
-                </div>
-                <form action="contraCamUsu.jsp" method="post" name="registros" class="login-card-form">
-                    
-                    <div class="form-item">
-                        Contraseña actual:<input type="text" placeholder="Contraseña actual" name="cont_actual">
-                    </div>
-                    <div class="form-item">
-                        <div class="containss">
-                                    <div class="inputBox">
-                                        Contraseña nueva:<input type="text" placeholder="Contraseña nueva" name="cont_new" minlength="6" id="contra" class="nueva">
-                                    </div>
-                                    <div class="strengthMeter"></div>
-                        </div>
-                        
-                    </div>
-                    <div class="form-item">
-                        Confirma la contraseña nueva:<input type="text" placeholder="Confirmación contraseña " name="confcont_new" minlength="6" id="conf_contras">
-                    </div>
-                            <button type="submit" name="registro" id="boton" value="Modificar">Modificar</button>
-                    <br><br>
-                </form>
-
-
+                <i class='bx bx-menu' id='btn'></i>
             </div>
-        </div>          
+
+            <ul class="nav">
+                <li>
+                    <a href="/NIMO/Controler?visualizar=mascotas">
+                        <i class='bx bxs-dog'></i>
+                        <span class="link_name">Mis Mascotas</span>
+                    </a>
+                    <span class="tooltip">Mis Mascotas</span>
+                </li>
+                <li>
+                    <a href="calendario.html">
+                        <i class='bx bx-calendar'></i>
+                        <span class="link_name">Calendario</span>
+                    </a>
+                    <span class="tooltip">Calendario</span>
+                </li>
+                <li>
+                    <a href="informativo.html">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="link_name">Información Mascotas</span>
+                    </a>
+                    <span class="tooltip">Información Mascotas</span>
+                </li>
+                <li>
+                    <a href="comunidad.html">
+                        <i class='bx bx-group'></i>
+                        <span class="link_name">Comunidad</span>
+                    </a>
+                    <span class="tooltip">Comunidad</span>
+                </li>
+                <li>
+                    <a href="/NIMO/Controler?visualizar=notas">
+                        <i class='bx bx-note'></i>
+                        <span class="link_name">Notas</span>
+                    </a>
+                    <span class="tooltip">Notas</span>
+                </li>
+                <li>
+                    <a href="saludBienestar.html">
+                        <i class='bx bxs-heart-circle'></i>
+                        <span class="link_name">Salud y Bienestar</span>
+                    </a>
+                    <span class="tooltip">Salud y Bienestar</span>
+                </li>
+                <li>
+                    <a href="adopciones.html">
+                        <i class='bx bxs-clinic'></i>
+                        <span class="link_name">Adopciones</span>
+                    </a>
+                    <span class="tooltip">Adopciones</span>
+                </li>
+                <li>
+                    <a href="config_usu.jsp">
+                        <i class='bx bx-cog'></i>
+                        <span class="link_name">Configuración</span>
+                    </a>
+                    <span class="tooltip">Configuración</span>
+                </li>
+                <li>
+                    <a href="cierreSesion.jsp">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span class="link_name">Cerrar Sesión</span>
+                    </a>
+                    <span class="tooltip">Cerrar Sesión</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="ventana">
+            <div class="login-card-container">
+                <div class="login-card">
+                    <div class="login-card-logo">
+                        <img src="imagenes/logo_nimo.png" alt="logo">
+                    </div>
+                    <div class="login-card-header">
+                        <h1>Modificación de contraseña</h1>
+                        <div>Por favor, confirma tu contraseña actual, y realiza los cambios deseados</div>
+                    </div>
+                    <form action="contraCamUsu.jsp" method="post" name="registros" class="login-card-form">
+
+                        <div class="form-item">
+                            Contraseña actual:<input type="text" placeholder="Contraseña actual" name="cont_actual">
+                        </div>
+                        <div class="form-item">
+                            <div class="containss">
+                                <div class="inputBox">
+                                    Contraseña nueva:<input type="text" placeholder="Contraseña nueva" name="cont_new" minlength="6" id="contra" class="nueva">
+                                </div>
+                                <div class="strengthMeter"></div>
+                            </div>
+
+                        </div>
+                        <div class="form-item">
+                            Confirma la contraseña nueva:<input type="text" placeholder="Confirmación contraseña " name="confcont_new" minlength="6" id="conf_contras">
+                        </div>
+                        <button type="submit" name="registro" id="boton" value="Modificar">Modificar</button>
+                        <br><br>
+                    </form>
+
+
+                </div>
+            </div>    
+        </section>
     </body>
+    <script src="prueba.js"></script>
 </html>
