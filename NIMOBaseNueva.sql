@@ -1,0 +1,238 @@
+drop database if exists NimoBase;
+create database NimoBase;
+use NimoBase;
+
+create table usuario(
+usuar varchar(50) primary key not null,
+tipo_us int,
+telefono varchar(12),
+gen varchar(15),
+f_nac varchar(50),
+apPat_us varchar(50),
+apMat_us varchar(50),
+nom_us varchar(50),
+pass_us varchar(50),
+mail_us varchar(50)
+);
+
+/* Tipos de Usuario
+	1 - Cliente
+    2 - Veterinario Validado
+    3 - Veterinario NO Validado
+    4 - Administrador
+    5 - Gestor de Veterinarios 
+    6 - Invitado */
+
+create table foro(
+id_foro varchar(25) primary key not null,
+contenido_foro varchar(2000)
+);
+
+create table foro_usu(
+usuar varchar(50),
+id_foro varchar(25),
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade,
+foreign key (id_foro) references foro(id_foro) on delete cascade on update cascade
+);
+
+/* Estados de una nota
+1. Normal
+2. En Papelera
+*/
+
+create table nota(
+id_nota int primary key auto_increment not null,
+contenido_nota varchar(3000),
+fecha_nota timestamp default current_timestamp,
+estado int
+);
+
+create table nota_usu(
+id_nota int auto_increment not null,
+usuar varchar(50),
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade,
+foreign key (id_nota) references nota(id_nota) on delete cascade on update cascade
+);
+
+create table veterinario(
+cedula int primary key not null,
+clinica_vet varchar(450),
+usuar varchar(50),
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade
+);
+
+create table mascota(
+id_masc int primary key auto_increment,
+nombre_masc varchar(50),
+raza varchar(60),
+tipoRaza varchar(60),
+nac_masc varchar(20),
+gustos varchar(160),
+disgustos varchar(160),
+sexo varchar(10),
+peso int,
+imagen longblob,
+tipo_animal varchar(20),
+alergias varchar(10),
+color varchar(20),
+estado varchar(20)
+);
+
+create table masc_usu(
+id_masc int,
+usuar varchar(50),
+foreign key (usuar) references usuario(usuar) on update cascade on delete cascade,
+foreign key (id_masc) references mascota(id_masc) on update cascade on delete cascade
+);
+
+create table adopcion(
+id_adopc int primary key auto_increment not null,
+salud varchar(1000),
+historia varchar(1000),
+gustos_adopc varchar(160),
+ubicacion varchar(450)
+);
+
+create table adopc_masc(
+id_adopc int auto_increment not null,
+id_masc int,
+foreign key (id_adopc) references adopcion(id_adopc) on update cascade on delete cascade,
+foreign key (id_masc) references mascota(id_masc) on update cascade on delete cascade
+);
+
+create table adoptar(
+id_adopt int primary key auto_increment not null,
+p1 varchar(110),
+p2 varchar(110),
+p3 varchar(110),
+p4 varchar(110),
+p5 varchar(110),
+p6 varchar(110),
+p7 varchar(110),
+p8 varchar(110),
+p9 varchar(110),
+p10 varchar(110),
+p11 varchar(110)
+);
+
+create table adopt_masc(
+id_adopt int auto_increment not null,
+id_masc int,
+usuar varchar(50),
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade,
+foreign key (id_adopt) references adoptar(id_adopt) on update cascade on delete cascade,
+foreign key (id_masc) references mascota(id_masc) on update cascade on delete cascade
+);
+
+create table citas(
+id_cita int primary key auto_increment not null,
+fecha_cita varchar(20),
+usuar varchar(50),
+id_masc int,
+cedula int,
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade,
+foreign key (id_masc) references mascota(id_masc) on update cascade on delete cascade,
+foreign key (cedula) references veterinario(cedula) on update cascade on delete cascade
+);
+
+create table comentarios(
+id_coment int primary key auto_increment not null,
+comentario varchar(3000),
+tipo_coment int
+);
+
+/* Tipos de Comentarios 
+   1 -  Comentario de invitado (no desplegable en soporte)
+   2 - Comentario de usuario (desplegable en soporte)*/
+
+create table usu_coment(
+id_coment int auto_increment not null,
+usuar varchar(50),
+foreign key (id_coment) references comentarios(id_coment) on delete cascade on update cascade,
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade
+);
+
+create table veterinario_cliente(
+usuar varchar(50),
+cedula int,
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade,
+foreign key (cedula) references veterinario(cedula) on update cascade on delete cascade
+);
+
+create table personal(
+trabajador varchar(50) primary key not null,
+pass_tra varchar(50),
+tipo_tra int
+);
+
+/* Tipos de Usuario
+	0 - Cliente
+	1 - Asistente
+    2 - Gerente de Soporte
+    3 - Gerente de Mantenimiento
+    4 - Ingeniero de Soporte
+    5 - Ingeniero de Mantenimiento
+    6 - Editor */
+    
+create table reportes(
+id_reporte int primary key auto_increment not null,
+descripcion varchar(110),
+estatus varchar(25),
+encargado varchar(50),
+fecha_hora timestamp default current_timestamp,
+solucion varchar(400)
+);
+
+
+create table trabajador_reporte(
+id_reporte int auto_increment not null,
+usuar varchar(50),
+foreign key (id_reporte) references reportes(id_reporte) on delete cascade on update cascade,
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade
+);
+
+create table primer_encargado(
+id_reporte int not null,
+primerEncargado varchar(50),
+foreign key (id_reporte) references reportes(id_reporte) on delete cascade on update cascade,
+foreign key (primerEncargado) references personal(trabajador) on delete cascade on update cascade
+);
+
+create table escritor(
+id_reporte int auto_increment not null,
+trabajador varchar(50),
+foreign key (id_reporte) references reportes(id_reporte) on delete cascade on update cascade,
+foreign key (trabajador) references personal(trabajador) on delete cascade on update cascade
+);
+
+create table editor(
+id_FAQ int primary key auto_increment not null,
+fecha_horaFAQ timestamp default current_timestamp,
+preguntaFAQ varchar(100),
+respuestaFAQ varchar(500),
+tipoFAQ varchar(1)
+);
+
+create table comunidad(
+id_comu int primary key auto_increment not null,
+usuar varchar(50),
+comunidad_name varchar (50),
+descripcion_comu varchar(2000)
+);
+
+create table cerrado_FAQ(
+id_reporte int auto_increment not null,
+estado int,
+foreign key (id_reporte) references reportes(id_reporte) on delete cascade on update cascade
+);
+
+select * from reportes;
+select * from usuario;
+select * from veterinario;
+select * from nota;
+select * from nota_usu;
+select * from mascota;
+select * from masc_usu;
+select * from comentarios;
+select * from usu_coment;
+select * from veterinario_cliente;

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head><link rel="icon" href="imagenes/logo_nimo.ico">
+        <title>Adoptar</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans");
+            h1{
+                text-align: center;
+                font-family: "Montserrat",sans-serif;;
+                margin-top: 20px;
+                font-size: 40px;
+                color: #4b277a;
+            }
+            *{
+                font-family: "Montserrat",sans-serif;; 
+            }
+            .nuevaMasc, .config{
+                font-size: 40px;
+            }
+            .cuadroNuevaMasc, .cuadroConfig{
+                border: 5px solid #4b277a;
+                border-radius: 15px;
+                height: 75%;
+                width: 60%;
+                margin: auto;
+                margin-top: 50px;
+            }
+            .conteExplora{
+                margin-top: 35px;
+                display: grid;
+                place-content: center;
+                grid-template-columns: repeat(4, 20%);
+                align-content: center;
+                gap: 30px;
+            }
+            button{
+                font-size: 25px;
+                color: white;
+                background: #dfb9ee;
+                font-weight: bold;
+                text-shadow: 3px 3px 1px #4B277A;
+            }
+            .conteComunidad{
+                margin-top: 35px;
+                display: grid;
+                place-content: center;
+                grid-template-columns: repeat(2, 40%);
+                align-content: center;
+                gap: 30px;
+            }
+            .conteAdop{
+                margin-top: 35px;
+                display: grid;
+                place-content: center;
+                grid-template-columns: repeat(2, 40%);
+                align-content: center;
+                gap: 30px;
+            }
+            .buscarCom, .tusCom{
+                border: 2px solid black;
+                border-radius: 15px;
+                height: 100px;
+                text-align: center;
+            }
+            .eAdopcion, .eCalendario, .eComunidad, .eConfig, .eInfo, .eMascotas, .eNotas, .eSalud{
+                border: 2px solid black;
+                border-radius: 15px;
+                height: 100px;
+                text-align: center;
+                top: 50%;
+            }
+            .eVeter{
+                border: 2px solid black;
+                border-radius: 15px;
+                height: 100px;
+                grid-column: 1/5;
+            }
+            .añadir{
+                position: absolute;
+                border-radius: 100%;
+                border: 0px;
+                bottom: 25px;
+                right: 25px;
+                height: 90px;
+                width: 90px;
+                background-color: #9a51fa;
+                font-size: 75px;
+                font-weight: bold;
+                color: white;
+            }
+            .conteNota{
+                border: 5px solid #4b277a;
+                height: 100%;
+                width: 60%;
+                margin: auto;
+                margin-top: 50px;
+            }
+            .escribirNota{
+                width: 100%;
+                height: 100%;
+                font-size: 25px;
+            }
+
+        </style>
+        <nav>
+            <link rel="stylesheet" href="menu.css">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
+            </label>
+            <a href="index.html" class="enlace">
+                <img src="imagenes/logo_nimo.png" alt="" class="logo">
+            </a>
+            <ul class="bot_acc">
+                <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
+                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
+                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="informativo.html" class="">Información Mascotas</a></li>
+                <li><a href="comunidad.html" class="">Comunidad</a></li>
+                <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
+
+                <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
+                <li><a href="adopciones.html" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
+            </ul>
+                    </nav>
+        <section>
+            <div class="qAdopt">
+                <h1 class="adoptaaaaar">Mascotas en adopción</h1>
+                <h4><center>Elige la mascota de tu interés para proceder el proceso de adopción.</center></h4>
+            </div>
+        </section>
+
+    </body>
+</html>

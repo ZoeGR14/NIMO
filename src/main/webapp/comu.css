@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+section{
+    height: calc(100vh - 100px);
+}
+.izquierda{
+    background: #cc99ff;
+    height: calc(100vh - 100px);;
+    width: 50%;
+    
+}
+.derecha{
+    background: url(imagenes/fondoComunidad.png);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: calc(100vh - 100px);
+}
+
+#pantalla-dividida{
+    display: flex;
+    
+}
+
+.creative{
+    color: #f8f3ff;
+}
+.text{
+    color: #f8f3ff;
+}
+h1{
+    font-size: 60px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-left: 190px;
+    margin-top: 80px;
+}
+p{
+    font-size: 19px;
+    line-height: 30px;
+    width: 50%;
+    margin: auto;
+}
+
+
+/*a{
+    border: 3px solid#ffffff;
+    padding: 20px;
+    text-decoration: none;
+    color: #f8f3ff;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 80px;
+}*/
+
+.link{
+    text-align: center;    
+}

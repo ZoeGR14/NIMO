@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.contenidoDes {
+    width: 800px;
+    height: 200px;
+    padding: 15px;
+    min-height: 5rem;
+}
+.contenidoDes:empty::before {
+    position: absolute;
+    content: "Escribe aquí...";
+}
+*::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #9140C7;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #7A40C7;
+    border-radius: 15px;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(imagenes/backk.jpg);
+    background-size: cover;
+    padding: 5em;
+}
+
+.titulito {
+    color: white;
+    font-weight: bold;
+    font-size: xx-large;
+    font-style: normal;
+    text-align: center;
+}
+::placeholder {
+    color: #fff; /* color gris claro para el texto del placeholder */
+}
+.usuario,
+.descripcion {
+    font-size: large;
+}
+.contenidoDes:active:focus{
+        box-shadow: 0px 0px 40px 10px #fff;
+}
+.contenidoDes {
+    margin-bottom: 30px;
+    margin-top: 70px;
+    box-shadow: 0px 0px 40px 10px rgb(148, 82, 191);
+    color: white;
+    text-align: justify;
+    border: 5px solid #ffffff;
+    background-color: rgba(255, 255, 255, .4);
+    font-size: 1.6em;
+    border-radius: 1em;
+    resize: none;
+}
+
+.solucion {
+    border-radius: 1em;
+    resize: none;
+    font-size: 25px;
+    padding: 20px;
+    outline: none;
+    border: none;
+}
+
+.descripcion {
+    color: white;
+}
+
+.botoncito {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #a454ff 0, #a454ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "Poppins", sans-serif;
+    height: 1.5em;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.botoncito:focus {
+    box-shadow: #913ce0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #9e3ce0 0 -3px 0 inset;
+}
+
+.botoncito:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #a43ce0 0 -3px 0 inset;
+    transform: translateY(-2px);
+    background-color: #2f2738;
+}
+
+.botoncito:active {
+    box-shadow: #b13ce0 0 3px 7px inset;
+    transform: translateY(2px);
+}

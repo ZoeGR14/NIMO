@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+/*--selection--*/
+*::selection{
+    background: #dfb9ee;
+    color: rgba(0,0,0,0.5);
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #8f54a0 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+    margin: 20px 0;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #8f54a0;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+.button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    height: 90px;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #7851fa;
+    background-color: #7851fa;
+}
+
+.button, .button__icon, .button__text {
+    transition: all 0.3s;
+}
+
+.button .button__text {
+    transform: translateX(20px);
+    color: #fff;
+    font-weight: 600;
+}
+
+.button .button__icon {
+    position: absolute;
+    transform: translateX(159px);
+    height: 100%;
+    width: 39px;
+    background-color: #4B277A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button .svg {
+    width: 30px;
+    stroke: #fff;
+}
+
+.button:hover {
+    background: #7851fa;
+}
+
+.button:hover .button__text {
+    color: transparent;
+}
+
+.button:hover .button__icon {
+    width: 199px;
+    transform: translateX(0);
+}
+
+.button:active .button__icon {
+    background-color: #7851fa;
+}
+
+.button:active {
+    border: 1px solid #7851fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+section {
+    position: absolute;
+    right: 0px;
+    background-image: url(imagenes/back-misMasc.png);
+    background-size: contain;
+    width: calc(100vw - 80px);
+    min-height: 100vh;
+}
+.titulo{
+    text-align: center;
+    font-family: "Poppins",sans-serif;
+    font-size: 60px;
+    color: #31277a;
+}
+.añadir{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 100%;
+    cursor: pointer;
+    border: none;
+    bottom: 25px;
+    right: 25px;
+    height: 90px;
+    width: 90px;
+    background-color: #7851fa;
+    font-size: 75px;
+    font-weight: bold;
+    color: white;
+}
+.container {
+    width: 100%;
+    min-height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container .warMascotas{
+    background-color: white;
+    padding: 10px 20px;
+    border: 5px solid black;
+}
+.container .card {
+    position: relative;
+    cursor: pointer;
+    width: 350px;
+    height: 400px;
+    padding: 15px;
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+}
+.container .card h2 {
+    z-index: 3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 185px;
+    position: absolute;
+    bottom: 25px;
+    right: 130px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    pointer-events: none;
+    transition: .2s ease;
+    text-shadow: 0 0 15px rgba(0, 0, 0, .5);
+}
+.container .card p {
+    z-index: 3;
+    position: absolute;
+    bottom: 30px;
+    right: 130px;
+    width: 150px;
+    color: #fff;
+    opacity: 0;
+    font-size: 12px;
+    text-align: right;
+    letter-spacing: 1px;
+    transition: .2s ease;
+}
+.container .card span {
+    z-index: 3;
+    position: absolute;
+    top: 60px;
+    right: 35px;
+    color: #333;
+    font-size: 12px;
+    letter-spacing: 1px;
+    writing-mode: vertical-lr;
+    transition: .2s ease;
+    opacity: .7;
+}
+.container .card .pic{
+    z-index: 100;
+    width: 245px;
+    height: 370px;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 12px;
+    transition: .3s ease;
+}
+.container .card button {
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+    width: 30px;
+    height: 30px;
+    background-color: #491dda;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    opacity: 1;
+    transition: .3s ease;
+}
+.container .card:hover button {
+    transform: scale(16.5);
+    opacity: .5;
+}
+.container .card:hover h2 {
+    bottom: 80px;
+    right: 50px;
+    overflow: hidden;
+    max-width: 220px;
+}
+.container .card:hover p {
+    opacity: 1;
+    right: 60px;
+}
+.container .card:hover span {
+    opacity: 0;
+    top: 80px;
+}
+.container .card:hover .pic {
+    width: 320px;
+}
+.container .card2 .pic {
+    background-image: url(f.jpg);
+    transition: .3s ease;
+}
+.container .card2 button {
+    background-color: #2b26c3;
+}

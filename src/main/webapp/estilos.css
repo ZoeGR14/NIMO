@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600|Open+Sans");
+
+/*--General--*/
+
+h1{
+    text-align: center;
+    font-family: "Montserrat",sans-serif;
+    font-size: 60px;
+    color: #4b277a;
+}
+section{
+    
+    padding: 35px;
+    background: url(imagenes/FONDOOOOOOOOOOOOOOO.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+*{
+    font-family: "Montserrat",sans-serif;
+}
+    /*--selection--*/
+*::selection{
+    background: #dfb9ee;
+    color: black;
+}
+    /*--scrollbar--*/
+*::-webkit-scrollbar{
+    width: 9px;
+}
+::-webkit-scrollbar-thumb:active{
+    background: #9140C7;
+}
+*::-webkit-scrollbar-thumb{
+    background: #7A40C7;
+    border-radius: 15px;
+}
+    /*--termina scrollbar--*/
+
+.nuevaMasc, .config{
+    font-size: 40px;
+}
+.cuadroConfig{
+    border: 5px solid #4b277a;
+    border-radius: 15px;
+    height: 80%;
+    width: 70%;
+    margin: auto;
+}
+.conteExplora{
+    margin-top: 35px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(4, 20%);
+    align-content: center;
+    gap: 30px;
+}
+.botonInicio, .botonCumunidad{
+    font-size: 25px;
+    color: white;
+    background: #dfb9ee;
+    font-weight: bold;
+    text-shadow: 3px 3px 1px #4B277A;
+}
+.conteComunidad{
+    margin-top: 35px;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(2, 40%);
+    align-content: center;
+    gap: 30px;
+}
+.buscarCom, .tusCom{
+    border: 2px solid black;
+    border-radius: 15px;
+    height: 100px;
+    text-align: center;
+}
+.eAdopcion, .eCalendario, .eComunidad, .eConfig, .eInfo, .eMascotas, .eNotas, .eSalud{
+    border: 2px solid black;
+    border-radius: 15px;
+    height: 100px;
+    text-align: center;
+    top: 50%;
+}
+.eVeter{
+    border: 2px solid black;
+    border-radius: 15px;
+    height: 100px;
+    grid-column: 1/5;
+}
+.añadir, .añadirNota{
+    position: fixed;
+    margin: 0;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 0px;
+    bottom: 25px;
+    right: 25px;
+    height: 90px;
+    width: 90px;
+    background-color: #9a51fa;
+    font-size: 75px;
+    font-weight: bold;
+    color: white;
+}
+.papelera{
+    position: fixed;
+    margin: 0;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 0px;
+    bottom: 25px;
+    width: 90px;
+    background-color: #9a51fa;
+    font-size: 75px;
+    font-weight: bold;
+    color: white;
+    
+}
+.añadir:hover, .añadirNota:hover, .papelera:hover{
+    background-color: #4b277a;
+}
+.regresar{
+    position: absolute;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: black;
+}
+
+/*--Mis mascotas--*/
+
+.contenedorMascotas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tarjetasMascota{
+    height: 600px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #BB9FDC;
+    padding: 20px;
+    display: block;
+    margin: 20px;
+}
+.conteIMG{
+    height: 40%;
+    width: 100%;
+    border: 5px solid white;
+    border-radius: 15px;
+}
+.imagenMasc{
+    width: 100%;
+    padding: 0;
+    height: calc(100% + 20px);
+    margin: 0;
+    object-fit: cover;
+    clip-path: inset(0px 0px 20px 0px round 10px);
+}
+
+.infoMasc{
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat";
+    font-size: 20px;
+    color: white;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+.infoMasc p{
+    margin: 5px 0;
+}
+
+/*--Termina mis mascotas--*/
+
+/*--Formulario Nueva Mascota--*/
+
+.cuadroNuevaMasc{
+    border: 5px solid #4b277a;
+    border-radius: 15px;
+    box-shadow: 20px 20px #4b277a;
+    height: 80%;
+    width: 55%;
+    min-width: 805px;
+    max-height: 600px;
+    max-width: 1700px;
+    margin: auto;
+    margin-top: 20px;
+}
+.contenidoNuevaMasc{
+    height: 100%;
+    display: grid;
+    padding: 20px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: repeat(12, auto);
+    color: #4b277a;
+    font-weight: bold;
+}
+.nuevaMasc{
+    grid-column: 2/4;
+}
+.mascNombre{
+    grid-row: 2/3;
+}
+.nacimMasc{
+    grid-row: 2/3;
+}
+.imgMasc{
+    grid-column: 3/5;
+}
+.sexoMasc, .razaMasc, .colorMasc, .gustosMasc, .disgustosMasc{
+    grid-column: 1/3;
+}
+.tipoAnimal, .tipoRazaMasc{
+    grid-column: 3/5;
+}
+.pesoMasc{
+    grid-column: 1/3;
+}
+.alergiasMasc{
+    grid-column: 3/5;
+}
+.itemMasc{
+
+}
+.añadirMasc{
+    margin: 10px;
+    grid-column: 2/4;
+    grid-row: 11/12;
+    display: flex;
+}
+.botonNuevaMasc{
+    width: 100%;
+    margin-top: 20px;
+    background-color: indigo;
+    color: white;
+    padding: 0px;
+    margin: 0;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 9px #999;
+}
+.botonNuevaMasc:active{
+    
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.botonNuevaMasc:hover{
+    background-color: #4B277A;
+    cursor: pointer;
+}
+input[type=text], input[type=number]{
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-bottom: 3px solid #4b277a;
+    outline: none;
+    padding-bottom: 3px;
+    background-color:  transparent;
+}
+input[type=date]{
+    margin-left: 20px;
+    outline: none;
+    padding: 3px;
+    text-align: center;
+    border: 3px solid #4b277a;
+    color: #4b277a;
+    font-weight: bold;
+}
+input[type=file]{
+    font-weight: bold;
+}
+select, option{
+    outline: none;
+    padding: 5px;
+    border: 3px solid #4b277a;
+    color: #4b277a;
+    font-weight: bold;
+}
+input[type=radio]{
+    accent-color: #4b277a;
+}
+.radio{
+    margin-left: 15px;
+}
+/*--Termina Nueva Mascota--*/
+
+/*--Notas--*/
+
+.conteNota{
+    border: 5px solid #4b277a;
+    height: 70%;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+.escribirNota{
+    resize: none;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    padding: 20px;
+    outline: none;
+    border: none;
+}
+.añadirNota{
+    font-size: 65px;
+}
+.contenedorNotas{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.notitas{
+    height: 430px;
+    width: 300px;
+    margin: 20px;
+    border: 7px solid #4B277A;
+    border-radius: 20px;
+    box-shadow: 10px 12px 0px 0px rgba(70,0,255,.5);
+    background: white;
+    position: relative;
+}
+.tituloNota{
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.contenidoNota{
+    height: calc(100% - 70px);
+    padding: 20px;
+    padding-top: 0px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    font-size: 18px;
+}
+.contenidoNota::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+.botonNota{
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    background-color: #C29BF8;
+    position: absolute;
+    top: 95%;
+}
+.edit, .deshacer{
+    left: 66%;
+}
+.remove{
+    left: 85%;
+}
+.botonNota:hover{
+    background-color: #9a51fa;
+    cursor: pointer;
+}
+
+/*Mascotas-Notas*/.warning{
+    display: flex;
+    height: calc(100vh - 1em);
+    align-items: center;
+    justify-content: center;
+    color: darkgray;
+}
+/*--Termina Notas--*/

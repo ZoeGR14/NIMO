@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+    <head><link rel="icon" href="imagenes/logo_nimo.ico">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Regístrate - NIMO</title>
+        <link rel="stylesheet" href="loginn.css">
+        <style>
+            body{
+                zoom:0.67;
+                background-color: #4b277a;
+            }
+            .contener{
+                margin-top: 60px;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: sans-serif;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                height: 350px;
+            }
+            .contener h3{
+                color: white;
+            }
+            .contener p{
+                color: white;
+            }
+            .contener figure{
+                position: relative;
+                height: 450px;
+                width: 550px;
+                overflow: hidden;
+                border-radius: 70px;
+                box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+                cursor: pointer;
+            }
+            .contener figure img{
+                width: 100%;
+                height: 100%;
+                transition: all 500ms ease-out;
+            }
+            .contener figure .capa{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.7);
+                transition: all 500ms ease-out;
+                opacity: 0;
+                visibility: hidden;
+                text-align: center;
+                text-decoration: white;
+            }
+            .contener figure:hover > .capa{
+                opacity: 1;
+                visibility: visible;
+            }
+            .contener figure:hover > .capa h3{
+                margin-top: 150px;
+                margin-bottom: 20px;
+            }
+            .contener figure:hover > img{
+                transform: scale(1.3);
+            }
+            .contener figure .capa h3{
+                color: white;
+                margin-bottom: 100px;
+                transition: all 500ms ease-out;
+                margin-top: 50px;
+            }
+            .contener figure .capa p{
+                color: white;
+                font-size: 18px;
+                line-height: 1.5;
+                width: 100%;
+                max-width: 280px;
+                margin: auto;
+            }
+            footer{
+                width: 100%;
+                padding: 20px 0px;
+                background-image: url(imagenes/background-footer.svg);
+                background-size: cover;
+            }
+            .container__footer{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                max-width: 1800px;
+                margin: auto;
+                margin-top: 75px;
+                align-items:  center;
+            }
+            
+            .box__footer{
+                display: flex;
+                flex-direction: column;
+                padding: 40px;
+                margin-top: 15px;
+                font-family: 'Open Sans', sans-serif;
+            }
+            
+            .box__footer .logooo img{
+                width: 160px;
+            }
+            .box__footer .terms{
+                max-width: 350px;
+                margin-top: 125px;
+                font-weight: 500;
+                color: #7a7a7a;
+                font-size: 18px;
+            }
+            .box__footer h2{
+                margin-bottom: 30px;
+                color: #343434;
+                font-weight: 700;
+            }
+            .box__footer a{
+                margin-top: 10px;
+                color: #7a7a7a;
+                font-weight: 600;
+            }
+            .box__footer a:hover{
+                opacity: 0.8;
+            }
+            .box__footer .reddd a{
+                display: inline;
+                padding: 10px;
+            }
+            .box__footer .redes{
+                height: 30px;
+                display: inline;
+            }
+            .box__copyright{
+                max-width: 1800px;
+                margin: auto;
+                text-align: center;
+                padding: 0px 40px;
+                font-family: 'Open Sans', sans-serif;
+            }
+            .box__copyright p{
+                margin-top: 20px;
+                color: #7a7a7a;
+                font-size: 15px;
+            }
+            .box__copyright hr{
+                border: none;
+                height: 1px;
+                background-color: #7a7a7a;
+            }
+            #relojito img{
+                height: 700px;
+                width:  700px;
+                
+                /*display: flex;*/
+            }
+            .relo{
+                margin-left: 70px;
+            }
+            .login-card-container{
+                /*display: flex;*/
+            }
+            .conttti{
+                margin-top: 35px;
+                display: flex;
+            }
+            #separa p{
+                color: #4b277a;
+            }
+            .login-card-container{
+                margin-left: 460px;
+            }
+            /*.spcaja{
+                float: left;
+                display: flex;
+                height: 90%;
+                width: 100%;
+            }
+            .cajita{
+                height: 100%;
+                width: 50%;
+            }
+            .cajita2{
+                height: 100%;
+                width: 50%;
+            }
+
+            /*#cajita{
+                display: table;
+                width: 100%;
+                height: 900px;
+            }*/
+            header{
+                height: 100%;
+            }
+              .bg_animate{
+                width: 100%;
+                height: 200%;
+                position: absolute;
+                overflow: hidden;
+            }
+            .burbuja{
+                border-radius: 50%;
+                background: #fff;
+                opacity: .3;
+
+                position: absolute;
+                
+
+                animation: burbujas 10s linear infinite ;
+            }
+
+            .burbuja:nth-child(1){
+                width: 80px;
+                height: 80px;
+                left: 5%;
+                animation-duration: 5s;
+            }
+
+            .burbuja:nth-child(2){
+                width: 100px;
+                height: 100px;
+                left: 35%;
+                animation-duration: 6s;
+            }
+
+            .burbuja:nth-child(3){
+                width: 20px;
+                height: 20px;
+                left: 15%;
+                animation-duration: 3.5s;
+            }
+
+            .burbuja:nth-child(4){
+                width: 50px;
+                height: 50px;
+                left: 90%;
+                animation-duration: 6s;
+            }
+
+            .burbuja:nth-child(5){
+                width: 70px;
+                height: 70px;
+                left: 65%;
+                animation-duration: 5s;
+            }
+
+            .burbuja:nth-child(6){
+                width: 20px;
+                height: 20px;
+                left: 50%;
+                animation-duration: 3.5s;
+            }
+
+            .burbuja:nth-child(7){
+                width: 20px;
+                height: 20px;
+                left: 50%;
+                animation-duration: 6s;
+            }
+
+            .burbuja:nth-child(8){
+                width: 100;
+                height: 100px;
+                left: 52%;
+                animation-duration: 7s;
+            }
+
+            .burbuja:nth-child(9){
+                width: 65px;
+                height: 65px;
+                left: 51%;
+                animation-duration: 5s;
+            }
+
+            .burbuja:nth-child(10){
+                width: 40px;
+                height: 40px;
+                left: 35%;
+                animation-duration: 3.5s;
+            }
+
+            .burbuja:nth-child(11){
+                width: 15px;
+                height: 15px;
+                left: 83%;
+                animation-duration: 7s;
+            }
+
+            .burbuja:nth-child(12){
+                width: 80px;
+                height: 80px;
+                left: 95%;
+                animation-duration: 3.5s;
+            }
+
+            .burbuja:nth-child(13){
+                width: 65px;
+                height: 65px;
+                left: 1%;
+                animation-duration: 4s;
+            }
+
+            @keyframes burbujas{
+                0%{
+                    bottom: 0;
+                    opacity: 0;
+                }
+                30%{
+                    transform: translateX(30px);
+                }
+                50%{
+                    opacity: .4;
+                }
+                100%{
+                    bottom: 100%;
+                    opacity: 0;
+                }
+            }
+
+            @keyframes movimiento{
+                0%{
+                    transform: translateY(0);
+                }
+                50%{
+                    transform: translateY(30px);
+                }
+                100%{
+                    transform: translateY(0);
+                }
+            }
+            
+            .containss{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            
+            .containss .strengthMeter{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                
+            }
+            .containss .strengthMeter::before{
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 100%;
+                transition: 0.5s;
+            }
+            .containss.weak .strengthMeter::before{
+                width: 10%;
+                background: #f00;
+                /*filter: drop-shadow(0 0 5px #f00) drop-shadow(0 0 10px #f00) drop-shadow(0 0 20px #f00);*/
+            }
+            .containss.medium .strengthMeter::before{
+                width: 66.66%;
+                background: #ffa500;
+                /*filter: drop-shadow(0 0 5px #ffa500) drop-shadow(0 0 10px #ffa500) drop-shadow(0 0 20px #ffa500);*/
+            }
+            .containss.strong .strengthMeter::before{
+                width: 100%;
+                background: #0f0;
+                /*filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 10px #0f0) drop-shadow(0 0 20px #0f0);*/
+            }
+            .containss .strengthMeter::after{
+                position: absolute;
+                top: 5px;
+                left: 30px;
+                color: #fff;
+                transition: 0.5s;
+                font-size: xx-small;
+            }
+            .containss.weak .strengthMeter::after{
+                content: 'Weak Password';
+                color: #f00;
+                /*filter: drop-shadow(0 0 5px #f00);*/
+            }
+            .containss.medium .strengthMeter::after{
+                content: 'Medium Password';
+                color: #ffa500;
+                /*filter: drop-shadow(0 0 5px #ffa500);*/
+            }
+            .containss.strong .strengthMeter::after{
+                content: 'Strong Password';
+                color: #0f0;
+                /*filter: drop-shadow(0 0 5px #0f0);*/
+            }
+            .show{
+                position: absolute;
+                top: 55%;
+                right: 5%;
+                width: 10%;
+                height: 10%;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .show::before{
+                content: url("imagenes/ver.png");
+                font-size: 0.6em;
+                color: #000;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+            }
+            .show.hide::before{
+                content: url("imagenes/esconder.png");
+            }
+        </style>
+        <script>
+            var imgActual = 0;
+            var final = 0;
+            var listaImg = new Array('reloj_image/2.png', 'reloj_image/3.png', 
+            'reloj_image/5.png','reloj_image/1.png')
+            function moverDiv1(){
+                document.images['anim'].src = listaImg[imgActual];
+                ++imgActual;
+                ++final;
+                if(imgActual === listaImg.length)
+                    imgActual = 0;
+                /*if(final > 20)
+                    clearInterval(demora);*/
+            }
+        </script>
+        <script src="sweetalert2.all.min.js"></script>
+    </head>
+    <body onload="demora=setInterval('moverDiv1()',5000)">
+        <nav>
+            <link rel="stylesheet" href="menu.css">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+               <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
+            </label>
+            <a href="index.html" class="enlace">
+                <img src="imagenes/logo_nimo.png" alt="" class="logo">
+            </a>
+            <ul alt="" class="bot_acc">
+                <li><a href="inicio_Sesion.html" class="inis">Inicio de Sesión</a></li>
+                <li><a href="registro.html" class="regis">Registro</a></li>
+                <li><a href="listado_FAQS.jsp" class="regis">FAQs</a></li>
+                <li><a href="InicioSPersonal.html" class="admins">¿Eres un administrador?</a></li>
+            </ul>
+        </nav>
+        <div class="bg_animate">
+            <div class="burbujas">
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+                <div class="burbuja"></div>
+            </div>
+        </div>
+        <section>
+            <div class="conttti">
+                <div style="position: relative; left:15px; top:300px; width:400px; height:400px" id="relojito" class="relo">
+                        <img id="mich" src="reloj_image/1.png" alt="hola" name="anim" width="180" height="220">
+                </div>
+                <br><br>
+                
+                <div class="login-card-container">
+                    <div class="login-card">
+                        <div class="login-card-logo">
+                            <img src="imagenes/logo_nimo.png" alt="logo">
+                        </div>
+                        <div class="login-card-header">
+                            <h1>Registro de Usuario</h1>
+                            <div>Por favor, ingresa tus datos para crear una nueva cuenta</div>
+                        </div>
+                        <form action="registro.jsp" method="post" name="registros" class="login-card-form">
+                            <div class="form-item">
+                                <input type="text" placeholder="Nombre" name="nombre" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="Escriba solo letras del abecedario" required autofocus>
+                            </div>
+                            <div class="form-item">
+                                <input type="text" placeholder="Apellido Paterno" name="ap_pat" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="Escriba solo letras del abecedario" required>
+                            </div>
+                            <div class="form-item">
+                                <input type="text" placeholder="Apellido Materno" name="ap_mat" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="Escriba solo letras del abecedario" required>
+                            </div>
+                            <div class="form-item">
+                                <input type="email" placeholder="Correo electrónico" name="correo" required>
+                            </div>
+                            <div class="form-item">
+                                <input type="tel" placeholder="Teléfono" name="telef" pattern="[0-9]{10}" required maxlength="10" title="Ingrese un número telefónico válido">
+                            </div>
+                            <div class="form-item">
+                                <input type="date" name="f_nac" required>
+                            </div>
+                            <div class="form-item">
+                                Género:&nbsp;&nbsp;&nbsp;
+                                <p>Masculino</p>&nbsp;&nbsp;<input type="radio" value="Masculino" id="gene" name="gen">
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>Femenino</p>&nbsp;&nbsp;<input type="radio" value="Femenino" id="gene" name="gen">
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>Personalizado</p>&nbsp;&nbsp;<input type="radio" value="Otro" id="gene" name="gen">
+                            </div>
+                            <div class="form-item">
+                                Tipo de usuario:&nbsp;&nbsp;&nbsp;
+                                <p>Veterinario</p>&nbsp;&nbsp;<input type="radio" value="3" id="vet" name="tipi">
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>Cliente</p>&nbsp;&nbsp;<input type="radio" value="1" id="client" name="tipi">
+                            </div>
+                            <div class="form-item">
+                                <input type="text" placeholder="Usuario" name="usu" minlength="3" title="El nombre de usuario debe contener por lo menos 3 caracteres" required>
+                            </div>
+                            <div class="form-item">
+                                <div class="containss">
+                                    <div class="inputBox">
+                                        <input type="password" placeholder="Contraseña" name="contrasenia" id="contra" minlength="6" title="La contraseña debe contener por lo menos 6 caracteres" required>
+                                        <div class="show"></div>
+                                    </div>
+                                    <div class="strengthMeter"></div>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <input type="password" placeholder="Confirma tu contraseña" name="conf_contra" id="conf_contras" minlength="6" title="La contraseña debe contener por lo menos 6 caracteres" required>
+                            </div>
+                            <button type="submit" name="registro" id="boton" value="Regístrate" onclick="verificando()">Regístrate</button>
+                            <br><br>
+                        </form>
+                        <div class="login-card-footer">
+                            <h5>¿Ya tienes una cuenta?&nbsp;&nbsp;<a href="inicio_Sesion.html">Ingresa</a></h5>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <br><br><br><br>
+        <script>
+            function Strength(password){
+                let i = 0;
+                if(password.length > 6){
+                    i++;
+                }
+                if(password.length >= 10){
+                    i++;
+                }
+                if(/[A-Z]/.test(password)){
+                    i++;
+                }
+                if(/[0-9]/.test(password)){
+                    i++;
+                }
+                if(/[A-Za-z0-8]/.test(password)){
+                    i++;
+                }
+                return i;
+            }
+                        
+            let container = document.querySelector('.containss');
+            document.addEventListener("keyup",function(e){
+                let password = document.querySelector('#contra').value;
+                let strength = Strength(password);
+                if(strength === 0){
+                    container.classList.remove('weak');
+                    container.classList.remove('medium');
+                    container.classList.remove('strong');
+                }
+                else
+                    if(strength > 0 && strength <= 2){
+                        container.classList.add('weak');
+                        container.classList.remove('medium');
+                        container.classList.remove('strong');
+                    }
+                    else
+                        if(strength >= 2 && strength <= 4){
+                            container.classList.remove('weak');
+                            container.classList.add('medium');
+                            container.classList.remove('strong');
+                        }
+                        else{
+                            container.classList.remove('weak');
+                            container.classList.remove('medium');
+                            container.classList.add('strong');
+                        }
+            });
+            
+            
+            let pswrd = document.querySelector('#contra');
+            let show = document.querySelector('.show');
+            show.onclick = function(){
+                if(pswrd.type === 'password'){
+                    pswrd.setAttribute('type', 'text');
+                    show.classList.add('hide');
+                }
+                else{
+                    pswrd.setAttribute('type', 'password');
+                    show.classList.remove('hide');
+                }
+            };
+            
+            function verificando(){
+                var cont = document.getElementById("contra");
+                var cotras = cont.toString();
+                var confcont = document.getElementById("conf_contras");
+                var confir = confcont.toString();
+                var boto = document.getElementById("boton");
+                if(boto.value === 'Regístrate'){
+                    if(!(cont.value === confcont.value)){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Las contraseñas no coinciden',
+                            text: 'Inténtelo de nuevo'
+                          });
+                        contra.value="";
+                         //conf_contras.title="Las contraseñas deben coincidir";
+                         conf_contras.value="";
+                       
+                        document.getElementById("contra").focus();
+                    }
+                }
+            }
+        </script>
+    </body>
+    <footer>
+            <div class="container__footer">
+
+                <div class="box__footer">
+                    <div class="logooo">
+                        <a href="index.jsp" class="enlace">
+                            <img src="imagenes/logo_emn_black.png" alt="">
+                        </a>
+                    </div>
+                    <div class="terms">
+                        <p>NIMO y EMN Corp. están a tu disposición.</p>
+                        <p>Contáctanos en:&nbsp;&nbsp;</p>
+                        <a href="mailto:comentarios.emn.corp@gmail.com?subject=Comentarios NIMO&body=Hola! Este es un correo mandado desde NIMO ">comentarios.emn.corp@gmail.com</a>
+                    </div>
+                </div>
+                <div class="box__footer">
+                    <h2>Contacto</h2>
+                    
+                    <br>
+                     <div class="reddd">
+                        <a href="https://wa.me/+525568741814?text=Contacto%20sobre%20EMN"><img src="imagenes/whatsapp.png" alt="" class="redes"></a>
+                        <a href="https://www.facebook.com/profile.php?id=100086728422788"><img src="imagenes/facebook.png" alt="" class="redes"></a>
+                        <a href="https://www.instagram.com/emn_corp/"><img src="imagenes/instagram.png" alt="" class="redes"></a>
+                        <a href="https://twitter.com/EMN_Corp?t=ZzFRMA_u_CryASYzMuUDvg&s=09"><img src="imagenes/twitter.png" alt="" class="redes"></a>
+                        <a href="mailto:comentarios.emn.corp@gmail.com?subject=Comentarios NIMO&body=Hola! Este es un correo mandado desde NIMO "><img src="imagenes/correoo.png" alt="" class="redes"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="box__copyright">
+                <hr>
+                <p>Todos los derechos reservados © 2022 
+                    <b>EMN Corp.</b></p>
+            </div>
+        </footer>
+    
+</html>

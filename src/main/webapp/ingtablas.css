@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.botoncito {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #a454ff 0, #a454ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "Poppins", sans-serif;
+    height: 1.5em;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    margin: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.botoncito:focus {
+    box-shadow: #913ce0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #9e3ce0 0 -3px 0 inset;
+}
+
+.botoncito:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #a43ce0 0 -3px 0 inset;
+    transform: translateY(-2px);
+    background-color: #2f2738;
+}
+
+.botoncito:active {
+    box-shadow: #b13ce0 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(imagenes/bqackk.jpg);
+    background-color: #4b277a;
+    align-items: center;
+    background-size: cover;
+    justify-content: center;
+    min-height: 100vh;
+    zoom: 0.8;
+
+}
+
+.container {
+    margin: 20px;
+    padding: 0px;
+    align-items: center;
+    text-align: center;
+}
+
+table {
+    box-shadow: rgba(255, 255, 255, 1) 0px 5px 15px 10px;
+     background-color: white;
+    text-align: center;
+    border-collapse: collapse;
+    border: solid 3px white;
+    width: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px;
+}
+.reportesito{
+align-items: center;
+}
+th {
+    background-color: #4b277a;
+    color: white;
+}
+
+.botOn {
+    display: inline-block;
+    margin-left: 20px;
+}
+.myInput {
+    box-shadow: rgba(148, 82, 191, 1) 0px 5px 15px 10px;
+    border-radius: 20px;
+    width: 50%;
+    border-color: #fff;
+    background: rgba(255,255,255,.5);
+    font-size: large;
+    text-align: center;
+    color: rgba(255,255,255,1);
+    margin: 20px;
+}
+.myInput:active{
+    background: #fff;
+    color:#0000;
+}
+.myInput:focus-within{
+    background: #0000;
+    color:#fff;
+}
+.myInput:focus{
+    box-shadow: rgba(255, 255, 255, 1) 0px 5px 15px 10px;
+    background: #fff;
+    color:black;
+
+}
+@media only screen and (max-width: 600px) {
+    table {
+        max-width: 90%;
+    }
+    td, th {
+        font-size: 12px;
+    }
+}
+.visualizar {
+    background-color: #845eb5;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    box-shadow: #845eb5 4px 4px 0 0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+.visulizar:hover{
+    box-shadow: rgba(255, 255, 255, 1) 0px 5px 15px 10px;
+}
+.visulizar:active{
+    box-shadow: rgba(255, 255, 255, 1) 0px 5px 15px 10px;
+}
+.visulizar:focus{
+    box-shadow: rgba(255, 255, 255, 1) 0px 5px 15px 10px;
+}
+
+.tituloo{
+    margin-top: 50px;
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    text-shadow: 
+        2px 2px 1px #4b277a,
+        4px 4px 1px #4b277a,
+        7px 7px 2px #4b277a;
+    ;
+}
+
+
+
