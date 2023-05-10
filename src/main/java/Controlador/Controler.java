@@ -94,6 +94,20 @@ public class Controler extends HttpServlet {
                 request.setAttribute("lista2", lista2);
                 request.getRequestDispatcher("visualizarNotas.jsp").forward(request, response);
                 break;
+            case "adopciones":
+                List<Mascota> lista3 = dao.listarN(usuario);
+                request.setAttribute("listita", lista3);
+                System.out.println("Todo bien");
+                System.out.println(lista3);
+                request.getRequestDispatcher("darAdop.jsp").forward(request, response);
+                break;
+            case "verAdop":
+                List<Object> listarAdopcion = dao.listarAdopcion(usuario);
+                request.setAttribute("listarAdopcion", listarAdopcion);
+                System.out.println("Todo bien w fasilidades");
+                System.out.println(listarAdopcion);
+                request.getRequestDispatcher("desplegarAdopcion.jsp").forward(request, response);
+                break;
         }
     }
 
@@ -300,17 +314,15 @@ public class Controler extends HttpServlet {
                 String salud = request.getParameter("salud");
                 String ubicacion = request.getParameter("ubicacion");
                 String mascota = request.getParameter("mascota");
-
-                d.setHistoria(historia);
-                d.setSalud(salud);
-                d.setUbicacion(ubicacion);
-                d.setMascota(mascota);
-
-                dDAO.agregar(d);
-                dDAO.agregarUnion(mascota);
+                m.setHistoria(historia);
+                m.setSalud(salud);
+                m.setUbicacion(ubicacion);
+                m.setMascota(mascota);
+                dao.agregarDAP(m);
+                dao.agregarUnionDAP(Integer.parseInt(mascota));
+                dao.cambiarEstadoDAP(mascota);
                 System.out.println(d.getMascota());
                 request.getRequestDispatcher("adopciones.html").forward(request, response);
-
                 break;
             default:
                 request.getRequestDispatcher("Controler?accion=Visualizar mis mascotas").forward(request, response);
