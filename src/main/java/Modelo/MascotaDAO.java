@@ -427,6 +427,87 @@ public class MascotaDAO {
         } catch (SQLException e) {
             System.out.println("Error Union");
         }
+    }
+    
+    public void agregarDAP(Mascota M) {
+        String sql = "insert into adopcion (historia, salud, ubicacion) values(?, ?, ?)";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, M.getHistoria());
+            ps.setString(2, M.getSalud());
+            ps.setString(3, M.getUbicacion());
+            ps.executeUpdate();
 
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+        }
+    }
+
+    public List listarDAP() {
+        String sql = "select * from adopcion";
+        List<Mascota> lista = new ArrayList<>();
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Mascota m = new Mascota();
+                m.setId(rs.getInt(1));
+                m.setSalud(rs.getString(2));
+                m.setHistoria(rs.getString(3));
+                m.setUbicacion(rs.getString(4));
+                lista.add(m);
+            }
+        } catch (Exception e) {
+        }
+        return lista;
+    }
+
+    private Mascota ultimO() {
+        String sql = "select * from adopcion";
+        Mascota d = new Mascota();
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                d.setId(rs.getInt(1));
+                d.setSalud(rs.getString(2));
+                d.setHistoria(rs.getString(3));
+                d.setUbicacion(rs.getString(4));
+            }
+        } catch (Exception e) {
+        }
+        return d;
+    }
+
+    public void agregarUnionDAP(int id) {
+        String sql = "insert into adopc_masc (id_adopc, id_masc) values (?, ?)";
+        Mascota d = ultimO();
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, d.getId());
+            ps.setInt(2, id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public void cambiarEstadoDAP(String mascota) {
+        String sql = "update mascota set estado = 'adopcion' where id_masc = " + mascota + "";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error al actualizar estado, estás bien estúpida alch. Tqm.");
+            e.printStackTrace();
+        }
     }
 }
