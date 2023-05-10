@@ -148,6 +148,109 @@ public class MascotaDAO {
         return m;
     }
 
+      public List listarN(String usuario) {
+
+        List<Mascota> lista = new ArrayList<>();
+        List<Mascota> lista2 = new ArrayList<>();
+        String sql = "select * from masc_usu where usuar = '" + usuario + "'";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Mascota m = new Mascota();
+                m.setId(rs.getInt(1));
+                lista.add(m);
+            }
+
+            String sql2 = "select * from mascota where estado = 'normal' and (id_masc = ";
+            int size = lista.size();
+            for (int i = 0; i < size; i++) {
+                if (i == 0) {
+                    sql2 = sql2 + lista.get(i).getId();
+                } else {
+                    sql2 = sql2 + " or id_masc = " + lista.get(i).getId();
+                }
+            }
+            sql2 = sql2 + ");";
+            System.out.println(sql2);
+            try {
+                ps2 = con.prepareStatement(sql2);
+                rs2 = ps2.executeQuery();
+                while (rs2.next()) {
+                    Mascota m = new Mascota();
+                    m.setId(rs2.getInt(1));
+                    m.setNombre(rs2.getString(2));
+                    m.setRaza(rs2.getString(3));
+                    m.setTipoRaza(rs2.getString(4));
+                    m.setNacimMasc(rs2.getString(5));
+                    m.setGustos(rs2.getString(6));
+                    m.setDisgustos(rs2.getString(7));
+                    m.setSexo(rs2.getString(8));
+                    m.setPeso(rs2.getInt(9));
+                    m.setFoto(rs2.getBinaryStream(10));
+                    m.setTipoAnimal(rs2.getString(11));
+                    m.setAlergias(rs2.getString(12));
+                    m.setColor(rs2.getString(13));
+                    m.setEstado(rs2.getString(14));
+                    lista2.add(m);
+                }
+                rs2.close();
+                ps2.close();
+
+            } catch (SQLException e) {
+                System.out.println("Error Listar_2");
+            }
+            rs.close();
+            ps.close();
+            con.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error Listar_1");
+        }
+        return lista2;
+    }
+
+    public List listarAdopcion(String usuario) {
+
+        List<Mascota> listaAdop = new ArrayList<>();
+        String sql2 = "SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc INNER JOIN adopcion ON adopcion.id_adopc = adopc_masc.id_adopc INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE mascota.estado = 'adopcion' AND masc_usu.usuar !='"+usuario+"' ";
+        System.out.println(sql2);
+        try {
+            con = cn.getConnection();
+            ps2 = con.prepareStatement(sql2);
+            rs2 = ps2.executeQuery();
+            while (rs2.next()) {
+                Mascota m = new Mascota();
+                m.setId(rs2.getInt(1));
+                m.setNombre(rs2.getString(2));
+                m.setRaza(rs2.getString(3));
+                m.setTipoRaza(rs2.getString(4));
+                m.setNacimMasc(rs2.getString(5));
+                m.setGustos(rs2.getString(6));
+                m.setDisgustos(rs2.getString(7));
+                m.setSexo(rs2.getString(8));
+                m.setPeso(rs2.getInt(9));
+                m.setFoto(rs2.getBinaryStream(10));
+                m.setTipoAnimal(rs2.getString(11));
+                m.setAlergias(rs2.getString(12));
+                m.setColor(rs2.getString(13));
+                m.setEstado(rs2.getString(14));
+                m.setSalud(rs2.getString(18));
+                m.setHistoria(rs2.getString(19));
+                m.setUbicacion(rs2.getString(20));
+                listaAdop.add(m);
+            }
+            rs2.close();
+            ps2.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error Listar adoptados, pendeja.");
+        }
+        return listaAdop;
+    }
+
+    
     public void listarImg(int id, HttpServletResponse response) {
         String sql = "SELECT imagen FROM mascota WHERE id_masc = ?";
         InputStream inputStream = null;

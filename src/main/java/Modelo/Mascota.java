@@ -3,14 +3,20 @@ package Modelo;
 import java.io.InputStream;
 
 public class Mascota {
-    String nombre, raza, tipoRaza, nacimMasc, gustos, disgustos, sexo, tipoAnimal, alergias, color, idDuenio;
+    String nombre, raza, tipoRaza, nacimMasc, gustos, disgustos, sexo, tipoAnimal, alergias, color, idDuenio, estado;
     int peso, id;
     InputStream foto;
+    
+    int idA;
+    String historia;
+    String salud;
+    String ubicacion;
+    String mascota;
     
     public Mascota(){
     }
 
-    public Mascota(String nombre, String raza, String tipoRaza, String nacimMasc, String gustos, String disgustos, String sexo, String tipoAnimal, String alergias, String color, String idDuenio, int peso, int id, InputStream foto) {
+    public Mascota(String nombre, String raza, String tipoRaza, String nacimMasc, String gustos, String disgustos, String sexo, String tipoAnimal, String alergias, String color, String idDuenio, String estado, int peso, int id, InputStream foto, int idA, String historia, String salud, String ubicacion, String mascota) {
         this.nombre = nombre;
         this.raza = raza;
         this.tipoRaza = tipoRaza;
@@ -22,11 +28,16 @@ public class Mascota {
         this.alergias = alergias;
         this.color = color;
         this.idDuenio = idDuenio;
+        this.estado = estado;
         this.peso = peso;
         this.id = id;
         this.foto = foto;
+        this.idA = idA;
+        this.historia = historia;
+        this.salud = salud;
+        this.ubicacion = ubicacion;
+        this.mascota = mascota;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -140,6 +151,52 @@ public class Mascota {
         this.id = id;
     }
     
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
     
+    public String getHistoria() {
+        return historia;
+    }
+
+    public void setHistoria(String historia) {
+        this.historia = historia;
+    }
+
+    public String getSalud() {
+        return salud;
+    }
+
+    public void setSalud(String salud) {
+        this.salud = salud;
+    }
+    
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+    
+    public String getMascota() {
+        return mascota;
+    }
+
+    public void setMascota(String mascota) {
+        this.mascota = mascota;
+    }
+
+    public int getIdA() {
+        return idA;
+    }
+
+    public void setIA(int idA) {
+        this.idA = idA;
+    }
     
 }
