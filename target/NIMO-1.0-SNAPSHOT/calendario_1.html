@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head><link rel="icon" href="imagenes/logo_nimo.ico">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Calendario</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
+        <!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+        <!--<link rel="stylesheet" href="estilos.css" type="text/css">-->     
+         
+    </head>
+    <body>
+        <nav>
+        <link rel="stylesheet" href="menu.css">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+               <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
+            </label>
+            <a href="index.html" class="enlace">
+                <img src="imagenes/logo_nimo.png" alt="" class="logo">
+            </a>
+            <form action="Controler" method="post"><ul class="bot_acc">
+                <li><a href="inicio_vete.jsp" class="inicio">Inicio</a></li>
+                <li><a href="misMascotas_1.html" class="">Mis Mascotas</a></li>
+                <li><a href="calendario_1.html" class="">Calendario</a></li>
+                <li><a href="informativo_1.html" class="">Información Mascotas</a></li>
+                <li><a href="comunidad_1.html" class="">Comunidad</a></li>
+                <li><a href="notas_1.html" class="">Notas</a></li>
+                <li><a href="citas_1.html" class="">Citas</a></li>
+                <li><a href="saludBienestar_1.html" class="">Salud y Bienestar</a></li>
+                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="soyVeterinario.jsp" class="">Opciones Veterinario</a></li>
+            </ul>
+        </nav>
+        <br>
+            <link rel="stylesheet" href="cal.css">
+        <section id="pantalla-dividida">
+            <link rel="stylesheet" href="cal2.css">
+        <link rel="stylesheet" href="dycalendar.css">
+            <div class="izquierda">
+                <h1><span class="creative">Agenda citas</span></h1>
+                <p>¡Agrenda ya una cita!</p>                          
+            </div>            
+        
+        
+        
+        
+            <div class="centro">
+                <section class="calendario">
+                    <div class="box">
+                        <div class="container">
+                            <div id="dycalendar">
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <script src="dycalendar.js"></script>  
+                <script>
+                    dycalendar.draw({
+                        target: '#dycalendar',
+                        type: 'month',
+                        dayformat: 'full',
+                        monthformat: 'full',
+                        highlightargetdate: true,
+                        prevnextbutton: 'show'
+                    })
+                </script>
+            </div>
+            
+            <div class="derecha">
+                <link rel="stylesheet" href="loginn.css">
+                <link rel="stylesheet" href="cita.css">
+                <div class="login-card-container">
+                <div class="login-card">
+                
+                <div class="login-card-header">
+                    <h2>Agenda una cita</h2>
+                    <div>Por favor, ingresa datos requeridos para agendar cita:</div>
+                </div>
+                <form class="login-card-form" method="post" name="cita" action="cita.jsp">
+                    <div class="form-item">
+                        <span class="form-item-icon material">
+                            <img src="imagenes/usuario.png">
+                        </span>
+                        <input type="text" placeholder="Usuario" name="usuario" required autofocus>
+                    </div>
+                    <div class="form-item">                        
+                        <input type="date" placeholder="Fecha de la cita" name="f_cita" required>                                                    
+                    </div>
+                    <div class="form-item">                        
+                        <input type="time" placeholder="Hora" name="t_cita" required>                                                    
+                    </div>
+                    <button type="submit" name="cita">Agendar</button>
+                    <br><br>
+                </form>
+                <div class="login-card-footer">
+                    <div class="contenedorr"></div>
+                </div>
+
+	<script src="popup.js"></script>
+
+            
+        
+                    
+           
+                
+        </section>  
+    </body>
+</html>

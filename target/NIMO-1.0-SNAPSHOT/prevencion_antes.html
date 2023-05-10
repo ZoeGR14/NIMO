@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+    <head><link rel="icon" href="imagenes/logo_nimo.ico">
+        <title>Prevencion</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: inherit;
+}
+header{
+    position: relative;
+    background-size: cover;
+}
+body{
+    background: url(imagenes/FONDOOOOOOOOOOOOOOO.png);
+	font-weight: 400;
+	
+	font-family: 'Montserrat', sans-serif;
+        align-content: center;
+        background-size: auto;
+        position: relative;
+}
+.titulo{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 0.5em;
+    font-size: 4em;
+    color: #4B277A;
+}
+.textito{
+    text-shadow:  3px 2px 3px purple;
+    text-align: center;
+}
+.navi{
+    font-family: 'Poppins', sans-serif;
+    background: none;
+    
+    width: 310px;
+}
+.secciones{
+    display:flex;
+}
+article{
+    justify-content: center;
+    width: calc(100vw - 300px);
+    display: flex;
+    
+}
+.nav__link{
+    color: #ffffff;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+}
+
+.nav__link--inside{
+    border-radius: 6px ;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.nav__link--inside:hover{
+    background: #9c85bd;
+}
+
+.list{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    font-size: 28px;
+    justify-content: center;
+    flex-direction: column;
+    background: #C29BF8;
+}
+
+.list__item{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.list__item--click{
+    cursor: pointer;
+}
+
+.list__button{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.arrow .list__arrow{
+    transform: rotate(90deg);
+}
+
+.list__arrow{
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+.list__show{
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid #ffffff;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+}
+.list__inside{
+    font-size: 2vh;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+        <nav>
+        <link rel="stylesheet" href="menu.css">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+               <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
+            </label>
+            <a href="index.html" class="enlace">
+                <img src="imagenes/logo_nimo.png" alt="" class="logo">
+            </a>
+            <ul class="bot_acc">
+                <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
+                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mascotas</a></li>
+                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="informativo.html" class="">Información Mascotas</a></li>
+                <li><a href="comunidad.html" class="">Comunidad</a></li>
+                <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
+                <li><a href="citas.html" class="">Citas</a></li>
+                <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
+                                        <li><a href="adopciones.html" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
+            </ul>
+        </nav>
+        </header>
+        <section class="secciones">
+        <aside class="navi">
+            <ul class="list">
+                <!-- Selección uno -->
+                <li class="list__item list__item--click">
+
+                    <div class="list__button list__button--click">
+    
+                        <a href="#" class="nav__link">Perros</a>
+
+                    </div>
+    
+                    <ul class="list__show">
+
+                        <li class="list__inside">
+
+                            <a href="pParvo.html" class="nav__link nav__link--inside">Parvovirus</a>
+
+                        </li>
+    
+                        <li class="list__inside">
+
+                            <a href="pMoquillo.html" class="nav__link nav__link--inside">Moquillo</a>
+                            
+                        </li>
+
+                        <li class="list__inside">
+
+                            <a href="pHepatitis.html" class="nav__link nav__link--inside">Hepatitis infecciosa canina</a>
+                            
+                        </li>
+
+                        <li class="list__inside">
+
+                            <a href="pLepto.html" class="nav__link nav__link--inside">Leptospicosis</a>
+                            
+                        </li>
+
+                        <li class="list__inside">
+
+                            <a href="pTos.html" class="nav__link nav__link--inside">Tos de las pérreras</a>
+                            
+                        </li>
+
+                        <li class="list__inside">
+
+                            <a href="pRabia.html" class="nav__link nav__link--inside">Rabia</a>
+                            
+                        </li>
+                    </ul>
+    
+                </li>
+    
+    <!-- Selección uno -->
+    
+                <li class="list__item list__item--click">
+                    <div class="list__button list__button--click">
+                        
+                        <a href="#" class="nav__link">Gatos</a>
+                        
+                    </div>
+    
+                    <ul class="list__show">
+                        <li class="list__inside">
+                            <a href="gInsu.html" class="nav__link nav__link--inside">Insuficiencia renal crónica</a>
+                        </li>
+    
+                        <li class="list__inside">
+                            <a href="gHiper.html" class="nav__link nav__link--inside">Hipertiroidismo</a>
+                        </li>
+
+                        <li class="list__inside">
+                            <a href="gDiabetes.html" class="nav__link nav__link--inside">Diabetes Mellitus</a>
+                        </li>
+
+                        <li class="list__inside">
+                            <a href="gInfec.html" class="nav__link nav__link--inside">Infección por retrovirus</a>
+                        </li>
+
+                        <li class="list__inside">
+                            <a href="gCancer.html" class="nav__link nav__link--inside">Cáncer en felinos</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <article>
+        <h1 class="titulo">Prevenciones</h1>
+        </article>
+    </section>
+    
+        <script>
+            let listElements = document.querySelectorAll('.list__button--click');
+
+                listElements.forEach(listElement => {
+                listElement.addEventListener('click', ()=>{
+        
+                listElement.classList.toggle('arrow');
+
+                let height = 0;
+                let menu = listElement.nextElementSibling;
+                if(menu.clientHeight == "0"){
+                    height=menu.scrollHeight;
+                }
+
+                menu.style.height = `${height}px`;
+
+    })
+});
+        </script>
+    </body>
+</html>

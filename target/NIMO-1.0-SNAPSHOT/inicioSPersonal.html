@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iniciar sesión</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="loginn_1.css">
+    </head>
+    <body>
+        <nav class="nopuedo">
+            <link rel="stylesheet" href="menu.css">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
+            </label>
+            <a href="index.html" class="enlace">
+                <img src="imagenes/logo_nimo.png" alt="" class="logo">
+            </a>
+            <ul alt="" class="bot_acc">
+                <li><a href="inicio_Sesion.html" class="inis">Inicio de Sesión</a></li>
+                <li><a href="registro.html" class="regis">Registro</a></li>
+                <li><a href="listado_FAQS.jsp" class="regis">FAQs</a></li>
+                <li><a href="InicioSPersonal.html" class="admins">¿Eres un administrador?</a></li>
+            </ul>
+        </nav>
+        <br>
+        <div class="login-card-container">
+            <div class="login-card">
+                <div class="login-card-logo">
+                    <img src="imagenes/logo_nimo.png" alt="logo">
+                </div>
+                <div class="login-card-header">
+                    <h1>Inicio de Sesión Trabajadores</h1>
+                    <div>Por favor, inicia sesión para hacer uso de tus herramientas</div>
+                </div>
+                <form class="login-card-form" action="ini_sesion_1.jsp" method="post" name="inici_sesi">
+                    <div class="form-item">
+                        <span class="form-item-icon material">
+                            <img src="imagenes/usuario.png">
+                        </span>
+                        <input type="text" placeholder="Usuario" name="usuario" required autofocus>
+                    </div>
+                    <div class="form-item">
+                        <span class="form-item-icon material">
+                            <img src="imagenes/candado.png">
+                        </span>
+                        <input type="password" name="contrasenia" placeholder="Contraseña" required>
+                    </div>
+                    <button type="submit" name="ingreso">Acceder</button>
+                    <br><br>
+                    <center>Para consultar las preguntas frecuentes de clic aquí: <a href="listado_FAQS.jsp" style="font-weight: bold;">FAQS</a></center>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

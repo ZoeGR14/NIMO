@@ -89,12 +89,11 @@ create table adopcion(
 id_adopc int primary key auto_increment not null,
 salud varchar(1000),
 historia varchar(1000),
-gustos_adopc varchar(160),
 ubicacion varchar(450)
 );
 
 create table adopc_masc(
-id_adopc int auto_increment not null,
+id_adopc int,
 id_masc int,
 foreign key (id_adopc) references adopcion(id_adopc) on update cascade on delete cascade,
 foreign key (id_masc) references mascota(id_masc) on update cascade on delete cascade
@@ -109,10 +108,7 @@ p4 varchar(110),
 p5 varchar(110),
 p6 varchar(110),
 p7 varchar(110),
-p8 varchar(110),
-p9 varchar(110),
-p10 varchar(110),
-p11 varchar(110)
+p8 varchar(110)
 );
 
 create table adopt_masc(
@@ -229,6 +225,7 @@ foreign key (id_reporte) references reportes(id_reporte) on delete cascade on up
 select * from reportes;
 select * from usuario;
 select * from veterinario;
+select * from veterinario_cliente;
 select * from nota;
 select * from nota_usu;
 select * from mascota;
@@ -236,3 +233,16 @@ select * from masc_usu;
 select * from comentarios;
 select * from usu_coment;
 select * from veterinario_cliente;
+select * from adopcion;
+select * from adopc_masc;
+select * from adoptar;
+select * from adopt_masc;
+
+/*SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc WHERE mascota.estado = 'adopcion';
+SELECT * FROM masc_usu INNER JOIN adopc_masc  ON masc_usu.id_masc = adopc_masc.id_masc WHERE usuar != "willis";
+SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc INNER JOIN adopcion ON adopcion.id_adopc = adopc_masc.id_adopc INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE mascota.estado = 'adopcion' AND masc_usu.usuar != "willis";
+
+SELECT * FROM mascota INNER JOIN masc_usu 
+ON mascota.id_masc = masc_usu.id_masc INNER JOIN adopcion ON adopc_masc.id_adopc= 
+adopcion.id_adopc WHERE mascota.estado = 'adopcion';*/
+

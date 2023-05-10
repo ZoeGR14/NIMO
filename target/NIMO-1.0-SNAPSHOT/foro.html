@@ -1,0 +1,55 @@
+<html>
+    <head><link rel="icon" href="imagenes/logo_nimo.ico">
+        <title>Foro</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <nav>
+        <link rel="stylesheet" href="menu.css">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+               <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
+            </label>
+            <a href="index.html" class="enlace">
+                <img src="imagenes/logo_nimo.png" alt="" class="logo">
+            </a>
+            <ul class="bot_acc">
+                <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
+                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mascotas</a></li>
+                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="informativo.html" class="">Información Mascotas</a></li>
+                <li><a href="comunidad.html" class="">Comunidad</a></li>
+                <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
+                <li><a href="citas.html" class="">Citas</a></li>
+                <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
+                                        <li><a href="adopciones.html" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
+            </ul>
+        </nav>
+       <link rel="stylesheet" href="foro.css">
+       <section class="forito">
+           
+        <main class="contenedor">
+            <section class="contenedor-agg-com">
+                <div class="imagen-usuario">
+                    <img src="imagenes/usuario.png">
+                </div>
+                <div class="input-com">
+                    <input id="nuevoComentario" type="text" placeholder="Nuevo comentario...">
+                    <div class="btn-agg">
+                        <button onclick="nComentario()">Comentar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <ul id="comentarios" class="contenedor-2">            
+        </ul>
+       
+       </section>
+    <script src="mainn.js"></script>
+    </body>
+
+</html>

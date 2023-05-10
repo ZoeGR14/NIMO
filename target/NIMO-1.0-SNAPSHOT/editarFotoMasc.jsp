@@ -1,0 +1,153 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head><link rel="icon" href="imagenes/logo_nimo.ico">
+        <title>Nueva Mascota</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">     
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="menusito.css">
+        <link rel="stylesheet" href="nuevaMasc.css">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <aside class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="imagenes/logo_nimo.png" alt="" class="logo2">
+                    <div class="logo_name">NIMO</div>
+                </div>
+                <i class='bx bx-menu' id='btn'></i>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="/NIMO/Controler?visualizar=mascotas">
+                        <i class='bx bxs-dog'></i>
+                        <span class="link_name">Mis Mascotas</span>
+                    </a>
+                    <span class="tooltip">Mis Mascotas</span>
+                </li>
+                <li>
+                    <a href="calendario.html">
+                        <i class='bx bx-calendar'></i>
+                        <span class="link_name">Calendario</span>
+                    </a>
+                    <span class="tooltip">Calendario</span>
+                </li>
+                <li>
+                    <a href="informativo.html">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="link_name">Información Mascotas</span>
+                    </a>
+                    <span class="tooltip">Información Mascotas</span>
+                </li>
+                <li>
+                    <a href="comunidad.html">
+                        <i class='bx bx-group'></i>
+                        <span class="link_name">Comunidad</span>
+                    </a>
+                    <span class="tooltip">Comunidad</span>
+                </li>
+                <li>
+                    <a href="/NIMO/Controler?visualizar=notas">
+                        <i class='bx bx-note'></i>
+                        <span class="link_name">Notas</span>
+                    </a>
+                    <span class="tooltip">Notas</span>
+                </li>
+                <li>
+                    <a href="saludBienestar.html">
+                        <i class='bx bxs-heart-circle'></i>
+                        <span class="link_name">Salud y Bienestar</span>
+                    </a>
+                    <span class="tooltip">Salud y Bienestar</span>
+                </li>
+                <li>
+                    <a href="adopciones.html">
+                        <i class='bx bxs-clinic'></i>
+                        <span class="link_name">Adopciones</span>
+                    </a>
+                    <span class="tooltip">Adopciones</span>
+                </li>
+                <li>
+                    <a href="config_usu.jsp">
+                        <i class='bx bx-cog'></i>
+                        <span class="link_name">Configuración</span>
+                    </a>
+                    <span class="tooltip">Configuración</span>
+                </li>
+                <li>
+                    <a href="cierreSesion.jsp">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span class="link_name">Cerrar Sesión</span>
+                    </a>
+                    <span class="tooltip">Cerrar Sesión</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="ventana">
+            <c:forEach var="dato" items="${fotoMasc}">
+            <div class="container">
+                <div class="title">Editar fotografía</div>
+                <div class="content">
+
+                    <form method="post" class="contenidoNuevaMasc" action="Controler" id='contenidoNuevaMasc' enctype="multipart/form-data">
+                            <div class="image-details">
+                                <img src="ControlerIMG?id=${dato.getId()}" id="foto" draggable="false">
+                                <input type="file" id="imagen" accept="image/*" name="fileFoto" class="imagen" required>
+                                <label for="imagen" class="boton">Agregar foto</label>
+                            </div>
+                            <div class="button">
+                                <input type="hidden" name="idEditado" value="${dato.getId()}">
+                                <input type="submit" name="accion" value="Editar Foto">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </c:forEach>
+            <%
+                try {
+                    String aprove = (String) request.getAttribute("aprobacionMascota");
+                    if (aprove.equals("si")) {
+            %>
+            <script>
+                Swal.fire({
+                    title: "¡Información editada!",
+                    icon: "success",
+                    confirmButtonText: "Vale",
+                    confirmButtonColor: "#4b277a",
+                    color: "black"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "/NIMO/Controler?visualizar=mascotas"
+                    }
+                });
+            </script>
+            <%} else {
+            %>
+            <script>
+                Swal.fire({
+                    title: "¡Error!",
+                    text: "Verifica que toda la información esté correcta",
+                    icon: "error",
+                    confirmButtonText: "Vale",
+                    confirmButtonColor: "#4b277a",
+                    color: "black"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.history.back();
+                    }
+                });
+            </script>
+            <%
+                    }
+                } catch (Exception e) {
+                }
+            %>
+
+
+        </section>
+        <script src="mascota.js"></script>
+        <script src="prueba.js"></script>
+</html>

@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body{
+    background: url('imagenes/fondohuehue.png') no-repeat;
+}
+.explore{
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tablita{
+    border-left-color: #4b277a; 
+    border-right-color: #4b277a; 
+    border-top-color: #4b277a; 
+    border-bottom-color: #4b277a; 
+}
+
+.ini_acci{
+    position: relative;
+    width: 1200px;
+    height: 700px;
+    margin: 50px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-top: 2px solid grey;
+    border-left: 2px solid grey;
+    backdrop-filter: blur(10px);
+}
+.margensito h5{
+    color: #4b277a;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+    font-size: 25px;
+}
+.bot-mag a{
+    text-decoration: none;
+    font-size: 93px;
+    color: white;
+}
+
+.bot-mag{
+    position: relative;
+    background-color: #4b277a;
+    color: white;
+    padding:  1rem 2.5rem;
+    border-radius: 3rem;
+    transition: .5s;
+    margin-top: 50px;
+    text-decoration: none;
+}
+
+.bot-mag::after{
+    content: "";
+    width: 80%;
+    height: 40%;
+    background: linear-gradient(to right, #a362e5, #8b43ff);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    margin: 0 auto;
+    border-radius: 3rem;
+    filter:blur(10px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.botmag_text{
+    position: relative;
+    z-index: 99;
+}
+
+.bot-mag img{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    pointer-events: none;
+    transition: .7s;
+    opacity: 0;
+}
+
+.botmag_img1{
+    width: 22px;
+    transform: translate(-60px, -10px) rotate(50deg);
+}
+
+.botmag_img2{
+    width: 33px;
+    transform: translate(60px, -15px) rotate(-70deg);
+}
+
+.botmag_img3{
+    width: 44px;
+    transform: translate(0px, -30px) rotate(-40deg);
+}
+
+.botmag_img4{
+    width: 33px;
+    transform: translate(0px, 30px) rotate(50deg);
+}
+
+.bot-mag:hover::after{
+    opacity: 1;
+}
+
+.bot-mag:hover{
+    transform: scale(1.2);
+    color: white;
+}
+
+.bot-mag:hover img{
+    opacity: 1;
+}
+
+.bot-mag:hover .botmag_img1{
+    transform: translate(-80px, -10px) scale(1.2);
+}
+
+.bot-mag:hover .botmag_img2{
+    transform: translate(80px, -10px) scale(1.1);
+}
+
+.bot-mag:hover .botmag_img3{
+    transform: translate(10px, -50px) scale(1.2);
+}
+
+.bot-mag:hover .botmag_img4{
+    transform: translate(20px, 45px) scale(1.1);
+}
+
+
+#modal::backdrop{
+    background-color: rgba(0,0,0,0.55);
+}
+
+#modal{
+    transition: .3s ease all;
+    transform: scale(1);
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.9);
+    overflow: hidden;
+    justify-content: center;
+    align-content: center;
+    border-top: 2px solid grey;
+    border-left: 2px solid grey;
+    backdrop-filter: blur(10px);
+    max-width: 70ch;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#modal h3{
+    color: #4b277a;
+    font-family: 'Fredoka One', cursive;
+    font-weight: lighter;
+}
+
+#modal input[type="text"]{
+    display: inline;
+    border:  #4b277a;
+    outline: #4b277a;
+    background: rgba(0,0,0,0.1);
+    padding: 1rem 1.5rem;
+    margin-top: 30px;
+    border-radius: 100px;
+    width: 35%;
+    transition: background .5s;
+}
+
+#btn-cerrar-modal{
+    background-color: #4b277a;
+    color: white;
+    padding:  0.5rem 2rem;
+    border-radius: 3rem;
+    transition: .5s;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+#btn-enviar-modal{
+    background-color: #4b277a;
+    color: white;
+    padding:  0.5rem 2rem;
+    border-radius: 3rem;
+    transition: .5s;
+    margin-top: 15px;
+    text-decoration: none;
+}
