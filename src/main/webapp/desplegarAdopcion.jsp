@@ -253,7 +253,7 @@ Contactar al usuario -->
                             <p>Estado de salud: ${listarAdopcion.getSalud()}</p>
                             <p>Ubicación: ${listarAdopcion.getUbicacion()}</p>
                             <button class="button">
-                                <span class="button-content"> ¡Quiero Adoptarte! </span>
+                                <span class="button-content"> ¡Quiero Adoptarte ^^! </span>
                             </button>
                         </div>
                     </div>
