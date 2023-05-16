@@ -14,3 +14,36 @@ file.addEventListener("change", e => {
         img.src = defaultFile;
     }
 })
+
+const btn = document.getElementById("boton");
+const form =  document.getElementById("contenidoNuevaMasc");
+
+btn.addEventListener("click", function(e){
+    e.preventDefault();
+    
+    var img = document.getElementById("imagen").value,
+    sexo = document.getElementsByName("radioSexo"),
+    raza = document.getElementsByName("radioRaza"),
+    alergias = document.getElementsByName("radioAlergias");
+    
+    var radios = [sexo, raza, alergias];
+    let allSelected = 0;
+    
+    for (var i = 0; i < radios.length; i++) {
+        if(radios[i][0].checked === true || radios[i][1].checked === true){
+            allSelected++;
+        }
+    }
+    
+    if(allSelected === 3 && img !== ""){
+        form.submit();
+    } else{
+        Swal.fire({
+            title: "¡Atención!",
+            text: "Termine por completo el formulario, por favor",
+            icon: "warning",
+            confirmButtonText: 'Vale'
+        });
+    }
+    
+})

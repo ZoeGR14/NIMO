@@ -24,7 +24,7 @@
 
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
+                        cnx = DriverManager.getConnection("jdbc:mysql://localhost:3308/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
                         sta = cnx.createStatement();
                         rs = sta.executeQuery("select * from editor where id_FAQ = " + id_FAQ + "");
                         rs.next();

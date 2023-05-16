@@ -12,6 +12,7 @@
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+            
 
             .bgcolor{
                 background-color: #4b277a;
@@ -328,14 +329,30 @@
                 background-color: #7a7a7a;
             }
 
-            .cajita img,h1,h2,h3,ul li,p{transition: 5s ease all;}
-            .cajita img { animation: entradaTitulo 5s ease .5s forwards; }
-            .cajita h1 { animation: entradaTitulo 5s ease .5s forwards; }
-            .cajita h2 { animation: entradaSubtitulo 5s ease .5s forwards; }
-            .cajita h3 { animation: entradaInputs 6s linear 1s forwards; }
-            .cajita h4 { animation: entradaInputs 6s linear 1s forwards; }
-            .cajita ul li { animation: entradaInputs 6s linear 1s forwards; }
-            .cajita .textt { animation: entradaInputs 6s linear 1s forwards; }
+            .cajita img,h1,h2,h3,ul li,p{
+                transition: 5s ease all;
+            }
+            .cajita img {
+                animation: entradaTitulo 5s ease .5s forwards;
+            }
+            .cajita h1 {
+                animation: entradaTitulo 5s ease .5s forwards;
+            }
+            .cajita h2 {
+                animation: entradaSubtitulo 5s ease .5s forwards;
+            }
+            .cajita h3 {
+                animation: entradaInputs 6s linear 1s forwards;
+            }
+            .cajita h4 {
+                animation: entradaInputs 6s linear 1s forwards;
+            }
+            .cajita ul li {
+                animation: entradaInputs 6s linear 1s forwards;
+            }
+            .cajita .textt {
+                animation: entradaInputs 6s linear 1s forwards;
+            }
         </style>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
         <script>
@@ -351,12 +368,12 @@
                     }
                     previousScroll = scroll;
                 });
-
             });
+            
         </script>
     </head>
 
-    <body>
+    <body class="hidden">
         <%
             HttpSession sesion = request.getSession();
             String usuario;
@@ -368,6 +385,7 @@
 
         %>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
         <header class="headersito" id="header">
             <a href="cierreSesion.jsp" class="logoin">
                 <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
@@ -594,5 +612,7 @@
             </div>
         </footer>
     </section>
-
+    <script>
+       
+    </script>
 </html>
