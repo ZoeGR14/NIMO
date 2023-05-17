@@ -21,7 +21,7 @@ public class MascotaDAO {
     PreparedStatement ps2;
     ResultSet rs;
     ResultSet rs2;
-
+/*Mis Mascotas*/
     public List listar(String usuario) {
 
         List<Mascota> lista = new ArrayList<>();
@@ -148,109 +148,6 @@ public class MascotaDAO {
         return m;
     }
 
-      public List listarN(String usuario) {
-
-        List<Mascota> lista = new ArrayList<>();
-        List<Mascota> lista2 = new ArrayList<>();
-        String sql = "select * from masc_usu where usuar = '" + usuario + "'";
-        try {
-            con = cn.getConnection();
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                Mascota m = new Mascota();
-                m.setId(rs.getInt(1));
-                lista.add(m);
-            }
-
-            String sql2 = "select * from mascota where estado = 'normal' and (id_masc = ";
-            int size = lista.size();
-            for (int i = 0; i < size; i++) {
-                if (i == 0) {
-                    sql2 = sql2 + lista.get(i).getId();
-                } else {
-                    sql2 = sql2 + " or id_masc = " + lista.get(i).getId();
-                }
-            }
-            sql2 = sql2 + ");";
-            System.out.println(sql2);
-            try {
-                ps2 = con.prepareStatement(sql2);
-                rs2 = ps2.executeQuery();
-                while (rs2.next()) {
-                    Mascota m = new Mascota();
-                    m.setId(rs2.getInt(1));
-                    m.setNombre(rs2.getString(2));
-                    m.setRaza(rs2.getString(3));
-                    m.setTipoRaza(rs2.getString(4));
-                    m.setNacimMasc(rs2.getString(5));
-                    m.setGustos(rs2.getString(6));
-                    m.setDisgustos(rs2.getString(7));
-                    m.setSexo(rs2.getString(8));
-                    m.setPeso(rs2.getInt(9));
-                    m.setFoto(rs2.getBinaryStream(10));
-                    m.setTipoAnimal(rs2.getString(11));
-                    m.setAlergias(rs2.getString(12));
-                    m.setColor(rs2.getString(13));
-                    m.setEstado(rs2.getString(14));
-                    lista2.add(m);
-                }
-                rs2.close();
-                ps2.close();
-
-            } catch (SQLException e) {
-                System.out.println("Error Listar_2");
-            }
-            rs.close();
-            ps.close();
-            con.close();
-
-        } catch (SQLException e) {
-            System.out.println("Error Listar_1");
-        }
-        return lista2;
-    }
-
-    public List listarAdopcion(String usuario) {
-
-        List<Mascota> listaAdop = new ArrayList<>();
-        String sql2 = "SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc INNER JOIN adopcion ON adopcion.id_adopc = adopc_masc.id_adopc INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE mascota.estado = 'adopcion' AND masc_usu.usuar !='"+usuario+"' ";
-        System.out.println(sql2);
-        try {
-            con = cn.getConnection();
-            ps2 = con.prepareStatement(sql2);
-            rs2 = ps2.executeQuery();
-            while (rs2.next()) {
-                Mascota m = new Mascota();
-                m.setId(rs2.getInt(1));
-                m.setNombre(rs2.getString(2));
-                m.setRaza(rs2.getString(3));
-                m.setTipoRaza(rs2.getString(4));
-                m.setNacimMasc(rs2.getString(5));
-                m.setGustos(rs2.getString(6));
-                m.setDisgustos(rs2.getString(7));
-                m.setSexo(rs2.getString(8));
-                m.setPeso(rs2.getInt(9));
-                m.setFoto(rs2.getBinaryStream(10));
-                m.setTipoAnimal(rs2.getString(11));
-                m.setAlergias(rs2.getString(12));
-                m.setColor(rs2.getString(13));
-                m.setEstado(rs2.getString(14));
-                m.setSalud(rs2.getString(18));
-                m.setHistoria(rs2.getString(19));
-                m.setUbicacion(rs2.getString(20));
-                listaAdop.add(m);
-            }
-            rs2.close();
-            ps2.close();
-
-        } catch (SQLException e) {
-            System.out.println("Error Listar adoptados, pendeja.");
-        }
-        return listaAdop;
-    }
-
-    
     public void listarImg(int id, HttpServletResponse response) {
         String sql = "SELECT imagen FROM mascota WHERE id_masc = ?";
         InputStream inputStream = null;
@@ -384,8 +281,8 @@ public class MascotaDAO {
         }
 
     }
-    
-    public void editarFoto(Mascota m, int id){
+
+    public void editarFoto(Mascota m, int id) {
         String sql = "update mascota set imagen = ? where id_masc = " + id;
         try {
             con = cn.getConnection();
@@ -397,7 +294,7 @@ public class MascotaDAO {
         } catch (Exception e) {
             System.out.println("Error actualizacion de foto");
         }
-        
+
     }
 
     public void eliminar(int id) {
@@ -429,6 +326,109 @@ public class MascotaDAO {
         }
     }
     
+/*Dar en Adopción*/
+    public List listarN(String usuario) {
+
+        List<Mascota> lista = new ArrayList<>();
+        List<Mascota> lista2 = new ArrayList<>();
+        String sql = "select * from masc_usu where usuar = '" + usuario + "'";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Mascota m = new Mascota();
+                m.setId(rs.getInt(1));
+                lista.add(m);
+            }
+
+            String sql2 = "select * from mascota where estado = 'normal' and (id_masc = ";
+            int size = lista.size();
+            for (int i = 0; i < size; i++) {
+                if (i == 0) {
+                    sql2 = sql2 + lista.get(i).getId();
+                } else {
+                    sql2 = sql2 + " or id_masc = " + lista.get(i).getId();
+                }
+            }
+            sql2 = sql2 + ");";
+            System.out.println(sql2);
+            try {
+                ps2 = con.prepareStatement(sql2);
+                rs2 = ps2.executeQuery();
+                while (rs2.next()) {
+                    Mascota m = new Mascota();
+                    m.setId(rs2.getInt(1));
+                    m.setNombre(rs2.getString(2));
+                    m.setRaza(rs2.getString(3));
+                    m.setTipoRaza(rs2.getString(4));
+                    m.setNacimMasc(rs2.getString(5));
+                    m.setGustos(rs2.getString(6));
+                    m.setDisgustos(rs2.getString(7));
+                    m.setSexo(rs2.getString(8));
+                    m.setPeso(rs2.getInt(9));
+                    m.setFoto(rs2.getBinaryStream(10));
+                    m.setTipoAnimal(rs2.getString(11));
+                    m.setAlergias(rs2.getString(12));
+                    m.setColor(rs2.getString(13));
+                    m.setEstado(rs2.getString(14));
+                    lista2.add(m);
+                }
+                rs2.close();
+                ps2.close();
+
+            } catch (SQLException e) {
+                System.out.println("Error Listar_2");
+            }
+            rs.close();
+            ps.close();
+            con.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error Listar_1");
+        }
+        return lista2;
+    }
+
+    public List listarAdopcion(String usuario) {
+
+        List<Mascota> listaAdop = new ArrayList<>();
+        String sql2 = "SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc INNER JOIN adopcion ON adopcion.id_adopc = adopc_masc.id_adopc INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE mascota.estado = 'adopcion' AND masc_usu.usuar !='" + usuario + "' ";
+        System.out.println(sql2);
+        try {
+            con = cn.getConnection();
+            ps2 = con.prepareStatement(sql2);
+            rs2 = ps2.executeQuery();
+            while (rs2.next()) {
+                Mascota m = new Mascota();
+                m.setId(rs2.getInt(1));
+                m.setNombre(rs2.getString(2));
+                m.setRaza(rs2.getString(3));
+                m.setTipoRaza(rs2.getString(4));
+                m.setNacimMasc(rs2.getString(5));
+                m.setGustos(rs2.getString(6));
+                m.setDisgustos(rs2.getString(7));
+                m.setSexo(rs2.getString(8));
+                m.setPeso(rs2.getInt(9));
+                m.setFoto(rs2.getBinaryStream(10));
+                m.setTipoAnimal(rs2.getString(11));
+                m.setAlergias(rs2.getString(12));
+                m.setColor(rs2.getString(13));
+                m.setEstado(rs2.getString(14));
+                m.setSalud(rs2.getString(18));
+                m.setHistoria(rs2.getString(19));
+                m.setUbicacion(rs2.getString(20));
+                listaAdop.add(m);
+            }
+            rs2.close();
+            ps2.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error Listar adoptados, pendeja.");
+        }
+        return listaAdop;
+    }
+    
     public void agregarDAP(Mascota M) {
         String sql = "insert into adopcion (historia, salud, ubicacion) values(?, ?, ?)";
         try {
@@ -454,7 +454,7 @@ public class MascotaDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Mascota m = new Mascota();
-                m.setId(rs.getInt(1));
+                m.setIdA(rs.getInt(1));
                 m.setSalud(rs.getString(2));
                 m.setHistoria(rs.getString(3));
                 m.setUbicacion(rs.getString(4));
@@ -482,7 +482,22 @@ public class MascotaDAO {
         }
         return d;
     }
-
+    
+     private Mascota ultimOAdoptar() {
+        String sql = "select * from adoptar";
+        Mascota d = new Mascota();
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                d.setIdA(rs.getInt(1));
+            }
+        } catch (Exception e) {
+        }
+        return d;
+    }
+    
     public void agregarUnionDAP(int id) {
         String sql = "insert into adopc_masc (id_adopc, id_masc) values (?, ?)";
         Mascota d = ultimO();
@@ -509,5 +524,69 @@ public class MascotaDAO {
             System.out.println("Error al actualizar estado, estás bien estúpida alch. Tqm.");
             e.printStackTrace();
         }
+    }
+
+    /*Adoptar*/
+    public void verFormulario(Mascota A) {
+        List<Mascota> lista = new ArrayList<>();
+        String sql = "select * from adoptar where";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, A.getP1());
+            ps.setString(2, A.getP2());
+            ps.setString(3, A.getP3());
+            ps.setString(4, A.getP4());
+            ps.setString(5, A.getP5());
+            ps.setString(6, A.getP6());
+            ps.setString(7, A.getP7());
+            ps.setString(8, A.getP8());
+            ps.setString(9, A.getP9());
+            ps.executeUpdate();
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+        }
+    }
+
+    public void enviarFormulario(Mascota A) {
+        String sql = "insert into adoptar (p1,p2,p3,p4,p5,p6,p7,p8,p9) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, A.getP1());
+            ps.setString(2, A.getP2());
+            ps.setString(3, A.getP3());
+            ps.setString(4, A.getP4());
+            ps.setString(5, A.getP5());
+            ps.setString(6, A.getP6());
+            ps.setString(7, A.getP7());
+            ps.setString(8, A.getP8());
+            ps.setString(9, A.getP9());
+            ps.executeUpdate();
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error envio de formulario");
+        }
+    }
+
+    public void agregarUnionAdoptar(int id, String usuario) {
+        String sql = "insert into adopt_masc (id_adopt, id_masc, usuar) values (?, ?, ?)";
+        Mascota d = ultimOAdoptar();
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, d.getId());
+            ps.setInt(2, id);
+            ps.setString(3, usuario);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
+    public void dueño_adoptante() {
+        String sql = "insert into adopt_masc(id_adopt, id_masc, usuar)";
     }
 }

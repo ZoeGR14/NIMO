@@ -108,8 +108,11 @@ p4 varchar(110),
 p5 varchar(110),
 p6 varchar(110),
 p7 varchar(110),
-p8 varchar(110)
+p8 varchar(110),
+p9 varchar(110)
 );
+
+# drop tables if exists adoptar, adopt_masc;
 
 create table adopt_masc(
 id_adopt int auto_increment not null,
@@ -155,60 +158,6 @@ foreign key (usuar) references usuario(usuar) on delete cascade on update cascad
 foreign key (cedula) references veterinario(cedula) on update cascade on delete cascade
 );
 
-create table personal(
-trabajador varchar(50) primary key not null,
-pass_tra varchar(50),
-tipo_tra int
-);
-
-/* Tipos de Usuario
-	0 - Cliente
-	1 - Asistente
-    2 - Gerente de Soporte
-    3 - Gerente de Mantenimiento
-    4 - Ingeniero de Soporte
-    5 - Ingeniero de Mantenimiento
-    6 - Editor */
-    
-create table reportes(
-id_reporte int primary key auto_increment not null,
-descripcion varchar(110),
-estatus varchar(25),
-encargado varchar(50),
-fecha_hora timestamp default current_timestamp,
-solucion varchar(400)
-);
-
-
-create table trabajador_reporte(
-id_reporte int auto_increment not null,
-usuar varchar(50),
-foreign key (id_reporte) references reportes(id_reporte) on delete cascade on update cascade,
-foreign key (usuar) references usuario(usuar) on delete cascade on update cascade
-);
-
-create table primer_encargado(
-id_reporte int not null,
-primerEncargado varchar(50),
-foreign key (id_reporte) references reportes(id_reporte) on delete cascade on update cascade,
-foreign key (primerEncargado) references personal(trabajador) on delete cascade on update cascade
-);
-
-create table escritor(
-id_reporte int auto_increment not null,
-trabajador varchar(50),
-foreign key (id_reporte) references reportes(id_reporte) on delete cascade on update cascade,
-foreign key (trabajador) references personal(trabajador) on delete cascade on update cascade
-);
-
-create table editor(
-id_FAQ int primary key auto_increment not null,
-fecha_horaFAQ timestamp default current_timestamp,
-preguntaFAQ varchar(100),
-respuestaFAQ varchar(500),
-tipoFAQ varchar(1)
-);
-
 create table comunidad(
 id_comu int primary key auto_increment not null,
 usuar varchar(50),
@@ -216,13 +165,7 @@ comunidad_name varchar (50),
 descripcion_comu varchar(2000)
 );
 
-create table cerrado_FAQ(
-id_reporte int auto_increment not null,
-estado int,
-foreign key (id_reporte) references reportes(id_reporte) on delete cascade on update cascade
-);
 
-select * from reportes;
 select * from usuario;
 select * from veterinario;
 select * from veterinario_cliente;

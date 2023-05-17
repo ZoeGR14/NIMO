@@ -227,9 +227,9 @@ header{
             background-size: cover;
         }
         .card {
-            width: 190px;
-            height: 254px;
-            background: #250d3b;
+            width: 220px;
+            height: 350px;
+            background: #9260bf;
             position: relative;
             display: inline-flex;
             justify-content: space-between;
@@ -238,7 +238,8 @@ header{
             place-items: center;
             overflow: hidden;
             border-radius: 20px;
-            margin:10px;
+            margin:50px;
+            opacity: 0.8;
         }
 
         .card h2 {
@@ -270,7 +271,7 @@ header{
         .card::after {
             content: '';
             position: absolute;
-            background: #250d3b;
+            background: #9260bf;
             ;
             inset: 5px;
             border-radius: 15px;

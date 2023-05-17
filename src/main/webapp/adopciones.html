@@ -5,6 +5,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="adopcionesN.css" type="text/css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            .alineado{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: calc(100vh - 65px);
+            }
+        </style>
     </head>
     <body>
         <aside class="sidebar">
@@ -86,6 +94,7 @@
             <center>
                 <br>
                 <h1 class="titulo">Adopciones</h1>
+                <div class="alineado">
                 <div>
                     <a href="/NIMO/Controler?visualizar=verAdop" style="none">
                         <div class="card">
@@ -100,6 +109,16 @@
                             <h2>Dar en Adopción</h2>
                         </div>
                     </a>
+                </div>
+                    
+                    <div>
+                    <a href="/NIMO/Controler?visualizar=adopciones" style="none">
+                        <div class="card">
+                            <h2>Visualizar Adopciones</h2>
+                        </div>
+                    </a>
+                </div>
+                    
                 </div>
             </center>
         </section>

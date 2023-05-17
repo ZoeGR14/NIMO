@@ -24,22 +24,40 @@ Contactar al usuario -->
             *{
                 font-family: 'Poppins', sans-serif;
             }
+            body{
+                background-image: url(imagenes/huellitass2.png);
+                background-repeat: repeat;
+            }
             .flip-card {
                 background-color: transparent;
                 width: 320px;
-                height: 500px;
+                height: 450px;
                 perspective: 1000px;
                 font-family: sans-serif;
             }
-
+            .titulito{
+                /*-webkit-text-stroke: 2px purple;*/
+                text-shadow: 2px 2px 0px #b050ff;
+                text-transform: uppercase;
+                font-weight: bolder;
+            }
             .title {
                 font-size: 1.5em;
                 font-weight: 900;
                 text-align: center;
-                box-shadow: 2px 2px 0 5px rgb(176, 80, 255);
+                -webkit-text-stroke: 1px white;
+                text-shadow: -3px -3px 3px #b050ff, 3px -3px 3px #b050ff, -3px 3px 3px #b050ff, 3px 3px 3px #b050ff;
                 margin: 0;
             }
-
+            .title2{
+                /*                color: white;
+                                text-shadow: 0px 3px 4px white;
+                                 -webkit-text-stroke: 1px #31154a;
+                /*letter-spacing: 0;*/
+                color: #fff;
+                font-weight: 900;
+                text-shadow: -3px -3px 3px #b050ff, 3px -3px 3px #b050ff, -3px 3px 3px #b050ff, 3px 3px 3px #b050ff
+            }
             .flip-card-inner {
                 position: relative;
                 width: 100%;
@@ -69,12 +87,12 @@ Contactar al usuario -->
             }
 
             .flip-card-front {
-/*                background: linear-gradient(120deg, rgb(233, 196, 255) 60%, rgb(242, 222, 255) 88%,
-                    rgb(236, 195, 255) 40%, rgba(200, 80, 255, 0.603) 48%);*/
-                    background-position: center center;
-                    background-size: cover;
+                /*                background: linear-gradient(120deg, rgb(233, 196, 255) 60%, rgb(242, 222, 255) 88%,
+                                    rgb(236, 195, 255) 40%, rgba(200, 80, 255, 0.603) 48%);*/
+                background-position: center center;
+                background-size: cover;
                 color: rgb(176, 80, 255);
-                
+
             }
 
             .flip-card-back {
@@ -87,6 +105,10 @@ Contactar al usuario -->
             .button {
                 position: relative;
                 overflow: hidden;
+                margin: auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 200px;   
                 height: 3rem;
                 padding: 0 2rem;
                 border-radius: 1.5rem;
@@ -98,11 +120,15 @@ Contactar al usuario -->
 
             .button:hover::before {
                 transform: scaleX(1);
+                cursor: pointer;
+
             }
 
             .button-content {
                 position: relative;
                 z-index: 1;
+                cursor: pointer;
+
             }
 
             .button::before {
@@ -236,13 +262,15 @@ Contactar al usuario -->
             </ul>
         </aside>
         <section class="ventana">
-            <h2>HOLA</h2>
+            <br>
+            <br>
+            <h2 class="titulito">Mascotas en adopción</h2>
             <c:forEach var="listarAdopcion" items="${listarAdopcion}">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front" style="background-image: url(ControlerIMG?id=${listarAdopcion.getId()})">
                             <p class="title">${listarAdopcion.getNombre()}</p>
-                            <p class="title2"> ${listarAdopcion.getRaza()}</p>
+                            <p class="title2"> Raza ${listarAdopcion.getRaza()}</p>
                         </div>
 
                         <div class="flip-card-back">
@@ -252,9 +280,11 @@ Contactar al usuario -->
                             <p>Historia: ${listarAdopcion.getHistoria()}</p>
                             <p>Estado de salud: ${listarAdopcion.getSalud()}</p>
                             <p>Ubicación: ${listarAdopcion.getUbicacion()}</p>
-                            <button class="button">
-                                <span class="button-content"> ¡Quiero Adoptarte ^^! </span>
-                            </button>
+                            <form action="Controler?accion=adoptar" method="post">
+                                <button class="button" name="adopp" value="${listarAdopcion.getId()}">
+                                    <span class="button-content"> ¡Quiero adoptarte! </span>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

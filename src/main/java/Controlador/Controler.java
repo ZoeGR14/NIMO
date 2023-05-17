@@ -102,12 +102,13 @@ public class Controler extends HttpServlet {
                 request.getRequestDispatcher("darAdop.jsp").forward(request, response);
                 break;
             case "verAdop":
-                List<Object> listarAdopcion = dao.listarAdopcion(usuario);
+                List<Mascota> listarAdopcion = dao.listarAdopcion(usuario);
                 request.setAttribute("listarAdopcion", listarAdopcion);
                 System.out.println("Todo bien w fasilidades");
                 System.out.println(listarAdopcion);
                 request.getRequestDispatcher("desplegarAdopcion.jsp").forward(request, response);
                 break;
+
         }
     }
 
@@ -323,6 +324,41 @@ public class Controler extends HttpServlet {
                 dao.cambiarEstadoDAP(mascota);
                 System.out.println(d.getMascota());
                 request.getRequestDispatcher("adopciones.html").forward(request, response);
+                break;
+            case "adoptar":
+                int idAdop = Integer.parseInt(request.getParameter("adopp"));
+                System.out.println(idAdop);
+                request.setAttribute("adopp", idAdop);
+                request.getRequestDispatcher("QuieroAdop.jsp").forward(request, response);
+                break;
+            case "enviarFormulario":
+                String[] radios = new String[4];
+                for (int i = 0; i < radios.length; i++) {
+                    if (i == 0) {
+                        radios[i] = request.getParameter("radio");
+                    } else {
+                        radios[i] = request.getParameter("radio" + i);
+                    }
+                }
+                String razonAdop = request.getParameter("razonAdop");
+                String personas = request.getParameter("personas");
+                String niños = request.getParameter("niños");
+                String viaje = request.getParameter("viaje");
+                String tiempo = request.getParameter("tiempo");
+                int mascotita = Integer.parseInt(request.getParameter("envio"));
+
+                m.setP1(razonAdop);
+                m.setP2(radios[0]);
+                m.setP3(radios[1]);
+                m.setP4(personas);
+                m.setP5(radios[2]);
+                m.setP6(niños);
+                m.setP7(viaje);
+                m.setP8(radios[3]);
+                m.setP9(tiempo);
+                dao.enviarFormulario(m);
+                dao.agregarUnionAdoptar(mascotita, usuario);
+                response.sendRedirect("Controler?visualizar=verAdop");
                 break;
             default:
                 request.getRequestDispatcher("Controler?accion=Visualizar mis mascotas").forward(request, response);

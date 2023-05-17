@@ -111,7 +111,7 @@
             <div class="form-container">
                 <p class="title">FORMULARIO DE ADOPCIÓN</p>
 
-                <form class="form" method="post" action="Controler">
+                <form class="form" method="post" action="Controler?accion=enviarFormulario">
                     <!-- Pregunta 1 -->
                     <div class="input-group">
                         <label for="escribir">¿Por qué desea adoptar?</label>
@@ -201,9 +201,8 @@
                         <label for="escribir">¿Cuánto tiempo pasaría solo al día? (En horas)</label>
                         <input type="number" min="0" max="24" name="tiempo" id="escribir" placeholder="">
                     </div>
-
                     <br>
-                    <button class="sign">Enviar formulario</button>
+                    <button name="envio" value="${adopp}" class="sign">Enviar formulario</button>
                 </form>
             </div>
         </section>
