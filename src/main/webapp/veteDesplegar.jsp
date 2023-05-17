@@ -29,10 +29,12 @@
                 margin: 0;
                 padding: 0;
                 min-height: 100vh;
-                background: url('imagenes/fondohuehue.png');
+                background: url('imagenes/fondovetes.png');
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                background-size: cover;
+                background-repeat: repeat-y;
             }
                         .row{
                 display: flex;
@@ -83,102 +85,73 @@
                 font-weight: 300;
                 text-transform: capitalize;
             }
-            todo{
-                width: 100%;
-            }
-            .princp{
-                margin-top: 100px;
-                margin-bottom: 150px;
-                display: grid;
-  grid-template-columns: repeat(3, 1fr); /* establece 3 columnas con ancho igual */
-  grid-auto-rows: minmax(100px, 700px); /* establece una altura mínima de 100px */
-  grid-gap: 100px; /* establece el espacio entre los elementos */
-            }
-            .vetecontainer{
-                
-                position: relative;
-                justify-content: center;
-            }
-            .vetecontainer .vetecard{
-                position: relative;
-                display: inline-block;
-            }
-            .vetecontainer .vetecard .face{
-                width: 400px;
-                height: 400px;
-                transition: 0.5s;
-                border-radius: 3rem;
-            }
-            .vetecontainer .vetecard .face.face1{
-                position: relative;
-                background: #D1C4E9;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 1;
-                transform: translateY(200px);
-            }
-            .vetecontainer .vetecard:hover .face.face1{
-                background: #4b277a;
-                border-radius: 0rem;
-                transform: translateY(0);
-            }
-            .vetecontainer .vetecard .face.face1 .contfcV{ 
-                opacity: 0.3;
-                transition: 0.5s;
-            }
-            .vetecontainer .vetecard:hover .face.face1 .contfcV{
-                color: #fff;
-                opacity: 1;
-            }
-            .vetecontainer .vetecard .face.face1 .contfcV h3{
-                margin: 10px 0 0;
-                padding: 0;
-                color: #4b277a;
-                text-align: center;
-                
-            }
-            .vetecontainer .vetecard:hover .face.face1 .contfcV h3{
-                color: #fff;
-            }
-            .vetecontainer .vetecard .face.face2{
-                position: relative;
-                background: #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 20px;
-                box-sizing: border-box;
-                box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-                transform: translateY(-200px);
-            }
-            .vetecontainer .vetecard:hover .face.face2{
-                border-radius: 0rem;
-                transform: translateY(0);
-            }
-            .vetecontainer .vetecard .face.face2 p{
-                margin: 0;
-                padding: 0;
-                font-weight: 500;
-                font-size: 17px;
-                justify-content: center;
-            }
-            .vetecontainer .vetecard .face.face2 button{
-                background-color: #4b277a;
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parent {
+  margin-left: 50%;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 60%;
+  width: 40%;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+  scrollbar-width: thin;
+  
+}
+
+/* width */
+::-webkit-scrollbar {
+    border-radius: 15px;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 15px;
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+  background: rgba(255,250,179,0.8);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,250,179,1); 
+}
+
+section {
+  height: 100%;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+p{
+    font-weight: 300;
+                font-size: 30px;
+}
+section button{
+    background-color: #4b277a;
     color: white;
-    padding:  1rem 2rem;
-    border-radius: 3rem;
+    padding:  0.5rem 0.8rem;
+    border-radius: 2rem;
     transition: .5s;
-    margin-top: 50px;
+    margin-top: 10px;
     text-decoration: none;
-        cursor: pointer;
-            }
-            .vetecontainer .vetecard .face.face2 button:hover{
-                background: #D1C4E9;
-                color: #4b277a;
-                transition: 0.5s;
-                border: 0;
-            }
+    cursor: pointer;
+}
         </style>
     </head>
     <body>
@@ -212,9 +185,12 @@
             </ul>
         </header>
         <br>
-        <div class="todo">
-            <br>
-            <div class="princp">
+        <div class="parent row">
+
+  
+
+                
+                
                 <%
                 Connection cnx = null;
                 Statement sta = null;
@@ -235,37 +211,32 @@
                         rs2 = sta2.executeQuery("select * from veterinario where usuar='"+user+"'");
                         while (rs2.next()) { 
                 %>
-            <div class="vetecontainer">
-                <div class="vetecard">
-                    <div class="face face1">
-                        <div class="contfcV">
-                            <h3>Veterinario</h3>
-                            <h3><%=rs.getString(8)%>&nbsp;<%=rs.getString(6)%>&nbsp;<%=rs.getString(7)%></h3>
-                            
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="contfcV">
-                            <center>
-                                <br>
-                                <p>Cédula:&nbsp;&nbsp;<%=rs2.getString(1)%></p><br>
-                                <p>Clínica:&nbsp;&nbsp;<%=rs2.getString(2)%></p><br>
-                                <p>Teléfono:&nbsp;&nbsp;<%=rs.getString(3)%></p><br>
-                                <p>E-mail:&nbsp;&nbsp;<%=rs.getString(10)%></p>
-                                <form class="login-card-form" action="dudasycontactoVete.jsp" method="post" name="contactV">
+                <section>
+                    <center>
+                        <br><br><br>
+                    <h1>Veterinario:&nbsp;<%=rs.getString(8)%>&nbsp;<%=rs.getString(6)%>&nbsp;<%=rs.getString(7)%></h1>
+                    <br>
+                            <p class="tip">Cédula:&nbsp;&nbsp;<%=rs2.getString(1)%></p><br>
+        <p class="tip">Clínica:&nbsp;&nbsp;<%=rs2.getString(2)%></p><br>
+        <p class="tip">Teléfono:&nbsp;&nbsp;<%=rs.getString(3)%></p><br>
+        <p class="tip">E-mail:&nbsp;&nbsp;<%=rs.getString(10)%></p><br>
+        <form class="login-card-form" action="dudasycontactoVete.jsp" method="post" name="contactV">
                                     <input type="hidden" name="veterinarioR" value="<%=rs2.getString(1)%>" required>
                                     <button type="submit" name="pedirVet">
                                         Contacto
                                     </button>
                                 </form>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </center>
+                </section>
+                
+
 
             <%
-                    }}
+                    }
+%>
+
+<%
+}
                         sta.close();
                         cnx.close();
                         rs.close();
@@ -274,8 +245,7 @@
                         out.print(error.toString());
                     }
                 %>
-            </div>
-        </div>    
+       </div>         
         
         <%
             } else {
