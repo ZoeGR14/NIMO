@@ -92,7 +92,7 @@
                     <form method="post" class="contenidoNuevaMasc" action="Controler" id='contenidoNuevaMasc' enctype="multipart/form-data">
                         <div class="image-details">
                             <img src="imagenes/nuevaMasc.jpg" id="foto" draggable="false">
-                            <input type="file" id="imagen" accept="image/*" name="fileFoto" class="imagen" required>
+                            <input type="file" id="imagen" accept="image/*" name="fileFoto" class="imagen">
                             <label for="imagen" class="boton">Agregar foto</label>
                         </div>
                         <div class="user-details">
@@ -194,65 +194,12 @@
                             </div>
                         </div>
                         <div class="button">
-                            <input type="submit" name="accion" value="Añadir">
+                            <input type="hidden" name="accion" value="Añadir">
+                            <input type="submit" id="boton" value="Añadir">
                         </div>
                     </form>
                 </div>
             </div>
-            <%
-                try {
-                    String aprove = (String) request.getAttribute("aprobacionMascota");
-                    if (aprove.equals("si")) {
-            %>
-            <script>
-                Swal.fire({
-                    title: "¡Mascota registrada!",
-                    icon: "success",
-                    confirmButtonText: "Vale",
-                    confirmButtonColor: "#4b277a",
-                    color: "black"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        var form = document.createElement("form");
-                        form.setAttribute("action", "Controler");
-                        form.setAttribute("method", "post");
-                        var submitButton = document.createElement("input");
-                        submitButton.setAttribute("type", "submit");
-                        submitButton.setAttribute("name", "accion");
-                        submitButton.setAttribute("value", "Visualizar mis mascotas");
-                        submitButton.setAttribute("id", "submit");
-
-                        form.appendChild(submitButton);
-                        document.body.appendChild(form);
-
-                        var button = document.getElementById("submit");
-                        button.click();
-                    }
-                });
-            </script>
-            <%} else {
-            %>
-            <script>
-                Swal.fire({
-                    title: "¡Error!",
-                    text: "Verifica que toda la información esté correcta",
-                    icon: "error",
-                    confirmButtonText: "Vale",
-                    confirmButtonColor: "#4b277a",
-                    color: "black"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.history.back();
-                    }
-                });
-            </script>
-            <%
-                    }
-                } catch (Exception e) {
-                }
-            %>
-
-
         </section>
         <script src="mascota.js"></script>
         <script src="prueba.js"></script>

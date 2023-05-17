@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-
+section {
+    position: absolute;
+    right: 0px;
+    background-image: url(imagenes/back-misMasc.png);
+    background-size: contain;
+    width: calc(100vw - 80px);
+    min-height: 100vh;
+}
 /*--selection--*/
 *::selection{
     background: #dfb9ee;
@@ -96,14 +103,7 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-section {
-    position: absolute;
-    right: 0px;
-    background-image: url(imagenes/back-misMasc.png);
-    background-size: contain;
-    width: calc(100vw - 80px);
-    min-height: 100vh;
-}
+
 .titulo{
     text-align: center;
     font-family: "Poppins",sans-serif;

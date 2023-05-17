@@ -125,7 +125,7 @@
                         ResultSet results=null;
                         try{
                             Class.forName("com.mysql.jdbc.Driver");
-                            conec  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NIMOBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
+                            conec  = DriverManager.getConnection("jdbc:mysql://localhost:3308/NIMOBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
                             pstat = conec.prepareStatement("select * from usuario where usuar=?");
                             String usu=request.getParameter("nusuar");
                             String contras=request.getParameter("contrasenia");
