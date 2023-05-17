@@ -194,7 +194,8 @@
                             </div>
                         </div>
                         <div class="button">
-                            <input type="submit" id="boton" name="accion" value="Añadir">
+                            <input type="hidden" name="accion" value="Añadir">
+                            <input type="submit" id="boton" value="Añadir">
                         </div>
                     </form>
                 </div>

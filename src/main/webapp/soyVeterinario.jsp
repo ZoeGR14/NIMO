@@ -34,7 +34,13 @@
             body{
                 font-size: 16px;
                 line-height: 1.5;
+                background: url('imagenes/horizonpets.png');
+                background-size: cover;
+                height: 100%;
+                width: 100%;
+                background-repeat: no-repeat;
             }
+            
 
             :before, :after{
                 box-sizing: border-box;
@@ -193,20 +199,7 @@
                 animation: float 2.5s ease-in-out 0s infinite forwards;
             }
             
-            .cover{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border-radius: 5px;
-                background-color: rgba(0,0,0,0.8);
-                clip-path: circle(15% at 0px 0px);
-                text-align: center;
-                cursor: pointer;
-                color: #c59bfb;
-                transition: all 0.3s ease;
-            }
+
             
             .texto_card{
                 margin-top: 60px;
@@ -241,37 +234,18 @@
                 clip-path: circle(75%);
             }
             .wrapper{
+                
                 display: flex;
                 width: 100%;
-                height: calc(100vh);
+                height: 100vh;
                 justify-content: center;
                 align-items: center;
                 padding: 0 10%;
                 overflow: hidden;
                  overflow-y:hidden;
             }
-            .wrapper::before{
-                position: absolute;
-                content: '';
-                height: 600px;
-                width: 600px;
-                border-radius: 50%;
-                left: -12%;
-                top: 40%;
-                background-color: #9236E4;
-                
-            }
-            .wrapper::after{
-                position: absolute;
-                content: '';
-                height: 200px;
-                width: 200px;
-                border-radius: 50%;
-                left: 35%;
-                top: 12%;
-                background-color: #9236E4;
-                
-            }
+            
+
             @keyframes object1{
                 left: -13%;
                 top: 41%;
@@ -316,7 +290,7 @@
                 display: block;
                 width: 90%;
                 font-size: 1.2em;
-                color: #3d535f;
+                color: #fff;
             }
             .btns{
                 width: 100%;
@@ -512,10 +486,7 @@
             </div>
         </div>
         <div class="cols cols1">
-            <div class="imgbox">
-                <img src="imagenes/manchass.png" id="splash">
-                <img src="imagenes/veterinarito.png" id="">
-            </div>
+            
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>

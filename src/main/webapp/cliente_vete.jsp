@@ -29,10 +29,12 @@
                 margin: 0;
                 padding: 0;
                 min-height: 100vh;
-                background: url('imagenes/fondohuehue.png');
+                background: url('imagenes/bybyby.jpg');
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                background-size: cover;
+                background-repeat: repeat-y;
             }
                         .row{
                 display: flex;
@@ -83,102 +85,117 @@
                 font-weight: 300;
                 text-transform: capitalize;
             }
-            todo{
-                width: 100%;
-            }
-            .princp{
-                margin-top: 100px;
-                margin-bottom: 150px;
+            body {
+  position: relative;
+  margin: 0;
+}
+.sect {
+  width: 100%;
+  min-height: 100vh;
+}
+#sect1,
+#sect3 {
+  background-color: #3333337d;
+  color: #fff;
+}
+#sect2 {
+  background-color: #dddddd7d;
+  color: #333;
+}
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 105%;
+  min-height: 100%;
+  transform: translateX(calc((100% - 100vw) / 2));
+  z-index: -2;
+}
+h1 {
+  margin: 0;
+  padding-top: 3rem;
+  padding-left: 2rem;
+}
+h2 {
+  margin: 0;
+  padding-top: 3rem;
+  padding-left: 2rem;
+}
+
+.gridd{
+    margin-top: 15%;
+                margin-bottom: 50px;
+                margin-left: 150px;
                 display: grid;
   grid-template-columns: repeat(3, 1fr); /* establece 3 columnas con ancho igual */
   grid-auto-rows: minmax(100px, 700px); /* establece una altura mínima de 100px */
   grid-gap: 100px; /* establece el espacio entre los elementos */
-            }
-            .vetecontainer{
-                
-                position: relative;
-                justify-content: center;
-            }
-            .vetecontainer .vetecard{
-                position: relative;
-                display: inline-block;
-            }
-            .vetecontainer .vetecard .face{
-                width: 400px;
-                height: 400px;
-                transition: 0.5s;
-                border-radius: 3rem;
-            }
-            .vetecontainer .vetecard .face.face1{
-                position: relative;
-                background: #D1C4E9;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 1;
-                transform: translateY(200px);
-            }
-            .vetecontainer .vetecard:hover .face.face1{
-                background: #4b277a;
-                border-radius: 0rem;
-                transform: translateY(0);
-            }
-            .vetecontainer .vetecard .face.face1 .contfcV{ 
-                opacity: 0.3;
-                transition: 0.5s;
-            }
-            .vetecontainer .vetecard:hover .face.face1 .contfcV{
-                color: #fff;
-                opacity: 1;
-            }
-            .vetecontainer .vetecard .face.face1 .contfcV h3{
-                margin: 10px 0 0;
-                padding: 0;
-                color: #4b277a;
-                text-align: center;
-                
-            }
-            .vetecontainer .vetecard:hover .face.face1 .contfcV h3{
-                color: #fff;
-            }
-            .vetecontainer .vetecard .face.face2{
-                position: relative;
-                background: #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 20px;
-                box-sizing: border-box;
-                box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-                transform: translateY(-200px);
-            }
-            .vetecontainer .vetecard:hover .face.face2{
-                border-radius: 0rem;
-                transform: translateY(0);
-            }
-            .vetecontainer .vetecard .face.face2 p{
-                margin: 0;
-                padding: 0;
-                font-weight: 500;
-                font-size: 17px;
-                justify-content: center;
-            }
-            .vetecontainer .vetecard .face.face2 button{
-                background-color: #4b277a;
-    color: white;
-    padding:  1rem 2rem;
-    border-radius: 3rem;
-    transition: .5s;
-    margin-top: 50px;
-    text-decoration: none;
-    cursor: pointer;
-            }
-            .vetecontainer .vetecard .face.face2 button:hover{
-                background: #D1C4E9;
-                color: #4b277a;
-                transition: 0.5s;
-                border: 0;
-            }
+}
+
+.card {
+  width: 350px;
+  height: 450px;
+  background: #8E5431;
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.card:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transform: scale(1.2);
+  box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
+  background: #744C24;
+}
+
+.first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.card:hover .first-content {
+  height: 0px;
+  opacity: 0;
+    font-size: 23px;
+  font-weight: 600;
+}
+
+.second-content {
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: all 0.4s;
+  font-size: 0px;
+  transform: rotate(90deg) scale(-1);
+}
+
+.card:hover .second-content {
+  opacity: 1;
+  height: 100%;
+  font-size: 1.8rem;
+  transform: rotate(0deg);
+}
+.texto22{
+    font-size: 17px;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+}
+
         </style>
     </head>
     <body>
@@ -212,10 +229,17 @@
             </ul>
         </header>
         <br>
-        <div class="todo">
-            <br>
-            <div class="princp">
-                <%
+<br>
+        <br>
+        <br>
+        <br>
+        
+        <video src="imagenes/video/animated dogs on a purple flower field landscape.mp4" autoplay="true" muted="true" loop="true" poster="https://carontestudio.com/img/contacto.jpg"></video>
+  
+        <section id="sect1" class="sect">
+            <div class="gridd">
+            
+        <%
                 Connection cnx = null;
                 Statement sta = null;
                 ResultSet rs = null;
@@ -239,29 +263,34 @@
                         sta3 = cnx.createStatement();
                         rs3 = sta3.executeQuery("select * from usuario where usuar='"+client+"'");
                         while (rs3.next()) { 
-                %>
-            <div class="vetecontainer">
-                <div class="vetecard">
-                    <div class="face face1">
-                        <div class="contfcV">
-                            <h3>Cliente</h3>
-                            <h3><%=rs3.getString(8)%>&nbsp;<%=rs3.getString(6)%>&nbsp;<%=rs3.getString(7)%></h3>
-                            
-                        </div>
-                    </div>
-                    <div class="face face2">
-                        <div class="contfcV">
-                            <center>
-                                <br>
-                                <p>Teléfono:&nbsp;&nbsp;<%=rs3.getString(3)%></p><br>
-                                <p>E-mail:&nbsp;&nbsp;<%=rs3.getString(10)%></p>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        %>
+      
+        
+        
+    <div class="card">
+  <div class="first-content">
+      <center>
+                            <span>
+                                Cliente <br>
+                            <%=rs3.getString(8)%>&nbsp;<%=rs3.getString(6)%>&nbsp;<%=rs3.getString(7)%>
+                            </span>
+      </center>
+  </div>
+  <div class="second-content">
+      <center>
+          <span class="texto22">
+                                
+                                Teléfono:&nbsp;&nbsp;<%=rs3.getString(3)%><br>
+                                E-mail:<br><%=rs3.getString(10)%>
+                            </span>
+      </center>
 
-            <%
+  </div>
+
+
+</div>
+  
+<%
                 }}}
                         sta.close();
                         cnx.close();
@@ -272,7 +301,7 @@
                     }
                 %>
             </div>
-        </div>    
+            </section>
         
         <%
             } else {
