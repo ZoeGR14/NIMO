@@ -172,13 +172,20 @@ public class Controler extends HttpServlet {
                 String raza = request.getParameter("radioRaza");
                 String tipoRaza = request.getParameter("tipoRaza");
                 String color = request.getParameter("selectColor");
-                int peso = Integer.parseInt(request.getParameter("pesoMasc"));
+                int peso = 0;
+                boolean isNumeric = false;
+                try {
+                    peso = Integer.parseInt(request.getParameter("pesoMasc"));
+                    isNumeric = true;
+                } catch (Exception e) {
+                    isNumeric = false;
+                }
                 String alergias = request.getParameter("radioAlergias");
                 String gustos = request.getParameter("gustosMasc");
                 String disgustos = request.getParameter("disgustosMasc");
                 Part part = request.getPart("fileFoto");
 
-                if (sexo != null && raza != null && alergias != null && part.getSize() != 0) {
+                if (sexo != null && raza != null && alergias != null && part.getSize() != 0 && isNumeric == true && peso != 0) {
                     InputStream inputStream = part.getInputStream();
                     m.setNombre(nombre);
                     m.setNacimMasc(nacim);
@@ -195,10 +202,9 @@ public class Controler extends HttpServlet {
                     m.setIdDuenio(usuario);
                     dao.agregar(m);
                     dao.agregarUnion(usuario);
-                    request.setAttribute("aprobacionMascota", "si");
-                    request.getRequestDispatcher("nuevaMascota.jsp").forward(request, response);
+                    response.sendRedirect("Controler?visualizar=mascotas");
                 } else {
-                    request.setAttribute("aprobacionMascota", "no");
+                    request.setAttribute("validacion", "nO");
                     request.getRequestDispatcher("nuevaMascota.jsp").forward(request, response);
                 }
                 System.out.println("Controler bien");

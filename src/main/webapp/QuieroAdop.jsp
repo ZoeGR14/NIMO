@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="Adopt.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="menusito.css">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <style>
             .sidebar {
                 position: fixed;
@@ -111,11 +112,11 @@
             <div class="form-container">
                 <p class="title">FORMULARIO DE ADOPCIÓN</p>
 
-                <form class="form" method="post" action="Controler?accion=enviarFormulario">
+                <form class="form" method="post" id="quieroAdoptar" action="Controler?accion=enviarFormulario">
                     <!-- Pregunta 1 -->
                     <div class="input-group">
                         <label for="escribir">¿Por qué desea adoptar?</label>
-                        <input type="text" name="razonAdop" id="escribir" placeholder="">
+                        <input type="text" name="razonAdop" id="escribir" placeholder="" required>
                     </div>
                     <!-- Pregunta 2 -->
                     <div class="input-group">
@@ -152,7 +153,7 @@
                     <!-- Pregunta 4 -->
                     <div class="input-group">
                         <label for="escribir">¿Cuántas personas viven en su casa?</label>
-                        <input type="number" min="0" max="20" name="personas" id="escribir" placeholder="">
+                        <input type="number" min="0" max="20" name="personas" id="escribir" placeholder="" required>
                     </div>
                     <!-- Pregunta 5 -->
                     <div class="input-group">
@@ -173,12 +174,12 @@
                     <!-- Pregunta 6 -->
                     <div class="input-group">
                         <label>¿Cuántos niños viven en su casa?</label>
-                        <input type="number" min="0" max="20" name="niños" id="escribir" placeholder="">
+                        <input type="number" min="0" max="20" name="niños" id="escribir" placeholder="" required>
                     </div>
                     <!-- Pregunta 7 -->
                     <div class="input-group">
                         <label for="escribir">En caso de viaje, ¿Qué pasaría?</label>
-                        <input type="text" name="viaje" id="escribir" placeholder="">
+                        <input type="text" name="viaje" id="escribir" placeholder="" required>
                     </div>
                     <!-- Pregunta 8 -->
                     <div class="input-group">
@@ -199,13 +200,50 @@
                     <!-- Pregunta 9 -->
                     <div class="input-group">
                         <label for="escribir">¿Cuánto tiempo pasaría solo al día? (En horas)</label>
-                        <input type="number" min="0" max="24" name="tiempo" id="escribir" placeholder="">
+                        <input type="number" min="0" max="24" name="tiempo" id="escribir" placeholder="" required>
                     </div>
                     <br>
-                    <button name="envio" value="${adopp}" class="sign">Enviar formulario</button>
+                    <input type="hidden" name="envio" value="${adopp}">
+                    <button id="btnE" class="sign">Enviar formulario</button>
                 </form>
             </div>
         </section>
     </body>
     <script src="prueba.js"></script>
+    <script>
+
+        var form = document.getElementById("quieroAdoptar");
+        var btnE = document.getElementById("btnE");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var radio = document.getElementsByName("radio"),
+                    radio1 = document.getElementsByName("radio1"),
+                    radio2 = document.getElementsByName("radio2"),
+                    radio3 = document.getElementsByName("radio3");
+                    
+            
+            var radios = [radio, radio1, radio2, radio3];
+
+            let allSelected = 0;
+
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i][0].checked === true || radios[i][1].checked === true) {
+                    allSelected++;
+                }
+            }
+
+            if (allSelected === 4) {
+                form.submit();
+            } else {
+                Swal.fire({
+                    title: "¡Atención!",
+                    text: "Termine por completo el formulario, por favor",
+                    icon: "warning",
+                    confirmButtonText: 'Vale'
+                });
+            }
+        });
+
+    </script>
 </html>
