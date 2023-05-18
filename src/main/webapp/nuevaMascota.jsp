@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -91,7 +92,9 @@
                 <div class="content">
                     <form method="post" class="contenidoNuevaMasc" action="Controler" id='contenidoNuevaMasc' enctype="multipart/form-data">
                         <div class="image-details">
-                            <img src="imagenes/nuevaMasc.jpg" id="foto" draggable="false">
+                            <label for="imagen" class="image-details boton">
+                                <img src="imagenes/nuevaMasc.jpeg" id="foto" draggable="false">
+                            </label>
                             <input type="file" id="imagen" accept="image/*" name="fileFoto" class="imagen">
                             <label for="imagen" class="boton">Agregar foto</label>
                         </div>
@@ -102,7 +105,7 @@
                             </div>
                             <div class="input-box">
                                 <span class="details">Fecha de Nacimiento</span>
-                                <input type="date" id="nacim" name="nacimMasc" required>
+                                <input type="date" id="nacim" name="nacimMasc" required min="1980-01-01">
                             </div>
                             <div class="input-box">
                                 <span class="details">Tipo de Animal</span>
@@ -201,6 +204,20 @@
                 </div>
             </div>
         </section>
+        <c:if test="${validacion eq 'nO'}">
+            <script>
+                Swal.fire({
+                    title: "¡Atención!",
+                    text: "Termine por completo el formulario, por favor",
+                    icon: "warning",
+                    confirmButtonText: 'Vale'
+                }).then((result) => {
+                    if(result.isConfirmed){
+                        history.back();
+                    }
+                });
+            </script>
+        </c:if>
         <script src="mascota.js"></script>
         <script src="prueba.js"></script>
 </html>

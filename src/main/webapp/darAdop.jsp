@@ -342,25 +342,25 @@
                         <div class="mascotasSelect">
                             <select id="mascotasSelect" name="mascota" required>
                                 <c:forEach var="datito" items="${listita}">
-                                    <option value="selec" disabled="true" selected="true" hidden>Seleccione una mascota</option>
+                                    <option value="selec" disabled selected hidden>Seleccione una mascota</option>
                                     <option value="${datito.getId()}">${datito.getNombre()}</option>
                                 </c:forEach>
                                 <c:if test="${empty listita}">
-                                    <option id="zero" selected="true" disabled="true" hidden>No hay mascotas registradas unu</option>
+                                    <option id="zero" selected disabled hidden>No hay mascotas registradas unu</option>
                                 </c:if>
                             </select>
                         </div>
                     </div><br>
                     <div class="user-box">
-                        <input type="text" name="historia" required autofocus>
+                        <input type="text" name="historia" required autofocus <c:if test="${empty listita}">disabled</c:if>>
                         <label>Historia de la mascota</label>
                     </div>
                     <div class="user-box">
-                        <input type="type" name="salud" required="">
+                        <input type="text" name="salud" required <c:if test="${empty listita}">disabled</c:if>>
                         <label>Estado de salud</label>
                     </div>
                     <div class="user-box">
-                        <input type="type" name="ubicacion" required="">
+                        <input type="text" name="ubicacion" required <c:if test="${empty listita}">disabled</c:if>>
                         <label>Ubicacion</label>
                     </div>
                     <button type="submit" name="accion" value="zoeguapote" style="border:none;" class="botoncito"><center>Dar en adopción</center></button>
