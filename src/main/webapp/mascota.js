@@ -1,4 +1,4 @@
-const defaultFile = "imagenes/nuevaMasc.jpg";
+const defaultFile = "imagenes/nuevaMasc.jpeg";
 
 const file = document.getElementById('imagen');
 const img = document.getElementById("foto");
@@ -8,17 +8,17 @@ file.addEventListener("change", e => {
         const reader = new FileReader();
         reader.onload = function(e){
             img.src = e.target.result;
-        }
+        };
         reader.readAsDataURL(e.target.files[0]);
     } else{
         img.src = defaultFile;
     }
-})
+});
 
 const btn = document.getElementById("boton");
 const form =  document.getElementById("contenidoNuevaMasc");
 
-btn.addEventListener("click", function(e){
+form.addEventListener("submit", function(e){
     e.preventDefault();
     
     var img = document.getElementById("imagen").value,
@@ -46,4 +46,10 @@ btn.addEventListener("click", function(e){
         });
     }
     
-})
+});
+
+var fechaActual = new Date();
+
+var formatoFecha = fechaActual.toISOString().split("T")[0];
+
+document.getElementById("nacim").max = formatoFecha;
