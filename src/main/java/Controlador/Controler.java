@@ -12,6 +12,7 @@ import Modelo.Mascota;
 import Modelo.MascotaDAO;
 import Modelo.Nota;
 import Modelo.NotaDAO;
+import Modelo.Usuario;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -108,6 +109,12 @@ public class Controler extends HttpServlet {
                 System.out.println(listarAdopcion);
                 request.getRequestDispatcher("desplegarAdopcion.jsp").forward(request, response);
                 break;
+            case "vAU":
+                List<Mascota> listaAd = dao.listarAdoptados(usuario);
+                List<Usuario> listaUs = dao.listarAdoptadosU(usuario);
+                request.setAttribute("listaAdoptar", listaAd);
+                request.setAttribute("listaContacto", listaUs);
+                request.getRequestDispatcher("verAdopciones.jsp").forward(request, response);
 
         }
     }
@@ -360,6 +367,8 @@ public class Controler extends HttpServlet {
                 dao.agregarUnionAdoptar(mascotita, usuario);
                 response.sendRedirect("Controler?visualizar=verAdop");
                 break;
+            case "adopciones_usu":
+                
             default:
                 request.getRequestDispatcher("Controler?accion=Visualizar mis mascotas").forward(request, response);
                 break;

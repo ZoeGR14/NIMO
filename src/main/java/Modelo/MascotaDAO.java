@@ -586,7 +586,65 @@ public class MascotaDAO {
         }
     }
 
-    public void dueño_adoptante() {
-        String sql = "insert into adopt_masc(id_adopt, id_masc, usuar)";
+    public List listarAdoptados(String usuario) {
+        String sql = "SELECT * FROM mascota INNER JOIN adopt_masc ON mascota.id_masc = adopt_masc.id_masc INNER JOIN adoptar ON adoptar.id_adopt = adopt_masc.id_adopt INNER JOIN usuario ON adopt_masc.usuar = usuario.usuar INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE masc_usu.usuar = '"+usuario+"'";
+        List<Mascota> ListaA = new ArrayList<>();
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            
+            while(rs.next()){
+                Mascota m = new Mascota();
+                m.setNombre(rs.getString(2));
+                m.setFoto(rs.getBinaryStream(10));
+                m.setP1(rs.getString(19));
+                m.setP2(rs.getString(20));
+                m.setP3(rs.getString(21));
+                m.setP4(rs.getString(22));
+                m.setP5(rs.getString(23));
+                m.setP6(rs.getString(24));
+                m.setP7(rs.getString(25));
+                m.setP8(rs.getString(26));
+                m.setP9(rs.getString(27));
+                ListaA.add(m);
+            }
+            ps.executeUpdate();
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al ver adopciones.");
+        }
+        return ListaA;
+    }
+     public List listarAdoptadosU(String usuario) {
+        String sql = "SELECT * FROM mascota INNER JOIN adopt_masc ON mascota.id_masc = adopt_masc.id_masc INNER JOIN adoptar ON adoptar.id_adopt = adopt_masc.id_adopt INNER JOIN usuario ON adopt_masc.usuar = usuario.usuar INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE masc_usu.usuar = '"+usuario+"'";
+        List<Usuario> ListaAU = new ArrayList<>();
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            
+            while(rs.next()){
+                Usuario u = new Usuario();
+                u.setUsuario(rs.getString(28));
+                u.setTelefono(rs.getString(30));
+                u.setGenero(rs.getString(31));
+                u.setFecha_nac(rs.getString(32));
+                u.setAp_pat(rs.getString(33));
+                u.setAp_mat(rs.getString(34));
+                u.setNombre(rs.getString(35));
+                u.setMail(rs.getString(37));
+                ListaAU.add(u);
+            }
+            ps.executeUpdate();
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error al ver adopciones2.");
+        }
+        return ListaAU;
     }
 }
