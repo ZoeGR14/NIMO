@@ -48,19 +48,24 @@
                             sesion.setAttribute("user", usu);
                             sesion.setAttribute("tipo_usuario", tipous);
                             if(tipous.equals("1")){
-                                out.println("<script>Swal.fire('Bienvendio','','success')</script>");
+                                out.println("<script>Swal.fire('Bienvenido','','success')</script>");
                                 response.sendRedirect("inicio.jsp");
                             }
                             else
                                 if(tipous.equals("2")){
-                                    out.println("<script>Swal.fire('Bienvendio','','success')</script>");
+                                    out.println("<script>Swal.fire('Bienvenido','','success')</script>");
                                     response.sendRedirect("inicio_vete.jsp");
                                 }
-                            else
-                                if(tipous.equals("4")){
-                                    out.println("<script>Swal.fire('Administrador detectado, redirigiendo al Log In indicado','','success')</script>");
-                                    response.sendRedirect("inicioSPersonal.html");
-                                }
+                                else
+                                    if(tipous.equals("3")){
+                                        out.println("<script>Swal.fire('Bienvenido','','success')</script>");
+                                        response.sendRedirect("inicio_veteNV.jsp");
+                                    }
+                                    else
+                                        if(tipous.equals("4")||tipous.equals("5")||tipous.equals("7")||tipous.equals("8")){
+                                            out.println("<script>Swal.fire('Trabajador detectado, redirigiendo al Login de trabajadores','','success')</script>");
+                                            response.sendRedirect("inicioSPersonal.html");
+                                        }
                         }
                         else{
                             out.println("<script>Swal.fire({icon: 'error',title: 'Contraseña incorrecta',text: 'Inténtelo de nuevo'});</script>");
@@ -78,3 +83,4 @@
              %>
     </body>
 </html>
+
