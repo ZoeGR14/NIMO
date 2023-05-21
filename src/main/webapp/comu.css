@@ -3,11 +3,12 @@ body{
     padding: 0;
     font-family: 'Montserrat';
 }
+
 section{
     height: calc(100vh - 100px);
 }
 .izquierda{
-    background: #cc99ff;
+    background: url(imagenes/esta.png);
     height: calc(100vh - 100px);;
     width: 50%;
     
@@ -62,3 +63,5 @@ p{
 .link{
     text-align: center;    
 }
+
+
