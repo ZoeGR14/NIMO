@@ -32,6 +32,8 @@
                 </ul>
             </nav>
             <section>
+                <div class="contenedor">
+                <link rel="stylesheet" href="listado_comu.css">    
                 <%
                     Connection cnx = null;
                     Statement sta = null;
@@ -39,27 +41,28 @@
 
                     try{
                         Class.forName("com.mysql.jdbc.Driver");
-                        cnx  = DriverManager.getConnection("jdbc:mysql://localhost:3308/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");
+                        cnx  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");
                         sta = cnx.createStatement();
                         rs = sta.executeQuery("select * from comunidad");
                         while (rs.next()) {   
                                                              
                     %>
-                <link rel="stylesheet" href="tarjetas_listadoComu.css">
-                    <div class="contenedor">
-                        <div class="card">
-                            <div class="card-encabezado"><%=rs.getString(3)%></div>
-                        <div class="card-contenido">
-                            <div class="nombre desplazar">
-                               ¿De qué trata la comunidad?             
-                            </div>
-                            <div class="descripcion">
-                                <%=rs.getString(4)%>
-                            </div>                          
-                        </div>
-                        </div>
-                    </div>                   
+                
+                
+                  
+                <div class="card">
+                    <div class="content">
+                      <p class="heading"><%=rs.getString(3)%>
+                      </p><p class="para">
+                        <%=rs.getString(4)%>
+                      </p>
+                      <a href="contenido_comunidades.jsp?paso=<%=rs.getString(1)%>"><button class="btn"><span></span>¡Ver más!</button></a>
 
+                    </div>
+                  </div>
+                      <br>
+                </div>
+                    
                     <%
     
                             }
@@ -71,7 +74,7 @@
                             out.print(error.toString());
                         }
                     %>
-
+                 
             </section>
     </body>
 </html>
