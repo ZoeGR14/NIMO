@@ -33,7 +33,7 @@
             }
 
             body{
-                zoom: 0.67;
+                zoom: adjust;
                 font-size: 16px;
                 line-height: 1.5;
             }
@@ -144,7 +144,7 @@
             }
 
             .boton-go{
-                font-size: 16px;
+                font-size: 14px;
                 color: rgb(235, 146, 31);
                 border: 1px solid rgb(235, 146, 31);
                 color: #fff;
@@ -169,7 +169,7 @@
 
             .about{
                 width: 100%;
-                background-color: #f8f3ff;
+                background-color: #f1e7f5;
                 min-height: 100vh;
                 font-family: 'Nunito Sans', sans-serif;
                 display: flex;
@@ -198,6 +198,7 @@
                 border-radius: 5px;
                 animation: float 2.5s ease-in-out 0s infinite forwards;
             }
+            
 
             .cover{
                 position: absolute;
@@ -212,6 +213,7 @@
                 cursor: pointer;
                 color: #c59bfb;
                 transition: all 0.3s ease;
+                z-index: 2;
             }
 
             .texto_card{
@@ -269,7 +271,7 @@
             }
 
             .seccionsita{
-                background-color: #f8f3ff;
+                background-color: #f1e7f5;
             }
 
             .box__footer{
@@ -426,7 +428,9 @@
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/img1.png" alt="">
+                    
+                        <img src="imagenes/img1.png" alt="">
+                    
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -438,7 +442,9 @@
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/calendario.png" alt="">
+                    
+                        <img src="imagenes/calendario.png" alt="">
+                    
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -450,7 +456,9 @@
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/info.png" alt="">
+                    
+                        <img src="imagenes/info.png" alt="">
+                    
                 </div>
             </div>  
             <div style="margin-top: 35px;">
@@ -464,7 +472,9 @@
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/img4.png" alt="">
+                   
+                        <img src="imagenes/img4.png" alt="">
+                   
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -476,7 +486,9 @@
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/notas.png" alt="">
+                    
+                        <img src="imagenes/notas.png" alt="">
+                    
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -488,7 +500,9 @@
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/vete.png" alt="">
+                    
+                        <img src="imagenes/vete.png" alt="">
+                    
                 </div>
             </div>
 
@@ -503,7 +517,9 @@
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/salud.png" alt="">
+                    
+                        <img src="imagenes/salud.png" alt="">
+                    
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -515,7 +531,9 @@
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/config.png" alt="">
+                    
+                        <img src="imagenes/config.png" alt="">
+                    
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -527,7 +545,9 @@
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/sesion.png" alt="">
+                    
+                        <img src="imagenes/sesion.png" alt="">
+                   
                 </div>
             </div>
 

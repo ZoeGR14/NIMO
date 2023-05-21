@@ -7,7 +7,7 @@
     <head>
         <link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Contacta Veterinarios</title>
+        <title>Clientes</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
