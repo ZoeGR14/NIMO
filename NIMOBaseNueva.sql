@@ -19,9 +19,11 @@ mail_us varchar(50)
 	1 - Cliente
     2 - Veterinario Validado
     3 - Veterinario NO Validado
-    4 - Administrador
+    4 - Administrador => todos los gestores
     5 - Gestor de Veterinarios 
-    6 - Invitado */
+    6 - Invitado
+    7 - Gestor de Comentarios
+    8 - Gestor de Usuarios*/
 
 create table foro(
 id_foro varchar(25) primary key not null,
@@ -165,6 +167,19 @@ comunidad_name varchar (50),
 descripcion_comu varchar(2000)
 );
 
+create table recordatorios(
+id_recordatorio int primary key auto_increment not null,
+usuar varchar(50),
+motivo varchar (3000),
+fechaRec varchar(50)
+);
+
+create table recordatorio_vete(
+id_recordatorio int auto_increment not null,
+cedula int,
+foreign key (id_recordatorio) references recordatorios(id_recordatorio) on delete cascade on update cascade,
+foreign key (cedula) references veterinario(cedula) on update cascade on delete cascade
+);
 
 select * from usuario;
 select * from veterinario;
@@ -180,6 +195,8 @@ select * from adopcion;
 select * from adopc_masc;
 select * from adoptar;
 select * from adopt_masc;
+select * from recordatorios;
+select * from recordatorio_vete;
 
 /*SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc WHERE mascota.estado = 'adopcion';
 SELECT * FROM masc_usu INNER JOIN adopc_masc  ON masc_usu.id_masc = adopc_masc.id_masc WHERE usuar != "willis";
