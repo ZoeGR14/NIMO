@@ -518,7 +518,7 @@
                         </div>
                     </div>
                     
-                        <img src="imagenes/salud.png" alt="">
+                    <img src="imagenes/saludd.png" alt="" style="height: 100%; width: 100%;">
                     
                 </div>
                 <div class="cardd">
