@@ -1,21 +1,25 @@
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page session="true"%>
 <!DOCTYPE html>
 <html>
     <head><link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cambio de Contraseña</title>
-        <link rel="stylesheet" href="loginn.css">
+        <link rel="stylesheet" href="recordatorioc.css">
         <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
             body{
-                background-color: #4b277a;
+                height: calc(100vh-100px);
+                width: 100%;
+                background-image: url(imagenes/lavander.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
             }
                         
 
             .bgcolor{
-                background-color: #4b277a;
+                background-color: #541c0a;
                 transition: all .35s ease-in-out;
               }
               
@@ -40,10 +44,6 @@
             :before, :after{
                 box-sizing: border-box;
             }
-
-            /*img{
-                width: 100%;
-            }*/
 
             .container{
                 max-width: 1140px;
@@ -394,91 +394,138 @@
                     transform: translateY(0);
                 }
             }
+            
+                        .containss{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            
+            .containss .strengthMeter{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                
+            }
+            .containss .strengthMeter::before{
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 100%;
+                transition: 0.5s;
+            }
+            .containss.weak .strengthMeter::before{
+                width: 10%;
+                background: #f00;
+                /*filter: drop-shadow(0 0 5px #f00) drop-shadow(0 0 10px #f00) drop-shadow(0 0 20px #f00);*/
+            }
+            .containss.medium .strengthMeter::before{
+                width: 66.66%;
+                background: #ffa500;
+                /*filter: drop-shadow(0 0 5px #ffa500) drop-shadow(0 0 10px #ffa500) drop-shadow(0 0 20px #ffa500);*/
+            }
+            .containss.strong .strengthMeter::before{
+                width: 100%;
+                background: #0f0;
+                /*filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 10px #0f0) drop-shadow(0 0 20px #0f0);*/
+            }
+            .containss .strengthMeter::after{
+                position: absolute;
+                top: 5px;
+                left: 30px;
+                color: #fff;
+                transition: 0.5s;
+                font-size: xx-small;
+            }
+            .containss.weak .strengthMeter::after{
+                content: 'Weak Password';
+                color: #f00;
+                /*filter: drop-shadow(0 0 5px #f00);*/
+            }
+            .containss.medium .strengthMeter::after{
+                content: 'Medium Password';
+                color: #ffa500;
+                /*filter: drop-shadow(0 0 5px #ffa500);*/
+            }
+            .containss.strong .strengthMeter::after{
+                content: 'Strong Password';
+                color: #0f0;
+                /*filter: drop-shadow(0 0 5px #0f0);*/
+            }
         </style>
         <script src="sweetalert2.all.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9wkNCBFjfknOvfJd2s1MCUM42Ia2QJdU&libraries=places"></script>
 
     </head>
     <body>
-
-
-                    <%
-HttpSession sesion = request.getSession();
+    <%
+            HttpSession sesion = request.getSession();
             String usuario;
             String tipo;
             
+            String clie=request.getParameter("clientesito");
             
+            if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
                 usuario = sesion.getAttribute("user").toString();
                 tipo = sesion.getAttribute("tipo_usuario").toString();
-                
-                Connection con= null;
-                Statement stat =null;
-                //Statement stat2 =null;
-                
-                
-                ResultSet res=null;
-                //ResultSet res2=null;
-                
+                %>
+        <header class="headersito" id="header">
+            <a href="cierreSesion.jsp" class="logoin">
+                <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
+            </a>
+            <ul class="nav">
+                <li><a href="inicio_vete.jsp" class="inicio">Inicio</a></li>
+                <li><a href="misMascotas_1.html" class="">Mis Mascotas</a></li>
+                <li><a href="calendario_1.html" class="">Calendario</a></li>
+                <li><a href="informativo_1.html" class="">Información Mascotas</a></li>
+                <li><a href="comunidad_1.html" class="">Comunidad</a></li>
+                <li><a href="notas_1.html" class="">Notas</a></li>
+                <li><a href="citas_1.html" class="">Citas</a></li>
+                <li><a href="saludBienestar_1.html" class="">Salud y Bienestar</a></li>
+                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="soyVeterinario.jsp" class="">Opciones Veterinario</a></li>
+                <li><a href="cierreSesion_1.jsp" class="">Cerrar Sesión</a></li>
+            </ul>
+        </header>
+        <br><br><br><br>
+        <br><br>
+         <div class="login-card-container">
+            <div class="login-card">
+                <div class="login-card-logo">
+                    <img src="imagenes/logo_nimo.png" alt="logo">
+                </div>
+                <div class="login-card-header">
+                    <h1>Nuevo Recordatorio</h1>
+                    <div>Agrega un recordatorio sobre tu cliente</div>
+                </div>
+                <form action="guardaReco.jsp" method="post" name="registros" class="login-card-form">
+                    
+                    <div class="form-item">
+                        Cliente:&nbsp;<input type="text" placeholder="Cliente" name="client" value="<%out.println(clie);%>" required="true" readonly="true">
+                    </div>
+                    <div class="form-item">
+                        Descripción:&nbsp;<input type="text" placeholder="Motivo del recordatorio" name="motive" required="true" autofocus="true">
+                    </div>
+                    <div class="form-item">
+                            Programado para:&nbsp;    <input type="date" name="f_rec" required>
+                            </div>
+                    <center>
+                        <button type="submit" name="guardar" id="boton" value="Guardar">Guardar</button>
+                    </center>
+                    <br><br>
+                </form>
 
-                
-                try{
-                    Class.forName("com.mysql.jdbc.Driver");
-                    con  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
-                    stat = con.createStatement();
-                    //stat2 = con.createStatement();
-                    
-                }
-                catch(SQLException error){
-                    out.print(error.toString());
-                }
-                try{
-                    String contra=request.getParameter("cont_actual");
-                    String confir = request.getParameter("confcont_new");
-                    String nueva=request.getParameter("cont_new");
-                    res=stat.executeQuery("select*from usuario where usuar='"+usuario+"';");
-                    
-                    if(!res.next()){
-                        out.println("<script>Swal.fire({icon: 'error',title: 'Usuario no encontrado',text: 'Inténtelo de nuevo'});</script>");
-                        out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
-                        out.println("<script>setTimeout(saludos, 1500);</script>");
-                    }
-                    else{
-                          
-                        if(res.getString("pass_us").equals(contra)){
-                            if(nueva.equals(confir)){
-                                stat.executeUpdate("update usuario set usuar='"+usuario+"',pass_us='"+nueva+"' where usuar='"+usuario+"';");
-                                out.println("<script>Swal.fire('Contraseña cambiada con éxito','','success')</script>");
-                                out.println("<script>function saludos(){location.href ='config_vete.jsp';}</script>");
-                                out.println("<script>setTimeout(saludos, 1500);</script>");
-                            }
-                            else{
-                                out.println("<script>Swal.fire({icon: 'error',title: 'La contraseña y su confirmación son diferentes',text: 'Por favor, rectifique e intente nuevamente'});</script>");
-                                out.println("<script>function saludos(){location.href ='cambiaContra_vete.jsp';}</script>");
-                                out.println("<script>setTimeout(saludos, 1500);</script>");
-                            }
-                            
-                        }
-                        else{
-                            out.println("<script>Swal.fire({icon: 'error',title: 'Contraseña incorrecta',text: 'Inténtelo de nuevo'});</script>");
-                            out.println("<script>function saludos(){location.href ='config_vete.jsp';}</script>");
-                            out.println("<script>setTimeout(saludos, 1500);</script>");
-                        }
-            }
-            }
-                
-                catch(SQLException error){
-                    out.println("<script>Swal.fire({icon: 'error',title: 'Algo salió mal',text: 'Inténtelo de nuevo'});</script>");
-                    out.println("<script>function saludos(){location.href ='config_vete.jsp';}</script>");
-                    out.println("<script>setTimeout(saludos, 1500);</script>");
-                }
-                        
-                        
-                        
-            %>
 
             </div>
-        </div>
-        
+        </div>  
+<%
+    }
+else {
+                out.print("<script>location.replace('inicioSPersonal.jsp');</script>");
+            }
+        %>        
     </body>
 </html>
-
