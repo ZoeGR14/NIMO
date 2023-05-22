@@ -429,7 +429,7 @@
                         </div>
                     </div>
                     
-                        <img src="imagenes/img1.png" alt="">
+                    <img src="imagenes/mismascotasin.png" alt="" style="height: 100%; width: 100%;">
                     
                 </div>
                 <div class="cardd">
