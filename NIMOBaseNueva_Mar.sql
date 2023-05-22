@@ -228,7 +228,14 @@ nueva_publi varchar (1000),
 foreign key (id_comu) references comunidad(id_comu) on delete cascade on update cascade
 );
 
-
+create table calendario(
+id_evento int primary key auto_increment not null,
+usuar varchar (20),
+fecha_evento varchar (50),
+hora_evento varchar (20),
+descripcion_evento varchar (100),
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade
+);
 
 create table cerrado_FAQ(
 id_reporte int auto_increment not null,
@@ -248,4 +255,4 @@ select * from usu_coment;
 select * from veterinario_cliente;
 select * from comunidad;
 select * from publicaciones;
-
+select * from calendario;
