@@ -12,7 +12,6 @@
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
-            
 
             .bgcolor{
                 background-color: #4b277a;
@@ -33,7 +32,7 @@
             }
 
             body{
-                zoom: adjust;
+                
                 font-size: 16px;
                 line-height: 1.5;
             }
@@ -144,7 +143,7 @@
             }
 
             .boton-go{
-                font-size: 14px;
+                font-size: 16px;
                 color: rgb(235, 146, 31);
                 border: 1px solid rgb(235, 146, 31);
                 color: #fff;
@@ -169,7 +168,7 @@
 
             .about{
                 width: 100%;
-                background-color: #f1e7f5;
+                background-color: #f8f3ff;
                 min-height: 100vh;
                 font-family: 'Nunito Sans', sans-serif;
                 display: flex;
@@ -198,7 +197,6 @@
                 border-radius: 5px;
                 animation: float 2.5s ease-in-out 0s infinite forwards;
             }
-            
 
             .cover{
                 position: absolute;
@@ -213,7 +211,6 @@
                 cursor: pointer;
                 color: #c59bfb;
                 transition: all 0.3s ease;
-                z-index: 2;
             }
 
             .texto_card{
@@ -271,7 +268,7 @@
             }
 
             .seccionsita{
-                background-color: #f1e7f5;
+                background-color: #f8f3ff;
             }
 
             .box__footer{
@@ -331,30 +328,14 @@
                 background-color: #7a7a7a;
             }
 
-            .cajita img,h1,h2,h3,ul li,p{
-                transition: 5s ease all;
-            }
-            .cajita img {
-                animation: entradaTitulo 5s ease .5s forwards;
-            }
-            .cajita h1 {
-                animation: entradaTitulo 5s ease .5s forwards;
-            }
-            .cajita h2 {
-                animation: entradaSubtitulo 5s ease .5s forwards;
-            }
-            .cajita h3 {
-                animation: entradaInputs 6s linear 1s forwards;
-            }
-            .cajita h4 {
-                animation: entradaInputs 6s linear 1s forwards;
-            }
-            .cajita ul li {
-                animation: entradaInputs 6s linear 1s forwards;
-            }
-            .cajita .textt {
-                animation: entradaInputs 6s linear 1s forwards;
-            }
+            .cajita img,h1,h2,h3,ul li,p{transition: 5s ease all;}
+            .cajita img { animation: entradaTitulo 5s ease .5s forwards; }
+            .cajita h1 { animation: entradaTitulo 5s ease .5s forwards; }
+            .cajita h2 { animation: entradaSubtitulo 5s ease .5s forwards; }
+            .cajita h3 { animation: entradaInputs 6s linear 1s forwards; }
+            .cajita h4 { animation: entradaInputs 6s linear 1s forwards; }
+            .cajita ul li { animation: entradaInputs 6s linear 1s forwards; }
+            .cajita .textt { animation: entradaInputs 6s linear 1s forwards; }
         </style>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
         <script>
@@ -370,12 +351,12 @@
                     }
                     previousScroll = scroll;
                 });
+
             });
-            
         </script>
     </head>
 
-    <body class="hidden">
+    <body>
         <%
             HttpSession sesion = request.getSession();
             String usuario;
@@ -387,15 +368,14 @@
 
         %>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
         <header class="headersito" id="header">
             <a href="cierreSesion.jsp" class="logoin">
                 <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
             </a>
             <ul class="nav">
                 <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
-                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mascotas</a></li>
+                <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="informativo.html" class="">Información Mascotas</a></li>
                 <li><a href="comunidad.html" class="">Comunidad</a></li>
                 <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
@@ -428,9 +408,7 @@
                             </button>
                         </div>
                     </div>
-                    
-                        <img src="imagenes/img1.png" alt="">
-                    
+                    <img src="imagenes/img1.png" alt="">
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -442,9 +420,7 @@
                             </button>
                         </div>
                     </div>
-                    
-                        <img src="imagenes/calendario.png" alt="">
-                    
+                    <img src="imagenes/calendario.png" alt="">
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -456,9 +432,7 @@
                             </button>
                         </div>
                     </div>
-                    
-                        <img src="imagenes/info.png" alt="">
-                    
+                    <img src="imagenes/info.png" alt="">
                 </div>
             </div>  
             <div style="margin-top: 35px;">
@@ -472,9 +446,7 @@
                             </button>
                         </div>
                     </div>
-                   
-                        <img src="imagenes/img4.png" alt="">
-                   
+                    <img src="imagenes/img4.png" alt="">
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -486,9 +458,7 @@
                             </button>
                         </div>
                     </div>
-                    
-                        <img src="imagenes/notas.png" alt="">
-                    
+                    <img src="imagenes/notas.png" alt="">
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -500,9 +470,7 @@
                             </button>
                         </div>
                     </div>
-                    
-                        <img src="imagenes/vete.png" alt="">
-                    
+                    <img src="imagenes/vete.png" alt="">
                 </div>
             </div>
 
@@ -517,9 +485,7 @@
                             </button>
                         </div>
                     </div>
-                    
-                        <img src="imagenes/salud.png" alt="">
-                    
+                    <img src="imagenes/salud.png" alt="">
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -531,9 +497,7 @@
                             </button>
                         </div>
                     </div>
-                    
-                        <img src="imagenes/config.png" alt="">
-                    
+                    <img src="imagenes/config.png" alt="">
                 </div>
                 <div class="cardd">
                     <div class="cover">
@@ -545,9 +509,7 @@
                             </button>
                         </div>
                     </div>
-                    
-                        <img src="imagenes/sesion.png" alt="">
-                   
+                    <img src="imagenes/sesion.png" alt="">
                 </div>
             </div>
 
@@ -632,7 +594,5 @@
             </div>
         </footer>
     </section>
-    <script>
-       
-    </script>
+
 </html>
