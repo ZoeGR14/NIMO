@@ -499,7 +499,7 @@
                         </button>
                     </div>
                 </div>
-                <img src="imagenes/vet_ilus.png" alt="">
+                <img src="imagenes/fongestorVet.png" alt="" style="width: 100%; height: 100%;">
             </div>
             </div>
             

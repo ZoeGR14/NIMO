@@ -7,7 +7,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class enviaaa {
+public class validadoVete {
     private String correoo;
 
     public String getContras() {
@@ -33,7 +33,7 @@ public class enviaaa {
         String contra_usu = this.contras;
         String correoEnvia = "soporte.emn.corp@gmail.com";
         String contrasenia = "drepvebatvzbarov";
-        String mensaje = "Lamentamos que hayas perdido tu contraseña\nEn este correo la encontrarás:\n" + contra_usu;
+        String mensaje = "¡Felicitaciones!\nTu cédula profesional ha sido validada por uno de nuestro expertos\n Tu registro ha sido modificado, y tu tipo de usuario ahora es 'Veterinario Validado'\nGracias por unirte a los Veterinarios usuarios de NIMO, cada día somos más";
         
         //String recibe = correoo;
         
@@ -49,7 +49,7 @@ public class enviaaa {
         try {
             mail.setFrom(new InternetAddress(correoEnvia));
             mail.addRecipient(Message.RecipientType.TO, new InternetAddress(Correo));
-            mail.setSubject("Recuperación de contraseña - NIMO");
+            mail.setSubject("Estatus de Validación de Veterinario - NIMO");
             mail.setText(mensaje);
             
             Transport transporte = sesion.getTransport("smtp");
