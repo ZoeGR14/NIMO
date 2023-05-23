@@ -11,169 +11,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="menusito.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="mainmain.css">
+        <link rel="stylesheet" href="modalContacto.css">
         <title>Mis Adopciones</title>
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap');
-
-            * {
-                font-family: 'Poppins', sans-serif;
-            }
-
-            .cards {
-                display: flex;
-                flex-direction: row;
-                gap: 15px;
-            }
-
-            .card {
-                background-color: #3d1f7a;
-            }
-
-            .cards .card {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                text-align: center;
-                height: auto;
-                width: 250px;
-                border-radius: 10px;
-                color: white;
-                cursor: pointer;
-                transition: 400ms;
-                padding: 10px;
-            }
-
-            .cards .card p.tip {
-                font-size: 1em;
-                font-weight: 700;
-            }
-
-            .cards .card p.second-text {
-                font-size: .7em;
-            }
-
-            .cards .card:hover {
-                transform: scale(1.1, 1.1);
-            }
-
-            .cards:hover>.card:not(:hover) {
-                filter: blur(10px);
-                transform: scale(0.9, 0.9);
-            }
-
-            .contenedor {
-                width: 500px;
-                height: auto;
-                display: flex;
-            }
-            .ola{
-                display: flex;
-                flex-direction: row;
-            }
-            .button {
-                flex-direction: row;
-                background: transparent;
-                position: relative;
-                padding: 5px 15px;
-                display: flex;
-                align-items: center;
-                font-size: 10px;
-                font-weight: 600;
-                text-decoration: none;
-                cursor: pointer;
-                border: 1px solid rgb(165, 110, 228);
-                border-radius: 25px;
-                outline: none;
-                overflow: hidden;
-                color: rgb(165, 110, 228);
-                transition: color 0.3s 0.1s ease-out;
-                text-align: center;
-                margin: 3px;
-            }
-
-            .button span {
-                margin: 10px;
-            }
-
-            .button::before {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                content: '';
-                border-radius: 50%;
-                display: block;
-                width: 20em;
-                height: 20em;
-                left: -5em;
-                text-align: center;
-                transition: box-shadow 0.5s ease-out;
-                z-index: -1;
-            }
-
-            .button:hover {
-                color: #fff;
-                border: 1px solid rgb(165, 110, 228);
-            }
-
-            .button:hover::before {
-                box-shadow: inset 0 0 0 10em rgb(165, 110, 228);
-            }
-
-            .button2 {
-                flex-direction: row;
-                background: transparent;
-                position: relative;
-                padding: 5px 15px;
-                display: flex;
-                align-items: center;
-                font-size: 10px;
-                font-weight: 600;
-                text-decoration: none;
-                cursor: pointer;
-                border: 1px solid rgb(228, 110, 110);
-                border-radius: 25px;
-                outline: none;
-                overflow: hidden;
-                color: rgb(228, 110, 110);
-                transition: color 0.3s 0.1s ease-out;
-                text-align: center;
-                margin: 3px;
-            }
-
-            .button2 span {
-                margin: 10px;
-            }
-
-            .button2::before {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                margin: auto;
-                content: '';
-                border-radius: 50%;
-                display: block;
-                width: 20em;
-                height: 20em;
-                left: -5em;
-                text-align: center;
-                transition: box-shadow 0.5s ease-out;
-                z-index: -1;
-            }
-
-            .button2:hover {
-                color: #fff;
-                border: 1px solid rgb(228, 110, 110);
-            }
-
-            .button2:hover::before {
-                box-shadow: inset 0 0 0 10em rgb(228, 110, 110);
+            body{
+            background-image:url(imagenes/fonditouwu2.jpg);
+            background-size: cover;
+            background-position: center center;
             }
         </style>
     </head>
@@ -256,21 +102,46 @@
         </aside>
         <section class="ventana">
             <div class="contenedor">
-                <c:forEach items="${listaAd}" var="datote">
-                <div class="cards">
-                    <div class="card">
-                        <p class="tip">${datote.getNombre()}</p>
-                        <p class="second-text">Lorem Ipsum</p>
-                        <button class="button">Ver más</button>
-                        <div class="ola">
-                            <button class="button">Contactar</button>
-                            <button class="button2">Rechazar</button>
+                    <div class="cards">
+                <c:set var="variable" value="${0}"/>
+                <c:forEach items="${listaAd}" var="listaAd" varStatus="status">
+                    <c:set var="variable" value="${variable + 1}"/>
+                        <div class="card" style="background-image: url(ControlerIMG?id=${listarAd.getId()};)">
+                            <p class="tip">${listaAd.getNombre()}</p>
+                            <p class="second-text">${listaAd.getUsuario()}</p>
+                            <form action="Controler?accion=verFormularioAdopcion" method="post">
+                                <button class="button" name="formulario" value="${listaAd.getIdD()}">Ver respuestas</button>
+                            </form>
+                            <div class="ola">
+                                <button class="button"  data-name="p-${variable}" name="contactar" value="${listaAd.getUsuario()}">Contactar</button>
+                                <form action="Controler?accion=eliminarSolicitud" method="post">
+                                    <button class="button2" name="eliminar" value="${listaAd.getIdD()}">Rechazar</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                </div>
                 </c:forEach>
+                    </div>
+                <c:set var="target" value="${0}"/>
+                <div class="contacto">
+                    <c:forEach var="listaAd" items="${listaAd}">
+                        <c:set var="target" value="${target + 1}"/>
+                        <div class="info" data-target="p-${target}">
+                            <i class="fas fa-times"></i>
+                            <h3>${listaAd.getNombre()}</h3>
+                            <p>Información contacto:</p>
+                            <p class='informacion'>
+                                Nombre: ${listaAd.getNombre_usu()}<br>
+                                Apellidos: ${listaAd.getAp_pat()} ${listaAd.getAp_mat()}<br>
+                                E-mail: ${listaAd.getMail()}<br>
+                                Teléfono: ${listaAd.getTelefono()}<br>
+                            </p>
+                        </div>
+                    </c:forEach>
+                </div>
             </div>
         </section>
     </body>
- <script src="prueba.js"></script>
+    <script src="prueba.js"></script>
+    <script src="modalContacto.js"></script>
+
 </html>

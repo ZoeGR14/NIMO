@@ -6,6 +6,8 @@ public class Mascota {
     String nombre, raza, tipoRaza, nacimMasc, gustos, disgustos, sexo, tipoAnimal, alergias, color, idDuenio, estado;
     int peso, id;
     InputStream foto;
+    String usuario, telefono, genero, fecha_nac, ap_pat, ap_mat, nombre_usu, pass_usu, mail;
+
     
     int idA;
     String historia;
@@ -25,7 +27,7 @@ public class Mascota {
     public Mascota(){
     }
 
-    public Mascota(String nombre, String raza, String tipoRaza, String nacimMasc, String gustos, String disgustos, String sexo, String tipoAnimal, String alergias, String color, String idDuenio, String estado, int peso, int id, InputStream foto, int idA, String historia, String salud, String ubicacion, String mascota, int idD, String p1, String p2, String p3, String p4, String p5, String p6, String p7, String p8, String p9) {
+    public Mascota(String nombre, String raza, String tipoRaza, String nacimMasc, String gustos, String disgustos, String sexo, String tipoAnimal, String alergias, String color, String idDuenio, String estado, int peso, int id, InputStream foto, String usuario, String telefono, String genero, String fecha_nac, String ap_pat, String ap_mat, String nombre_usu, String pass_usu, String mail, int idA, String historia, String salud, String ubicacion, String mascota, int idD, String p1, String p2, String p3, String p4, String p5, String p6, String p7, String p8, String p9) {
         this.nombre = nombre;
         this.raza = raza;
         this.tipoRaza = tipoRaza;
@@ -41,11 +43,23 @@ public class Mascota {
         this.peso = peso;
         this.id = id;
         this.foto = foto;
+        /*Usuario*/
+        this.usuario = usuario;
+        this.telefono = telefono;
+        this.genero = genero;
+        this.fecha_nac = fecha_nac;
+        this.ap_pat = ap_pat;
+        this.ap_mat = ap_mat;
+        this.nombre_usu = nombre_usu;
+        this.pass_usu = pass_usu;
+        this.mail = mail;
+        /*Dar en Adopcion*/
         this.idA = idA;
         this.historia = historia;
         this.salud = salud;
         this.ubicacion = ubicacion;
         this.mascota = mascota;
+        /*Adoptar*/
         this.idD = idD;
         this.p1 = p1;
         this.p2 = p2;
@@ -57,6 +71,7 @@ public class Mascota {
         this.p8 = p8;
         this.p9 = p9;
     }
+
 
     
 
@@ -298,6 +313,77 @@ public class Mascota {
 
     public void setP9(String p9) {
         this.p9 = p9;
+    }
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getFecha_nac() {
+        return fecha_nac;
+    }
+
+    public void setFecha_nac(String fecha_nac) {
+        this.fecha_nac = fecha_nac;
+    }
+
+    public String getAp_pat() {
+        return ap_pat;
+    }
+
+    public void setAp_pat(String ap_pat) {
+        this.ap_pat = ap_pat;
+    }
+
+    public String getAp_mat() {
+        return ap_mat;
+    }
+
+    public void setAp_mat(String ap_mat) {
+        this.ap_mat = ap_mat;
+    }
+
+    public String getNombre_usu() {
+        return nombre_usu;
+    }
+
+    public void setNombre_usu(String nombre_usu) {
+        this.nombre_usu = nombre_usu;
+    }
+
+    public String getPass_usu() {
+        return pass_usu;
+    }
+
+    public void setPass_usu(String pass_usu) {
+        this.pass_usu = pass_usu;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
     
 }

@@ -596,55 +596,81 @@ public class MascotaDAO {
             
             while(rs.next()){
                 Mascota m = new Mascota();
-                m.setNombre(rs.getString(2));
-                m.setFoto(rs.getBinaryStream(10));
-                m.setP1(rs.getString(19));
-                m.setP2(rs.getString(20));
-                m.setP3(rs.getString(21));
-                m.setP4(rs.getString(22));
-                m.setP5(rs.getString(23));
-                m.setP6(rs.getString(24));
-                m.setP7(rs.getString(25));
-                m.setP8(rs.getString(26));
-                m.setP9(rs.getString(27));
+                m.setId(rs.getInt("id_masc"));
+                m.setNombre(rs.getString("nombre_masc"));
+                m.setFoto(rs.getBinaryStream("imagen"));
+                m.setIdD(rs.getInt("id_adopt"));
+                m.setP1(rs.getString("p1"));
+                m.setP2(rs.getString("p2"));
+                m.setP3(rs.getString("p3"));
+                m.setP4(rs.getString("p4"));
+                m.setP5(rs.getString("p5"));
+                m.setP6(rs.getString("p6"));
+                m.setP7(rs.getString("p7"));
+                m.setP8(rs.getString("p8"));
+                m.setP9(rs.getString("p9"));
+                m.setUsuario(rs.getString("usuar"));
+                m.setTelefono(rs.getString("telefono"));
+                m.setGenero(rs.getString("gen"));
+                m.setFecha_nac(rs.getString("f_nac"));
+                m.setAp_pat(rs.getString("apPat_us"));
+                m.setAp_mat(rs.getString("apMat_us"));
+                m.setNombre_usu(rs.getString("nom_us"));
+                m.setMail(rs.getString("mail_us"));
                 ListaA.add(m);
             }
-            ps.executeUpdate();
+            
             ps.close();
             con.close();
+            
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error al ver adopciones.");
         }
         return ListaA;
     }
-     public List listarAdoptadosU(String usuario) {
-        String sql = "SELECT * FROM mascota INNER JOIN adopt_masc ON mascota.id_masc = adopt_masc.id_masc INNER JOIN adoptar ON adoptar.id_adopt = adopt_masc.id_adopt INNER JOIN usuario ON adopt_masc.usuar = usuario.usuar INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE masc_usu.usuar = '"+usuario+"'";
+     public List eliminarSolicitud(String usuario) {
+        String sql = "DELETE FROM mascota INNER JOIN adopt_masc ON mascota.id_masc = adopt_masc.id_masc INNER JOIN adoptar ON adoptar.id_adopt = adopt_masc.id_adopt INNER JOIN usuario ON adopt_masc.usuar = usuario.usuar INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE masc_usu.usuar = '"+usuario+"'";
         List<Usuario> ListaAU = new ArrayList<>();
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
-            rs=ps.executeQuery();
-            
-            while(rs.next()){
-                Usuario u = new Usuario();
-                u.setUsuario(rs.getString(28));
-                u.setTelefono(rs.getString(30));
-                u.setGenero(rs.getString(31));
-                u.setFecha_nac(rs.getString(32));
-                u.setAp_pat(rs.getString(33));
-                u.setAp_mat(rs.getString(34));
-                u.setNombre(rs.getString(35));
-                u.setMail(rs.getString(37));
-                ListaAU.add(u);
-            }
-            ps.executeUpdate();
             ps.close();
             con.close();
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Error al ver adopciones2.");
+            System.out.println("Error al eliminar solicitud.");
         }
         return ListaAU;
+    }
+     public List listarFormularioAdopcion(int id_form) {
+        List<Mascota> lista = new ArrayList<>();
+        String sql = "SELECT * FROM adoptar where id_adopt="+id_form+"";
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                System.out.println("statement");
+                Mascota m = new Mascota();
+                m.setIdD(rs.getInt(1));
+                m.setP1(rs.getString(2));
+                m.setP2(rs.getString(3));
+                m.setP3(rs.getString(4));
+                m.setP4(rs.getString(5));
+                m.setP5(rs.getString(6));
+                m.setP6(rs.getString(7));
+                m.setP7(rs.getString(8));
+                m.setP8(rs.getString(9));
+                m.setP9(rs.getString(10));
+                lista.add(m);
+            }
+            rs.close();
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error 'tás bien mensa al listar el fomrulario :DD");
+        }
+        return lista;
     }
 }

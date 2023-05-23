@@ -111,9 +111,7 @@ public class Controler extends HttpServlet {
                 break;
             case "vAU":
                 List<Mascota> listaAd = dao.listarAdoptados(usuario);
-                List<Usuario> listaUs = dao.listarAdoptadosU(usuario);
-                request.setAttribute("listaAdoptar", listaAd);
-                request.setAttribute("listaContacto", listaUs);
+                request.setAttribute("listaAd", listaAd);
                 request.getRequestDispatcher("verAdopciones.jsp").forward(request, response);
 
         }
@@ -373,8 +371,19 @@ public class Controler extends HttpServlet {
                 dao.agregarUnionAdoptar(mascotita, usuario);
                 response.sendRedirect("Controler?visualizar=verAdop");
                 break;
-            case "adopciones_usu":
-                
+            case "verFormularioAdopcion":
+                int id_form = Integer.parseInt(request.getParameter("formulario"));
+                System.out.println(id_form);
+                List<Mascota> listaAd = dao.listarFormularioAdopcion(id_form);
+                request.setAttribute("listaAd", listaAd);
+                request.getRequestDispatcher("visualizarFormulario.jsp").forward(request, response);
+                break;
+            case "eliminarSolicitud":
+                int idE = Integer.parseInt(request.getParameter("eliminar"));
+                m.setId(idE);
+                dao.eliminarSolicitud(usuario);
+                request.getRequestDispatcher("Controler?visualizar=vAU").forward(request, response);
+                break;
             default:
                 request.getRequestDispatcher("Controler?accion=Visualizar mis mascotas").forward(request, response);
                 break;
