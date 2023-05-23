@@ -75,15 +75,20 @@
         </section>                                                  
 
 
-            <%
+                <%
                     String cad;
+                     String id_usuar;
+                    Connection cnx2 = null;
+                    Statement sta2 = null;
+                    ResultSet rs2 = null;
+                    
                     if (request.getParameter("btnEvento") != null) {
                         String usuario = request.getParameter("txtusuario");
                         String fecha = request.getParameter("txtfecha");
                         String hora = request.getParameter("txthora");
                         String descripcion = request.getParameter("txtdescripcion");
                         cad = "insert into calendario(id_evento,usuar,fecha_evento,hora_evento,descripcion_evento) values (null,'" + usuario + "','" + fecha + "','" + hora + "','" + descripcion + "')";
-                       
+                       id_usuar = usuario;
                         Connection cnx = null;
                         ResultSet rs = null;
                         Statement sta = null;
@@ -97,11 +102,39 @@
                         } catch (SQLException error) {
                             out.print(error.toString());
                         }
-                    }
+                        id_usuar = usuario;
+                    }else{
                 %>
 
                 <div id="miCalendario">
+                    <link rel="stylesheet" href="miCalendario.css"> 
+                 <%
+                   
+
                     
+                        cnx2  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");
+                        sta2 = cnx2.createStatement();                        
+                        rs2 = sta2.executeQuery("select * from calendario where usuar = " + id_usuar + "" );
+                        while (rs2.next()) {   
+                     }                                    
+                    %>                   
+               <div class="card">
+                        <div class="card-border-top">
+                        </div>
+
+                    <span><%=rs2.getString(3)%></span>
+                    <p class="job"><%=rs2.getString(4)%></p>
+                    <p class="job"><%=rs2.getString(5)%></p>                    
+                    </div>
                 </div>
+                        <%
+    
+                            
+                            sta2.close();
+                            cnx2.close();
+                            rs2.close();
+                        }
+                        
+                    %>
             </body>
 </html>
