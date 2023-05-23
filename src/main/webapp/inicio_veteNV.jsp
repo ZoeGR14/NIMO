@@ -474,17 +474,7 @@
                     </div>
                     <img src="imagenes/vete.png" alt="">
                 </div>
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Opciones Veterinario</h2>
-                            <p>...</p>
-                            <button class="view-btn" onclick="Swal.fire('Tu perfil continúa en proceso de validación', 'Continúa navegando por el resto de nuestras opciones', 'warning');">Próximo
-                            </button>
-                        </div>
-                    </div>
-                    <img src="imagenes/vet_ilus.png" alt="">
-                </div>
+                
             </div>
 
             <div style="margin-top: 35px;">
@@ -512,19 +502,17 @@
                     </div>
                     <img src="imagenes/config.png" alt="">
                 </div>
-                <div class="cardd">
+<div class="cardd">
                     <div class="cover">
                         <div class="texto_card">
-                            <h2>Cerrar Sesión</h2>
-                            <p>¡Puedes volver cuando gustes!</p>
-                            <button class="view-btn">
-                                <a href="cierreSesion.jsp">¡Vamos!</a>
+                            <h2>Opciones Veterinario</h2>
+                            <p>...</p>
+                            <button class="view-btn" onclick="Swal.fire('Tu perfil continúa en proceso de validación', 'Continúa navegando por el resto de nuestras opciones', 'warning');">Próximo
                             </button>
                         </div>
                     </div>
-                    <img src="imagenes/sesion.png" alt="">
+                    <img src="imagenes/fongestorVet.png" alt="" style="width: 100%; height: 100%;">
                 </div>
-
 
             </div>
         </section>
