@@ -629,19 +629,16 @@ public class MascotaDAO {
         }
         return ListaA;
     }
-     public List eliminarSolicitud(String usuario) {
-        String sql = "DELETE FROM mascota INNER JOIN adopt_masc ON mascota.id_masc = adopt_masc.id_masc INNER JOIN adoptar ON adoptar.id_adopt = adopt_masc.id_adopt INNER JOIN usuario ON adopt_masc.usuar = usuario.usuar INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE masc_usu.usuar = '"+usuario+"'";
-        List<Usuario> ListaAU = new ArrayList<>();
+     public void eliminarSolicitud(int idD) {
+        String sql = "DELETE FROM adoptar WHERE id_adopt=" + idD;
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
-            ps.close();
-            con.close();
+            ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error al eliminar solicitud.");
         }
-        return ListaAU;
     }
      public List listarFormularioAdopcion(int id_form) {
         List<Mascota> lista = new ArrayList<>();

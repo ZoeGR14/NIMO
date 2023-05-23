@@ -380,9 +380,9 @@ public class Controler extends HttpServlet {
                 break;
             case "eliminarSolicitud":
                 int idE = Integer.parseInt(request.getParameter("eliminar"));
-                m.setId(idE);
-                dao.eliminarSolicitud(usuario);
-                request.getRequestDispatcher("Controler?visualizar=vAU").forward(request, response);
+                System.out.println(idE);
+                dao.eliminarSolicitud(idE);
+                request.getRequestDispatcher("adopciones.html").forward(request, response);
                 break;
             default:
                 request.getRequestDispatcher("Controler?accion=Visualizar mis mascotas").forward(request, response);

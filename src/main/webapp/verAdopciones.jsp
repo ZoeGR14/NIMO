@@ -101,14 +101,15 @@
             </ul>
         </aside>
         <section class="ventana">
+            <h1 class="mainT">Solicitudes de Adopción</h1>
             <div class="contenedor">
                     <div class="cards">
                 <c:set var="variable" value="${0}"/>
                 <c:forEach items="${listaAd}" var="listaAd" varStatus="status">
                     <c:set var="variable" value="${variable + 1}"/>
                         <div class="card" style="background-image: url(ControlerIMG?id=${listarAd.getId()};)">
-                            <p class="tip">${listaAd.getNombre()}</p>
-                            <p class="second-text">${listaAd.getUsuario()}</p>
+                            <p class="tip">Mascota: ${listaAd.getNombre()}</p>
+                            <p class="second-text">Usuario interesado: <p class="second-text" style="color:orange;">${listaAd.getUsuario()}</p></p>
                             <form action="Controler?accion=verFormularioAdopcion" method="post">
                                 <button class="button" name="formulario" value="${listaAd.getIdD()}">Ver respuestas</button>
                             </form>

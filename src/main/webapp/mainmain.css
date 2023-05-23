@@ -236,9 +236,11 @@ header{
 .cards {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 15px;
     margin: 0;
     margin-top: 25px;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -287,12 +289,14 @@ p.second-text{
 }
 
 .contenedor {
-    width: 500px;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     margin: auto;
+    margin-top: -75px;
     align-items: center;
 }
 .ola{
@@ -358,7 +362,7 @@ p.second-text{
     padding: 5px 15px;
     display: flex;
     align-items: center;
-    font-size: 10px;
+    font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     cursor: pointer;
@@ -432,4 +436,11 @@ p.second-text{
 
 .button3:hover::before {
     box-shadow: inset 0 0 0 10em rgb(165, 110, 228);
+}
+
+.mainT{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: -10px;
 }
