@@ -482,7 +482,7 @@
             <p>¡Descubre los beneficios que tenemos para ti!</p>
             <div class="btns">
                 <a href="cliente_vete.jsp"> <button>Verificar Clientes</button></a>
-                <a href="#"> <button>Comunidades</button></a>
+                <a href="recordatorios_vete.jsp"> <button>Recordatorios</button></a>
             </div>
         </div>
         <div class="cols cols1">

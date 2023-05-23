@@ -12,7 +12,6 @@
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
-
             *{
                 padding: 0;
                 margin: 0;
@@ -25,27 +24,42 @@
                 user-select: none;
                 font-family: 'Poppins', sans-serif;
             }
+
             body{
-                margin: 0;
-                padding: 0;
-                min-height: 100vh;
+                font-size: 16px;
+                line-height: 1.5;
                 background: url('imagenes/fondovetes.png');
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 background-size: cover;
-                background-repeat: repeat-y;
+                height: 100%;
+                width: 100%;
+                background-repeat: no-repeat;
             }
-                        .row{
+            
+
+            :before, :after{
+                box-sizing: border-box;
+            }
+
+            /*img{
+                width: 100%;
+            }*/
+
+            .container{
+                max-width: 1140px;
+                margin: auto;
+            }
+
+            .row{
                 display: flex;
                 flex-wrap: wrap;
             }
 
             .logoni{
-                height: 70px;
+                    height: 70px;
             }
+
             #header{
-                background: #4b277a;
+                background-color: #4b277a;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -55,7 +69,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                transition: .5s;
+                transition: .5s;  
             }
 
             .nav{
@@ -66,24 +80,26 @@
             .nav li{
                 margin: 0 0 0 30px;
             }
-            .desplegar{
-            background-color: transparent;
-            cursor: pointer;
-            font-size: 16px;
-            }
-            .nav li a, .desplegar{
-                color: #fff;
+
+            .nav li a{
+                color: white;
                 font-weight: 300;
                 text-transform: capitalize;
                 &.sticky{
-                    color: #fff;
-                }
+                color: #fff;}
             }
 
-            .nav li a:hover, .desplegar:hover{
+            .nav li a:hover{
                 color: #c59bfb;
                 font-weight: 300;
                 text-transform: capitalize;
+            }
+            .nav button{
+                background-color: #4b277a;
+                color: white;
+                font-weight: 300;
+                text-transform: capitalize;
+                cursor: pointer;
             }
 html,
 body {
@@ -106,7 +122,7 @@ body {
     background: rgba(255,255,255,0.8);
     backdrop-filter: blur(10px);
   scrollbar-width: thin;
-  
+  margin-top: 10%;
 }
 
 /* width */

@@ -25,27 +25,42 @@
                 user-select: none;
                 font-family: 'Poppins', sans-serif;
             }
+
             body{
-                margin: 0;
-                padding: 0;
-                min-height: 100vh;
-                background: url('imagenes/bybyby.jpg');
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                font-size: 16px;
+                line-height: 1.5;
+                
                 background-size: cover;
-                background-repeat: repeat-y;
+                height: 100%;
+                width: 100%;
+                background-repeat: no-repeat;
             }
-                        .row{
+            
+
+            :before, :after{
+                box-sizing: border-box;
+            }
+
+            /*img{
+                width: 100%;
+            }*/
+
+            .container{
+                max-width: 1140px;
+                margin: auto;
+            }
+
+            .row{
                 display: flex;
                 flex-wrap: wrap;
             }
 
             .logoni{
-                height: 70px;
+                    height: 70px;
             }
+
             #header{
-                background: #4b277a;
+                background-color: #4b277a;
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -55,7 +70,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                transition: .5s;
+                transition: .5s;  
             }
 
             .nav{
@@ -66,29 +81,21 @@
             .nav li{
                 margin: 0 0 0 30px;
             }
-            .desplegar{
-            background-color: transparent;
-            cursor: pointer;
-            font-size: 16px;
-            }
-            .nav li a, .desplegar{
-                color: #fff;
+
+            .nav li a{
+                color: white;
                 font-weight: 300;
                 text-transform: capitalize;
                 &.sticky{
-                    color: #fff;
-                }
+                color: #fff;}
             }
 
-            .nav li a:hover, .desplegar:hover{
+            .nav li a:hover{
                 color: #c59bfb;
                 font-weight: 300;
                 text-transform: capitalize;
             }
-            body {
-  position: relative;
-  margin: 0;
-}
+
 .sect {
   width: 100%;
   min-height: 100vh;
@@ -124,7 +131,7 @@ h2 {
 }
 
 .gridd{
-    margin-top: 15%;
+    margin-top: 0%;
                 margin-bottom: 50px;
                 margin-left: 150px;
                 display: grid;
@@ -142,6 +149,7 @@ h2 {
   box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
   font-size: 23px;
   font-weight: 600;
+  margin-top: 50%;
 }
 
 .card:hover {
@@ -196,6 +204,16 @@ h2 {
   align-items: center;
 }
 
+.bottar{
+    background-color: #5b1f00;
+    color: white;
+    padding:  0.5rem 0.8rem;
+    border-radius: 2rem;
+    transition: .5s;
+    margin-top: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
         </style>
     </head>
     <body>
@@ -209,7 +227,7 @@ h2 {
                 tipo = sesion.getAttribute("tipo_usuario").toString();
 
         %>
-    <header class="headersito" id="header">
+<header class="headersito" id="header">
         <a href="cierreSesion.jsp" class="logoin">
                 <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
             </a>
@@ -228,11 +246,7 @@ h2 {
                 <li><a href="cierreSesion_1.jsp" class="">Cerrar Sesión</a></li>
             </ul>
         </header>
-        <br>
-<br>
-        <br>
-        <br>
-        <br>
+
         
         <video src="imagenes/video/animated dogs on a purple flower field landscape.mp4" autoplay="true" muted="true" loop="true" poster="https://carontestudio.com/img/contacto.jpg"></video>
   
@@ -282,6 +296,12 @@ h2 {
                                 
                                 Teléfono:&nbsp;&nbsp;<%=rs3.getString(3)%><br>
                                 E-mail:<br><%=rs3.getString(10)%>
+                                <form class="login-card-form" action="agregarecordatorio.jsp" method="post" name="recuerda">
+                                    <input type="hidden" name="clientesito" value="<%out.println(client);%>" required>
+                                    <button type="submit" name="manda" class="bottar">
+                                        Agregar recordatorio
+                                    </button>
+                                </form>
                             </span>
       </center>
 

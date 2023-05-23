@@ -23,7 +23,11 @@ insert into usuario	values	('zoegr', '1', '5568741814','Masculino','2005-01-14',
 							('ingMan3', 4, '5532145124','Masculino','1999-12-31','de','Mantenimiento3','Ingeniero','ingMan3', 'ingenieroMantenimiento3@gmail.com'),
 							('editor1', 4, '5532145124','Masculino','1999-12-31','de','FAQs','Editor','editor1', 'editor1@gmail.com'),
 							('editor2', 4, '5532145124','Masculino','1999-12-31','de','FAQs','Editor','editor2', 'editor2@gmail.com'),
-							('editor3', 4, '5532145124','Masculino','1999-12-31','de','FAQs','Editor','editor3', 'editor3@gmail.com');
+							('editor3', 4, '5532145124','Masculino','1999-12-31','de','FAQs','Editor','editor3', 'editor3@gmail.com'),
+                            ('adminimo', '4', '5526262626','Masculino','2005-10-26','Admin','Admin','Comino','cominitoadmin', 'soporte.emn.corp@gmail.com'),
+                            ('gVeterinarios', '5', '5510101010','Masculino','1990-11-11','Gestor','Veterinarios','Nimo','gestorvete', 'soporte.emn.corp@gmail.com'),
+                            ('gComentarios', '7', '5505050505','Masculino','1990-11-11','Gestor','Comentarios','Nimo','gestorcomen', 'comentarios.emn.corp@gmail.com'),
+                            ('gUsuarios', '8', '5514141414','Masculino','1990-11-11','Gestor','Usuarios','Nimo','gestorusus', 'soporte.emn.corp@gmail.com');
     
 insert into veterinario	values	('12345678', 'Santurce 1065 Residencial Zacatenco', 'mariana'),
 ('34567890', 'Mar Mediterraneo', 'ola'),
