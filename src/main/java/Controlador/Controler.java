@@ -161,6 +161,11 @@ public class Controler extends HttpServlet {
                 dao.eliminar(idEliminado);
                 response.sendRedirect("/NIMO/Controler?visualizar=mascotas");
                 break;
+            case "quitarAdopcion":
+                String idEditadoQA = request.getParameter("edit");
+                dao.quitarAdopcion(idEditadoQA);
+                response.sendRedirect("/NIMO/Controler?visualizar=mascotas");
+                break;
             case "Dar adopcion":
                 List<Mascota> listita = dao.listar(usuario);
                 request.setAttribute("listita", listita);
