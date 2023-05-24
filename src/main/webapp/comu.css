@@ -3,21 +3,22 @@ body{
     padding: 0;
     font-family: 'Montserrat';
 }
+
 section{
-    height: calc(100vh - 100px);
+    height: 100vh;
 }
 .izquierda{
-    background: #cc99ff;
-    height: calc(100vh - 100px);;
+    background: url(imagenes/esta.png);
+    height: 100%;
     width: 50%;
     
 }
 .derecha{
     background: url(imagenes/fondoComunidad.png);
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     width: 50%;
-    height: calc(100vh - 100px);
+    height: 100%;
 }
 
 #pantalla-dividida{
@@ -46,19 +47,8 @@ p{
     margin: auto;
 }
 
-
-/*a{
-    border: 3px solid#ffffff;
-    padding: 20px;
-    text-decoration: none;
-    color: #f8f3ff;
-    border-radius: 30px;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 30px;
-    margin-left: 80px;
-}*/
-
 .link{
     text-align: center;    
 }
+
+

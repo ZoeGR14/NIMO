@@ -8,6 +8,11 @@
             html {
                 height: 100%;
             }
+            .mascotasSelect select option{
+                background-color: rgba(0,0,0,.7);
+                border-radius: 15px;
+                font-size: 18px;
+            }
             .mascotasSelect select{
                 display: inline-block;
                 width: 700px;
@@ -19,9 +24,9 @@
                 border-radius: 0;
                 background: transparent;
                 color: #ffffff;
-                font-size: 0.5em;
+                font-size: 18px;
                 color: #ffffff;
-                border:2px solid rgba(0,0,0,0.2);
+                border:2px solid rgba(255,255,255,0.2);
                 border-radius: 12px;
                 position: relative;
                 transition: all 0.25s ease;
@@ -276,7 +281,7 @@
                     <span class="tooltip">Mis Mascotas</span>
                 </li>
                 <li>
-                    <a href="calendario.html">
+                    <a href="2_calendario.jsp">
                         <i class='bx bx-calendar'></i>
                         <span class="link_name">Calendario</span>
                     </a>

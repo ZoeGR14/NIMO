@@ -423,7 +423,7 @@
                     <span class="tooltip">Mis Mascotas</span>
                 </li>
                 <li>
-                    <a href="calendario.html">
+                    <a href="2_calendario.jsp">
                         <i class='bx bx-calendar'></i>
                         <span class="link_name">Calendario</span>
                     </a>

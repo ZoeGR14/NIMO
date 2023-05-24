@@ -382,7 +382,7 @@ public class Controler extends HttpServlet {
                 int idE = Integer.parseInt(request.getParameter("eliminar"));
                 System.out.println(idE);
                 dao.eliminarSolicitud(idE);
-                request.getRequestDispatcher("adopciones.html").forward(request, response);
+                response.sendRedirect("Controler?visualizar=vAU");
                 break;
             default:
                 request.getRequestDispatcher("Controler?accion=Visualizar mis mascotas").forward(request, response);
