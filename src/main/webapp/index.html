@@ -38,7 +38,26 @@
             body::-webkit-scrollbar {
                 width: 8px;     
                 height: 8px;    
-                display: none;
+                color: #4b277a;  
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background: #a362e5;
+                border-radius: 4px;
+            }
+            
+            body::-webkit-scrollbar-thumb:hover {
+                background: #c59bfb;
+                box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            body::-webkit-scrollbar-thumb:active {
+                background-color: #c59bfb;
+            }
+            
+            body::-webkit-scrollbar-track {
+                background: rgba(255,255,255,0.3);
+                border-radius: 4px;
             }
 
             :before, :after{
