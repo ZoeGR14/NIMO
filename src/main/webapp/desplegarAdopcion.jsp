@@ -186,6 +186,15 @@ Contactar al usuario -->
             .aviso{
 
             }
+            
+            .containerr{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row; 
+                gap: 20px;
+                margin-top: 20px;
+            }
         </style>
     </head>
 
@@ -349,30 +358,33 @@ Contactar al usuario -->
                     </div>
                 </div>
             </c:if>
-            <c:forEach var="listarAdopcion" items="${listarAdopcion}">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: url(ControlerIMG?id=${listarAdopcion.getId()})">
-                            <p class="title">${listarAdopcion.getNombre()}</p>
-                            <p class="title2"> Raza ${listarAdopcion.getRaza()}</p>
-                        </div>
+            <div class="containerr">
 
-                        <div class="flip-card-back">
-                            <p class="title">${listarAdopcion.getNombre()}</p> 
-                            <p>Raza: ${listarAdopcion.getRaza()}</p>
-                            <p>Edad: ${listarAdopcion.getNacimMasc()}</p>
-                            <p>Historia: ${listarAdopcion.getHistoria()}</p>
-                            <p>Estado de salud: ${listarAdopcion.getSalud()}</p>
-                            <p>Ubicación: ${listarAdopcion.getUbicacion()}</p>
-                            <form action="Controler?accion=adoptar" method="post">
-                                <button class="button" name="adopp" value="${listarAdopcion.getId()}">
-                                    <span class="button-content"> ¡Quiero adoptarte! </span>
-                                </button>
-                            </form>
+                <c:forEach var="listarAdopcion" items="${listarAdopcion}">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front" style="background-image: url(ControlerIMG?id=${listarAdopcion.getId()})">
+                                <p class="title">${listarAdopcion.getNombre()}</p>
+                                <p class="title2"> Raza ${listarAdopcion.getRaza()}</p>
+                            </div>
+
+                            <div class="flip-card-back">
+                                <p class="title">${listarAdopcion.getNombre()}</p> 
+                                <p>Raza: ${listarAdopcion.getRaza()}</p>
+                                <p>Edad: ${listarAdopcion.getNacimMasc()}</p>
+                                <p>Historia: ${listarAdopcion.getHistoria()}</p>
+                                <p>Estado de salud: ${listarAdopcion.getSalud()}</p>
+                                <p>Ubicación: ${listarAdopcion.getUbicacion()}</p>
+                                <form action="Controler?accion=adoptar" method="post">
+                                    <button class="button" name="adopp" value="${listarAdopcion.getId()}">
+                                        <span class="button-content"> ¡Quiero adoptarte! </span>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </c:forEach>                        
+                </c:forEach>                        
+            </div>
         </section>
     </body>
     <script src="prueba.js"></script>
