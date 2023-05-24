@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+section{
+    height: calc(100vh - 100px);
+}
+.izquierda{
+    background: #330033;
+    height: calc(100vh - 100px);;
+    width: 50%;
+    
+}
+.derecha{
+    background: url(imagenes/esta.png);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    height: calc(100vh - 100px);
+}
+
+#pantalla-dividida{
+    display: flex;
+    
+}
+
+.creative{
+    color: #f8f3ff;
+}
+.text{
+    color: #f8f3ff;
+}
+h1{
+    font-size: 60px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-left: 190px;
+    margin-top: 80px;
+}
+p{
+    font-size: 19px;
+    line-height: 30px;
+    width: 50%;
+    margin: auto;
+}
+.link{
+    text-align: center;    
+}
+
+
+
+
+
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+    background: #cc99ff;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #cc99ff,
+              0 0 25px #cc99ff,
+              0 0 50px #cc99ff,
+              0 0 100px #cc99ff;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(1) {
+  bottom: 2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #cc99ff);
+  animation: btn-anim1 2s linear infinite;
+}
+
+
+
+.btn {
+    margin-left: 200px;
+ display: inline-block;
+ padding: 0.9rem 1.8rem;
+ font-size: 16px;
+ font-weight: 700;
+ color: white;
+ border: 3px solid rgb(252, 70, 100);
+ cursor: pointer;
+ position: relative;
+ background-color: transparent;
+ text-decoration: none;
+ overflow: hidden;
+ z-index: 1;
+ font-family: inherit;
+}
+
+.btn::before {
+ content: "";
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgb(252, 70, 100);
+ transform: translateX(-100%);
+ transition: all .3s;
+ z-index: -1;
+}
+
+.btn:hover::before {
+ transform: translateX(0);
+}
