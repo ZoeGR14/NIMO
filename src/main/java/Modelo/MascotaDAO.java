@@ -65,6 +65,7 @@ public class MascotaDAO {
                     m.setTipoAnimal(rs2.getString(11));
                     m.setAlergias(rs2.getString(12));
                     m.setColor(rs2.getString(13));
+                    m.setEstado(rs2.getString(14));
                     lista2.add(m);
                 }
                 rs2.close();
@@ -516,6 +517,27 @@ public class MascotaDAO {
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error al actualizar estado, estás bien estúpida alch. Tqm.");
+            e.printStackTrace();
+        }
+    }
+    
+    public void quitarAdopcion(String mascota) {
+        String sql = "update mascota set estado = 'normal' where id_masc = " + mascota + "";
+        String sql2 = "delete adopc_masc, adopcion from adopc_masc join adopcion on adopc_masc.id_adopc = adopcion.id_adopc where id_masc = " + mascota;
+        String sql3 = "delete adopt_masc, adoptar from adopt_masc join adoptar on adopt_masc.id_adopt = adoptar.id_adopt where id_masc = " + mascota;
+        try {
+            con = cn.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+            ps = con.prepareStatement(sql2);
+            ps.executeUpdate();
+            ps = con.prepareStatement(sql3);
             ps.executeUpdate();
 
             ps.close();
