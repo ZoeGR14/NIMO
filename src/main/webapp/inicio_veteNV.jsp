@@ -383,7 +383,7 @@
                 <li><a href="citas_1.html" class="">Citas</a></li>
                 <li><a href="saludBienestar_1.html" class="">Salud y Bienestar</a></li>
                 <li><a href="2_calendario.jsp" class="">Calendario</a></li>
-                <li><a href="adopciones.html" class="">Adopciones</a></li>
+                <li><a href="adopciones.jsp" class="">Adopciones</a></li>
                 <li><a href="config_vete.jsp" class="">Configuración</a></li>
                 <li><a href="cierreSesion_1.jsp" class="">Cerrar Sesión</a></li>
             </ul>

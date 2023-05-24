@@ -36,7 +36,6 @@ id_foro varchar(25),
 foreign key (usuar) references usuario(usuar) on delete cascade on update cascade,
 foreign key (id_foro) references foro(id_foro) on delete cascade on update cascade
 );
-
 /* Estados de una nota
 1. Normal
 2. En Papelera
@@ -166,6 +165,24 @@ usuar varchar(50),
 comunidad_name varchar (50),
 descripcion_comu varchar(2000)
 );
+
+
+create table publicaciones(
+id_publicaciones int primary key auto_increment not null,
+id_comu int,
+nueva_publi varchar (1000),
+foreign key (id_comu) references comunidad(id_comu) on delete cascade on update cascade
+);
+
+create table calendario(
+id_evento int primary key auto_increment not null,
+usuar varchar (20),
+fecha_evento varchar (50),
+hora_evento varchar (20),
+descripcion_evento varchar (100),
+foreign key (usuar) references usuario(usuar) on delete cascade on update cascade
+);
+
 
 create table recordatorios(
 id_recordatorio int primary key auto_increment not null,

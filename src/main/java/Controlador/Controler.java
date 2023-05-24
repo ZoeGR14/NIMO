@@ -339,7 +339,7 @@ public class Controler extends HttpServlet {
                 dao.agregarUnionDAP(Integer.parseInt(mascota));
                 dao.cambiarEstadoDAP(mascota);
                 System.out.println(d.getMascota());
-                request.getRequestDispatcher("adopciones.html").forward(request, response);
+                request.getRequestDispatcher("adopciones.jsp").forward(request, response);
                 break;
             case "adoptar":
                 int idAdop = Integer.parseInt(request.getParameter("adopp"));

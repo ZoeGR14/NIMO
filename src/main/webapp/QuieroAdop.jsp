@@ -86,7 +86,7 @@
                     <span class="tooltip">Salud y Bienestar</span>
                 </li>
                 <li>
-                    <a href="adopciones.html">
+                    <a href="adopciones.jsp">
                         <i class='bx bxs-clinic'></i>
                         <span class="link_name">Adopciones</span>
                     </a>

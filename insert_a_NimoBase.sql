@@ -1,4 +1,5 @@
 use NIMOBase;
+insert into comunidad values(null, 'mariana1', 'comu1','contenido' );
 insert into usuario	values	('zoegr', '1', '5568741814','Masculino','2005-01-14','Gonzalez','Rodriguez','Zoe','zocito', 'zoegr@gmail.com'),
 							('willis', '1', '5568741854','Femenino','2005-03-06','Quintanar','Bravo','Wiliams Jacqueline','willicita', 'willis@gmail.com'),
                             ('lizeth', '3', '5568741814','Femenino','2005-10-26','Contreras','Delgadillo','Lizeth','lizethcita', 'lizeth@gmail.com'),

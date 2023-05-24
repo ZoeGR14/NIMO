@@ -401,7 +401,7 @@
                 <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
                 <li><a href="citas.html" class="">Citas</a></li>
                 <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
-                <li><a href="adopciones.html" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
+                <li><a href="adopciones.jsp" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
                 <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>
 
             </ul>
