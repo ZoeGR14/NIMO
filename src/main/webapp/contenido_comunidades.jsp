@@ -23,7 +23,11 @@
             <form action="Controler" method="post"><ul class="bot_acc">
                     <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
                     <li><button class="desplegar" name="accion" value="Visualizar mis mascotas" style="border: none;">Mis Mascotas</button></li>
+<<<<<<< HEAD
                     <li><a href="2_calendario.jsp" class="">Calendario</a></li>
+=======
+                    <li><a href="calendario.html" class="">Calendario</a></li>
+>>>>>>> 438f1c1153ba0547562242cdc4f8d52a22a90556
                     <li><a href="informativo.html" class="">Información Mascotas</a></li>
                     <li><a href="comunidad.html" class="">Comunidad</a></li>
                     <li><button class="desplegar" name="accion" value="Visualizar mis notas" style="border: none;">Notas</button></li></form>

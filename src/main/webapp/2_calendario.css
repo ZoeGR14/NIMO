@@ -10,7 +10,11 @@ section{
 }
 .izquierda{
     background: #330033;
+<<<<<<< HEAD
     height: 100vh;;
+=======
+    height: calc(100vh - 100px);;
+>>>>>>> 438f1c1153ba0547562242cdc4f8d52a22a90556
     width: 50%;
     
 }
@@ -19,7 +23,11 @@ section{
     background-size: cover;
     background-position: center;
     width: 50%;
+<<<<<<< HEAD
     height: 100vh;
+=======
+    height: calc(100vh - 100px);
+>>>>>>> 438f1c1153ba0547562242cdc4f8d52a22a90556
 }
 
 #pantalla-dividida{
