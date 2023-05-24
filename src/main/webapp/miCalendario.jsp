@@ -6,7 +6,7 @@
     <head><link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Listado Comunidades</title>        
+        <title>Mi Calendario</title>        
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
     </head>
         <body>
@@ -33,8 +33,9 @@
             </nav>
             <section>
                 <div class="contenedor">
-                <link rel="stylesheet" href="listado_comu.css">    
+                <link rel="stylesheet" href="miCalendario.css">    
                 <%
+                    String id_usuar = request.getParameter("cod");
                     Connection cnx = null;
                     Statement sta = null;
                     ResultSet rs = null;
@@ -43,23 +44,22 @@
                         Class.forName("com.mysql.jdbc.Driver");
                         cnx  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");
                         sta = cnx.createStatement();
-                        rs = sta.executeQuery("select * from comunidad");
+                        rs = sta.executeQuery("select * from calendario where usuar = " + id_usuar + "" );
                         while (rs.next()) {   
                                                              
                     %>
                 
                 
-                  
-                <div class="card">
-                    <div class="content">
-                      <p class="heading"><%=rs.getString(3)%>
-                      </p><p class="para">
-                        <%=rs.getString(4)%>
-                      </p>
-                      <a href="contenido_comunidades.jsp?paso=<%=rs.getString(1)%>"><button class="btn"><span></span>¡Ver más!</button></a>
-
+            <div class="card">
+                    <div class="card-border-top">
                     </div>
-                  </div>
+               
+                <span><%=rs.getString(3)%></span>
+                <p class="job"><%=rs.getString(4)%></p>
+                <p class="job"><%=rs.getString(5)%></p>
+                <!-- <a href="miCalendario.jsp"><button class="btn"><span></span>Eliminar</button></a> -->
+            </div>
+
                       <br>
                 </div>
                     

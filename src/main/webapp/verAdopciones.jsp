@@ -8,6 +8,7 @@
     <head>
         <link rel="icon" href="imagenes/logo_nimo.ico">
         <meta charset="UTF-8">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -17,9 +18,9 @@
         <title>Mis Adopciones</title>
         <style>
             body{
-            background-image:url(imagenes/fonditouwu2.jpg);
-            background-size: cover;
-            background-position: center center;
+                background-image:url(imagenes/fonditouwu2.jpg);
+                background-size: cover;
+                background-position: center center;
             }
         </style>
     </head>
@@ -43,7 +44,7 @@
                     <span class="tooltip">Mis Mascotas</span>
                 </li>
                 <li>
-                    <a href="calendario.html">
+                    <a href="2_calendario.jsp">
                         <i class='bx bx-calendar'></i>
                         <span class="link_name">Calendario</span>
                     </a>
@@ -103,10 +104,90 @@
         <section class="ventana">
             <h1 class="mainT">Solicitudes de Adopción</h1>
             <div class="contenedor">
-                    <div class="cards">
-                <c:set var="variable" value="${0}"/>
-                <c:forEach items="${listaAd}" var="listaAd" varStatus="status">
-                    <c:set var="variable" value="${variable + 1}"/>
+                <c:if test="${empty listaAd}">
+                    <style>
+                    .notifications-container {
+                        width: 320px;
+                        height: auto;
+                        font-size: 0.875rem;
+                        line-height: 1.25rem;
+                        display: flex;
+                        margin: auto;
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+
+                    .flex {
+                        display: flex;
+                    }
+
+                    .flex-shrink-0 {
+                        flex-shrink: 0;
+                    }
+
+                    .error-alert {
+                        border-radius: 0.375rem;
+                        padding: 1rem;
+                        background-color: rgb(254 242 242);
+                    }
+
+                    .error-svg {
+                        color: #F87171;
+                        width: 1.25rem;
+                        height: 1.25rem;
+                    }
+
+                    .error-prompt-heading {
+                        color: #991B1B;
+                        font-size: 0.875rem;
+                        line-height: 1.25rem;
+                        font-weight: bold;
+                    }
+
+                    .error-prompt-container {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 1.25rem;
+                    }
+
+                    .error-prompt-wrap {
+                        margin-top: 0.5rem;
+                        color: #B91C1C;
+                        font-size: 0.875rem;
+                        line-height: 1.25rem;
+                    }
+
+                    .error-prompt-list {
+                        padding-left: 1.25rem;
+                        margin-top: 0.25rem;
+                        list-style-type: disc;
+                    }
+                </style>
+                <div class="notifications-container">
+                    <div class="error-alert">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+
+                                <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="error-svg">
+                                <path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" fill-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div class="error-prompt-container">
+                                <p class="error-prompt-heading">No hay respuestas aún. :(
+                                </p><div class="error-prompt-wrap">
+                                    <ul class="error-prompt-list" role="list">
+                                        <li>Espera a que las personas respondan el formulario</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </c:if>
+                <div class="cards">
+                    <c:set var="variable" value="${0}"/>
+                    <c:forEach items="${listaAd}" var="listaAd" varStatus="status">
+                        <c:set var="variable" value="${variable + 1}"/>
                         <div class="card" style="background-image: url(ControlerIMG?id=${listarAd.getId()};)">
                             <p class="tip">Mascota: ${listaAd.getNombre()}</p>
                             <p class="second-text">Usuario interesado: <p class="second-text" style="color:orange;">${listaAd.getUsuario()}</p></p>
@@ -116,12 +197,13 @@
                             <div class="ola">
                                 <button class="button"  data-name="p-${variable}" name="contactar" value="${listaAd.getUsuario()}">Contactar</button>
                                 <form action="Controler?accion=eliminarSolicitud" method="post">
-                                    <button class="button2" name="eliminar" value="${listaAd.getIdD()}">Rechazar</button>
+                                     <input type="hidden" name="eliminar" value="${listaAd.getIdD()}"> 
+                                    <button class="button2 btnEliminar">Rechazar</button>
                                 </form>
                             </div>
                         </div>
-                </c:forEach>
-                    </div>
+                    </c:forEach>
+                </div>
                 <c:set var="target" value="${0}"/>
                 <div class="contacto">
                     <c:forEach var="listaAd" items="${listaAd}">
@@ -144,5 +226,27 @@
     </body>
     <script src="prueba.js"></script>
     <script src="modalContacto.js"></script>
+    <script>
+    var btnEliminar = document.querySelectorAll(".btnEliminar");
+
+    btnEliminar.forEach(function(btn) {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: 'Esta acción no se puede deshacer',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    e.target.closest("form").submit();
+                }
+            });
+        });
+    });
+</script>
 
 </html>

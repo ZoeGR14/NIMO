@@ -395,7 +395,7 @@
             <ul class="nav">
                 <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
                 <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
-                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="informativo.html" class="">Información Mascotas</a></li>
                 <li><a href="comunidad.html" class="">Comunidad</a></li>
                 <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
@@ -438,7 +438,7 @@
                             <h2>Calendario</h2>
                             <p>Agenda citas importantes y almacena días especiales</p>
                             <button class="view-btn">
-                                <a href="calendario.html">¡Vamos!</a>
+                                <a href="2_calendario.jsp">¡Vamos!</a>
                             </button>
                         </div>
                     </div>

@@ -1,6 +1,14 @@
 .contenedor{
+<<<<<<< HEAD
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+=======
     display: grid;
     grid-template-columns: repeat (1fr, 3);
+>>>>>>> 438f1c1153ba0547562242cdc4f8d52a22a90556
     width: 940px;
     gap: 50px;
     margin: auto;

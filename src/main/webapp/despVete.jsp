@@ -192,7 +192,7 @@ section button{
                 <li><a href="notas_1.html" class="">Notas</a></li>
                 <li><a href="citas_1.html" class="">Citas</a></li>
                 <li><a href="saludBienestar_1.html" class="">Salud y Bienestar</a></li>
-                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="soyVeterinario.jsp" class="">Opciones Veterinario</a></li>
                 <li><a href="config_vete.jsp" class="">Configuración</a></li>
                 <li><a href="cierreSesion_1.jsp" class="">Cerrar Sesión</a></li>

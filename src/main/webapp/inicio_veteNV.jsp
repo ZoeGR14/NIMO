@@ -382,7 +382,7 @@
                 <li><a href="notas_1.html" class="">Notas</a></li>
                 <li><a href="citas_1.html" class="">Citas</a></li>
                 <li><a href="saludBienestar_1.html" class="">Salud y Bienestar</a></li>
-                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="adopciones.html" class="">Adopciones</a></li>
                 <li><a href="config_vete.jsp" class="">Configuración</a></li>
                 <li><a href="cierreSesion_1.jsp" class="">Cerrar Sesión</a></li>
@@ -418,7 +418,7 @@
                             <h2>Calendario</h2>
                             <p>Agenda citas importantes y almacena días especiales</p>
                             <button class="view-btn">
-                                <a href="calendario.html">¡Vamos!</a>
+                                <a href="2_calendario.jsp">¡Vamos!</a>
                             </button>
                         </div>
                     </div>

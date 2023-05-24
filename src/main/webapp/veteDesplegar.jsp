@@ -189,7 +189,7 @@ section button{
             <ul class="nav">
                 <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
                 <li><button class="desplegar" name="accion" value="Visualizar mis mascotas" style="border: none;">Mis Mascotas</button></li>
-                <li><a href="calendario.html" class="">Calendario</a></li>
+                <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="informativo.html" class="">Información Mascotas</a></li>
                 <li><a href="comunidad.html" class="">Comunidad</a></li>
                 <li><button class="desplegar" name="accion" value="Visualizar mis notas" style="border: none;">Notas</button></li></form>
