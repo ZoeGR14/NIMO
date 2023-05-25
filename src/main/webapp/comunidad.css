@@ -6,9 +6,9 @@
     width: 100%;
     gap: 50px;
     margin: auto;
-    margin-top: 50px;
     justify-items: center;
     align-items: center;
+    height: 100%;
     
 }
 .card p {

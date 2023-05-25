@@ -15,13 +15,16 @@
                 width: 50px;
             }
             .contenedor{
-                min-height: 100vh;
+                height: calc(100vh - 100px);
+                position: absolute;
+                bottom: 0;
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                gap: 15px;
+                flex-wrap: wrap;
+                align-content: center;
+                gap: 70px 15px;
                 flex-direction: row;
-                margin: auto;
+                margin: 0;
                 padding: 15px;
             }
             h1{
@@ -29,6 +32,13 @@
                 margin-top: 15px;
                 text-align: center;
                 margin-bottom: -70px;
+            }
+
+            @media(max-width: 1340px){
+                .contenedor{
+                    align-content: flex-start;
+                    align-items: center;
+                }
             }
         </style>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
@@ -140,16 +150,16 @@
                 </div>
                 <br>
 
-            <%
+                <%
 
+                        }
+                        sta.close();
+                        cnx.close();
+                        rs.close();
+                    } catch (SQLException error) {
+                        out.print(error.toString());
                     }
-                    sta.close();
-                    cnx.close();
-                    rs.close();
-                } catch (SQLException error) {
-                    out.print(error.toString());
-                }
-            %>
+                %>
 
             </div>
         </section>
