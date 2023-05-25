@@ -9,21 +9,27 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" href="menusito.css">
+        <link rel="stylesheet" href="miCalendario.css"> 
         <title>Mi Calendario</title>        
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">
         <style>
             .sidebar{
                 width: 50px;
             }
+            h1{
+                font-size: 30px;
+                margin-top: 15px;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
         <%HttpSession sesion = request.getSession();
-                    String usuario = "";
-                    if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
-                        usuario = sesion.getAttribute("user").toString();
-                    }
-                %>
+            String usuario = "";
+            if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
+                usuario = sesion.getAttribute("user").toString();
+            }
+        %>
         <aside class="sidebar">
             <div class="logo_content">
                 <div class="logo">
@@ -100,8 +106,9 @@
             </ul>
         </aside>
         <section class="ventana">
+                <h1>Mis Eventos</h1>
             <div class="contenedor">
-                <link rel="stylesheet" href="miCalendario.css">    
+                   
                 <%
                     Connection cnx = null;
                     Statement sta = null;
@@ -115,32 +122,46 @@
                         while (rs.next()) {
 
                 %>
+<!--                <div class="card">
+                    <div class="card-border-top">
+                    </div>
+                    Fecha
+                    <span></span>
+                    Hora
+                    <p class="job"></p>
+                    Descripcion
+                    <p class="job"><%=rs.getString(5)%></p>
+
+                </div>-->
 
 
                 <div class="card">
-                    <div class="card-border-top">
+                    <div class="card__content">
+                        <div class="card__content-body">
+                            <p>Fecha: <%=rs.getString(3)%></p>
+                            <p>Hora: <%=rs.getString(4)%></p>
+                            <p>Hora: <%=rs.getString(5)%></p>
+                        </div>
+                        <div class="card__content-footer">
+                            <button> Eliminar evento</button>
+                        </div>
                     </div>
-
-                    <span><%=rs.getString(3)%></span>
-                    <p class="job"><%=rs.getString(4)%></p>
-                    <p class="job"><%=rs.getString(5)%></p>
-
                 </div>
 
-                <br>
-            </div>
 
-            <%
 
+                <%
+
+                        }
+                        sta.close();
+                        cnx.close();
+                        rs.close();
+                    } catch (SQLException error) {
+                        out.print(error.toString());
                     }
-                    sta.close();
-                    cnx.close();
-                    rs.close();
-                } catch (SQLException error) {
-                    out.print(error.toString());
-                }
-            %>
+                %>
 
+            </div>
         </section>
     </body>
     <script src="prueba.js"></script>

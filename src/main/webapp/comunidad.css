@@ -1,12 +1,12 @@
 .contenedor{
-    padding: 20px;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    width: 940px;
+    width: 100%;
     gap: 50px;
     margin: auto;
+    margin-top: 50px;
     justify-items: center;
     align-items: center;
     
@@ -48,13 +48,14 @@
   display: block;
   position: relative;
   max-width: 262px;
-  background-color: #f2f8f9;
-  border-radius: 4px;
+  background-color: rgba(255,255,255, 0.8);
+  border-radius: 15px;
   padding: 32px 24px;
   margin: 12px;
   text-decoration: none;
   z-index: 0;
   overflow: hidden;
+  box-shadow: 0 0 20px 20px rgba(0,0,0,0.1);
 }
 
 .card1:before {

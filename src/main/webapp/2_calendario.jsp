@@ -17,16 +17,62 @@
             .sidebar{
                 width: 50px;
             }
+            .button {
+                text-align: center;
+                width: 10em;
+                position: relative;
+                height: 3.5em;
+                border: 3px ridge #f76d84;
+                outline: none;
+                background-color: transparent;
+                color: white;
+                transition: 1s;
+                border-radius: 0.3em;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .button::after {
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: 3%;
+                width: 95%;
+                height: 40%;
+                background-color: #1A1617;
+                transition: 0.5s;
+                transform-origin: center;
+            }
+
+            .button::before {
+                content: "";
+                transform-origin: center;
+                position: absolute;
+                top: 80%;
+                left: 3%;
+                width: 95%;
+                height: 40%;
+                background-color: #1A1617;
+                transition: 0.5s;
+            }
+
+            .button:hover::before, .button:hover::after {
+                transform: scale(0)
+            }
+
+            .button:hover {
+                box-shadow: inset 0px 0px 25px #f76d84;
+            }
         </style>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">    
     </head>
     <body>
         <%HttpSession sesion = request.getSession();
-                    String usuario = "";
-                    if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
-                        usuario = sesion.getAttribute("user").toString();
-                    }
-                %>
+            String usuario = "";
+            if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
+                usuario = sesion.getAttribute("user").toString();
+            }
+        %>
         <aside class="sidebar">
             <div class="logo_content">
                 <div class="logo">
@@ -103,109 +149,109 @@
             </ul>
         </aside>
         <section class="ventana">
-           <section id="pantalla-dividida">
-            <link rel="stylesheet" href="2_calendario.css">
+            <section id="pantalla-dividida">
+                <link rel="stylesheet" href="2_calendario.css">
 
-            <div class="izquierda">
-                <h1><span class="creative">Agrega eventos en tu calendario</span></h1>
-                <span class="text"><p>Agenda y visualiza tus eventos</p>
-                </span>
-                </span>
-                <br>
-                <a class="btn" href="miCalendario.jsp">Mis eventos</a>
-            </div>            
+                <div class="izquierda">
+                    <h1><span class="creative">Agrega eventos en tu calendario</span></h1>
+                    <span class="text"><p>Agenda y visualiza tus eventos</p>
+                    </span>
+                    </span>
+                    <br>
+                    <a class="btn" href="miCalendario.jsp">Mis eventos</a>
+                </div>            
 
 
 
-            <div class="derecha">                   
-                <div class="login-box"> 
+                <div class="derecha">                   
+                    <div class="login-box"> 
 
-                    <form action="">
-
-                        <div class="user-box">
-                            <input type="text" name="txtusuario" value="<%=usuario%>" hidden>
-                            
-                        </div>
-                        <div class="user-box">
-                            <input type="date" name="txtfecha">     
-
-                            <div class="user-box">                        
-                                <input type="time" name="txthora">
-                            </div>
+                        <form action="">
 
                             <div class="user-box">
-                                <input type="text" name="txtdescripcion">
-                                <label>Descripción</label>
+                                <input type="text" name="txtusuario" value="<%=usuario%>" hidden>
+
                             </div>
+                            <div class="user-box">
+                                <input type="date" name="txtfecha">     
 
-                            <button type="submit" name="btnEvento" value="Subir Evento">Agendar</button>
-                        </div><center>    
-                    </form>       
-                </div>                                        
-            </div>             
-        </section>                                                  
+                                <div class="user-box">                        
+                                    <input type="time" name="txthora">
+                                </div>
 
-        
-        <%
-            Connection cnx = null;
-            PreparedStatement stmt = null;
-            ResultSet rs = null;
+                                <div class="user-box">
+                                    <input type="text" name="txtdescripcion">
+                                    <label>Descripción</label>
+                                </div>
 
-            if (request.getParameter("btnEvento") != null) {
-                String id_usuario = request.getParameter("txtusuario");
-                String fecha = request.getParameter("txtfecha");
-                String hora = request.getParameter("txthora");
-                String descripcion = request.getParameter("txtdescripcion");
+                                <center><button class="button" type="submit" name="btnEvento" value="Subir Evento">Agendar</button></center>
+                            </div>    
+                        </form>       
+                    </div>                                        
+                </div>             
+            </section>                                                  
 
-                try {
-                    Class.forName("com.mysql.jdbc.Driver");
-                    cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
 
-                    // Verificar si el registro ya existe
-                    String selectQuery = "SELECT id_evento FROM calendario WHERE usuar = ? AND fecha_evento = ? AND hora_evento = ?";
-                    stmt = cnx.prepareStatement(selectQuery);
-                    stmt.setString(1, id_usuario);
-                    stmt.setString(2, fecha);
-                    stmt.setString(3, hora);
-                    rs = stmt.executeQuery();
+            <%
+                Connection cnx = null;
+                PreparedStatement stmt = null;
+                ResultSet rs = null;
 
-                    if (rs.next()) {
-                        
-                    } else {
-                        // Realizar la inserción
-                        String insertQuery = "INSERT INTO calendario(id_evento, usuar, fecha_evento, hora_evento, descripcion_evento) VALUES (null, ?, ?, ?, ?)";
-                        stmt = cnx.prepareStatement(insertQuery);
+                if (request.getParameter("btnEvento") != null) {
+                    String id_usuario = request.getParameter("txtusuario");
+                    String fecha = request.getParameter("txtfecha");
+                    String hora = request.getParameter("txthora");
+                    String descripcion = request.getParameter("txtdescripcion");
+
+                    try {
+                        Class.forName("com.mysql.jdbc.Driver");
+                        cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
+
+                        // Verificar si el registro ya existe
+                        String selectQuery = "SELECT id_evento FROM calendario WHERE usuar = ? AND fecha_evento = ? AND hora_evento = ?";
+                        stmt = cnx.prepareStatement(selectQuery);
                         stmt.setString(1, id_usuario);
                         stmt.setString(2, fecha);
                         stmt.setString(3, hora);
-                        stmt.setString(4, descripcion);
-                        stmt.executeUpdate();
-                        request.getRequestDispatcher("2_calendario.jsp").forward(request, response);
-                    }
-                } catch (ClassNotFoundException e) {
-                    
-                } catch (SQLException error) {
-                    
-                } finally {
-                    try {
-                        if (stmt != null) {
-                            stmt.close();
+                        rs = stmt.executeQuery();
+
+                        if (rs.next()) {
+
+                        } else {
+                            // Realizar la inserción
+                            String insertQuery = "INSERT INTO calendario(id_evento, usuar, fecha_evento, hora_evento, descripcion_evento) VALUES (null, ?, ?, ?, ?)";
+                            stmt = cnx.prepareStatement(insertQuery);
+                            stmt.setString(1, id_usuario);
+                            stmt.setString(2, fecha);
+                            stmt.setString(3, hora);
+                            stmt.setString(4, descripcion);
+                            stmt.executeUpdate();
+                            request.getRequestDispatcher("2_calendario.jsp").forward(request, response);
                         }
-                        if (cnx != null) {
-                            cnx.close();
+                    } catch (ClassNotFoundException e) {
+
+                    } catch (SQLException error) {
+
+                    } finally {
+                        try {
+                            if (stmt != null) {
+                                stmt.close();
+                            }
+                            if (cnx != null) {
+                                cnx.close();
+                            }
+                            if (rs != null) {
+                                rs.close();
+                            }
+                        } catch (SQLException e) {
+                            out.print(e.toString());
                         }
-                        if (rs != null) {
-                            rs.close();
-                        }
-                    } catch (SQLException e) {
-                        out.print(e.toString());
                     }
                 }
-            }
 
 
-        %>
-        
+            %>
+
     </body>
     <script src="prueba.js"></script>
 </html>

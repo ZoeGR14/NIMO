@@ -8,6 +8,12 @@
         <link rel="stylesheet" href="loginn.css">
     </head>
     <body>
+        <%HttpSession sesion = request.getSession();
+                    String usuario = "";
+                    if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
+                        usuario = sesion.getAttribute("user").toString();
+                    }
+                %>
         <br>
                 <div class="login-card-container">
                     <div class="login-card">
@@ -17,7 +23,7 @@
                         <div class="login-card-form">
                             <form action="" class="login-card-form">
                                 <div class="form-item">
-                                    Nombre de usuario:<input type="text" placeholder="Usuario" name="txtusuario_comu" required autofocus><br><br>
+                                    Nombre de usuario:<input type="text" name="txtusuario_comu" hidden disabled value="<%=usuario%>"><br><br>
                                    
                                 </div>
                                 <div class="form-item">
@@ -36,7 +42,6 @@
                 <%
                     String cad;
                     if (request.getParameter("btnComu") != null) {
-                        String usuario = request.getParameter("txtusuario_comu");
                         String comunidad_name = request.getParameter("txtcomunidad");
                         String descripcion_comu = request.getParameter("txtdescripcionComu");
                         cad = "insert into comunidad(id_comu,usuar,comunidad_name,descripcion_comu) values (null,'" + usuario + "','" + comunidad_name + "','"+descripcion_comu+"')";
@@ -51,8 +56,7 @@
                             cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
                             sta = cnx.createStatement();
                             sta.executeUpdate(cad);
-                            request.getRequestDispatcher("listadoComunidades.jsp").forward(request, response);
-                                                       
+                            response.sendRedirect("listadoComunidades.jsp");
                         } catch (SQLException error) {
                             out.print(error.toString());
                         }         
