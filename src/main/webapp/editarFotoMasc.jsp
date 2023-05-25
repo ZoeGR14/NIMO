@@ -88,66 +88,73 @@
         </aside>
         <section class="ventana">
             <c:forEach var="dato" items="${fotoMasc}">
-            <div class="container">
-                <div class="title">Editar fotografía</div>
-                <div class="content">
+                <div class="container">
+                    <div class="title">Editar fotografía</div>
+                    <div class="content">
 
-                    <form method="post" class="contenidoNuevaMasc" action="Controler" id='contenidoNuevaMasc' enctype="multipart/form-data">
+                        <form method="post" class="contenidoNuevaMasc" action="Controler" id='editarFoto' enctype="multipart/form-data">
                             <div class="image-details">
                                 <img src="ControlerIMG?id=${dato.getId()}" id="foto" draggable="false">
-                                <input type="file" id="imagen" accept="image/*" name="fileFoto" class="imagen" required>
+                                <input type="file" id="imagen" accept="image/*" name="fileFoto" class="imagen">
                                 <label for="imagen" class="boton">Agregar foto</label>
                             </div>
                             <div class="button">
                                 <input type="hidden" name="idEditado" value="${dato.getId()}">
-                                <input type="submit" name="accion" value="Editar Foto">
+                                <input type="hidden" name="accion" value="Editar Foto">
+                                <input type="submit" value="Editar Foto">
                             </div>
                         </form>
                     </div>
                 </div>
             </c:forEach>
-            <%
-                try {
-                    String aprove = (String) request.getAttribute("aprobacionMascota");
-                    if (aprove.equals("si")) {
-            %>
-            <script>
-                Swal.fire({
-                    title: "¡Información editada!",
-                    icon: "success",
-                    confirmButtonText: "Vale",
-                    confirmButtonColor: "#4b277a",
-                    color: "black"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = "/NIMO/Controler?visualizar=mascotas"
-                    }
-                });
-            </script>
-            <%} else {
-            %>
-            <script>
-                Swal.fire({
-                    title: "¡Error!",
-                    text: "Verifica que toda la información esté correcta",
-                    icon: "error",
-                    confirmButtonText: "Vale",
-                    confirmButtonColor: "#4b277a",
-                    color: "black"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.history.back();
-                    }
-                });
-            </script>
-            <%
-                    }
-                } catch (Exception e) {
+
+        <script>
+            const defaultFile = document.getElementById("foto").src;
+
+            const file = document.getElementById('imagen');
+            const img = document.getElementById("foto");
+
+            file.addEventListener("change", e => {
+                if (e.target.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(e.target.files[0]);
+                } else {
+                    img.src = defaultFile;
                 }
-            %>
+            });
 
+            const form = document.getElementById("editarFoto");
 
-        </section>
-        <script src="mascota.js"></script>
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                var img = document.getElementById("imagen").value;
+                console.log(img);
+                if (img !== "") {
+                    Swal.fire({
+                        title: "Foto editada",
+                        text: "La foto de su mascota ha sido editada correctamente",
+                        icon: "success",
+                        confirmButtonText: "Vale",
+                        timer: 2000,
+                        timerProgressBar: true
+                    }).then((result) => {
+                        form.submit();
+                    });
+                } else {
+                    Swal.fire({
+                        title: "¡Atención!",
+                        text: "Termine por completo el formulario, por favor",
+                        icon: "warning",
+                        confirmButtonText: 'Vale'
+                    });
+                }
+
+            });
+
+        </script>
         <script src="prueba.js"></script>
 </html>

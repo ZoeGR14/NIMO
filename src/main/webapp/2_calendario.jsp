@@ -97,71 +97,115 @@
             </ul>
         </aside>
         <section class="ventana">
-            <section id="pantalla-dividida">
+           <section id="pantalla-dividida">
+            <link rel="stylesheet" href="2_calendario.css">
 
-                <div class="izquierda">
-                    <h1><span class="creative">Agrega eventos en tu calendario</span></h1>
-                    <span class="text"><p>Agenda y visualiza tus eventos</p>
-                    </span>
-                    <br>
-                    <a class="btn" href="2_calendario.jsp#miCalendario">Mis eventos</a>
-                </div>            
+            <div class="izquierda">
+                <h1><span class="creative">Agrega eventos en tu calendario</span></h1>
+                <span class="text"><p>Agenda y visualiza tus eventos</p>
+                </span>
+                </span>
+                <br>
+                <%HttpSession sesion = request.getSession();
+                    String usuario = "";
+                    if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
+                        usuario = sesion.getAttribute("user").toString();
+                    }
+                %>
+                <a class="btn" href="miCalendario.jsp?paso=<%=usuario%>">Mis eventos</a>
+            </div>            
 
 
 
-                <div class="derecha">                   
-                    <div class="login-box"> 
+            <div class="derecha">                   
+                <div class="login-box"> 
 
-                        <form action="">
-                            <div class="user-box">
-                                <input type="text" name="txtusuario">
-                                <label>Usuario</label>
+                    <form action="">
+
+                        <div class="user-box">
+                            <input type="text" name="txtusuario">
+                            <label>Usuario</label>
+                        </div>
+                        <div class="user-box">
+                            <input type="date" name="txtfecha">     
+
+                            <div class="user-box">                        
+                                <input type="time" name="txthora">
                             </div>
+
                             <div class="user-box">
-                                <input type="date" name="txtfecha">     
-                                <div class="user-box">
-                                    <input type="time" name="txthora">
-                                </div>
-                                <div class="user-box">
-                                    <input type="text" name="txtdescripcion">
-                                    <label>Descripción</label>
-                                </div>
+                                <input type="text" name="txtdescripcion">
+                                <label>Descripción</label>
+                            </div>
 
-                                <button type="submit" name="btnEvento" value="Subir Evento">Agendar</button>
-                            </div><center>    
-                        </form>       
-                    </div>                                        
-                </div>             
-            </section>                                                  
-        </section>
+                            <button type="submit" name="btnEvento" value="Subir Evento">Agendar</button>
+                        </div><center>    
+                    </form>       
+                </div>                                        
+            </div>             
+        </section>                                                  
 
+        
         <%
-            String cad;
+            Connection cnx = null;
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+
             if (request.getParameter("btnEvento") != null) {
-                String usuario = request.getParameter("txtusuario");
+                String id_usuario = request.getParameter("txtusuario");
                 String fecha = request.getParameter("txtfecha");
                 String hora = request.getParameter("txthora");
                 String descripcion = request.getParameter("txtdescripcion");
-                cad = "insert into calendario(id_evento,usuar,fecha_evento,hora_evento,descripcion_evento) values (null,'" + usuario + "','" + fecha + "','" + hora + "','" + descripcion + "')";
-
-                Connection cnx = null;
-                ResultSet rs = null;
-                Statement sta = null;
 
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
                     cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
-                    sta = cnx.createStatement();
-                    sta.executeUpdate(cad);
-                    request.getRequestDispatcher("2_calendario.jsp").forward(request, response);
+
+                    // Verificar si el registro ya existe
+                    String selectQuery = "SELECT id_evento FROM calendario WHERE usuar = ? AND fecha_evento = ? AND hora_evento = ?";
+                    stmt = cnx.prepareStatement(selectQuery);
+                    stmt.setString(1, id_usuario);
+                    stmt.setString(2, fecha);
+                    stmt.setString(3, hora);
+                    rs = stmt.executeQuery();
+
+                    if (rs.next()) {
+                        
+                    } else {
+                        // Realizar la inserción
+                        String insertQuery = "INSERT INTO calendario(id_evento, usuar, fecha_evento, hora_evento, descripcion_evento) VALUES (null, ?, ?, ?, ?)";
+                        stmt = cnx.prepareStatement(insertQuery);
+                        stmt.setString(1, id_usuario);
+                        stmt.setString(2, fecha);
+                        stmt.setString(3, hora);
+                        stmt.setString(4, descripcion);
+                        stmt.executeUpdate();
+                        request.getRequestDispatcher("2_calendario.jsp").forward(request, response);
+                    }
+                } catch (ClassNotFoundException e) {
+                    
                 } catch (SQLException error) {
-                    out.print(error.toString());
+                    
+                } finally {
+                    try {
+                        if (stmt != null) {
+                            stmt.close();
+                        }
+                        if (cnx != null) {
+                            cnx.close();
+                        }
+                        if (rs != null) {
+                            rs.close();
+                        }
+                    } catch (SQLException e) {
+                        out.print(e.toString());
+                    }
                 }
             }
-        %>
 
-        <div id="miCalendario">
-        </div>
+
+        %>
+        
     </body>
     <script src="prueba.js"></script>
 </html>
