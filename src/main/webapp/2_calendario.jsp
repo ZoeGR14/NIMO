@@ -10,8 +10,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="2_calendario.css">
         <link rel="stylesheet" href="menusito.css">
+        <link rel="stylesheet" href="2_calendario.css">
         <title>Calendario</title>
         <style>
             .sidebar{
@@ -21,6 +21,12 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet">    
     </head>
     <body>
+        <%HttpSession sesion = request.getSession();
+                    String usuario = "";
+                    if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
+                        usuario = sesion.getAttribute("user").toString();
+                    }
+                %>
         <aside class="sidebar">
             <div class="logo_content">
                 <div class="logo">
@@ -106,13 +112,7 @@
                 </span>
                 </span>
                 <br>
-                <%HttpSession sesion = request.getSession();
-                    String usuario = "";
-                    if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
-                        usuario = sesion.getAttribute("user").toString();
-                    }
-                %>
-                <a class="btn" href="miCalendario.jsp?paso=<%=usuario%>">Mis eventos</a>
+                <a class="btn" href="miCalendario.jsp">Mis eventos</a>
             </div>            
 
 
@@ -123,8 +123,8 @@
                     <form action="">
 
                         <div class="user-box">
-                            <input type="text" name="txtusuario">
-                            <label>Usuario</label>
+                            <input type="text" name="txtusuario" value="<%=usuario%>" hidden>
+                            
                         </div>
                         <div class="user-box">
                             <input type="date" name="txtfecha">     
