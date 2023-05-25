@@ -263,9 +263,7 @@ public class Controler extends HttpServlet {
                 InputStream inputStream = part.getInputStream();
                 m.setFoto(inputStream);
                 dao.editarFoto(m, idEditado);
-                request.setAttribute("aprobacionMascota", "si");
-                request.getRequestDispatcher("editarFotoMasc.jsp").forward(request, response);
-//                response.sendRedirect("/NIMO/Controler?visualizar=mascotas");
+                response.sendRedirect("/NIMO/Controler?visualizar=mascotas");
                 break;
             case "✔":
                 String nota = request.getParameter("nota");
