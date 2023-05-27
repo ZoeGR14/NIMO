@@ -23,7 +23,7 @@
                         <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
                     </a>
                     <ul class="nav">
-                        <a href="/NIMO/ControlerZ">Volver</a>
+                        <a href="/ControlerZ">Volver</a>
                     </ul>
                     <ul class="nav">
                         <a href="cierreSesion.jsp" class="">Cerrar Sesión</a>

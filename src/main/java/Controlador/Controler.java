@@ -159,12 +159,12 @@ public class Controler extends HttpServlet {
             case "eliminarMascota":
                 int idEliminado = Integer.parseInt(request.getParameter("delete"));
                 dao.eliminar(idEliminado);
-                response.sendRedirect("/NIMO/Controler?visualizar=mascotas");
+                response.sendRedirect("/Controler?visualizar=mascotas");
                 break;
             case "quitarAdopcion":
                 String idEditadoQA = request.getParameter("edit");
                 dao.quitarAdopcion(idEditadoQA);
-                response.sendRedirect("/NIMO/Controler?visualizar=mascotas");
+                response.sendRedirect("/Controler?visualizar=mascotas");
                 break;
             case "Dar adopcion":
                 List<Mascota> listita = dao.listar(usuario);
@@ -263,7 +263,7 @@ public class Controler extends HttpServlet {
                 InputStream inputStream = part.getInputStream();
                 m.setFoto(inputStream);
                 dao.editarFoto(m, idEditado);
-                response.sendRedirect("/NIMO/Controler?visualizar=mascotas");
+                response.sendRedirect("/Controler?visualizar=mascotas");
                 break;
             case "✔":
                 String nota = request.getParameter("nota");
@@ -276,7 +276,7 @@ public class Controler extends HttpServlet {
                 /*
                 request.setAttribute("aprovacionNota", "si");
                 request.getRequestDispatcher("Controler?accion=Visualizar mis notas").forward(request, response);*/
-                response.sendRedirect("/NIMO/Controler?visualizar=notas");
+                response.sendRedirect("/Controler?visualizar=notas");
                 break;
             case "Visualizar mis notas":
                 List<Nota> lista2 = nDAO.listar(usuario);
@@ -321,7 +321,7 @@ public class Controler extends HttpServlet {
                 nDAO.editar(n, 1);
 //                request.setAttribute("aprovacionNota", "si");
 //                request.getRequestDispatcher("editarNota.jsp").forward(request, response);
-                response.sendRedirect("/NIMO/Controler?visualizar=notas");
+                response.sendRedirect("/Controler?visualizar=notas");
                 break;
 
             case "zoeguapote":

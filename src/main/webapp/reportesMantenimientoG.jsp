@@ -29,7 +29,7 @@
                     </a>
                     <c:if test="${sessionScope.gerenteS eq 'gerenSop1'}">
                         <ul class="nav">
-                            <a href="/NIMO/ControlerZ">Volver</a>
+                            <a href="/ControlerZ">Volver</a>
                         </ul>
                     </c:if>
                     <ul class="nav">

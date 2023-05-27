@@ -39,7 +39,7 @@
                 sta.executeUpdate("insert into cerrado_FAQ values(null, 0)");
                 sta.executeUpdate("insert into escritor values(null,'"+escribe+"');");
                 out.println("<script>Swal.fire('Registro guardado exitosamente','Hasta luego','success')</script>");
-                out.println("<script>function saludos(){location.href ='/NIMO/ControlerZ';}</script>");
+                out.println("<script>function saludos(){location.href ='/ControlerZ';}</script>");
                 out.println("<script>setTimeout(saludos, 1500);</script>");
                 conx.close();
                 sta.close();

@@ -394,11 +394,11 @@
             </a>
             <ul class="nav">
                 <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
+                <li><a href="/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
                 <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="informativo.html" class="">Información Mascotas</a></li>
                 <li><a href="comunidad.html" class="">Comunidad</a></li>
-                <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
+                <li><a href="/Controler?visualizar=notas" class="">Notas</a></li>
                 <li><a href="citas.html" class="">Citas</a></li>
                 <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
                 <li><a href="adopciones.jsp" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
@@ -424,7 +424,7 @@
                             <h2>Mis Mascotas</h2>
                             <p>Registra a tus mascotas</p>
                             <button class="view-btn">
-                                <a href="/NIMO/Controler?visualizar=mascotas">¡Vamos!</a>
+                                <a href="/Controler?visualizar=mascotas">¡Vamos!</a>
                             </button>
                         </div>
                     </div>
@@ -482,7 +482,7 @@
                             <h2>Notas</h2>
                             <p>Guarda información importante en notas rápidas</p>
                             <button class="view-btn">
-                                <a href="/NIMO/Controler?visualizar=notas">Vamos!</a>
+                                <a href="/Controler?visualizar=notas">Vamos!</a>
                             </button>
                         </div>
                     </div>
