@@ -34,7 +34,7 @@
                 
                 try{
                     Class.forName("com.mysql.jdbc.Driver");
-                    con  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
+                    con  = DriverManager.getConnection("jdbc:mysql://10.100.49.216:3306/NimoBase?autoReconnect=true&useSSL=false","root","RTPdlm96117");                               
                     stat = con.createStatement();
                     stat2 = con.createStatement();
                     

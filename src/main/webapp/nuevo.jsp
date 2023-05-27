@@ -41,7 +41,7 @@
                         Statement sta = null;
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
-                            cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
+                            cnx = DriverManager.getConnection("jdbc:mysql://10.100.49.216:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "RTPdlm96117");
                             sta = cnx.createStatement();
                             sta.executeUpdate(cad);
                             request.getRequestDispatcher("listado.jsp").forward(request, response);

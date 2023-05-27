@@ -131,7 +131,7 @@
 
                         try {
                             Class.forName("com.mysql.jdbc.Driver");
-                            cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
+                            cnx = DriverManager.getConnection("jdbc:mysql://10.100.49.216:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "RTPdlm96117");
                             sta = cnx.createStatement();
                             sta.executeUpdate(paso);
 
@@ -153,7 +153,7 @@
                 <%
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        cnx2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
+                        cnx2 = DriverManager.getConnection("jdbc:mysql://10.100.49.216:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "RTPdlm96117");
                         sta2 = cnx2.createStatement();
                         rs2 = sta2.executeQuery("select * from publicaciones where id_comu =" + paso2 + "");
                         System.out.println("prueba");
