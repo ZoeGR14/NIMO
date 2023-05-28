@@ -64,7 +64,7 @@
                                     else
                                         if(tipous.equals("8")){
                                             out.println("<script>Swal.fire('Bienvenido Gestor de Usuarios','','success')</script>");
-                                            response.sendRedirect("gestorUsuarios.html");
+                                            response.sendRedirect("gestorUsuarios.jsp");
                                         }
                         }
                         else{
