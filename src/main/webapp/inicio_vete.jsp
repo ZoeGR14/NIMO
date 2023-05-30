@@ -11,12 +11,14 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+            
 
             .bgcolor{
                 background-color: #4b277a;
                 transition: all .35s ease-in-out;
-              }
-              
+            }
+
             *{
                 padding: 0;
                 margin: 0;
@@ -31,12 +33,11 @@
             }
 
             body{
+                zoom: adjust;
                 font-size: 16px;
                 line-height: 1.5;
             }
-.seccionsita{
-                background-color: #f8f3ff;
-            }
+
             :before, :after{
                 box-sizing: border-box;
             }
@@ -56,7 +57,7 @@
             }
 
             .logoni{
-                    height: 70px;
+                height: 70px;
             }
 
             #header{
@@ -69,7 +70,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                transition: .5s;  
+                transition: .5s;
             }
 
             .nav{
@@ -80,16 +81,21 @@
             .nav li{
                 margin: 0 0 0 30px;
             }
-
-            .nav li a{
+            .desplegar{
+                background-color: transparent;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .nav li a, .desplegar{
                 color: #fff;
                 font-weight: 300;
                 text-transform: capitalize;
                 &.sticky{
-                color: #fff;}
+                    color: #fff;
+                }
             }
 
-            .nav li a:hover{
+            .nav li a:hover, .desplegar:hover{
                 color: #c59bfb;
                 font-weight: 300;
                 text-transform: capitalize;
@@ -138,7 +144,7 @@
             }
 
             .boton-go{
-                font-size: 16px;
+                font-size: 14px;
                 color: rgb(235, 146, 31);
                 border: 1px solid rgb(235, 146, 31);
                 color: #fff;
@@ -163,25 +169,25 @@
 
             .about{
                 width: 100%;
-                background-color: #f8f3ff;
+                background-color: #f1e7f5;
                 min-height: 100vh;
                 font-family: 'Nunito Sans', sans-serif;
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
-            
+
             .about img{
-                width: 100%;
-                height: 95%;
+                width: fit-content;
+                height: 100%;
+                align-content: center;
             }
-            
+
             .cardd{
                 align-items: center;
                 justify-content: center;
                 width: 400px;
                 height: 300px;
-                padding: 20px;
                 margin-top: 70px;
                 margin-left: 110px;
                 margin-right: 110px;
@@ -193,6 +199,7 @@
                 animation: float 2.5s ease-in-out 0s infinite forwards;
             }
             
+
             .cover{
                 position: absolute;
                 top: 0;
@@ -206,20 +213,21 @@
                 cursor: pointer;
                 color: #c59bfb;
                 transition: all 0.3s ease;
+                z-index: 2;
             }
-            
+
             .texto_card{
                 margin-top: 60px;
             }
-            
+
             .texto_card h2{
                 margin-bottom: 30px;
             }
-            
+
             .texto_card p{
                 margin-bottom: 40px;
             }
-            
+
             .view-btn{
                 width: 150px;
                 padding: 10px 20px;
@@ -230,15 +238,21 @@
                 cursor: pointer;
                 font-weight: 600;
             }
-            
+
             .view-btn:hover{
                 border: 1px solid #c59bfb;
                 background-color:#c59bfb;
                 color: black;
             }
-            
+
             .cardd:hover .cover{
                 clip-path: circle(75%);
+            }
+
+            @media (max-width: 1400px){
+                .home{
+                    zoom:1.33;
+                }
             }
             footer{
                 width: 100%;
@@ -255,11 +269,11 @@
                 margin-top: 75px;
                 align-items:  center;
             }
-            
+
             .seccionsita{
-                background-color: #f8f3ff;
+                background-color: #f1e7f5;
             }
-            
+
             .box__footer{
                 display: flex;
                 flex-direction: column;
@@ -267,7 +281,7 @@
                 margin-top: 15px;
                 font-family: 'Open Sans', sans-serif;
             }
-            
+
             .box__footer .logooo img{
                 width: 160px;
             }
@@ -316,15 +330,31 @@
                 height: 1px;
                 background-color: #7a7a7a;
             }
-            
-            .cajita img,h1,h2,h3,ul li,p{transition: 5s ease all;}
-            .cajita img { animation: entradaTitulo 5s ease .5s forwards; }
-            .cajita h1 { animation: entradaTitulo 5s ease .5s forwards; }
-            .cajita h2 { animation: entradaSubtitulo 5s ease .5s forwards; }
-            .cajita h3 { animation: entradaInputs 6s linear 1s forwards; }
-            .cajita h4 { animation: entradaInputs 6s linear 1s forwards; }
-            .cajita ul li { animation: entradaInputs 6s linear 1s forwards; }
-            .cajita .textt { animation: entradaInputs 6s linear 1s forwards; }
+
+            .cajita img,h1,h2,h3,ul li,p{
+                transition: 5s ease all;
+            }
+            .cajita img {
+                animation: entradaTitulo 5s ease .5s forwards;
+            }
+            .cajita h1 {
+                animation: entradaTitulo 5s ease .5s forwards;
+            }
+            .cajita h2 {
+                animation: entradaSubtitulo 5s ease .5s forwards;
+            }
+            .cajita h3 {
+                animation: entradaInputs 6s linear 1s forwards;
+            }
+            .cajita h4 {
+                animation: entradaInputs 6s linear 1s forwards;
+            }
+            .cajita ul li {
+                animation: entradaInputs 6s linear 1s forwards;
+            }
+            .cajita .textt {
+                animation: entradaInputs 6s linear 1s forwards;
+            }
         </style>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
         <script>
@@ -388,108 +418,80 @@
         <section class="about" id="about">
             <div style="margin-top: 35px;">
                 <div class="cardd">
-                <div class="cover">
-                    <div class="texto_card">
-                        <h2>Mis Mascotas</h2>
-                        <p>Registra a tus mascotas</p>
-                        <button class="view-btn">
-                            <a href="misMascotas_1.html">¡Vamos!</a>
-                        </button>
+                    <div class="cover">
+                        <div class="texto_card">
+                            <h2>Mis Mascotas</h2>
+                            <p>Registra a tus mascotas</p>
+                            <button class="view-btn">
+                                <a href="/NIMO/Controler?visualizar=mascotas">¡Vamos!</a>
+                            </button>
+                        </div>
                     </div>
+                    
+                    <img src="imagenes/mismascotasin.png" alt="" style="height: 100%; width: 100%;">
+                    
                 </div>
-                <img src="imagenes/mismas_inicio.png" alt="">
-            </div>
-            <div class="cardd">
-                <div class="cover">
-                    <div class="texto_card">
-                        <h2>Calendario</h2>
-                        <p>Agenda citas importantes y almacena días especiales</p>
-                        <button class="view-btn">
-                            <a href="calendario_1.html">¡Vamos!</a>
-                        </button>
+                <div class="cardd">
+                    <div class="cover">
+                        <div class="texto_card">
+                            <h2>Calendario</h2>
+                            <p>Agenda citas importantes y almacena días especiales</p>
+                            <button class="view-btn">
+                                <a href="2_calendario.jsp">¡Vamos!</a>
+                            </button>
+                        </div>
                     </div>
+                    
+                        <img src="imagenes/calendario.png" alt="">
+                    
                 </div>
-                <img src="imagenes/calendar.png" alt="">
-            </div>
-            <div class="cardd">
-                <div class="cover">
-                    <div class="texto_card">
-                        <h2>Información Mascotas</h2>
-                        <p>Aprende más sobre mascotas</p>
-                        <button class="view-btn">
-                            <a href="informativo_1.html">¡Vamos!</a>
-                        </button>
+                <div class="cardd">
+                    <div class="cover">
+                        <div class="texto_card">
+                            <h2>Información Mascotas</h2>
+                            <p>Aprende más sobre mascotas</p>
+                            <button class="view-btn">
+                                <a href="informativo.html">¡Vamos!</a>
+                            </button>
+                        </div>
                     </div>
+                    
+                        <img src="imagenes/info.png" alt="">
+                    
                 </div>
-                <img src="imagenes/infou.png" alt="">
-            </div>
             </div>
             <br><br><br>
             <div style="margin-top: 35px;">
-            <div class="cardd">
-                <div class="cover">
-                    <div class="texto_card">
-                        <h2>Comunidad</h2>
-                        <p>Explora foros y aprende de otros</p>
-                        <button class="view-btn">
-                            <a href="comunidad_1.html">¡Vamos!</a>
-                        </button>
+                <div class="cardd">
+                    <div class="cover">
+                        <div class="texto_card">
+                            <h2>Comunidad</h2>
+                            <p>Explora foros y forma amistades</p>
+                            <button class="view-btn">
+                                <a href="comunidad.html">¡Vamos!</a>
+                            </button>
+                        </div>
                     </div>
+                   
+                        <img src="imagenes/img4.png" alt="">
+                   
                 </div>
-                <img src="imagenes/comunity.png" alt="">
-            </div>
-            <div class="cardd">
-                <div class="cover">
-                    <div class="texto_card">
-                        <h2>Notas</h2>
-                        <p>Guarda información importante en notas rápidas</p>
-                        <button class="view-btn">
-                            <a href="notas_1.html">¡Vamos!</a>
-                        </button>
+                <div class="cardd">
+                    <div class="cover">
+                        <div class="texto_card">
+                            <h2>Notas</h2>
+                            <p>Guarda información importante en notas rápidas</p>
+                            <button class="view-btn">
+                                <a href="/NIMO/Controler?visualizar=notas">Vamos!</a>
+                            </button>
+                        </div>
                     </div>
+                    
+                        <img src="imagenes/notas.png" alt="">
+                    
                 </div>
-                <img src="imagenes/notes.png" alt="">
-            </div>
-            <div class="cardd">
-                <div class="cover">
-                    <div class="texto_card">
-                        <h2>Citas</h2>
-                        <p>Agenda citas con veterinarios avalados</p>
-                        <button class="view-btn">
-                            <a href="citas_1.html">¡Vamos!</a>
-                        </button>
-                    </div>
-                </div>
-                <img src="imagenes/appointments.png" alt="">
-            </div>
-            </div>
-            <br><br><br>
-            <div style="margin-top: 35px;">
-            <div class="cardd">
-                <div class="cover">
-                    <div class="texto_card">
-                        <h2>Salud y Bienestar</h2>
-                        <p>Descubre las mejores formas de cuidar a tu mejor amigo</p>
-                        <button class="view-btn">
-                            <a href="saludBienestar_1.html">¡Vamos!</a>
-                        </button>
-                    </div>
-                </div>
-                <img src="imagenes/healthandwellness.png" alt="">
-            </div>
-            <div class="cardd">
-                <div class="cover">
-                    <div class="texto_card">
-                        <h2>Configuración</h2>
-                        <p>Realiza cambios en tu cuenta</p>
-                        <button class="view-btn">
-                            <a href="cierreSesion_1.jsp">¡Vamos!</a>
-                        </button>
-                    </div>
-                </div>
-                <img src="imagenes/configure.png" alt="">
-            </div>
-            <div class="cardd">
+                
+                            <div class="cardd">
                 <div class="cover">
                     <div class="texto_card">
                         <h2>Opciones Veterinario</h2>
@@ -501,6 +503,53 @@
                 </div>
                 <img src="imagenes/fongestorVet.png" alt="" style="width: 100%; height: 100%;">
             </div>
+
+            </div>
+            <div style="margin-top: 35px;">
+                <div class="cardd">
+                    <div class="cover">
+                        <div class="texto_card">
+                            <h2>Salud y Bienestar</h2>
+                            <p>Descubre las mejores formas de cuidar a tu mejor amigo</p>
+                            <button class="view-btn">
+                                <a href="saludBienestar_1.html">¡Vamos!</a>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <img src="imagenes/saludd.png" alt="" style="height: 100%; width: 100%;">
+                    
+                </div>
+                <div class="cardd">
+                    <div class="cover">
+                        <div class="texto_card">
+                            <h2>Configuración</h2>
+                            <p>Realiza cambios en tu cuenta</p>
+                            <button class="view-btn">
+                                <a href="config_vete.jsp">¡Vamos!</a>
+                            </button>
+                        </div>
+                    </div>
+                    
+                        <img src="imagenes/config.png" alt="">
+                    
+                </div>
+                
+                                <div class="cardd">
+                    <div class="cover">
+                        <div class="texto_card">
+                            <h2>Cerrar Sesión</h2>
+                            <p>¡Puedes volver cuando gustes!</p>
+                            <button class="view-btn">
+                                <a href="cierreSesion.jsp">¡Vamos!</a>
+                            </button>
+                        </div>
+                    </div>
+                    
+                        <img src="imagenes/sesion.png" alt="">
+                   
+                </div>
+
             </div>
             
     </section>

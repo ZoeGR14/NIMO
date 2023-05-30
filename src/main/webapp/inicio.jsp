@@ -462,20 +462,7 @@
                 </div>
             </div>  
             <div style="margin-top: 35px;">
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Comunidad</h2>
-                            <p>Explora foros y forma amistades</p>
-                            <button class="view-btn">
-                                <a href="comunidad.html">¡Vamos!</a>
-                            </button>
-                        </div>
-                    </div>
-                   
-                        <img src="imagenes/img4.png" alt="">
-                   
-                </div>
+  
                 <div class="cardd">
                     <div class="cover">
                         <div class="texto_card">
@@ -490,20 +477,7 @@
                         <img src="imagenes/notas.png" alt="">
                     
                 </div>
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Citas</h2>
-                            <p>Agenda citas con veterinarios avalados</p>
-                            <button class="view-btn">
-                                <a href="citas.html">¡Vamos!</a>
-                            </button>
-                        </div>
-                    </div>
-                    
-                        <img src="imagenes/vete.png" alt="">
-                    
-                </div>
+
             </div>
 
             <div style="margin-top: 35px;">
@@ -527,7 +501,7 @@
                             <h2>Configuración</h2>
                             <p>Realiza cambios en tu cuenta</p>
                             <button class="view-btn">
-                                <a href="cierreSesion.jsp">¡Vamos!</a>
+                                <a href="config_usu.jsp">¡Vamos!</a>
                             </button>
                         </div>
                     </div>
@@ -541,7 +515,7 @@
                             <h2>Cerrar Sesión</h2>
                             <p>¡Puedes volver cuando gustes!</p>
                             <button class="view-btn">
-                                <a href="cierreSesion.jsp">¡Vamos!</a>
+                                <a href="cierreSesion_1.jsp">¡Vamos!</a>
                             </button>
                         </div>
                     </div>
