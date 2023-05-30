@@ -176,7 +176,8 @@
                                 <p class="error-prompt-heading">No hay respuestas aún. :(
                                 </p><div class="error-prompt-wrap">
                                     <ul class="error-prompt-list" role="list">
-                                        <li>Espera a que las personas respondan el formulario</li>
+                                        <li>¡Da en adopción a una mascota antes!</li>
+                                        <li>Espera a que las personas respondan el formulario de adopción.</li>
                                     </ul>
                                 </div>
                             </div>

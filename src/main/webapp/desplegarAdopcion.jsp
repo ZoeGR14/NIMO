@@ -350,7 +350,8 @@ Contactar al usuario -->
                                 <p class="error-prompt-heading">No hay mascotas dadas en adopción aún.
                                 </p><div class="error-prompt-wrap">
                                     <ul class="error-prompt-list" role="list">
-                                        <li>Espera para adoptar nuevas mascotas</li>
+                                        <li>Espera para adoptar nuevas mascotas.</li>
+                                        <li>Recuerda que no puedes adoptar a tu propia mascota.</li>
                                     </ul>
                                 </div>
                             </div>
