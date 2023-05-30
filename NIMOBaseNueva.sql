@@ -214,6 +214,8 @@ select * from adoptar;
 select * from adopt_masc;
 select * from recordatorios;
 select * from recordatorio_vete;
+select * from calendario;
+select * from publicaciones;
 
 /*SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc WHERE mascota.estado = 'adopcion';
 SELECT * FROM masc_usu INNER JOIN adopc_masc  ON masc_usu.id_masc = adopc_masc.id_masc WHERE usuar != "willis";

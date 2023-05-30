@@ -11,13 +11,13 @@
         <link rel="stylesheet" href="menusito.css">
         <title>Listado Comunidades</title>   <link rel="stylesheet" href="listado_comu.css"> 
         <style>
+           
             .sidebar{
                 width: 50px;
             }
             .contenedor{
-                height: calc(100vh - 100px);
+                
                 position: absolute;
-                bottom: 0;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
@@ -25,15 +25,16 @@
                 gap: 70px 15px;
                 flex-direction: row;
                 margin: 0;
+                margin-top:20px;
                 padding: 15px;
             }
             h1{
                 font-size: 30px;
                 margin-top: 15px;
                 text-align: center;
-                margin-bottom: -70px;
+                margin-bottom: 0px;
             }
-
+            
             @media(max-width: 1340px){
                 .contenedor{
                     align-content: flex-start;
