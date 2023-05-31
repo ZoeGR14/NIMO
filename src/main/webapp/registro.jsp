@@ -20,13 +20,13 @@
             <label for="check" class="checkbtn">
                <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
             </label>
-            <a href="index.html" class="enlace">
+            <a href="index.jsp" class="enlace">
                 <img src="imagenes/logo_nimo.png" alt="" class="logo">
             </a>
             <ul alt="" class="bot_acc">
-                <li><a href="inicio_Sesion.html" class="inis">Inicio de Sesión</a></li>
+                <li><a href="inicio_Sesion.jsp" class="inis">Inicio de Sesión</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><a href="registro.html" class="regis">Registro</a></li>
+                <li><a href="registro.jsp" class="regis">Registro</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><a href="#" class="admins">¿Eres un administrador?</a></li>
             </ul>
@@ -51,7 +51,7 @@
                     results=pstat.executeQuery();
                     if (results.next()){
                         out.println("<script>Swal.fire({icon: 'error',title: 'El usuario ya existe',text: 'Inténtelo de nuevo'});</script>");
-                        out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                        out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                         pstat.close();
                     }
@@ -65,7 +65,7 @@
                             results2=pstat2.executeQuery();
                             if (results2.next()){
                                 out.println("<script>Swal.fire({icon: 'error',title: 'El correo ya ha sido registrado con otra cuenta',text: 'Inténtelo de nuevo'});</script>");
-                                out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                                out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                                 out.println("<script>setTimeout(saludos, 1500);</script>");
                                 pstat.close();
                             }
@@ -88,7 +88,7 @@
                                 sta.executeUpdate("insert into usuario values('"+usuar+"','"+tipe+"','"+tel+"','"+sex+"', '"+naci+"', '"+apP+"','"+apM+"','"+nom+"','"+con+"','"+cor+"')");
                                 if(tipe == 1){
                                     out.println("<script>Swal.fire('Registro dado de alta','','success')</script>");
-                                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                                     out.println("<script>setTimeout(saludos, 1500);</script>");
                                     conec.close();
                                     sta.close();
@@ -119,21 +119,21 @@
                                 }
                                 catch(SQLException error){
                                     out.println("<script>Swal.fire({icon: 'error',title: 'Algo salió mal',text: 'Inténtelo de nuevo'});</script>");
-                                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                                     out.println("<script>setTimeout(saludos, 1500);</script>");
                                 }
                             }
                         } 
                         catch(SQLException error){
                                 out.println("<script>Swal({icon: 'error',title: 'Ocurrió un error',text: 'Inténtelo de nuevo'});</script>");
-                                out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                                out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                                 out.println("<script>setTimeout(saludos, 1000);</script>");
                         }
                     }
                 }
                 catch(SQLException error){
                     out.println("<script>Swal({icon: 'error',title: 'Ocurrió un error',text: 'Inténtelo de nuevo'});</script>");
-                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                     out.println("<script>setTimeout(saludos, 1000);</script>");
                 }
                 

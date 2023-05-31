@@ -1,0 +1,233 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="imagenes/logo_nimo.ico">
+        <title>Infección por retrovirus</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="prevenciones.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <aside class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="imagenes/logo_nimo.png" alt="" class="logo2">
+                    <div class="logo_name">NIMO</div>
+                </div>
+                <i class='bx bx-menu' id='btn'></i>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="/Controler?visualizar=mascotas">
+                        <i class='bx bxs-dog'></i>
+                        <span class="link_name">Mis Mascotas</span>
+                    </a>
+                    <span class="tooltip">Mis Mascotas</span>
+                </li>
+                <li>
+                    <a href="2_calendario.jsp">
+                        <i class='bx bx-calendar'></i>
+                        <span class="link_name">Calendario</span>
+                    </a>
+                    <span class="tooltip">Calendario</span>
+                </li>
+                <li>
+                    <a href="informativo.jsp">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="link_name">Información Mascotas</span>
+                    </a>
+                    <span class="tooltip">Información Mascotas</span>
+                </li>
+                <li>
+                    <a href="comunidad.jsp">
+                        <i class='bx bx-group'></i>
+                        <span class="link_name">Comunidad</span>
+                    </a>
+                    <span class="tooltip">Comunidad</span>
+                </li>
+                <li>
+                    <a href="/Controler?visualizar=notas">
+                        <i class='bx bx-note'></i>
+                        <span class="link_name">Notas</span>
+                    </a>
+                    <span class="tooltip">Notas</span>
+                </li>
+                <li>
+                    <a href="saludBienestar.jsp">
+                        <i class='bx bxs-heart-circle'></i>
+                        <span class="link_name">Salud y Bienestar</span>
+                    </a>
+                    <span class="tooltip">Salud y Bienestar</span>
+                </li>
+                <li>
+                    <a href="adopciones.jsp">
+                        <i class='bx bxs-clinic'></i>
+                        <span class="link_name">Adopciones</span>
+                    </a>
+                    <span class="tooltip">Adopciones</span>
+                </li>
+                <li>
+                    <a href="config_usu.jsp">
+                        <i class='bx bx-cog'></i>
+                        <span class="link_name">Configuración</span>
+                    </a>
+                    <span class="tooltip">Configuración</span>
+                </li>
+                <li>
+                    <a href="cierreSesion.jsp">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span class="link_name">Cerrar Sesión</span>
+                    </a>
+                    <span class="tooltip">Cerrar Sesión</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="ventana">
+            <section class="secciones">
+                <aside class="navi">
+                    <ul class="list">
+                        <!-- Selección uno -->
+                        <li class="list__item list__item--click">
+                            <div class="list__button list__button--click">
+                                <a href="#" class="nav__link">Perros</a>
+                            </div>
+                            <ul class="list__show">
+                                <li class="list__inside">
+                                    <a href="pParvo.jsp" class="nav__link nav__link--inside">Parvovirus</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="pMoquillo.jsp" class="nav__link nav__link--inside">Moquillo</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="pHepatitis.jsp" class="nav__link nav__link--inside">Hepatitis infecciosa canina</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="pLepto.jsp" class="nav__link nav__link--inside">Leptospicosis</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="pTos.jsp" class="nav__link nav__link--inside">Tos de las pérreras</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="pRabia.jsp" class="nav__link nav__link--inside">Rabia</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Selección uno -->
+                        <li class="list__item list__item--click">
+                            <div class="list__button list__button--click">
+                                <a href="#" class="nav__link">Gatos</a>
+                            </div>
+                            <ul class="list__show">
+                                <li class="list__inside">
+                                    <a href="gInsu.jsp" class="nav__link nav__link--inside">Insuficiencia renal crónica</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="gHiper.jsp" class="nav__link nav__link--inside">Hipertiroidismo</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="gDiabetes.jsp" class="nav__link nav__link--inside">Diabetes Mellitus</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="gInfec.jsp" class="nav__link nav__link--inside">Infección por retrovirus</a>
+                                </li>
+                                <li class="list__inside">
+                                    <a href="gCancer.jsp" class="nav__link nav__link--inside">Cáncer en felinos</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+                <article>
+                    <h1 class="titulo">Infección por retrovirus</h1>
+                    <h2 class="subtitulos">¿Qué es?</h2>
+                    <p class="textoOOOO">
+                        El virus de la leucemia felina (FeLV) es un “retrovirus”. Se trata de un agente infeccioso que 
+                        puede infectar a los gatos e introducirse en sus células, produciendo alteraciones en su 
+                        sistema inmune, anemias, leucemias y linfomas.<br>
+                        <br>
+                        Afecta a gatos por todo el mundo. La prevalencia puede ser mayor en animales de vida salvaje, 
+                        pero también puede afectar a gatos sin acceso al exterior. Hoy en día, el número de gatos 
+                        afectados se ha reducido gracias a la vacunación.<br>
+                        <br>Afortunadamente, es un virus vulnerable a condiciones ambientales adversas y detergentes 
+                        normales.
+                    </p>
+                    <center>
+                        <a href="https://bit.ly/3GAZzYV" target="_blank">
+                            <img src="data:image/jpeg;base64,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" class="imagenParvo">
+                        </a>
+                    </center>
+                    <br>
+                    <h2 class="subtitulos">¿Cómo puedo saber si mi gato está infectado?</h2>
+                    <p class="textoOOOO">Es conveniente hacer pruebas a todos los gatos, ya sean gatitos, jóvenes o adultos,
+                        independientemente de su origen en el momento de su adquisición o adopción y antes de la 
+                        vacunación. Así como a aquellos que tengan acceso al exterior, después de haber tenido 
+                        contacto con posibles gatos infectados, que aparezcan con signos de peleas o presenten 
+                        síntomas compatibles con la enfermedad. Es importante esperar el tiempo necesario para que 
+                        sean fiables las pruebas para detectar el virus. </p>
+                    <center>
+                        <a href="https://bit.ly/3GAZzYV" target="_blank">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm4xlAKWLcSy0vRU6-pEGsgI5EkMykxUhOZv3Hi8VNpLjAl7x_iPkfqdvEJxRwEaI18jE&usqp=CAU" class="imagenParvo">
+                        </a>
+                    </center>
+                    <h2 class="subtitulos">Síntomas</h2>
+                    <p class="textoOOOO">
+                        La principal causa de los síntomas que puede ver el cuidador en casa son consecuencia de la 
+                        supresión del sistema inmune, dando lugar a signos como; fiebre, falta de apetito, letargia, 
+                        infecciones, pérdida de peso…<br>
+                        Los signos serán cíclicos y persistentes. Con el tiempo se desarrollarán las anemias y las 
+                        neoplasias con la aparición de gran variedad de signos clínicos como dificultad respiratoria, 
+                        palidez de mucosas, debilidad, falta de apetito…<br>
+                        Otros signos asociados a leucemia felina y que siempre que aparecen debe realizarse el test 
+                        son alteraciones neurológicas, problemas oculares, gingivoestomatitis, dermatosis, aumento 
+                        de tamaño de ganglios, enteritis o vasculitis. <br>
+                        En realidad, como el virus puede estar “escondido”, prácticamente recomendamos realizar 
+                        test ELISA a todos los gatos con cualquier tipo de enfermedad. 
+                    
+                        <center>
+                            <a href="https://bit.ly/3GAZzYV" target="_blank">
+                                <img src="https://web.uchile.cl/vignette/tecnovet/AlasbimnImages/tc-2001(2)-munoz-fig005.jpg" class="imagenParvo">
+                            </a>
+                        </center>
+                    <h2 class="subtitulos">¿Cómo se transmite?</h2>
+                    <p class="textoOOOO">
+                        El virus lo eliminan los gatos infectados a través de casi todas las secreciones; saliva, mocos, 
+                        lágrimas, heces, orina, sangre (peleas, pulgas, transfusiones) semen, …pero sobre todo LA 
+                        SALIVA. Así que la forma más común de transmisión es a través del contacto directo por 
+                        lavarse, mordeduras o compartir comederos y bebederos. Se necesita un contacto estrecho y 
+                        prolongado.<br>
+                        Las madres también pueden transmitir el virus a sus gatitos por la placenta o la leche. <br>Los gatos adultos son menos propensos a contagiarse, pero también les puede pasar si hay 
+                        muchos virus en el ambiente. 
+                    </p>
+                    <center>
+                        <a href="https://bit.ly/3GAZzYV" target="_blank">
+                            <img src="https://vetmarketportal.com.ar/uploads/noticias/2/20200310124421_gato.jpg" class="imagenParvo">
+                        </a>
+                    </center>
+                </article>
+            </section>
+        </section>
+        <script>
+            let listElements = document.querySelectorAll('.list__button--click');
+
+            listElements.forEach(listElement=>{
+                listElement.addEventListener('click', ()=>{
+
+                    listElement.classList.toggle('arrow');
+
+                    let height = 0;
+                    let menu = listElement.nextElementSibling;
+                    if (menu.clientHeight == "0") {
+                        height = menu.scrollHeight;
+                    }
+
+                    menu.style.height = height + 'px';
+
+                }
+                )
+            }
+            );
+        </script>
+    </body>
+    <script src="prueba.js"></script>
+</html>

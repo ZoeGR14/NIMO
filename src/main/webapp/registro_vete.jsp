@@ -96,13 +96,13 @@
             <label for="check" class="checkbtn">
                <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
             </label>
-            <a href="index.html" class="enlace">
+            <a href="index.jsp" class="enlace">
                 <img src="imagenes/logo_nimo.png" alt="" class="logo">
             </a>
             <ul alt="" class="bot_acc">
-                <li><a href="inicio_Sesion.html" class="inis">Inicio de Sesión</a></li>
+                <li><a href="inicio_Sesion.jsp" class="inis">Inicio de Sesión</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><a href="registro.html" class="regis">Registro</a></li>
+                <li><a href="registro.jsp" class="regis">Registro</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><a href="#" class="admins">¿Eres un administrador?</a></li>
             </ul>
@@ -152,18 +152,18 @@
                     }
                     else{
                         out.println("<script>Swal.fire({icon: 'error',title: 'Algo salió mal',text: 'Inténtelo de nuevo'});</script>");
-                        out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                        out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                     }
                 }
             catch(SQLException error){
                     out.println("<script>Swal({icon: 'error',title: 'Ocurrió un error',text: 'Inténtelo de nuevo'});</script>");
-                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                     out.println("<script>setTimeout(saludos, 1000);</script>");
                 }
             %>
                 <div class="login-card-footer">
-                    <h5>¿Ya tienes una cuenta?&nbsp;&nbsp;<a href="inicio_Sesion.html">Ingresa</a></h5>
+                    <h5>¿Ya tienes una cuenta?&nbsp;&nbsp;<a href="inicio_Sesion.jsp">Ingresa</a></h5>
                 </div>
             </div>
         </div>

@@ -1,0 +1,152 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%><!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+    <head><link rel="icon" href="imagenes/logo_nimo.ico">
+        <title>Salud y Bienestar</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="saludBienestar.css" type="text/css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="menusito.css">
+    <body>
+        <header>
+            <center><h1 class="titulo">Salud y Bienestar</h1></center>
+            <br><center><p class="textito">  Elige el apartado de tu elección</p></center>
+        </header>
+        <aside class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="imagenes/logo_nimo.png" alt="" class="logo2">
+                    <div class="logo_name">NIMO</div>
+                </div>
+                <i class='bx bx-menu' id='btn'></i>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="/Controler?visualizar=mascotas">
+                        <i class='bx bxs-dog'></i>
+                        <span class="link_name">Mis Mascotas</span>
+                    </a>
+                    <span class="tooltip">Mis Mascotas</span>
+                </li>
+                <li>
+                    <a href="2_calendario.jsp">
+                        <i class='bx bx-calendar'></i>
+                        <span class="link_name">Calendario</span>
+                    </a>
+                    <span class="tooltip">Calendario</span>
+                </li>
+                <li>
+                    <a href="informativo.jsp">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="link_name">Información Mascotas</span>
+                    </a>
+                    <span class="tooltip">Información Mascotas</span>
+                </li>
+                <li>
+                    <a href="comunidad.jsp">
+                        <i class='bx bx-group'></i>
+                        <span class="link_name">Comunidad</span>
+                    </a>
+                    <span class="tooltip">Comunidad</span>
+                </li>
+                <li>
+                    <a href="/Controler?visualizar=notas">
+                        <i class='bx bx-note'></i>
+                        <span class="link_name">Notas</span>
+                    </a>
+                    <span class="tooltip">Notas</span>
+                </li>
+                <li>
+                    <a href="saludBienestar.jsp">
+                        <i class='bx bxs-heart-circle'></i>
+                        <span class="link_name">Salud y Bienestar</span>
+                    </a>
+                    <span class="tooltip">Salud y Bienestar</span>
+                </li>
+                <li>
+                    <a href="adopciones.jsp">
+                        <i class='bx bxs-clinic'></i>
+                        <span class="link_name">Adopciones</span>
+                    </a>
+                    <span class="tooltip">Adopciones</span>
+                </li>
+                <li>
+                    <a href="config_usu.jsp">
+                        <i class='bx bx-cog'></i>
+                        <span class="link_name">Configuración</span>
+                    </a>
+                    <span class="tooltip">Configuración</span>
+                </li>
+                <li>
+                    <a href="cierreSesion.jsp">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span class="link_name">Cerrar Sesión</span>
+                    </a>
+                    <span class="tooltip">Cerrar Sesión</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="ventana">
+            <div class="apartadito">
+                <div class="grid">
+                    <figure class="effect-ruby" draggable="false"> 
+                        <img src="./imagenes/gatito.jpg" alt="img13">
+                        <figcaption draggable="false">
+                            <h2>
+                                <span>Comidas</span>
+                            </h2>
+                            <p>Conoce los alimentos que puede y no puede ingerir tu mascota.</p>
+                            <a href="comidas.jsp"></a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="effect-ruby" draggable="false"> 
+                        <img src="./imagenes/veteimg.png" alt="img13">
+                        <figcaption draggable="false">
+                            <h2>
+                                <span>Veterinario</span>
+                            </h2>
+                            <p>Realiza una cita con uno de nuestros profesionales</p>
+                            <a href="veteDesplegar.jsp"></a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="effect-ruby" draggable="false"> 
+                        <img src="./imagenes/asismed.png" alt="img13">
+                        <figcaption draggable="false">
+                            <h2>Asistencia
+                                <span>Médica</span>
+                            </h2>
+                            <p>Conoce las veterinarias cerca de tu localidad.</p>
+                            <a href="asistenciaMedica.jsp"></a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="effect-ruby" draggable="false"> 
+                        <img src="./imagenes/preve.png" alt="img13">
+                        <figcaption draggable="false">
+                            <h2>
+                                <span>Prevención</span>
+                            </h2>
+                            <p>Mantente informado acerca de las enfermedades que tu mascota puede adquirir.</p>
+                            <a href="prevencion.jsp"></a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="effect-ruby" draggable="false"> 
+                        <img src="./imagenes/auxi.png" alt="img13">
+                        <figcaption draggable="false">
+                            <h2>Primeros
+                                <span>Auxilios</span>
+                            </h2>
+                            <p>Infórmate acerca de qué hacer en caso de una emergencia.</p>
+                            <a href="auxilios.jsp"></a>
+                        </figcaption>
+                    </figure>
+                </div>       
+            </div>
+        </section>
+    </body>
+    <script src="prueba.js"></script>
+</html>

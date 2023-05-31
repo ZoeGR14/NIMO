@@ -16,18 +16,18 @@
             <label for="check" class="checkbtn">
                 <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
             </label>
-            <a href="index.html" class="enlace">
+            <a href="index.jsp" class="enlace">
                 <img src="imagenes/logo_nimo.png" alt="" class="logo">
             </a>
             <ul class="bot_acc">
                     <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
                     <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
                     <li><a href="2_calendario.jsp" class="">Calendario</a></li>
-                    <li><a href="informativo.html" class="">Información Mascotas</a></li>
-                    <li><a href="comunidad.html" class="">Comunidad</a></li>
+                    <li><a href="informativo.jsp" class="">Información Mascotas</a></li>
+                    <li><a href="comunidad.jsp" class="">Comunidad</a></li>
                     <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
-            <li><a href="citas.html" class="">Citas</a></li>
-            <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
+            <li><a href="citas.jsp" class="">Citas</a></li>
+            <li><a href="saludBienestar.jsp" class="">Salud y Bienestar</a></li>
                                     <li><a href="adopciones.jsp" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
         </ul>
                 </nav>

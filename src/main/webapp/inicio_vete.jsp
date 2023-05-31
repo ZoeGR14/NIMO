@@ -392,13 +392,12 @@
             </a>
             <ul class="nav">
                 <li><a href="inicio_vete.jsp" class="inicio">Inicio</a></li>
-                <li><a href="misMascotas_1.html" class="">Mis Mascotas</a></li>
-                <li><a href="calendario_1.html" class="">Calendario</a></li>
-                <li><a href="informativo_1.html" class="">Información Mascotas</a></li>
-                <li><a href="comunidad_1.html" class="">Comunidad</a></li>
-                <li><a href="notas_1.html" class="">Notas</a></li>
-                <li><a href="citas_1.html" class="">Citas</a></li>
-                <li><a href="saludBienestar_1.html" class="">Salud y Bienestar</a></li>
+                <li><a href="misMascotas_1.jsp" class="">Mis Mascotas</a></li>
+                <li><a href="calendario_1.jsp" class="">Calendario</a></li>
+                <li><a href="informativo_1.jsp" class="">Información Mascotas</a></li>
+                <li><a href="comunidad_1.jsp" class="">Comunidad</a></li>
+                <li><a href="notas_1.jsp" class="">Notas</a></li>
+                <li><a href="saludBienestar_1.jsp" class="">Salud y Bienestar</a></li>
                 <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="soyVeterinario.jsp" class="">Opciones Veterinario</a></li>
                 <li><a href="config_vete.jsp" class="">Configuración</a></li>
@@ -451,7 +450,7 @@
                             <h2>Información Mascotas</h2>
                             <p>Aprende más sobre mascotas</p>
                             <button class="view-btn">
-                                <a href="informativo.html">¡Vamos!</a>
+                                <a href="informativo.jsp">¡Vamos!</a>
                             </button>
                         </div>
                     </div>
@@ -468,7 +467,7 @@
                             <h2>Comunidad</h2>
                             <p>Explora foros y forma amistades</p>
                             <button class="view-btn">
-                                <a href="comunidad.html">¡Vamos!</a>
+                                <a href="comunidad.jsp">¡Vamos!</a>
                             </button>
                         </div>
                     </div>
@@ -512,7 +511,7 @@
                             <h2>Salud y Bienestar</h2>
                             <p>Descubre las mejores formas de cuidar a tu mejor amigo</p>
                             <button class="view-btn">
-                                <a href="saludBienestar_1.html">¡Vamos!</a>
+                                <a href="saludBienestar_1.jsp">¡Vamos!</a>
                             </button>
                         </div>
                     </div>
@@ -607,9 +606,9 @@
                 </div>
                 <div class="box__footer">
                     <h2>Acerca de EMN</h2>
-                    <a href="emn_corp.html">EMN Corp.</a>
-                    <a href="emn_corp.html#nosotros">¿Quiénes somos?</a>
-                    <a href="emn_corp.html#prod">Acerca de nuestros servicios</a>
+                    <a href="emn_corp.jsp">EMN Corp.</a>
+                    <a href="emn_corp.jsp#nosotros">¿Quiénes somos?</a>
+                    <a href="emn_corp.jsp#prod">Acerca de nuestros servicios</a>
                 </div>
 
 

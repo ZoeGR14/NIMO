@@ -23,7 +23,7 @@
             HttpSession sesion = request.getSession();
                 sesion.invalidate();
                 out.println("<script>Swal.fire('Hasta luego')</script>");
-                out.println("<script> location.href ='index.html';</script>");
+                out.println("<script> location.href ='index.jsp';</script>");
                 
             %>
     </body>

@@ -26,13 +26,13 @@
             <label for="check" class="checkbtn">
                <i class="menu-icon"> <img src="imagenes\menuicon.png"> </i>
             </label>
-            <a href="index.html" class="enlace">
+            <a href="index.jsp" class="enlace">
                 <img src="imagenes/logo_nimo.png" alt="" class="logo">
             </a>
             <ul class="bot_acc">
-                <li><a href="inicio_Sesion.html" class="inis">Inicio de Sesión</a></li>
+                <li><a href="inicio_Sesion.jsp" class="inis">Inicio de Sesión</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><a href="registro.html" class="regis">Registro</a></li>
+                <li><a href="registro.jsp" class="regis">Registro</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><a href="#" class="admins">¿Eres un administrador?</a></li>
             </ul>
@@ -61,7 +61,7 @@
                     res=stat.executeQuery("select*from usuario where mail_us='"+emaill+"';");
                     if(!res.next()){
                         out.println("<script>Swal.fire({icon: 'error',title: 'No hay usuarios registrados a ese correo',text: 'Inténtelo de nuevo'});</script>");
-                        out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
+                        out.println("<script>function saludos(){location.href ='inicio_Sesion.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                     }
                     else{
@@ -74,7 +74,7 @@
                         sends.setCorreoo(emaill);
                         sends.transfer_to_mail(emaill);*/
                         out.println("<script>Swal.fire('El correo de recuperación ha sido enviado','','success')</script>");
-                        out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
+                        out.println("<script>function saludos(){location.href ='inicio_Sesion.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                         /*String correoEnvia = "contreras.delgadillo.lizeth@gmail.com";
                         String contrasenia = "eyozilipbefccxka";

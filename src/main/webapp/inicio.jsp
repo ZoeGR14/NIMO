@@ -396,11 +396,10 @@
                 <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
                 <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
                 <li><a href="2_calendario.jsp" class="">Calendario</a></li>
-                <li><a href="informativo.html" class="">Información Mascotas</a></li>
-                <li><a href="comunidad.html" class="">Comunidad</a></li>
+                <li><a href="informativo.jsp" class="">Información Mascotas</a></li>
+                <li><a href="comunidad.jsp" class="">Comunidad</a></li>
                 <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
-                <li><a href="citas.html" class="">Citas</a></li>
-                <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
+                <li><a href="saludBienestar.jsp" class="">Salud y Bienestar</a></li>
                 <li><a href="adopciones.jsp" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
                 <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>
 
@@ -452,7 +451,7 @@
                             <h2>Información Mascotas</h2>
                             <p>Aprende más sobre mascotas</p>
                             <button class="view-btn">
-                                <a href="informativo.html">¡Vamos!</a>
+                                <a href="informativo.jsp">¡Vamos!</a>
                             </button>
                         </div>
                     </div>
@@ -487,7 +486,7 @@
                             <h2>Salud y Bienestar</h2>
                             <p>Descubre las mejores formas de cuidar a tu mejor amigo</p>
                             <button class="view-btn">
-                                <a href="saludBienestar.html">¡Vamos!</a>
+                                <a href="saludBienestar.jsp">¡Vamos!</a>
                             </button>
                         </div>
                     </div>
@@ -579,9 +578,9 @@
                 </div>
                 <div class="box__footer">
                     <h2>Acerca de EMN</h2>
-                    <a href="emn_corp.html">EMN Corp.</a>
-                    <a href="emn_corp.html#nosotros">¿Quiénes somos?</a>
-                    <a href="emn_corp.html#prod">Acerca de nuestros servicios</a>
+                    <a href="emn_corp.jsp">EMN Corp.</a>
+                    <a href="emn_corp.jsp#nosotros">¿Quiénes somos?</a>
+                    <a href="emn_corp.jsp#prod">Acerca de nuestros servicios</a>
                 </div>
 
 

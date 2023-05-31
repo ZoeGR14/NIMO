@@ -43,7 +43,7 @@
                         stat.executeUpdate("insert into comentarios values(null,'"+comm+"','1');");
                         stat.executeUpdate("insert into usu_coment values(null,'"+inv+"');");
                         out.println("<script>Swal.fire('Gracias por tus comentarios, son de mucha ayuda para nosotros!','','success')</script>");
-                        out.println("<script>function saludos(){location.href ='index.html';}</script>");
+                        out.println("<script>function saludos(){location.href ='index.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                     
                 }

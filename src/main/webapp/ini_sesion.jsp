@@ -37,7 +37,7 @@
                     
                     if(!res.next()){
                         out.println("<script>Swal.fire({icon: 'error',title: 'Usuario no encontrado',text: 'Inténtelo de nuevo'});</script>");
-                        out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
+                        out.println("<script>function saludos(){location.href ='inicio_Sesion.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                     }
                     else{
@@ -64,12 +64,12 @@
                                     else
                                         if(tipous.equals("4")||tipous.equals("5")||tipous.equals("7")||tipous.equals("8")){
                                             out.println("<script>Swal.fire('Trabajador detectado, redirigiendo al Login de trabajadores','','success')</script>");
-                                            response.sendRedirect("inicioSPersonal.html");
+                                            response.sendRedirect("inicioSPersonal.jsp");
                                         }
                         }
                         else{
                             out.println("<script>Swal.fire({icon: 'error',title: 'Contraseña incorrecta',text: 'Inténtelo de nuevo'});</script>");
-                            out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
+                            out.println("<script>function saludos(){location.href ='inicio_Sesion.jsp';}</script>");
                             out.println("<script>setTimeout(saludos, 1500);</script>");
                         }
             }
@@ -77,7 +77,7 @@
                 
                 catch(SQLException error){
                     out.println("<script>Swal.fire({icon: 'error',title: 'Algo salió mal',text: 'Inténtelo de nuevo'});</script>");
-                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                     out.println("<script>setTimeout(saludos, 1500);</script>");
                 }
              %>

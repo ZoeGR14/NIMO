@@ -224,14 +224,14 @@ Contactar al usuario -->
                     <span class="tooltip">Calendario</span>
                 </li>
                 <li>
-                    <a href="informativo.html">
+                    <a href="informativo.jsp">
                         <i class='bx bx-info-circle'></i>
                         <span class="link_name">Información Mascotas</span>
                     </a>
                     <span class="tooltip">Información Mascotas</span>
                 </li>
                 <li>
-                    <a href="comunidad.html">
+                    <a href="comunidad.jsp">
                         <i class='bx bx-group'></i>
                         <span class="link_name">Comunidad</span>
                     </a>
@@ -245,7 +245,7 @@ Contactar al usuario -->
                     <span class="tooltip">Notas</span>
                 </li>
                 <li>
-                    <a href="saludBienestar.html">
+                    <a href="saludBienestar.jsp">
                         <i class='bx bxs-heart-circle'></i>
                         <span class="link_name">Salud y Bienestar</span>
                     </a>

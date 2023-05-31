@@ -37,7 +37,7 @@
                     
                     if(!res.next()){
                         out.println("<script>Swal.fire({icon: 'error',title: 'Usuario no encontrado',text: 'Inténtelo de nuevo'});</script>");
-                        out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
+                        out.println("<script>function saludos(){location.href ='inicio_Sesion.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                     }
                     else{
@@ -64,12 +64,12 @@
                                     else
                                         if(tipous.equals("8")){
                                             out.println("<script>Swal.fire('Bienvenido Gestor de Usuarios','','success')</script>");
-                                            response.sendRedirect("gestorUsuarios.html");
+                                            response.sendRedirect("gestorUsuarios.jsp");
                                         }
                         }
                         else{
                             out.println("<script>Swal.fire({icon: 'error',title: 'Contraseña incorrecta',text: 'Inténtelo de nuevo'});</script>");
-                            out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
+                            out.println("<script>function saludos(){location.href ='inicio_Sesion.jsp';}</script>");
                             out.println("<script>setTimeout(saludos, 1500);</script>");
                         }
             }
@@ -77,7 +77,7 @@
                 
                 catch(SQLException error){
                     out.println("<script>Swal.fire({icon: 'error',title: 'Algo salió mal',text: 'Inténtelo de nuevo'});</script>");
-                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                     out.println("<script>setTimeout(saludos, 1500);</script>");
                 }
              %>

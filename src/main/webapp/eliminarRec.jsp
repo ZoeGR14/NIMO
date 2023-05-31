@@ -270,13 +270,13 @@ h2 {
             </a>
             <ul class="nav">
                 <li><a href="inicio_vete.jsp" class="inicio">Inicio</a></li>
-                <li><a href="misMascotas_1.html" class="">Mis Mascotas</a></li>
-                <li><a href="calendario_1.html" class="">Calendario</a></li>
-                <li><a href="informativo_1.html" class="">Información Mascotas</a></li>
-                <li><a href="comunidad_1.html" class="">Comunidad</a></li>
-                <li><a href="notas_1.html" class="">Notas</a></li>
-                <li><a href="citas_1.html" class="">Citas</a></li>
-                <li><a href="saludBienestar_1.html" class="">Salud y Bienestar</a></li>
+                <li><a href="misMascotas_1.jsp" class="">Mis Mascotas</a></li>
+                <li><a href="calendario_1.jsp" class="">Calendario</a></li>
+                <li><a href="informativo_1.jsp" class="">Información Mascotas</a></li>
+                <li><a href="comunidad_1.jsp" class="">Comunidad</a></li>
+                <li><a href="notas_1.jsp" class="">Notas</a></li>
+                <li><a href="citas_1.jsp" class="">Citas</a></li>
+                <li><a href="saludBienestar_1.jsp" class="">Salud y Bienestar</a></li>
                 <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="soyVeterinario.jsp" class="">Opciones Veterinario</a></li>
                 <li><a href="config_vete.jsp" class="">Configuración</a></li>

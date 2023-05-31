@@ -1,0 +1,222 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%><!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+    <head><link rel="icon" href="imagenes/logo_nimo.ico">
+        <title>Rabia</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="prevenciones.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <aside class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <img src="imagenes/logo_nimo.png" alt="" class="logo2">
+                    <div class="logo_name">NIMO</div>
+                </div>
+                <i class='bx bx-menu' id='btn'></i>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="/Controler?visualizar=mascotas">
+                        <i class='bx bxs-dog'></i>
+                        <span class="link_name">Mis Mascotas</span>
+                    </a>
+                    <span class="tooltip">Mis Mascotas</span>
+                </li>
+                <li>
+                    <a href="2_calendario.jsp">
+                        <i class='bx bx-calendar'></i>
+                        <span class="link_name">Calendario</span>
+                    </a>
+                    <span class="tooltip">Calendario</span>
+                </li>
+                <li>
+                    <a href="informativo.jsp">
+                        <i class='bx bx-info-circle'></i>
+                        <span class="link_name">Información Mascotas</span>
+                    </a>
+                    <span class="tooltip">Información Mascotas</span>
+                </li>
+                <li>
+                    <a href="comunidad.jsp">
+                        <i class='bx bx-group'></i>
+                        <span class="link_name">Comunidad</span>
+                    </a>
+                    <span class="tooltip">Comunidad</span>
+                </li>
+                <li>
+                    <a href="/Controler?visualizar=notas">
+                        <i class='bx bx-note'></i>
+                        <span class="link_name">Notas</span>
+                    </a>
+                    <span class="tooltip">Notas</span>
+                </li>
+                <li>
+                    <a href="saludBienestar.jsp">
+                        <i class='bx bxs-heart-circle'></i>
+                        <span class="link_name">Salud y Bienestar</span>
+                    </a>
+                    <span class="tooltip">Salud y Bienestar</span>
+                </li>
+                <li>
+                    <a href="adopciones.jsp">
+                        <i class='bx bxs-clinic'></i>
+                        <span class="link_name">Adopciones</span>
+                    </a>
+                    <span class="tooltip">Adopciones</span>
+                </li>
+                <li>
+                    <a href="config_usu.jsp">
+                        <i class='bx bx-cog'></i>
+                        <span class="link_name">Configuración</span>
+                    </a>
+                    <span class="tooltip">Configuración</span>
+                </li>
+                <li>
+                    <a href="cierreSesion.jsp">
+                        <i class='bx bx-log-out-circle'></i>
+                        <span class="link_name">Cerrar Sesión</span>
+                    </a>
+                    <span class="tooltip">Cerrar Sesión</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="ventana">
+            <section class="secciones">
+                <aside class="navi">
+                    <ul class="list">
+                        <!-- Selección uno -->
+                        <li class="list__item list__item--click">
+
+                            <div class="list__button list__button--click">
+
+                                <a href="#" class="nav__link">Perros</a>
+
+                            </div>
+
+                            <ul class="list__show">
+
+                                <li class="list__inside">
+
+                                    <a href="pParvo.jsp" class="nav__link nav__link--inside">Parvovirus</a>
+
+                                </li>
+
+                                <li class="list__inside">
+
+                                    <a href="pMoquillo.jsp" class="nav__link nav__link--inside">Moquillo</a>
+
+                                </li>
+
+                                <li class="list__inside">
+
+                                    <a href="pHepatitis.jsp" class="nav__link nav__link--inside">Hepatitis infecciosa canina</a>
+
+                                </li>
+
+                                <li class="list__inside">
+
+                                    <a href="pLepto.jsp" class="nav__link nav__link--inside">Leptospicosis</a>
+
+                                </li>
+
+                                <li class="list__inside">
+
+                                    <a href="pTos.jsp" class="nav__link nav__link--inside">Tos de las pérreras</a>
+
+                                </li>
+
+                                <li class="list__inside">
+
+                                    <a href="pRabia.jsp" class="nav__link nav__link--inside">Rabia</a>
+
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        <!-- Selección uno -->
+
+                        <li class="list__item list__item--click">
+                            <div class="list__button list__button--click">
+
+                                <a href="#" class="nav__link">Gatos</a>
+
+                            </div>
+
+                            <ul class="list__show">
+                                <li class="list__inside">
+                                    <a href="gInsu.jsp" class="nav__link nav__link--inside">Insuficiencia renal crónica</a>
+                                </li>
+
+                                <li class="list__inside">
+                                    <a href="gHiper.jsp" class="nav__link nav__link--inside">Hipertiroidismo</a>
+                                </li>
+
+                                <li class="list__inside">
+                                    <a href="gDiabetes.jsp" class="nav__link nav__link--inside">Diabetes Mellitus</a>
+                                </li>
+
+                                <li class="list__inside">
+                                    <a href="gInfec.jsp" class="nav__link nav__link--inside">Infección por retrovirus</a>
+                                </li>
+
+                                <li class="list__inside">
+                                    <a href="gCancer.jsp" class="nav__link nav__link--inside">Cáncer en felinos</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+                <article>
+                    <h1 class="titulo">Rabia</h1>
+                    <h2 class="subtitulos">¿Qué es?</h2>
+                    <p class="textoOOOO">Es una infección causada por el virus de la rabia (Rhabdoviridae), virus del género Lyssavirus que se propaga por saliva infectada a través de una herida, ya que no puede atravesar piel intacta. El virus no sobrevive mucho tiempo fuera del hospedador, ya que se trata de un virus frágil, se inactiva rápidamente con la luz solar y el calor.
+                        Es una zoonosis, es decir, puede transmitirse al ser humano.
+                        Afecta a un gran número de animales, tanto domésticos como salvajes, aunque por su cercanía al hombre, los más implicados en su transmisión son perros y gatos.
+                        Aunque parece una enfermedad inexistente en la actualidad, lo cierto es que sigue habiendo algunos casos de rabia en animales y humanos. En España se habían dado casos esporádicos en las ciudades de Ceuta y Melilla, pero el suceso ocurrido en Toledo con un perro infectado de rabia hizo saltar las alarmas.
+                        Cuando un animal infectado muerde o en el caso del gato también puede ser por arañazo, el virus penetra en el organismo y desde el lugar de la mordedura, viaja hasta el encéfalo. Desde ahí se disemina, llegando a las glándulas salivares, asegurando así la transmisión de la infección.</p>
+                    <center><a href="https://bit.ly/3Op80IG" target="_blank"><img src="https://bit.ly/3EtFMYB" class="imagenParvo"></a> </center>
+                    <h2 class="subtitulos">Síntomas</h2>
+                    <p class="textoOOOO">Independientemente del periodo de incubación, 3 a 5 días antes de aparecer los signos clínicos, el virus ya se encuentra en las glándulas salivares y por tanto es contagioso. En este periodo, hay un cambio de comportamiento repentino en el animal, están más ariscos o alerta, aunque frecuentemente estos cambios, pasan desapercibidos.
+                        A continuación hay dos síndromes, rabia furiosa y rabia muda, aunque puede darse uno o ambos síndromes en el mismo individuo.
+                        En la forma furiosa , el animal está intranquilo, reacciona con violencia a cualquier estímulo, muerde objetos incluso imaginarios, por lo que puede haber heridas en hocico y encías. En pocos días se produce una parálisis progresiva que conduce a la muerte.
+                        En la forma muda, sin embargo, parecen deprimidos, están quietos, escondidos. Presentan parálisis, generalmente en cara, garganta y cuello que les produce babeo e incapacidad para tragar. Según avanza la enfermedad, la parálisis se extiende acabando en coma y muerte.</p>
+
+                    <center><a href="https://bit.ly/3Op80IG" target="_blank"><img src="https://bit.ly/3V0hKf8" class="imagenParvo"></a> </center>
+                    <h2 class="subtitulos">Prevención</h2>
+                    <p class="textoOOOO">Se trata de una enfermedad de declaración obligatoria. Por su gravedad, es considerada una de las zoonosis más importantes del mundo.
+                        El principal método de lucha contra ella, es la vacunación periódica de los animales.
+                        Actualmente en Castilla la Mancha, es obligatoria la vacunación de perros, gatos y hurones mayores de tres meses, siendo imprescindible para su vacunación que estén correctamente identificados con algún sistema de identificación autorizado y homologado. Se estipula el tipo de vacuna a emplear, las pautas de revacunación y la administración por veterinarios autorizados.
+                        La Organización Mundial de la Salud considera a España (con excepción de Ceuta y Melilla), zona de bajo riesgo para la rabia. Sin embargo, todo el norte de África es zona de alto riesgo para la enfermedad.
+                        Por la cercanía y consiguiente riesgo, como fue el caso de rabia declarado en Toledo, nos parece fundamental continuar activamente con la prevención de esta enfermedad que resulta mortal para los animales incluido el ser humano.</p>
+                    <center><a href="https://bit.ly/3Op80IG" target="_blank"><img src="https://bit.ly/3gnGsa2" class="imagenParvo"></a> </center>
+
+                </article>
+            </section>
+        </section>
+        <script>
+            let listElements = document.querySelectorAll('.list__button--click');
+
+            listElements.forEach(listElement => {
+                listElement.addEventListener('click', () => {
+
+                    listElement.classList.toggle('arrow');
+
+                    let height = 0;
+                    let menu = listElement.nextElementSibling;
+                    if (menu.clientHeight == "0") {
+                        height = menu.scrollHeight;
+                    }
+
+                    menu.style.height = height + 'px';
+
+                })
+            });
+        </script>
+    </body>
+    <script src="prueba.js"></script>
+</html>
