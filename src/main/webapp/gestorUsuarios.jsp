@@ -3,7 +3,7 @@
 <%@page session="true"%>
 
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
+<html>
     <head>
         <link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -270,9 +270,11 @@
                 usuario = sesion.getAttribute("user").toString();
                 tipo = sesion.getAttribute("tipo_usuario").toString();
 
+if (tipo.equals("4")){
+
         %>
-        <header class="headersito" id="header">
-            <a href="cierreSesion.jsp" class="logoin">
+    <header class="headersito" id="header">
+        <a href="cierreSesion.jsp" class="logoin">
                 <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
             </a>
             <ul class="nav">
@@ -283,6 +285,22 @@
                 <li><a href="cierreSesion.jsp">Cerrar Sesión</a></li>
             </ul>
         </header>
+<%
+    }
+else{
+
+%>
+    <header class="headersito" id="header">
+        <a href="cierreSesion.jsp" class="logoin">
+                <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
+            </a>
+            <ul class="nav">
+                <li><a href="cierreSesion.jsp">Cerrar Sesión</a></li>
+            </ul>
+        </header>
+<%
+    }
+%>
 
 
         <img src="imagenes/fongestorusu.png" class="imagensita">

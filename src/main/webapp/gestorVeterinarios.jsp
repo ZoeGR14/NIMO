@@ -263,6 +263,8 @@ h2 {
                 usuario = sesion.getAttribute("user").toString();
                 tipo = sesion.getAttribute("tipo_usuario").toString();
 
+if (tipo.equals("4")){
+
         %>
     <header class="headersito" id="header">
         <a href="cierreSesion.jsp" class="logoin">
@@ -276,6 +278,22 @@ h2 {
                 <li><a href="cierreSesion.jsp">Cerrar Sesión</a></li>
             </ul>
         </header>
+<%
+    }
+else{
+
+%>
+    <header class="headersito" id="header">
+        <a href="cierreSesion.jsp" class="logoin">
+                <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
+            </a>
+            <ul class="nav">
+                <li><a href="cierreSesion.jsp">Cerrar Sesión</a></li>
+            </ul>
+        </header>
+<%
+    }
+%>
 
         
     <img src="imagenes/fongestorVet.png" class="imagensita">
@@ -342,7 +360,7 @@ h2 {
                     <form action="correoNV_vete.jsp" method="post" name="eliminaR">
                                     <input type="hidden" name="mailUs" value="<%=rs.getString(10)%>" required>
                                     <button type="submit" name="manda" class="bottar">
-                                        <img src="imagenes/correo-48.png" alt="alt">
+                                        <img src="imagenes/icons8-cancelar-45.png" alt="alt">
                                     </button>
                     </form>
                 </div>

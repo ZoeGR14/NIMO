@@ -1,12 +1,8 @@
-<%-- 
-    Document   : cierreSesion
-    Created on : 21/11/2022, 01:35:08 PM
-    Author     : HP
---%>
-
+<%@page import="java.sql.*,java.io.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
+<html>
     <head><link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="loginn.css">
