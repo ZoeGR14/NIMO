@@ -1,5 +1,8 @@
+<%@page import="java.sql.*,java.io.*" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="icon" href="imagenes/logo_nimo.ico">
@@ -237,7 +240,7 @@ background: linear-gradient(to right, hsla(35,88%,52%,0.15), hsla(10,100%,59%,0.
                 <a href="gestorVeterinarios.jsp">Veterinarios</a>
                 <a href="gestorComentarios.jsp">Comentarios</a>
                 <a href="gestorUsuarios.jsp">Usuarios</a>
-                <a href="cierreSesion.jsp">Cerrar Sesión</a>
+                <a href="cierreSesion.jsp">Cerrar SesiÃ³n</a>
             </nav>
             <section class="texto-header">
                 <h1>Bienvenido Administrador, <%out.println(usuario);%></h1>
@@ -274,8 +277,8 @@ background: linear-gradient(to right, hsla(35,88%,52%,0.15), hsla(10,100%,59%,0.
                         </a>
                     </div>
                     <div class="terms">
-                        <p>NIMO y EMN Corp. están a tu disposición.</p>
-                        <p>Contáctanos en:&nbsp;&nbsp;</p>
+                        <p>NIMO y EMN Corp. estÃ¡n a tu disposiciÃ³n.</p>
+                        <p>ContÃ¡ctanos en:&nbsp;&nbsp;</p>
                         <a href="mailto:comentarios.emn.corp@gmail.com?subject=Comentarios NIMO&body=Hola! Este es un correo mandado desde NIMO ">comentarios.emn.corp@gmail.com</a>
                     </div>
                 </div>
@@ -294,7 +297,7 @@ background: linear-gradient(to right, hsla(35,88%,52%,0.15), hsla(10,100%,59%,0.
             </div>
             <div class="box__copyright">
                 <hr>
-                <p>Todos los derechos reservados © 2022 
+                <p>Todos los derechos reservados Â© 2022 
                     <b>EMN Corp.</b></p>
             </div>
         </footer>

@@ -164,7 +164,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #FF8243;
+  background-color: #34B912;
   transition-duration: .5s;
   color: white;
   font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -243,8 +243,112 @@ h2 {
   width: 100%;
   fill: rgb(14, 14, 14);
 }
+.cardContainer1 {
+  width: 430px;
+  height: 450px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition-duration: .5s;
+  border-radius: 10px;
+  margin-top: 55%;
+}
 
-.bottar{
+.profileDiv1 {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:#FF8243 ;
+  transition-duration: .5s;
+  color: white;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.cardContainer1:hover .profileDiv1 {
+  transform: translateX(-25%) translateY(-20%);
+  transition-duration: .5s;
+}
+
+.infoDiv1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  z-index: 1;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255,0.3);
+}
+
+.nameDiv1 {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: aliceblue;
+  font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  gap: 2px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255,0.3);
+  color: #FF8243 ;
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.name1 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+.role1 {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgb(48, 48, 48);
+  margin-bottom: 5px;
+}
+
+.socialDiv1 {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(14, 14, 14);
+  gap: 25px;
+  background-color: rgba(255, 255, 255,0.3);
+  border-radius: 10px;
+}
+
+.infoDiv1 a {
+  width: 50%;
+}
+
+.socials1 {
+  width: 100%;
+  fill: rgb(14, 14, 14);
+}
+
+.bottar1{
     background-color: rgba(255, 255, 255,0.3);
     border: none;
     cursor: pointer;
@@ -262,6 +366,8 @@ h2 {
             if (sesion.getAttribute("user") != null && sesion.getAttribute("tipo_usuario") != null) {
                 usuario = sesion.getAttribute("user").toString();
                 tipo = sesion.getAttribute("tipo_usuario").toString();
+                
+if (tipo.equals("4")){
 
         %>
     <header class="headersito" id="header">
@@ -276,7 +382,22 @@ h2 {
                 <li><a href="cierreSesion.jsp">Cerrar Sesión</a></li>
             </ul>
         </header>
+<%
+    }
+else{
 
+%>
+    <header class="headersito" id="header">
+        <a href="cierreSesion.jsp" class="logoin">
+                <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
+            </a>
+            <ul class="nav">
+                <li><a href="cierreSesion.jsp">Cerrar Sesión</a></li>
+            </ul>
+        </header>
+<%
+    }
+%>
         
     <img src="imagenes/writeComment.png" class="imagensita">
   
@@ -331,7 +452,7 @@ h2 {
                                     
                     
                                     <a href="mailto:<%out.println(rs3.getString(10));%>?subject=Comentarios NIMO&body=Hola! Este es un correo mandado desde NIMO para brindar soporte a tu comentario">
-                                        <img src="imagenes/comencorre.png" alt="alt">
+                                        <img src="imagenes/Correocomen.png" alt="alt">
                                     </a>
                                     
                                         
@@ -344,6 +465,53 @@ h2 {
   
 <%
     }}}
+                        sta.close();
+                        cnx.close();
+                        rs.close();
+                    }
+                    catch (SQLException error){
+                        out.print(error.toString());
+                    }
+                %>
+        <%
+                Connection con = null;
+                Statement stat = null;
+                ResultSet re = null;
+
+                try{
+                    Class.forName("com.mysql.jdbc.Driver");
+                    con  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
+                    stat = con.createStatement();
+                    int num = 1;
+                    re = stat.executeQuery("select * from comentarios where tipo_coment='"+num+"';");
+                    while (re.next()) {
+                    
+                    
+
+                        
+                        %>
+      
+        <div class="cardContainer1">
+            <div class="profileDiv1">
+                <center>
+                    Comentario:<br><br> <%=re.getString(2)%><br><br><br>
+                   
+                </center>
+            </div>
+            <div class="infoDiv1">
+                <div class="nameDiv1"><center>Comentario Enviado por Invitado</center></div>
+                <div class="socialDiv1">        
+                                    
+                                        
+                                    
+                    
+                </div>
+            </div>
+        </div>
+
+  
+<%
+    }
                         sta.close();
                         cnx.close();
                         rs.close();
