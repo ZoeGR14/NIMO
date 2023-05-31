@@ -32,4 +32,5 @@ insert into usuario	values	('zoegr', '1', '5568741814','Masculino','2005-01-14',
     
 insert into veterinario	values	('12345678', 'Santurce 1065 Residencial Zacatenco', 'mariana'),
 ('34567890', 'Mar Mediterraneo', 'ola'),
-('09876543', 'Calle #8 Popotla', 'cominitoc');
+('09876543', 'Calle #8 Popotla', 'cominitoc'),
+('63246546', 'Indios Verdes', 'lizeth');

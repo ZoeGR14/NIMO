@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <title>Modificando Datos</title>
@@ -440,7 +440,7 @@
                                                         res = sta.executeQuery("select*from usuario where usuar='"+usuario+"';");
                                                         if(!res.next()){
                         out.println("<script>Swal.fire({icon: 'error',title: 'Usuario no encontrado',text: 'Inténtelo de nuevo'});</script>");
-                        out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
+                        out.println("<script>function saludos(){location.href ='inicio_Sesion.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                     }
                                                         else{

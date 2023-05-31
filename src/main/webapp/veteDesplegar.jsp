@@ -3,7 +3,7 @@
 <%@page session="true"%>
 
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head>
         <link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -190,11 +190,11 @@ section button{
                 <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
                 <li><button class="desplegar" name="accion" value="Visualizar mis mascotas" style="border: none;">Mis Mascotas</button></li>
                 <li><a href="2_calendario.jsp" class="">Calendario</a></li>
-                <li><a href="informativo.html" class="">Información Mascotas</a></li>
-                <li><a href="comunidad.html" class="">Comunidad</a></li>
+                <li><a href="informativo.jsp" class="">Información Mascotas</a></li>
+                <li><a href="comunidad.jsp" class="">Comunidad</a></li>
                 <li><button class="desplegar" name="accion" value="Visualizar mis notas" style="border: none;">Notas</button></li></form>
-                <li><a href="citas.html" class="">Citas</a></li>
-                <li><a href="saludBienestar.html" class="">Salud y Bienestar</a></li>
+                <li><a href="citas.jsp" class="">Citas</a></li>
+                <li><a href="saludBienestar.jsp" class="">Salud y Bienestar</a></li>
                 <li><a href="config_usu.jsp" class="">Configuración</a></li>
                 <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>
 

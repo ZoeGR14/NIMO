@@ -198,7 +198,7 @@ foreign key (id_recordatorio) references recordatorios(id_recordatorio) on delet
 foreign key (cedula) references veterinario(cedula) on update cascade on delete cascade
 );
 
-select * from usuario;
+select * from usuario where tipo_us = 3;
 select * from veterinario;
 select * from veterinario_cliente;
 select * from nota;

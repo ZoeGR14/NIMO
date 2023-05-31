@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head><link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -51,7 +51,7 @@
                     res=stat.executeQuery("select*from usuario where usuar='"+usuario+"';");
                     if(!res.next()){
                         out.println("<script>Swal.fire({icon: 'error',title: 'Ha ocurrido un error',text: 'Inténtelo más tarde'});</script>");
-                        out.println("<script>function saludos(){location.href ='inicio_veteNV.jsp';}</script>");
+                        out.println("<script>function saludos(){location.href ='inicio.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                     }
                     else{
@@ -59,7 +59,7 @@
                         stat.executeUpdate("insert into comentarios values(null,'"+comm+"','2');");
                         stat.executeUpdate("insert into usu_coment values(null,'"+usuario+"');");
                         out.println("<script>Swal.fire('Gracias por tus comentarios, son de mucha ayuda para nosotros!','','success')</script>");
-                        out.println("<script>function saludos(){location.href ='inicio_veteNV.jsp';}</script>");
+                        out.println("<script>function saludos(){location.href ='inicio.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                     }
                 }

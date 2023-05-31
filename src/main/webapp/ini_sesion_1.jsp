@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head><link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -37,7 +37,7 @@
                     
                     if(!res.next()){
                         out.println("<script>Swal.fire({icon: 'error',title: 'Usuario no encontrado',text: 'Inténtelo de nuevo'});</script>");
-                        out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
+                        out.println("<script>function saludos(){location.href ='inicio_Sesion.jsp';}</script>");
                         out.println("<script>setTimeout(saludos, 1500);</script>");
                     }
                     else{
@@ -69,7 +69,7 @@
                         }
                         else{
                             out.println("<script>Swal.fire({icon: 'error',title: 'Contraseña incorrecta',text: 'Inténtelo de nuevo'});</script>");
-                            out.println("<script>function saludos(){location.href ='inicio_Sesion.html';}</script>");
+                            out.println("<script>function saludos(){location.href ='inicio_Sesion.jsp';}</script>");
                             out.println("<script>setTimeout(saludos, 1500);</script>");
                         }
             }
@@ -77,7 +77,7 @@
                 
                 catch(SQLException error){
                     out.println("<script>Swal.fire({icon: 'error',title: 'Algo salió mal',text: 'Inténtelo de nuevo'});</script>");
-                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
+                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
                     out.println("<script>setTimeout(saludos, 1500);</script>");
                 }
              %>

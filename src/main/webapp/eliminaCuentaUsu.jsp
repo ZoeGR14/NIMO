@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
                 <title>Eliminar cuenta</title>
@@ -437,7 +437,7 @@
                                                                 sta2.executeUpdate("delete from veterinario where usuar='"+usuario+"';");
                                                   }
                                                   out.println("<script>Swal.fire('Cuenta eliminada','Lamentamos que te vayas','success')</script>");
-                                out.println("<script>function saludos(){location.href ='index.html';}</script>");
+                                out.println("<script>function saludos(){location.href ='index.jsp';}</script>");
                                 out.println("<script>setTimeout(saludos, 1500);</script>");
                                                   }
                                                   catch(SQLException error){
