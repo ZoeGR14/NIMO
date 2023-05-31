@@ -197,32 +197,3 @@ cedula int,
 foreign key (id_recordatorio) references recordatorios(id_recordatorio) on delete cascade on update cascade,
 foreign key (cedula) references veterinario(cedula) on update cascade on delete cascade
 );
-
-select * from usuario where tipo_us = 3;
-select * from veterinario;
-select * from veterinario_cliente;
-select * from nota;
-select * from nota_usu;
-select * from mascota;
-select * from masc_usu;
-select * from comentarios;
-select * from usu_coment;
-select * from veterinario_cliente;
-select * from adopcion;
-select * from adopc_masc;
-select * from adoptar;
-select * from adopt_masc;
-select * from recordatorios;
-select * from recordatorio_vete;
-select * from calendario;
-select * from publicaciones;
-
-/*SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc WHERE mascota.estado = 'adopcion';
-SELECT * FROM masc_usu INNER JOIN adopc_masc  ON masc_usu.id_masc = adopc_masc.id_masc WHERE usuar != "willis";
-SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc INNER JOIN adopcion ON adopcion.id_adopc = adopc_masc.id_adopc INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE mascota.estado = 'adopcion' AND masc_usu.usuar != "willis";
-
-SELECT * FROM mascota INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc INNER JOIN adopcion ON adopc_masc.id_adopc= adopcion.id_adopc WHERE mascota.estado = 'adopcion';*/
-
-SELECT * FROM mascota INNER JOIN adopt_masc ON mascota.id_masc = adopt_masc.id_masc INNER JOIN adoptar ON adoptar.id_adopt = adopt_masc.id_adopt INNER JOIN usuario ON adopt_masc.usuar = usuario.usuar INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE adopt_masc.usuar = "+usuario+";
-SELECT * FROM mascota INNER JOIN adopt_masc ON mascota.id_masc = adopt_masc.id_masc INNER JOIN adoptar ON adoptar.id_adopt = adopt_masc.id_adopt INNER JOIN usuario ON adopt_masc.usuar = usuario.usuar INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE masc_usu.usuar = "willis";
-SELECT * FROM adoptar where id_adopt="1";
