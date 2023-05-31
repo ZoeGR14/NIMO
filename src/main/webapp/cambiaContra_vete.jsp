@@ -1,7 +1,7 @@
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head><link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cambio de Contraseña</title>
@@ -465,17 +465,17 @@
                 <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
             </a>
             <ul class="nav">
-                <li><a href="inicio_vete.jsp" class="inicio">Inicio</a></li>
-                <li><a href="misMascotas_1.jsp" class="">Mis Mascotas</a></li>
-                <li><a href="calendario_1.jsp" class="">Calendario</a></li>
-                <li><a href="informativo_1.jsp" class="">Información Mascotas</a></li>
-                <li><a href="comunidad_1.jsp" class="">Comunidad</a></li>
-                <li><a href="notas_1.jsp" class="">Notas</a></li>
-                <li><a href="citas_1.jsp" class="">Citas</a></li>
-                <li><a href="saludBienestar_1.jsp" class="">Salud y Bienestar</a></li>
+                <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
+                <li><a href="misMascotas.jsp" class="">Mis Mascotas</a></li>
+                <li><a href="calendario.jsp" class="">Calendario</a></li>
+                <li><a href="informativo.jsp" class="">Información Mascotas</a></li>
+                <li><a href="comunidad.jsp" class="">Comunidad</a></li>
+                <li><a href="notas.jsp" class="">Notas</a></li>
+                <li><a href="citas.jsp" class="">Citas</a></li>
+                <li><a href="saludBienestar.jsp" class="">Salud y Bienestar</a></li>
                 <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="soyVeterinario.jsp" class="">Opciones Veterinario</a></li>
-                <li><a href="cierreSesion_1.jsp" class="">Cerrar Sesión</a></li>
+                <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>
             </ul>
         </header>
         <br><br><br><br>

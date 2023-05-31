@@ -1,18 +1,27 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.sql.*,java.io.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head><link rel="icon" href="imagenes/logo_nimo.ico">
-        <title>NIMO</title>
+        <c:choose>
+            <c:when test="${sessionScope.tipo_usuario eq 1}">
+                <title>NIMO</title>
+            </c:when>
+            <c:otherwise>
+                <title>NIMO - Veterinarios</title>
+            </c:otherwise>
+        </c:choose>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="sweetalert2.all.min.js"></script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
-            
+
 
             .bgcolor{
                 background-color: #4b277a;
@@ -198,7 +207,7 @@
                 border-radius: 5px;
                 animation: float 2.5s ease-in-out 0s infinite forwards;
             }
-            
+
 
             .cover{
                 position: absolute;
@@ -371,7 +380,7 @@
                     previousScroll = scroll;
                 });
             });
-            
+
         </script>
     </head>
 
@@ -387,7 +396,7 @@
 
         %>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
+
         <header class="headersito" id="header">
             <a href="cierreSesion.jsp" class="logoin">
                 <img src="imagenes/logo_nimo.png" alt="" class="logoni" draggable="false">
@@ -400,131 +409,406 @@
                 <li><a href="comunidad.jsp" class="">Comunidad</a></li>
                 <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
                 <li><a href="saludBienestar.jsp" class="">Salud y Bienestar</a></li>
-                <li><a href="adopciones.jsp" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>
-                <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>
+                <li><a href="adopciones.jsp" class="">Adopciones</a></li>
+                <c:if test="${sessionScope.tipo_usuario eq 2}"><li><a href="soyVeterinario.jsp" class="">Opciones Veterinario</a></li></c:if>
+                    <li><a href="config_usu.jsp" class="">Configuración</a></li>
+                    <li><a href="cierreSesion.jsp" class="">Cerrar Sesión</a></li>
 
-            </ul>
-        </header>
-        <section class="home" id="home">
-            <div class="content">
-                <h2>NIMO</h2>
-                <p>
-                    Bienvenid@&nbsp;<%out.println(usuario);%><br>
-                    ¡Navega por todas las opciones que tenemos para ti!
+                </ul>
+            </header>
+            <section class="home" id="home">
+                <div class="content">
+                    <h2>NIMO</h2>
+                    <p>
+                    <c:choose>
+                        <c:when test="${sessionScope.tipo_usuario eq 1}">
+                            Bienvenid@&nbsp;<%out.println(usuario);%><br>
+                            ¡Navega por todas las opciones que tenemos para ti!
+                        </c:when>
+                        <c:otherwise>
+                            Bienvenido Veterinario&nbsp;<%out.println(usuario);%><br>
+                            ¡Navega por todas las opciones que tenemos para ti!
+                        </c:otherwise>
+                    </c:choose>
                 </p>
                 <a href="inicio.jsp#about" class="boton-go">¡Vamos!</a>
             </div>
         </section>
-        <section class="about" id="about">
-            <div style="margin-top: 35px;">
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Mis Mascotas</h2>
-                            <p>Registra a tus mascotas</p>
-                            <button class="view-btn">
-                                <a href="/NIMO/Controler?visualizar=mascotas">¡Vamos!</a>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <img src="imagenes/mismascotasin.png" alt="" style="height: 100%; width: 100%;">
-                    
-                </div>
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Calendario</h2>
-                            <p>Agenda citas importantes y almacena días especiales</p>
-                            <button class="view-btn">
-                                <a href="2_calendario.jsp">¡Vamos!</a>
-                            </button>
-                        </div>
-                    </div>
-                    
-                        <img src="imagenes/calendario.png" alt="">
-                    
-                </div>
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Información Mascotas</h2>
-                            <p>Aprende más sobre mascotas</p>
-                            <button class="view-btn">
-                                <a href="informativo.jsp">¡Vamos!</a>
-                            </button>
-                        </div>
-                    </div>
-                    
-                        <img src="imagenes/info.png" alt="">
-                    
-                </div>
-            </div>  
-            <div style="margin-top: 35px;">
-  
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Notas</h2>
-                            <p>Guarda información importante en notas rápidas</p>
-                            <button class="view-btn">
-                                <a href="/NIMO/Controler?visualizar=notas">Vamos!</a>
-                            </button>
-                        </div>
-                    </div>
-                    
-                        <img src="imagenes/notas.png" alt="">
-                    
-                </div>
+        <c:choose>
+            <c:when test="${sessionScope.tipo_usuario eq 1}">
+                <section class="about" id="about">
+                    <div style="margin-top: 35px;">
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Mis Mascotas</h2>
+                                    <p>Registra a tus mascotas</p>
+                                    <button class="view-btn">
+                                        <a href="/NIMO/Controler?visualizar=mascotas">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
 
-            </div>
+                            <img src="imagenes/mismascotasin.png" alt="" style="height: 100%; width: 100%;">
 
-            <div style="margin-top: 35px;">
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Salud y Bienestar</h2>
-                            <p>Descubre las mejores formas de cuidar a tu mejor amigo</p>
-                            <button class="view-btn">
-                                <a href="saludBienestar.jsp">¡Vamos!</a>
-                            </button>
                         </div>
-                    </div>
-                    
-                    <img src="imagenes/saludd.png" alt="" style="height: 100%; width: 100%;">
-                    
-                </div>
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Configuración</h2>
-                            <p>Realiza cambios en tu cuenta</p>
-                            <button class="view-btn">
-                                <a href="config_usu.jsp">¡Vamos!</a>
-                            </button>
-                        </div>
-                    </div>
-                    
-                        <img src="imagenes/config.png" alt="">
-                    
-                </div>
-                <div class="cardd">
-                    <div class="cover">
-                        <div class="texto_card">
-                            <h2>Cerrar Sesión</h2>
-                            <p>¡Puedes volver cuando gustes!</p>
-                            <button class="view-btn">
-                                <a href="cierreSesion_1.jsp">¡Vamos!</a>
-                            </button>
-                        </div>
-                    </div>
-                    
-                        <img src="imagenes/sesion.png" alt="">
-                   
-                </div>
-            </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Calendario</h2>
+                                    <p>Agenda citas importantes y almacena días especiales</p>
+                                    <button class="view-btn">
+                                        <a href="2_calendario.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
 
-        </section>
+                            <img src="imagenes/calendario.png" alt="">
+
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Información Mascotas</h2>
+                                    <p>Aprende más sobre mascotas</p>
+                                    <button class="view-btn">
+                                        <a href="informativo.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/info.png" alt="">
+
+                        </div>
+                    </div>  
+                    <div style="margin-top: 35px;">
+
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Notas</h2>
+                                    <p>Guarda información importante en notas rápidas</p>
+                                    <button class="view-btn">
+                                        <a href="/NIMO/Controler?visualizar=notas">Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/notas.png" alt="">
+
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 35px;">
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Salud y Bienestar</h2>
+                                    <p>Descubre las mejores formas de cuidar a tu mejor amigo</p>
+                                    <button class="view-btn">
+                                        <a href="saludBienestar.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/saludd.png" alt="" style="height: 100%; width: 100%;">
+
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Configuración</h2>
+                                    <p>Realiza cambios en tu cuenta</p>
+                                    <button class="view-btn">
+                                        <a href="config_usu.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/config.png" alt="">
+
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Cerrar Sesión</h2>
+                                    <p>¡Puedes volver cuando gustes!</p>
+                                    <button class="view-btn">
+                                        <a href="cierreSesion.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/sesion.png" alt="">
+
+                        </div>
+                    </div>
+
+                </section>
+            </c:when>
+            <c:when test="${sessionScope.tipo_usuario eq 3}">
+                <section class="about" id="about">
+                    <div style="margin-top: 35px;">
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Mis Mascotas</h2>
+                                    <p>Registra a tus mascotas</p>
+                                    <button class="view-btn">
+                                        <a href="misMascotas.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/img1.png" alt="">
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Calendario</h2>
+                                    <p>Agenda citas importantes y almacena días especiales</p>
+                                    <button class="view-btn">
+                                        <a href="2_calendario.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/calendario.png" alt="">
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Información Mascotas</h2>
+                                    <p>Aprende más sobre mascotas</p>
+                                    <button class="view-btn">
+                                        <a href="informativo.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/info.png" alt="">
+                        </div>
+                    </div>  
+                    <div style="margin-top: 35px;">
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Comunidad</h2>
+                                    <p>Explora foros y forma amistades</p>
+                                    <button class="view-btn">
+                                        <a href="comunidad.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/img4.png" alt="">
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Notas</h2>
+                                    <p>Guarda información importante en notas rápidas</p>
+                                    <button class="view-btn">
+                                        <a href="notas.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/notas.png" alt="">
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Citas</h2>
+                                    <p>Agenda citas con veterinarios avalados</p>
+                                    <button class="view-btn">
+                                        <a href="citas.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/vete.png" alt="">
+                        </div>
+
+                    </div>
+
+                    <div style="margin-top: 35px;">
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Salud y Bienestar</h2>
+                                    <p>Descubre las mejores formas de cuidar a tu mejor amigo</p>
+                                    <button class="view-btn">
+                                        <a href="saludBienestar.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/salud.png" alt="">
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Configuración</h2>
+                                    <p>Realiza cambios en tu cuenta</p>
+                                    <button class="view-btn">
+                                        <a href="cierreSesion.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/config.png" alt="">
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Opciones Veterinario</h2>
+                                    <p>...</p>
+                                    <button class="view-btn" onclick="Swal.fire('Tu perfil continúa en proceso de validación', 'Continúa navegando por el resto de nuestras opciones', 'warning');">Próximo
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/fongestorVet.png" alt="" style="width: 100%; height: 100%;">
+                        </div>
+
+                    </div>
+                </section>
+            </c:when>
+            <c:otherwise>
+                <section class="about" id="about">
+                    <div style="margin-top: 35px;">
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Mis Mascotas</h2>
+                                    <p>Registra a tus mascotas</p>
+                                    <button class="view-btn">
+                                        <a href="/NIMO/Controler?visualizar=mascotas">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/mismascotasin.png" alt="" style="height: 100%; width: 100%;">
+
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Calendario</h2>
+                                    <p>Agenda citas importantes y almacena días especiales</p>
+                                    <button class="view-btn">
+                                        <a href="2_calendario.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/calendario.png" alt="">
+
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Información Mascotas</h2>
+                                    <p>Aprende más sobre mascotas</p>
+                                    <button class="view-btn">
+                                        <a href="informativo.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/info.png" alt="">
+
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <div style="margin-top: 35px;">
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Comunidad</h2>
+                                    <p>Explora foros y forma amistades</p>
+                                    <button class="view-btn">
+                                        <a href="comunidad.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/img4.png" alt="">
+
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Notas</h2>
+                                    <p>Guarda información importante en notas rápidas</p>
+                                    <button class="view-btn">
+                                        <a href="/NIMO/Controler?visualizar=notas">Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/notas.png" alt="">
+
+                        </div>
+
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Opciones Veterinario</h2>
+                                    <p>Revisa tus citas pendientes y pacientes en espera</p>
+                                    <button class="view-btn">
+                                        <a href="soyVeterinario.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="imagenes/fongestorVet.png" alt="" style="width: 100%; height: 100%;">
+                        </div>
+
+                    </div>
+                    <div style="margin-top: 35px;">
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Salud y Bienestar</h2>
+                                    <p>Descubre las mejores formas de cuidar a tu mejor amigo</p>
+                                    <button class="view-btn">
+                                        <a href="saludBienestar.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/saludd.png" alt="" style="height: 100%; width: 100%;">
+
+                        </div>
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Configuración</h2>
+                                    <p>Realiza cambios en tu cuenta</p>
+                                    <button class="view-btn">
+                                        <a href="config_vete.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/config.png" alt="">
+
+                        </div>
+
+                        <div class="cardd">
+                            <div class="cover">
+                                <div class="texto_card">
+                                    <h2>Cerrar Sesión</h2>
+                                    <p>¡Puedes volver cuando gustes!</p>
+                                    <button class="view-btn">
+                                        <a href="cierreSesion.jsp">¡Vamos!</a>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <img src="imagenes/sesion.png" alt="">
+
+                        </div>
+
+                    </div>
+
+                </section>
+            </c:otherwise>
+        </c:choose>
+
         <script src="script_inic.js"></script>
         <%
             } else {
@@ -564,7 +848,7 @@
                                 <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                                 <h3>Escibe el problema a resolver</h3>
                                 <h4>Nos mantendremos en contacto por medio de correo electrónico</h4>
-                                <form action="comments_1.jsp" method="post" name="comentarrr">
+                                <form <c:choose><c:when test="${sessionScope.tipo_usuario eq 1}">action="comments.jsp"</c:when><c:when test="${sessionScope.tipo_usuario eq 2}">action="comments_2.jsp"</c:when><c:otherwise>action="soporteNV.jsp"</c:otherwise></c:choose> method="post" name="comentarrr">
                                     <div class="contenedorr-inputs">
                                         <input type="text" placeholder="Problema(s)" name="comenttt">
                                     </div>
@@ -606,6 +890,6 @@
         </footer>
     </section>
     <script>
-       
+
     </script>
 </html>

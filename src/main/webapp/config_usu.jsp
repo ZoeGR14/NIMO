@@ -3,7 +3,7 @@
 <%@page session="true"%>
 
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head><link rel="icon" href="imagenes/logo_nimo.ico">
         <title>Configuración NIMO</title>
         <meta charset="UTF-8">
@@ -512,7 +512,17 @@
                         <i class='bx bxs-clinic'></i>
                         <span class="link_name">Adopciones</span>
                     </a>
-                    <span class="tooltip">Adopciones</span>
+                        <span class="tooltip">Adopciones</span>
+                </li>
+                <c:if test="${sessionScope.tipo_usuario eq 2}">
+                    <li>
+                        <a href="soyVeterinario.jsp">
+                            <i class='bx bx-plus-medical'></i>
+                            <span class="link_name">Opciones Veterinario</span>
+                        </a>
+                        <span class="tooltip">Adopciones</span>
+                    </li>
+                </c:if>
                 </li>
                 <li>
                     <a href="config_usu.jsp">
@@ -560,7 +570,7 @@
                                 <div class="text-cajac">
                                     <h3>Modificar Datos Personales</h3>
                                     <p>Actualiza tus datos</p>
-                                    <a href="modificadatos_1.jsp">Vamos</a>
+                                    <a href="modificadatos.jsp">Vamos</a>
                                 </div>
                             </div>
                         </div>

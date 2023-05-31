@@ -3,7 +3,7 @@
 <%@page session="true"%>
 
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head>
         <link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -60,7 +60,7 @@
                     }
                     else
                         if(tipo.equals("3")){
-                            out.println("<script>function saludos(){location.href ='despVete_1.jsp';}</script>");
+                            out.println("<script>function saludos(){location.href ='despVete.jsp';}</script>");
                             out.println("<script>setTimeout(saludos, 1500);</script>");
                             conx.close();
                             sta.close();

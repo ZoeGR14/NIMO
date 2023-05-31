@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,8 +90,17 @@
                         <i class='bx bxs-clinic'></i>
                         <span class="link_name">Adopciones</span>
                     </a>
-                    <span class="tooltip">Adopciones</span>
+                        <span class="tooltip">Adopciones</span>
                 </li>
+                <c:if test="${sessionScope.tipo_usuario eq 2}">
+                    <li>
+                        <a href="soyVeterinario.jsp">
+                            <i class='bx bx-plus-medical'></i>
+                            <span class="link_name">Opciones Veterinario</span>
+                        </a>
+                        <span class="tooltip">Adopciones</span>
+                    </li>
+                </c:if>
                 <li>
                     <a href="config_usu.jsp">
                         <i class='bx bx-cog'></i>

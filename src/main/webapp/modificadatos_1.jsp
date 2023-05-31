@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Modificar Datos Personales</title>
@@ -528,7 +528,7 @@
                             <h1>Modificación a Datos personales</h1>
                             <div>Por favor, modifica los datos deseados</div>
                         </div>
-                        <form action="modificandoD_1.jsp" method="post" name="registros" class="login-card-form">
+                        <form action="modificandoD.jsp" method="post" name="registros" class="login-card-form">
                             
                             <div class="form-item">
                                 <input type="text" placeholder="Nombre" name="nombre" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" title="Escriba solo letras del abecedario" required autofocus value="<%=res.getString(8)%>">

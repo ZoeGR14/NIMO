@@ -3,11 +3,11 @@
 <%@page session="true"%>
 
 <!DOCTYPE html>
-<html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
     <head>
         <link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Gestor de Usuarios</title>
+        <title>Gestor de Veterinarios</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
@@ -307,7 +307,7 @@ h2 {
                     cnx  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
                     sta = cnx.createStatement();
                     int num = 3;
-                    rs = sta.executeQuery("select * from usuario where tipo_us='"+num+"';");
+                    rs = sta.executeQuery("select * from usuario where tipo_us="+num+"");
                     while (rs.next()) {
                     String name = rs.getString(1);
                     sta2 = cnx.createStatement();
