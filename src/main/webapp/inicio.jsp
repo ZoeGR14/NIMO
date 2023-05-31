@@ -848,7 +848,7 @@
                                 <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                                 <h3>Escibe el problema a resolver</h3>
                                 <h4>Nos mantendremos en contacto por medio de correo electrónico</h4>
-                                <form <c:choose><c:when test="${sessionScope.tipo_usuario eq 1}">action="comments.jsp"</c:when><c:when test="${sessionScope.tipo_usuario eq 2}">action="comments_2.jsp"</c:when><c:otherwise>action="soporteNV.jsp"</c:otherwise></c:choose> method="post" name="comentarrr">
+                                <form <c:choose><c:when test="${sessionScope.tipo_usuario eq 1}">action="comments_1.jsp"</c:when><c:when test="${sessionScope.tipo_usuario eq 2}">action="comments_2.jsp"</c:when><c:otherwise>action="soporteNV.jsp"</c:otherwise></c:choose> method="post" name="comentarrr">
                                     <div class="contenedorr-inputs">
                                         <input type="text" placeholder="Problema(s)" name="comenttt">
                                     </div>

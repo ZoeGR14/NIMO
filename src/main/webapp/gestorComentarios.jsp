@@ -3,7 +3,7 @@
 <%@page session="true"%>
 
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
+<html>
     <head>
         <link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -135,21 +135,14 @@ h2 {
 }
 
 .gridd{
-                padding: 15px;
-                margin:0;
-                display: flex;
-                margin: auto;
-                flex-direction: row;
-                gap: 20px;
-                flex-wrap: wrap;
-                align-content: space-around;
-                align-items: center;
-                justify-content: center;
-                
-/*                grid-template-columns: repeat(3, 1fr);  establece 3 columnas con ancho igual 
-                grid-auto-rows: minmax(100px, 700px);  establece una altura mínima de 100px 
-                grid-gap: 100px;  establece el espacio entre los elementos */
-            }
+    margin-top: 0%;
+                margin-bottom: 50px;
+                margin-left: 150px;
+                display: grid;
+  grid-template-columns: repeat(3, 1fr); /* establece 3 columnas con ancho igual */
+  grid-auto-rows: minmax(100px, 700px); /* establece una altura mínima de 100px */
+  grid-gap: 100px; /* establece el espacio entre los elementos */
+}
 .cardContainer {
   width: 430px;
   height: 450px;

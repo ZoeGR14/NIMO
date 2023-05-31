@@ -3,11 +3,11 @@
 <%@page session="true"%>
 
 <!DOCTYPE html>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><html>
+<html>
     <head>
         <link rel="icon" href="imagenes/logo_nimo.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Gestor de Veterinarios</title>
+        <title>Gestor de Usuarios</title>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
@@ -135,21 +135,14 @@ h2 {
 }
 
 .gridd{
-                padding: 15px;
-                margin:0;
-                display: flex;
-                margin: auto;
-                flex-direction: row;
-                gap: 20px;
-                flex-wrap: wrap;
-                align-content: space-around;
-                align-items: center;
-                justify-content: center;
-                
-/*                grid-template-columns: repeat(3, 1fr);  establece 3 columnas con ancho igual 
-                grid-auto-rows: minmax(100px, 700px);  establece una altura mínima de 100px 
-                grid-gap: 100px;  establece el espacio entre los elementos */
-            }
+    margin-top: 0%;
+                margin-bottom: 50px;
+                margin-left: 150px;
+                display: grid;
+  grid-template-columns: repeat(3, 1fr); /* establece 3 columnas con ancho igual */
+  grid-auto-rows: minmax(100px, 700px); /* establece una altura mínima de 100px */
+  grid-gap: 100px; /* establece el espacio entre los elementos */
+}
 .cardContainer {
   width: 430px;
   height: 450px;
@@ -307,7 +300,7 @@ h2 {
                     cnx  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
                     sta = cnx.createStatement();
                     int num = 3;
-                    rs = sta.executeQuery("select * from usuario where tipo_us="+num+"");
+                    rs = sta.executeQuery("select * from usuario where tipo_us='"+num+"';");
                     while (rs.next()) {
                     String name = rs.getString(1);
                     sta2 = cnx.createStatement();
