@@ -222,7 +222,7 @@ SELECT * FROM masc_usu INNER JOIN adopc_masc  ON masc_usu.id_masc = adopc_masc.i
 SELECT * FROM mascota INNER JOIN adopc_masc ON mascota.id_masc = adopc_masc.id_masc INNER JOIN adopcion ON adopcion.id_adopc = adopc_masc.id_adopc INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE mascota.estado = 'adopcion' AND masc_usu.usuar != "willis";
 
 SELECT * FROM mascota INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc INNER JOIN adopcion ON adopc_masc.id_adopc= adopcion.id_adopc WHERE mascota.estado = 'adopcion';*/
-
+/*
 SELECT * FROM mascota INNER JOIN adopt_masc ON mascota.id_masc = adopt_masc.id_masc INNER JOIN adoptar ON adoptar.id_adopt = adopt_masc.id_adopt INNER JOIN usuario ON adopt_masc.usuar = usuario.usuar INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE adopt_masc.usuar = "+usuario+";
 SELECT * FROM mascota INNER JOIN adopt_masc ON mascota.id_masc = adopt_masc.id_masc INNER JOIN adoptar ON adoptar.id_adopt = adopt_masc.id_adopt INNER JOIN usuario ON adopt_masc.usuar = usuario.usuar INNER JOIN masc_usu ON mascota.id_masc = masc_usu.id_masc WHERE masc_usu.usuar = "willis";
-SELECT * FROM adoptar where id_adopt="1";
+SELECT * FROM adoptar where id_adopt="1";*/
