@@ -620,7 +620,7 @@
             </a>
             <ul class="nav">
                 <li><a href="inicio_Sesion.jsp" class="">Inicio de Sesión</a></li>
-                <li><a href="registro.jsp" class="">Registro</a></li>
+                <li><a href="registro.html" class="">Registro</a></li>
                 <li><a href="inicioSPersonal.jsp" class="">¿Eres un administrador?</a></li>
             </ul>
         </header>
@@ -753,7 +753,7 @@
                     <br><br><br>
                     <center><h4>¿No tienes una cuenta?</h4></center>
                     <br><br>
-                    <center><a href="registro.jsp" class="bot-mag">
+                    <center><a href="registro.html" class="bot-mag">
                             <span class="botmag_text">
                                 ¡REGÍSTRATE!
                             </span>

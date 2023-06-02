@@ -612,19 +612,6 @@
                             </div>
                             <img src="imagenes/notas.png" alt="">
                         </div>
-                        <div class="cardd">
-                            <div class="cover">
-                                <div class="texto_card">
-                                    <h2>Citas</h2>
-                                    <p>Agenda citas con veterinarios avalados</p>
-                                    <button class="view-btn">
-                                        <a href="citas.jsp">¡Vamos!</a>
-                                    </button>
-                                </div>
-                            </div>
-                            <img src="imagenes/vete.png" alt="">
-                        </div>
-
                     </div>
 
                     <div style="margin-top: 35px;">

@@ -77,7 +77,7 @@
                 
                 catch(SQLException error){
                     out.println("<script>Swal.fire({icon: 'error',title: 'Algo salió mal',text: 'Inténtelo de nuevo'});</script>");
-                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
+                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
                     out.println("<script>setTimeout(saludos, 1500);</script>");
                 }
              %>

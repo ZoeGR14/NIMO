@@ -300,7 +300,7 @@
             </a>
             <ul alt="" class="bot_acc">
                 <li><a href="inicio_Sesion.jsp" class="inis">Inicio de Sesión</a></li>
-                <li><a href="registro.jsp" class="regis">Registro</a></li>
+                <li><a href="registro.html" class="regis">Registro</a></li>
                 <li><a href="inicioSPersonal.jsp" class="admins">¿Eres un administrador?</a></li>
             </ul>
         </nav>
