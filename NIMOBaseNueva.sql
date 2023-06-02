@@ -44,7 +44,7 @@ foreign key (id_foro) references foro(id_foro) on delete cascade on update casca
 create table nota(
 id_nota int primary key auto_increment not null,
 contenido_nota varchar(3000),
-fecha_nota timestamp default current_timestamp,
+fecha_nota timestamp,
 estado int
 );
 
