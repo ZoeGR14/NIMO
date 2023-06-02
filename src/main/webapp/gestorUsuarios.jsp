@@ -321,7 +321,7 @@ else{
 
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
+                        cnx = DriverManager.getConnection("jdbc:mysql://10.100.49.216:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "RTPdlm96117");
                         sta = cnx.createStatement();
                         rs = sta.executeQuery("select * from usuario");
                         while (rs.next()) {
@@ -362,13 +362,13 @@ else{
                         <div class="nameDiv"></div>
                         <div class="socialDiv">
                             <form action="eliminarUsuarG.jsp" method="post" name="eliminaR">
-                                <input type="hidden" name="usuE" value="<%=rs.getString(1)%>" required>
+                                <input type="hidden" name="usuE" value="<%=rs.getString(1)%>">
                                 <button type="submit" name="manda" class="bottar">
                                     <img src="imagenes/deleteR.svg" alt="alt">
                                 </button>
                             </form>
                             <form action="modificarUsuarG.jsp" method="post" name="eliminaR">
-                                <input type="hidden" name="usuMO" value="<%=rs.getString(1)%>" required>
+                                <input type="hidden" name="usuMO" value="<%=rs.getString(1)%>">
                                 <button type="submit" name="manda" class="bottar">
                                     <img src="imagenes/icons8-editar.svg" alt="alt">
                                 </button>

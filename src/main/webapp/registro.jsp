@@ -6,6 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registro</title>
         <link rel="stylesheet" href="loginn.css">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <style>
             body{
                 background-color: #4b277a;
@@ -41,9 +42,10 @@
                 PreparedStatement pstat2 =null;
                 Statement sta2 =null;
                 ResultSet results2=null;
+                
                 try{
                     Class.forName("com.mysql.jdbc.Driver");
-                    conec  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NIMOBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
+                    conec  = DriverManager.getConnection("jdbc:mysql://10.100.49.216:3306/NimoBase?autoReconnect=true&useSSL=false","root","RTPdlm96117");                                                           
                     pstat = conec.prepareStatement("select * from usuario where usuar=?");
                     String usu=request.getParameter("usu");
                     //String contras=request.getParameter("contrasenia");
@@ -58,7 +60,7 @@
                     else{
                         try{
                             Class.forName("com.mysql.jdbc.Driver");
-                            conec2  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NIMOBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
+                            conec2  = DriverManager.getConnection("jdbc:mysql://10.100.49.216:3306/NimoBase?autoReconnect=true&useSSL=false","root","RTPdlm96117");                               
                             pstat2 = conec2.prepareStatement("select * from usuario where mail_us=?");
                             String correito=request.getParameter("correo");
                             pstat2.setString(1, correito);
@@ -145,7 +147,7 @@
                                 try{
                                     sta = conec2.createStatement();
                             
-                                sta.executeUpdate("insert into usuario values('"+usuar+"','"+tipe+"','"+tel+"','"+sex+"', '"+naci+"', '"+apP+"','"+apM+"','"+nom+"','"+con+"','"+cor+"')");
+                                sta.executeUpdate("insert into usuario values('"+usuar+"',"+tipe+",'"+tel+"','"+sex+"', '"+naci+"', '"+apP+"','"+apM+"','"+nom+"','"+con+"','"+cor+"')");
                                 if(tipe == 1){
                                     out.println("<script>Swal.fire('Registro dado de alta','','success')</script>");
                                     out.println("<script>function saludos(){location.href ='registro.html';}</script>");
@@ -178,6 +180,8 @@
                                     }
                                 }
                                 catch(SQLException error){
+                                    System.out.println("Error Tercer Try");
+                                    error.printStackTrace();
                                     out.println("<script>Swal.fire({icon: 'error',title: 'Algo salió mal',text: 'Inténtelo de nuevo'});</script>");
                                     out.println("<script>function saludos(){location.href ='registro.html';}</script>");
                                     out.println("<script>setTimeout(saludos, 1500);</script>");
@@ -185,6 +189,8 @@
                             }
                         } 
                         catch(SQLException error){
+                                System.out.println("Error Segundo Try");
+                                error.printStackTrace();
                                 out.println("<script>Swal({icon: 'error',title: 'Ocurrió un error',text: 'Inténtelo de nuevo'});</script>");
                                 out.println("<script>function saludos(){location.href ='registro.html';}</script>");
                                 out.println("<script>setTimeout(saludos, 1000);</script>");
@@ -195,6 +201,8 @@
                     out.println("<script>Swal({icon: 'error',title: 'Ocurrió un error',text: 'Inténtelo de nuevo'});</script>");
                     out.println("<script>function saludos(){location.href ='registro.html';}</script>");
                     out.println("<script>setTimeout(saludos, 1000);</script>");
+                    System.out.println("Error Primer Try");
+                    error.printStackTrace();
                 }
                 
             %>        

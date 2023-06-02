@@ -69,7 +69,7 @@ public class NotaDAO {
     
     
     public void agregar(Nota n){
-        String sql = "insert into nota (contenido_nota, estado) values (?, ?)";
+        String sql = "insert into nota (contenido_nota, estado, fecha_nota) values (?, ?, DATE_SUB(current_timestamp, INTERVAL 6 HOUR))";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
@@ -134,7 +134,7 @@ public class NotaDAO {
     public void editar(Nota n, int tipo){
         String sql = "";
         if(tipo == 1){
-            sql = "update nota set contenido_nota = '"+n.getContenido()+"' where id_nota = "+n.getId();
+            sql = "update nota set contenido_nota = '"+n.getContenido()+"', fecha_nota = DATE_SUB(current_timestamp, INTERVAL 6 HOUR) where id_nota = "+n.getId();
         } else if(tipo == 2){
             sql = "update nota set estado = "+2+" where id_nota = "+n.getId();
         } else if(tipo == 3){
