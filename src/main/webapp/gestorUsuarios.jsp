@@ -321,7 +321,7 @@ else{
 
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "RTPdlm96117");
+                        cnx = DriverManager.getConnection("jdbc:mysql://10.100.49.216:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "RTPdlm96117");
                         sta = cnx.createStatement();
                         rs = sta.executeQuery("select * from usuario");
                         while (rs.next()) {

@@ -480,7 +480,7 @@ else{
 
                 try{
                     Class.forName("com.mysql.jdbc.Driver");
-                    con  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","RTPdlm96117");                               
+                    con  = DriverManager.getConnection("jdbc:mysql://10.100.49.216:3306/NimoBase?autoReconnect=true&useSSL=false","root","RTPdlm96117");                               
                     stat = con.createStatement();
                     int num = 1;
                     re = stat.executeQuery("select * from comentarios where tipo_coment='"+num+"';");
