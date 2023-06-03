@@ -620,7 +620,7 @@
             </a>
             <ul class="nav">
                 <li><a href="inicio_Sesion.jsp" class="">Inicio de Sesión</a></li>
-                <li><a href="registro.jsp" class="">Registro</a></li>
+                <li><a href="registro.html" class="">Registro</a></li>
                 <li><a href="inicioSPersonal.jsp" class="">¿Eres un administrador?</a></li>
             </ul>
         </header>
