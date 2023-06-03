@@ -753,7 +753,7 @@
                     <br><br><br>
                     <center><h4>¿No tienes una cuenta?</h4></center>
                     <br><br>
-                    <center><a href="registro.jsp" class="bot-mag">
+                    <center><a href="registro.html" class="bot-mag">
                             <span class="botmag_text">
                                 ¡REGÍSTRATE!
                             </span>

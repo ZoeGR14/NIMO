@@ -19,7 +19,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="/Controler?visualizar=mascotas">
+                    <a href="/NIMO/Controler?visualizar=mascotas">
                         <i class='bx bxs-dog'></i>
                         <span class="link_name">Mis Mascotas</span>
                     </a>
@@ -47,7 +47,7 @@
                     <span class="tooltip">Comunidad</span>
                 </li>
                 <li>
-                    <a href="/Controler?visualizar=notas">
+                    <a href="/NIMO/Controler?visualizar=notas">
                         <i class='bx bx-note'></i>
                         <span class="link_name">Notas</span>
                     </a>
@@ -188,7 +188,7 @@
                         Hablamos, por tanto, de una enfermedad extremadamente grave y potencialmente mortal, sobre todo para aquellos perros que no han sido vacunados previamente. Por tanto, se puede intentar prevenir el desarrollo del virus mediante vacunaciones específicas para aumentar su inmunidad. En las siguientes líneas desde el equipo del Hospital Veterinario Nacho Menes explicaremos cómo prevenir esta enfermedad o cómo identificar sus síntomas, en el caso de que nuestro perro ya la tuviera.</p>
                     <center><a href="https://hvnachomenes.com/blog/que-es-el-moquillo-canino-y-como-podemos-identificar-sus-sintomas/" target="_blank"><img src="https://cdn.redcanina.es/wp-content/uploads/2018/12/10151200/cuidados-perro-con-moquillo-750x375.jpg" class="imagenParvo"></a> </center>
                     <p class="textoOOOO">La manera más frecuente de contagio en perros es mediante la inhalación de partículas virales que se encuentren flotando en el ambiente.  Aunque el moquillo también puede transmitirse a través del contacto directo del cachorro con los fluidos de otros canes infectados, incluyendo agua y comida.</p>
-                    <center><a href="https://hvnachomenes.com/blog/que-es-el-moquillo-canino-y-como-podemos-identificar-sus-sintomas/" target="_blank"><img src="https://www.purina-latam.com/sites/g/files/auxxlc391/files/todo-sobre-el-%20moquillo-en-%20perros-5.jpg" class="imagenParvo"></a> </center>
+                    <center><a href="https://hvnachomenes.com/blog/que-es-el-moquillo-canino-y-como-podemos-identificar-sus-sintomas/" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWzd0Cc-znlEVeMLEDT6c23yEu9FpY1u3Omg&usqp=CAU" class="imagenParvo"></a> </center>
                     <h2 class="subtitulos">Síntomas principales</h2>
                     <p class="textoOOOO">Una vez que nuestro cachorro ya está en casa, es muy importante protegerlo al máximo, evitando, en la medida de lo posible, que salga al exterior antes de ser vacunado. Pero si por alguna razón, nos vemos obligados a ello, ¿cómo podemos saber si nuestra mascota se ha contagiado de moquillo? En el caso de haber contraído el virus, las primeras señales suelen hacer acto de presencia entre el tercer y sexto día.
 

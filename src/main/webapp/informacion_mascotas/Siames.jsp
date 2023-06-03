@@ -36,7 +36,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="/Controler?visualizar=mascotas">
+                    <a href="/NIMO/Controler?visualizar=mascotas">
                         <i class='bx bxs-dog'></i>
                         <span class="link_name">Mis Mascotas</span>
                     </a>
@@ -64,7 +64,7 @@
                     <span class="tooltip">Comunidad</span>
                 </li>
                 <li>
-                    <a href="/Controler?visualizar=notas">
+                    <a href="/NIMO/Controler?visualizar=notas">
                         <i class='bx bx-note'></i>
                         <span class="link_name">Notas</span>
                     </a>
@@ -147,35 +147,34 @@
                 </ul>
             </div>
             <div class="info">
-                <h1 class="raza">Labrador Retriever</h1>
-                <img src="../animalesFotos/labrador.jpg" alt="" draggable="false"/>
-                <div class="p-caract">
+                <h1 class="raza">Siamés</h1>
+                <img src="../animalesFotos/siames.jpg" alt="" draggable="false"/>
+                
+                <div class="g-caract">
                     <h2>Caracteristicas:</h2>
                     <ul>
-                        <li>Son perros de tamaño mediano, cuerpo musculoso, fuerte y compacto.</li>
-                        <li>Su tamaño oscila entre los 54 - 57 cm.</li>
-                        <li>Peso promedio: 25 - 32 kg.</li>
-                        <li>La cola es lo más característico de esta raza, es gruesa en la base y termina en punta.</li>
-                        <li>Sus orejas, de tamaño medio, cuelgan a ambos lados de un cráneo amplio.</li>
-                        <li>Tienen mucho apetito, incluso puede conllevar a obesidad si se le permite.</li>
+                        <li>Característicos por su cabeza en corte triangular y orejas terminadas en punta.</li>
+                        <li>Sus ojos azules intensos son el rasgo más significativo de la raza.</li>
+                        <li>Tienen pelo corto y suave, en tonos: café con leche, chocolate, negro, gris, entre otros.</li>
                     </ul>
                 </div>
-                <div class="p-cuidados">
+                <div class="g-cuidados">
                     <h2>Cuidados especiales:</h2>
                     <ul>
-                        <li>Lo ideal es ofrecerle unos 3 paseos diarios.</li>
-                        <li>Combinar los paseos con ejercicio activo, para evitar una obesidad a futuro.</li>
-                        <li>Tener juguetes para que juegue ayudará a que encuentre una forma de canalizar su energía.</li>
-                        <li>Bañarlo cada mes o mes y medio y cepillarlo constantemente, así prevendrá la aparición de parasitos.</li>
+                        <li>Velar por su correcta alimentación (inclinándose siempre por el <a href="https://www.businessinsider.es/mejores-piensos-gatos-puedes-comprar-847531" target="_blank">pienso seco</a>).</li>
+                        <li>Mantener limpia su bandeja sanitaria.</li>
+                        <li>Desparasitarlo, vacunarlo y ofrecerle un rascador para que se afile las uñas.</li>
+                        <li>Cepillar su pelo dos veces por semana.</li>
+                        <li>Necesita de la compañía de su dueño por su alto nivel de sociabilidad y lo cariñoso de su carácter.</li>
                     </ul>
                 </div>
-                <div class="p-act-hab">
+                <div class="g-act-hab">
                     <h2>Actitudes y Habilidades:</h2>
                     <ul>
-                        <li>Su apariencia es amigable y tienen carácter excepcionalmente sociable.</li>
-                        <li>Esta raza es muy socialbe, amigable, leal, inteligente y son amantes de la diversión.</li>
-                        <li>Es una raza que tiene mucha energía y necesita mucho ejercicio.</li>
-                        <li>No son perros peleoneros, normalmente evita las peleas, aunque suelen meterse en problemas por su ímpetu y energía.</li>
+                        <li>Es conocido por ser el "perro de los gatos"</li>
+                        <li>Extremadamente juguetones, inteligentes y activos.</li>
+                        <li>Persigue a sus humanos y los recibe con alegría cuando vuelven a casa.</li>
+                        <li>Tiene muy alta capacidad de comunicación, cuenta con un amplio número de formas para interactuar con los dueños.</li>
                     </ul>
                 </div>
             </div>

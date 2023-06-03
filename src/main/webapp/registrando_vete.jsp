@@ -26,7 +26,7 @@
             <ul alt="" class="bot_acc">
                 <li><a href="inicio_Sesion.jsp" class="inis">Inicio de Sesión</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><a href="registro.jsp" class="regis">Registro</a></li>
+                <li><a href="registro.html" class="regis">Registro</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><a href="#" class="admins">¿Eres un administrador?</a></li>
             </ul>
@@ -46,20 +46,20 @@
                 }
                 catch (SQLException error){
                     out.println("<script>Swal({icon: 'error',title: 'Algo salió mal',text: 'Inténtelo de nuevo'});</script>");
-                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
+                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
                     out.println("<script>setTimeout(saludos, 1000);</script>");
                 }
                 try{
                     sta.executeUpdate("insert into veterinario values('"+cedulita+"','"+direc+"','"+usuario+"');");
                     out.println("<script>Swal.fire('Veterinario registrado exitosamente','','success')</script>");
-                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
+                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
                     out.println("<script>setTimeout(saludos, 1500);</script>");
                     conx.close();
                     sta.close();
                 }
                 catch(SQLException error){
                     out.println("<script>Swal({icon: 'error',title: 'Ocurrió un error',text: 'Inténtelo de nuevo'});</script>");
-                    out.println("<script>function saludos(){location.href ='registro.jsp';}</script>");
+                    out.println("<script>function saludos(){location.href ='registro.html';}</script>");
                     out.println("<script>setTimeout(saludos, 1000);</script>");
                 }
                 

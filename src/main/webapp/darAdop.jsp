@@ -361,7 +361,7 @@
                                     <option value="${datito.getId()}">${datito.getNombre()}</option>
                                 </c:forEach>
                                 <c:if test="${empty listita}">
-                                    <option id="zero" selected disabled hidden>No hay mascotas registradas unu</option>
+                                    <option id="zero" selected disabled hidden>No hay mascotas para dar en adopción. unu</option>
                                 </c:if>
                             </select>
                         </div>

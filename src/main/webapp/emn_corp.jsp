@@ -239,7 +239,7 @@
             <ul class="bot_acc">
                 <li><a href="inicio_Sesion.jsp" class="inis">Inicio de Sesión</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><a href="registro.jsp" class="regis">Registro</a></li>
+                <li><a href="registro.html" class="regis">Registro</a></li>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><a href="#" class="admins">¿Eres un administrador?</a></li>
             </ul>
