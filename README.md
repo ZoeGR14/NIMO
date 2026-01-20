@@ -4,13 +4,13 @@
 
 ## 📋 Tabla de Contenidos
 
-* [Características](https://www.google.com/search?q=%23caracter%C3%ADsticas)
-* [Tecnologías Utilizadas](https://www.google.com/search?q=%23tecnolog%C3%ADas-utilizadas)
-* [Requisitos Previos](https://www.google.com/search?q=%23requisitos-previos)
-* [Instalación y Configuración](https://www.google.com/search?q=%23instalaci%C3%B3n-y-configuraci%C3%B3n)
-* [Base de Datos](https://www.google.com/search?q=%23base-de-datos)
-* [Roles de Usuario](https://www.google.com/search?q=%23roles-de-usuario)
-* [Autores](https://www.google.com/search?q=%23autores)
+* [Características]
+* [Tecnologías Utilizadas]
+* [Requisitos Previos]
+* [Instalación y Configuración]
+* [Base de Datos]
+* [Roles de Usuario]
+* [Autores]
 
 ## ✨ Características
 
