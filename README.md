@@ -4,13 +4,13 @@
 
 ## 📋 Tabla de Contenidos
 
-* [Características]
-* [Tecnologías Utilizadas]
-* [Requisitos Previos]
-* [Instalación y Configuración]
-* [Base de Datos]
-* [Roles de Usuario]
-* [Autores]
+* [Características](https://github.com/ZoeGR14/NIMO/blob/main/README.md#-caracter%C3%ADsticas)
+* [Tecnologías Utilizadas](https://github.com/ZoeGR14/NIMO/blob/main/README.md#-tecnolog%C3%ADas-utilizadas)
+* [Requisitos Previos](https://github.com/ZoeGR14/NIMO/blob/main/README.md#%EF%B8%8F-requisitos-previos)
+* [Instalación y Configuración](https://github.com/ZoeGR14/NIMO/blob/main/README.md#-instalaci%C3%B3n-y-configuraci%C3%B3n)
+* [Base de Datos](https://github.com/ZoeGR14/NIMO/blob/main/README.md#-base-de-datos)
+* [Roles de Usuario](https://github.com/ZoeGR14/NIMO/blob/main/README.md#-roles-de-usuario)
+* [Autores](https://github.com/ZoeGR14/NIMO/blob/main/README.md#%EF%B8%8F-autores)
 
 ## ✨ Características
 
