@@ -137,7 +137,7 @@ docker-compose restart app
 ### 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/nimo.git
+git clone https://github.com/ZoeGR14/NIMO.git
 ```
 
 ### 2. Configurar la Base de Datos:
@@ -159,7 +159,7 @@ mvn clean install
 ### 5. Despliegue:
 
 - Genera el archivo `.war` y despliégalo en tu servidor de aplicaciones preferido.
-- Accede a la aplicación (generalmente en `http://localhost:8080/NIMO`).
+- Accede a la aplicación (generalmente en `http://localhost:8080`).
 
 ## 🗄 Base de Datos
 
