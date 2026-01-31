@@ -210,7 +210,7 @@ Contactar al usuario -->
 
             <ul class="nav">
                 <li>
-                    <a href="/NIMO/Controler?visualizar=mascotas">
+                    <a href="/Controler?visualizar=mascotas">
                         <i class='bx bxs-dog'></i>
                         <span class="link_name">Mis Mascotas</span>
                     </a>
@@ -238,7 +238,7 @@ Contactar al usuario -->
                     <span class="tooltip">Comunidad</span>
                 </li>
                 <li>
-                    <a href="/NIMO/Controler?visualizar=notas">
+                    <a href="/Controler?visualizar=notas">
                         <i class='bx bx-note'></i>
                         <span class="link_name">Notas</span>
                     </a>

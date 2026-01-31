@@ -5,6 +5,7 @@
         <title>Hepatitis</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="menusito.css">
         <link rel="stylesheet" href="prevenciones.css">
     </head>
     <body>
@@ -19,7 +20,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="/NIMO/Controler?visualizar=mascotas">
+                    <a href="/Controler?visualizar=mascotas">
                         <i class='bx bxs-dog'></i>
                         <span class="link_name">Mis Mascotas</span>
                     </a>
@@ -47,7 +48,7 @@
                     <span class="tooltip">Comunidad</span>
                 </li>
                 <li>
-                    <a href="/NIMO/Controler?visualizar=notas">
+                    <a href="/Controler?visualizar=notas">
                         <i class='bx bx-note'></i>
                         <span class="link_name">Notas</span>
                     </a>

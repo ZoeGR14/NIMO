@@ -5,38 +5,8 @@
         <title>Insuficiencia renal crónica</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="menusito.css">
         <link rel="stylesheet" href="prevenciones.css">
-        <style>
-            .imagen{
-                align-self: center;
-                display: flex;
-                height: 20vh;
-                border-radius: 5%;
-                box-shadow:  0px 0px 10px 10px #f1c5f5;
-            }
-            .imagen:hover{
-                border-radius: 5%;
-                -webkit-border-radius: 5%;
-                box-shadow: 0px 0px 15px 15px #e7cff9;
-                -webkit-box-shadow: 0px 0px 15px 15px #c69fea;
-                transform: rotate(360deg);
-                -webkit-transform: rotate(360deg);
-            }
-            .contenedor-imagenes {
-                display: flex;
-                width: calc(100vw - 350px);
-                justify-content: center;
-            }
-
-            .contenedor-imagenes img:first-child {
-                margin: 3em;
-                margin-bottom: 0px;
-            }
-            .navi{
-                display: block;
-                float: right;
-            }
-        </style>
     </head>
     <body>
         <aside class="sidebar">
@@ -50,7 +20,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="/NIMO/Controler?visualizar=mascotas">
+                    <a href="/Controler?visualizar=mascotas">
                         <i class='bx bxs-dog'></i>
                         <span class="link_name">Mis Mascotas</span>
                     </a>
@@ -78,7 +48,7 @@
                     <span class="tooltip">Comunidad</span>
                 </li>
                 <li>
-                    <a href="/NIMO/Controler?visualizar=notas">
+                    <a href="/Controler?visualizar=notas">
                         <i class='bx bx-note'></i>
                         <span class="link_name">Notas</span>
                     </a>

@@ -84,7 +84,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="/NIMO/Controler?visualizar=mascotas">
+                    <a href="/Controler?visualizar=mascotas">
                         <i class='bx bxs-dog'></i>
                         <span class="link_name">Mis Mascotas</span>
                     </a>
@@ -112,7 +112,7 @@
                     <span class="tooltip">Comunidad</span>
                 </li>
                 <li>
-                    <a href="/NIMO/Controler?visualizar=notas">
+                    <a href="/Controler?visualizar=notas">
                         <i class='bx bx-note'></i>
                         <span class="link_name">Notas</span>
                     </a>
@@ -214,7 +214,7 @@
 
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        cnx = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
+                        cnx = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/NimoBase?autoReconnect=true&useSSL=false", "root", "n0m3l0");
 
                         // Verificar si el registro ya existe
                         String selectQuery = "SELECT id_evento FROM calendario WHERE usuar = ? AND fecha_evento = ? AND hora_evento = ?";

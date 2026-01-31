@@ -460,11 +460,11 @@
             </a>
             <ul class="nav">
                 <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
+                <li><a href="/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
                 <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="informativo.jsp" class="">Información Mascotas</a></li>
                 <li><a href="comunidad.jsp" class="">Comunidad</a></li>
-                <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
+                <li><a href="/Controler?visualizar=notas" class="">Notas</a></li>
                 <li><a href="saludBienestar.jsp" class="">Salud y Bienestar</a></li>
                 <li><a href="adopciones.jsp" class="">Adopciones</a></li>
                 <li><a href="soyVeterinario.jsp" class="">Opciones Veterinario</a></li>

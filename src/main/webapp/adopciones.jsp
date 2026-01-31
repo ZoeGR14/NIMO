@@ -28,7 +28,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="/NIMO/Controler?visualizar=mascotas">
+                    <a href="/Controler?visualizar=mascotas">
                         <i class='bx bxs-dog'></i>
                         <span class="link_name">Mis Mascotas</span>
                     </a>
@@ -56,7 +56,7 @@
                     <span class="tooltip">Comunidad</span>
                 </li>
                 <li>
-                    <a href="/NIMO/Controler?visualizar=notas">
+                    <a href="/Controler?visualizar=notas">
                         <i class='bx bx-note'></i>
                         <span class="link_name">Notas</span>
                     </a>
@@ -108,7 +108,7 @@
                 <h2 class="titulo">Adopciones</h2>
                 <div class="alineado">
                     <div>
-                        <a href="/NIMO/Controler?visualizar=verAdop" style="none">
+                        <a href="/Controler?visualizar=verAdop" style="none">
                             <div class="card">
                                 <h2>Adoptar</h2>
                             </div>
@@ -116,7 +116,7 @@
                     </div>
 
                     <div>
-                        <a href="/NIMO/Controler?visualizar=adopciones" style="none">
+                        <a href="/Controler?visualizar=adopciones" style="none">
                             <div class="card">
                                 <h2>Dar en Adopción</h2>
                             </div>
@@ -124,7 +124,7 @@
                     </div>
                     <%--<c:if test="${not empty listaAd}">--%>
                     <div>
-                        <a href="/NIMO/Controler?visualizar=vAU" style="none">
+                        <a href="/Controler?visualizar=vAU" style="none">
                             <div class="card">
                                 <h2>Visualizar Adopciones</h2>
                             </div>

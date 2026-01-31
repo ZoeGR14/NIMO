@@ -403,11 +403,11 @@
             </a>
             <ul class="nav">
                 <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
+                <li><a href="/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
                 <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                 <li><a href="informativo.jsp" class="">Información Mascotas</a></li>
                 <li><a href="comunidad.jsp" class="">Comunidad</a></li>
-                <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
+                <li><a href="/Controler?visualizar=notas" class="">Notas</a></li>
                 <li><a href="saludBienestar.jsp" class="">Salud y Bienestar</a></li>
                 <li><a href="adopciones.jsp" class="">Adopciones</a></li>
                 <c:if test="${sessionScope.tipo_usuario eq 2}"><li><a href="soyVeterinario.jsp" class="">Opciones Veterinario</a></li></c:if>
@@ -444,7 +444,7 @@
                                     <h2>Mis Mascotas</h2>
                                     <p>Registra a tus mascotas</p>
                                     <button class="view-btn">
-                                        <a href="/NIMO/Controler?visualizar=mascotas">¡Vamos!</a>
+                                        <a href="/Controler?visualizar=mascotas">¡Vamos!</a>
                                     </button>
                                 </div>
                             </div>
@@ -489,7 +489,7 @@
                                     <h2>Notas</h2>
                                     <p>Guarda información importante en notas rápidas</p>
                                     <button class="view-btn">
-                                        <a href="/NIMO/Controler?visualizar=notas">Vamos!</a>
+                                        <a href="/Controler?visualizar=notas">Vamos!</a>
                                     </button>
                                 </div>
                             </div>
@@ -663,7 +663,7 @@
                                     <h2>Mis Mascotas</h2>
                                     <p>Registra a tus mascotas</p>
                                     <button class="view-btn">
-                                        <a href="/NIMO/Controler?visualizar=mascotas">¡Vamos!</a>
+                                        <a href="/Controler?visualizar=mascotas">¡Vamos!</a>
                                     </button>
                                 </div>
                             </div>
@@ -722,7 +722,7 @@
                                     <h2>Notas</h2>
                                     <p>Guarda información importante en notas rápidas</p>
                                     <button class="view-btn">
-                                        <a href="/NIMO/Controler?visualizar=notas">Vamos!</a>
+                                        <a href="/Controler?visualizar=notas">Vamos!</a>
                                     </button>
                                 </div>
                             </div>

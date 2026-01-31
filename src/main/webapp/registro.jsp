@@ -43,7 +43,7 @@
                 ResultSet results2=null;
                 try{
                     Class.forName("com.mysql.jdbc.Driver");
-                    conec  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NIMOBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
+                    conec  = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/NIMOBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
                     pstat = conec.prepareStatement("select * from usuario where usuar=?");
                     String usu=request.getParameter("usu");
                     //String contras=request.getParameter("contrasenia");
@@ -58,7 +58,7 @@
                     else{
                         try{
                             Class.forName("com.mysql.jdbc.Driver");
-                            conec2  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NIMOBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
+                            conec2  = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/NIMOBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
                             pstat2 = conec2.prepareStatement("select * from usuario where mail_us=?");
                             String correito=request.getParameter("correo");
                             pstat2.setString(1, correito);

@@ -21,11 +21,11 @@
             </a>
             <ul class="bot_acc">
                     <li><a href="inicio.jsp" class="inicio">Inicio</a></li>
-                    <li><a href="/NIMO/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
+                    <li><a href="/Controler?visualizar=mascotas" class="">Mis Mascotas</a></li>
                     <li><a href="2_calendario.jsp" class="">Calendario</a></li>
                     <li><a href="informativo.jsp" class="">Información Mascotas</a></li>
                     <li><a href="comunidad.jsp" class="">Comunidad</a></li>
-                    <li><a href="/NIMO/Controler?visualizar=notas" class="">Notas</a></li>
+                    <li><a href="/Controler?visualizar=notas" class="">Notas</a></li>
             <li><a href="citas.jsp" class="">Citas</a></li>
             <li><a href="saludBienestar.jsp" class="">Salud y Bienestar</a></li>
                                     <li><a href="adopciones.jsp" class="">Adopciones</a></li><li><a href="config_usu.jsp" class="">Configuración</a></li>

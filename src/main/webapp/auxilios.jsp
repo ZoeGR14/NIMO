@@ -5,32 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="menusito.css">
-        <link rel="stylesheet" href="estilos.css" type="text/css">
-        <link rel="stylesheet" href="comida.css">
-
-        <style>
-            .apartadito{
-                padding-bottom: 20px;
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-            .imagensita {
-                height: 12em;
-                margin: 20px;
-                border: 2px solid rgb(85, 19, 135);
-                -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-                -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-                box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-                -webkit-transition: all 0.5s ease-out;
-                -moz-transition: all 0.5s ease;
-                -o-transition: all 0.5s ease;
-            }
-            .imagensita:hover {
-                -webkit-transform: rotate(-7deg);
-                -moz-transform: rotate(-7deg);
-                -o-transform: rotate(-7deg);
-            }
-        </style>
+        <link rel="stylesheet" href="auxilios.css" type="text/css">
     </head>
     <body>
         <aside class="sidebar">
@@ -44,7 +19,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="/NIMO/Controler?visualizar=mascotas">
+                    <a href="/Controler?visualizar=mascotas">
                         <i class='bx bxs-dog'></i>
                         <span class="link_name">Mis Mascotas</span>
                     </a>
@@ -72,7 +47,7 @@
                     <span class="tooltip">Comunidad</span>
                 </li>
                 <li>
-                    <a href="/NIMO/Controler?visualizar=notas">
+                    <a href="/Controler?visualizar=notas">
                         <i class='bx bx-note'></i>
                         <span class="link_name">Notas</span>
                     </a>

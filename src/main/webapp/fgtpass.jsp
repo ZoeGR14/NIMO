@@ -49,7 +49,7 @@
                 
                 try{
                     Class.forName("com.mysql.jdbc.Driver");
-                    con  = DriverManager.getConnection("jdbc:mysql://localhost:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
+                    con  = DriverManager.getConnection("jdbc:mysql://mysql-db:3306/NimoBase?autoReconnect=true&useSSL=false","root","n0m3l0");                               
                     stat = con.createStatement();
 
                 }
